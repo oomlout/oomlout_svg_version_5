@@ -1,0 +1,72 @@
+-   depth: 8.5
+    diameter: 1
+    extra: 16_teeth_shield
+    number_of_teeth: 16
+    pos:
+    - 0
+    - 0
+    - -4.25
+    shaft: ''
+    shape: pulley_gt2
+    thickness: 6
+    type: p
+-   depth: 1
+    diameter: 1
+    extra: 16_teeth_shield
+    pos:
+    - 0
+    - 0
+    - -3.75
+    radius: 6.095541401273885
+    shaft: ''
+    shape: oobb_cylinder
+    thickness: 6
+    type: p
+-   depth: 1
+    diameter: 1
+    extra: 16_teeth_shield
+    pos:
+    - 0
+    - 0
+    - 3.75
+    radius: 6.095541401273885
+    shaft: ''
+    shape: oobb_cylinder
+    thickness: 6
+    type: p
+-   both_holes: true
+    circle: true
+    diameter: 1
+    extra: 16_teeth_shield
+    height: 1
+    middle: false
+    pos:
+    - 0
+    - 0
+    - 0
+    shaft: ''
+    shape: oobb_holes
+    thickness: 6
+    type: n
+    width: 1
+-   diameter: 1
+    extra: 16_teeth_shield
+    pos:
+    - 0
+    - 0
+    - 0
+    radius_name: m6
+    shaft: ''
+    shape: oobb_hole
+    thickness: 6
+    type: n
+-   diameter: 1
+    extra: 16_teeth_shield
+    pos:
+    - 0
+    - 0
+    - 0
+    shaft: ''
+    shape: oobb_slice
+    thickness: 6
+    type: n

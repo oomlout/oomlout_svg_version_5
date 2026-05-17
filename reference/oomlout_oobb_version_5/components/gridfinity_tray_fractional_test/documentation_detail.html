@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gridfinity_tray_fractional_test Documentation</title>
+  <style>
+    :root {
+      --bg: #f7f5ff;
+      --panel: rgba(255,255,255,0.92);
+      --border: #ddd5ff;
+      --text: #2f2850;
+      --subtle: #635c7e;
+      --accent: #7b68ee;
+      --accent-soft: #efeaff;
+      --shadow: 0 14px 40px rgba(78, 58, 140, 0.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #fff9ef, var(--bg) 45%, #eef6ff 100%);
+      color: var(--text);
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(244,240,255,0.92));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 22px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.1;
+    }
+    .name-long {
+      color: var(--subtle);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      margin: 0;
+      line-height: 1.7;
+      color: var(--subtle);
+      font-size: 16px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .meta-chip {
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+    .panel-intro {
+      margin: 0 0 18px;
+      color: var(--subtle);
+      line-height: 1.6;
+    }
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .sample-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.82);
+    }
+    .sample-image-wrap {
+      background: linear-gradient(180deg, #faf7ff, #f1ebff);
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+    .sample-image-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 10px 28px rgba(74, 52, 112, 0.14);
+    }
+    .sample-missing {
+      color: var(--subtle);
+      font-size: 14px;
+      padding: 24px;
+      text-align: center;
+    }
+    .sample-body {
+      padding: 16px;
+      color: var(--subtle);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .sample-body h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--text);
+    }
+    .sample-body p {
+      margin: 0 0 12px;
+    }
+    .sample-link-row {
+      margin-bottom: 10px;
+    }
+    .sample-link {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #efe8ff;
+      color: #4f3ca7;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid #d6c7ff;
+    }
+    .sample-link-disabled {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #f3f1f8;
+      color: var(--subtle);
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+    }
+    .sample-thumbs {
+      display: flex;
+      gap: 10px;
+      padding: 0 14px 12px;
+      flex-wrap: wrap;
+    }
+    .sample-thumb {
+      border: 1px solid var(--border);
+      background: #faf8ff;
+      border-radius: 12px;
+      padding: 4px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--subtle);
+      font-size: 12px;
+    }
+    .sample-thumb img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    details {
+      margin-top: 10px;
+      background: #faf8ff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .sample-empty {
+      margin-top: 10px;
+      color: var(--subtle);
+      line-height: 1.6;
+    }
+    pre {
+      margin: 10px 0 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #261f45;
+      color: #f7f4ff;
+      padding: 14px;
+      border-radius: 14px;
+      overflow: auto;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--subtle);
+    }
+    .markdown-table-wrap {
+      overflow-x: auto;
+    }
+    .markdown-table {
+      margin-top: 12px;
+    }
+    p, ul, ol {
+      line-height: 1.7;
+      color: var(--subtle);
+    }
+    h3, h4 {
+      margin-top: 1.2em;
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      .page { padding: 14px; }
+      .hero, .panel { padding: 18px; border-radius: 18px; }
+      h1 { font-size: 28px; }
+      .sample-image-wrap { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Component Detail</div>
+      <h1>gridfinity_tray_fractional_test</h1>
+      <div class="name-long">Gridfinity: Tray Raw</div>
+      <p>Returns a raw OpenSCAD wrapper around the vendored Gridfinity Extended basic cup, using repo-style public size inputs where gridfinity_width is X, gridfinity_height is Y, and gridfinity_depth is Z.</p>
+      <div class="meta">
+        <div class="meta-chip"><strong>Category:</strong> Gridfinity</div>
+        <div class="meta-chip"><strong>Returns:</strong> Raw SCAD geometry component dict.</div>
+        <div class="meta-chip"><strong>Aliases:</strong> None</div>
+      </div>
+    </section>
+
+    <section class="panel"><h2>Sample Images</h2><p class="panel-intro">Representative sample renders for this component.</p><div class="sample-grid">
+            <article class="sample-card">
+              <div class="sample-image-wrap"><div class="sample-missing">Image not generated yet</div></div>
+              
+              <div class="sample-body">
+                <h3>_validation_explicit</h3>
+                <p>No caption available yet.</p>
+                <div class="sample-link-row"><a class="sample-link" href="test/_validation_explicit/working.scad" download>Download SCAD</a></div><details><summary>Set Values</summary><div class="sample-empty">No explicit sample values documented.</div></details><details><summary>Default Values</summary><pre><code>{
+  &quot;gridfinity_width&quot;: 2,
+  &quot;gridfinity_height&quot;: 1,
+  &quot;gridfinity_depth&quot;: 3,
+  &quot;filled_in&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;wall_thickness&quot;: 0,
+  &quot;headroom&quot;: 0.8,
+  &quot;lip_style&quot;: &quot;\&quot;normal\&quot;&quot;,
+  &quot;vertical_chambers&quot;: 1,
+  &quot;horizontal_chambers&quot;: 1,
+  &quot;enable_magnets&quot;: false,
+  &quot;enable_screws&quot;: false,
+  &quot;magnet_size&quot;: &quot;[6.5,2.4]&quot;,
+  &quot;screw_size&quot;: &quot;[3,6]&quot;,
+  &quot;floor_thickness&quot;: 0.7,
+  &quot;efficient_floor&quot;: &quot;\&quot;off\&quot;&quot;,
+  &quot;sub_pitch&quot;: 1,
+  &quot;flat_base&quot;: &quot;\&quot;off\&quot;&quot;,
+  &quot;label_style&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;label_position&quot;: &quot;\&quot;left\&quot;&quot;,
+  &quot;sliding_lid_enabled&quot;: false,
+  &quot;fingerslide&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;tapered_corner&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;wallpattern_enabled&quot;: false,
+  &quot;floorpattern_enabled&quot;: false,
+  &quot;wallcutout_vertical&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;wallcutout_horizontal&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;extension_x_enabled&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;extension_y_enabled&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;text_1&quot;: false,
+  &quot;text_2&quot;: false,
+  &quot;text_2_text&quot;: &quot;\&quot;Gridfinity Extended\&quot;&quot;,
+  &quot;pitch&quot;: &quot;[42,42,7]&quot;,
+  &quot;clearance&quot;: &quot;[0.5,0.5,0]&quot;,
+  &quot;set_colour&quot;: &quot;\&quot;enable\&quot;&quot;,
+  &quot;render_position&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;fa&quot;: 6,
+  &quot;fs&quot;: 0.4,
+  &quot;fn&quot;: 0,
+  &quot;random_seed&quot;: 0,
+  &quot;force_render&quot;: true,
+  &quot;pos&quot;: &quot;[0,0,0]&quot;,
+  &quot;rot&quot;: &quot;[0,0,0]&quot;,
+  &quot;type&quot;: &quot;\&quot;positive\&quot;&quot;
+}</code></pre></details>
+              </div>
+            </article>
+            
+            <article class="sample-card">
+              <div class="sample-image-wrap"><div class="sample-missing">Image not generated yet</div></div>
+              
+              <div class="sample-body">
+                <h3>scad_reference</h3>
+                <p>No caption available yet.</p>
+                <div class="sample-link-row"><span class="sample-link-disabled">SCAD not generated yet</span></div><details><summary>Set Values</summary><div class="sample-empty">No explicit sample values documented.</div></details><details><summary>Default Values</summary><pre><code>{
+  &quot;gridfinity_width&quot;: 2,
+  &quot;gridfinity_height&quot;: 1,
+  &quot;gridfinity_depth&quot;: 3,
+  &quot;filled_in&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;wall_thickness&quot;: 0,
+  &quot;headroom&quot;: 0.8,
+  &quot;lip_style&quot;: &quot;\&quot;normal\&quot;&quot;,
+  &quot;vertical_chambers&quot;: 1,
+  &quot;horizontal_chambers&quot;: 1,
+  &quot;enable_magnets&quot;: false,
+  &quot;enable_screws&quot;: false,
+  &quot;magnet_size&quot;: &quot;[6.5,2.4]&quot;,
+  &quot;screw_size&quot;: &quot;[3,6]&quot;,
+  &quot;floor_thickness&quot;: 0.7,
+  &quot;efficient_floor&quot;: &quot;\&quot;off\&quot;&quot;,
+  &quot;sub_pitch&quot;: 1,
+  &quot;flat_base&quot;: &quot;\&quot;off\&quot;&quot;,
+  &quot;label_style&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;label_position&quot;: &quot;\&quot;left\&quot;&quot;,
+  &quot;sliding_lid_enabled&quot;: false,
+  &quot;fingerslide&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;tapered_corner&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;wallpattern_enabled&quot;: false,
+  &quot;floorpattern_enabled&quot;: false,
+  &quot;wallcutout_vertical&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;wallcutout_horizontal&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;extension_x_enabled&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;extension_y_enabled&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;text_1&quot;: false,
+  &quot;text_2&quot;: false,
+  &quot;text_2_text&quot;: &quot;\&quot;Gridfinity Extended\&quot;&quot;,
+  &quot;pitch&quot;: &quot;[42,42,7]&quot;,
+  &quot;clearance&quot;: &quot;[0.5,0.5,0]&quot;,
+  &quot;set_colour&quot;: &quot;\&quot;enable\&quot;&quot;,
+  &quot;render_position&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;fa&quot;: 6,
+  &quot;fs&quot;: 0.4,
+  &quot;fn&quot;: 0,
+  &quot;random_seed&quot;: 0,
+  &quot;force_render&quot;: true,
+  &quot;pos&quot;: &quot;[0,0,0]&quot;,
+  &quot;rot&quot;: &quot;[0,0,0]&quot;,
+  &quot;type&quot;: &quot;\&quot;positive\&quot;&quot;
+}</code></pre></details>
+              </div>
+            </article>
+            
+            <article class="sample-card">
+              <div class="sample-image-wrap"><img id="sample-main-test_1" src="test/test_1/image_400.png" alt="test_1"></div>
+              <div class="sample-thumbs"><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_400.png" data-alt="test_1 iso view"><img src="test/test_1/image_120.png" alt="test_1 iso thumbnail"><span>Iso</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_top_400.png" data-alt="test_1 top view"><img src="test/test_1/image_top_120.png" alt="test_1 top thumbnail"><span>Top</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_side_400.png" data-alt="test_1 side view"><img src="test/test_1/image_side_120.png" alt="test_1 side thumbnail"><span>Side</span></button></div>
+              <div class="sample-body">
+                <h3>test_1</h3>
+                <p>No caption available yet.</p>
+                <div class="sample-link-row"><a class="sample-link" href="test/test_1/working.scad" download>Download SCAD</a></div><details><summary>Set Values</summary><div class="sample-empty">No explicit sample values documented.</div></details><details><summary>Default Values</summary><pre><code>{
+  &quot;gridfinity_width&quot;: 2,
+  &quot;gridfinity_height&quot;: 1,
+  &quot;gridfinity_depth&quot;: 3,
+  &quot;filled_in&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;wall_thickness&quot;: 0,
+  &quot;headroom&quot;: 0.8,
+  &quot;lip_style&quot;: &quot;\&quot;normal\&quot;&quot;,
+  &quot;vertical_chambers&quot;: 1,
+  &quot;horizontal_chambers&quot;: 1,
+  &quot;enable_magnets&quot;: false,
+  &quot;enable_screws&quot;: false,
+  &quot;magnet_size&quot;: &quot;[6.5,2.4]&quot;,
+  &quot;screw_size&quot;: &quot;[3,6]&quot;,
+  &quot;floor_thickness&quot;: 0.7,
+  &quot;efficient_floor&quot;: &quot;\&quot;off\&quot;&quot;,
+  &quot;sub_pitch&quot;: 1,
+  &quot;flat_base&quot;: &quot;\&quot;off\&quot;&quot;,
+  &quot;label_style&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;label_position&quot;: &quot;\&quot;left\&quot;&quot;,
+  &quot;sliding_lid_enabled&quot;: false,
+  &quot;fingerslide&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;tapered_corner&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;wallpattern_enabled&quot;: false,
+  &quot;floorpattern_enabled&quot;: false,
+  &quot;wallcutout_vertical&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;wallcutout_horizontal&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;extension_x_enabled&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;extension_y_enabled&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;text_1&quot;: false,
+  &quot;text_2&quot;: false,
+  &quot;text_2_text&quot;: &quot;\&quot;Gridfinity Extended\&quot;&quot;,
+  &quot;pitch&quot;: &quot;[42,42,7]&quot;,
+  &quot;clearance&quot;: &quot;[0.5,0.5,0]&quot;,
+  &quot;set_colour&quot;: &quot;\&quot;enable\&quot;&quot;,
+  &quot;render_position&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;fa&quot;: 6,
+  &quot;fs&quot;: 0.4,
+  &quot;fn&quot;: 0,
+  &quot;random_seed&quot;: 0,
+  &quot;force_render&quot;: true,
+  &quot;pos&quot;: &quot;[0,0,0]&quot;,
+  &quot;rot&quot;: &quot;[0,0,0]&quot;,
+  &quot;type&quot;: &quot;\&quot;positive\&quot;&quot;
+}</code></pre></details>
+              </div>
+            </article>
+            
+            <article class="sample-card">
+              <div class="sample-image-wrap"><img id="sample-main-test_2" src="test/test_2/image_400.png" alt="test_2"></div>
+              <div class="sample-thumbs"><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_400.png" data-alt="test_2 iso view"><img src="test/test_2/image_120.png" alt="test_2 iso thumbnail"><span>Iso</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_top_400.png" data-alt="test_2 top view"><img src="test/test_2/image_top_120.png" alt="test_2 top thumbnail"><span>Top</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_side_400.png" data-alt="test_2 side view"><img src="test/test_2/image_side_120.png" alt="test_2 side thumbnail"><span>Side</span></button></div>
+              <div class="sample-body">
+                <h3>test_2</h3>
+                <p>No caption available yet.</p>
+                <div class="sample-link-row"><a class="sample-link" href="test/test_2/working.scad" download>Download SCAD</a></div><details><summary>Set Values</summary><div class="sample-empty">No explicit sample values documented.</div></details><details><summary>Default Values</summary><pre><code>{
+  &quot;gridfinity_width&quot;: 2,
+  &quot;gridfinity_height&quot;: 1,
+  &quot;gridfinity_depth&quot;: 3,
+  &quot;filled_in&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;wall_thickness&quot;: 0,
+  &quot;headroom&quot;: 0.8,
+  &quot;lip_style&quot;: &quot;\&quot;normal\&quot;&quot;,
+  &quot;vertical_chambers&quot;: 1,
+  &quot;horizontal_chambers&quot;: 1,
+  &quot;enable_magnets&quot;: false,
+  &quot;enable_screws&quot;: false,
+  &quot;magnet_size&quot;: &quot;[6.5,2.4]&quot;,
+  &quot;screw_size&quot;: &quot;[3,6]&quot;,
+  &quot;floor_thickness&quot;: 0.7,
+  &quot;efficient_floor&quot;: &quot;\&quot;off\&quot;&quot;,
+  &quot;sub_pitch&quot;: 1,
+  &quot;flat_base&quot;: &quot;\&quot;off\&quot;&quot;,
+  &quot;label_style&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;label_position&quot;: &quot;\&quot;left\&quot;&quot;,
+  &quot;sliding_lid_enabled&quot;: false,
+  &quot;fingerslide&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;tapered_corner&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;wallpattern_enabled&quot;: false,
+  &quot;floorpattern_enabled&quot;: false,
+  &quot;wallcutout_vertical&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;wallcutout_horizontal&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;extension_x_enabled&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;extension_y_enabled&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;text_1&quot;: false,
+  &quot;text_2&quot;: false,
+  &quot;text_2_text&quot;: &quot;\&quot;Gridfinity Extended\&quot;&quot;,
+  &quot;pitch&quot;: &quot;[42,42,7]&quot;,
+  &quot;clearance&quot;: &quot;[0.5,0.5,0]&quot;,
+  &quot;set_colour&quot;: &quot;\&quot;enable\&quot;&quot;,
+  &quot;render_position&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;fa&quot;: 6,
+  &quot;fs&quot;: 0.4,
+  &quot;fn&quot;: 0,
+  &quot;random_seed&quot;: 0,
+  &quot;force_render&quot;: true,
+  &quot;pos&quot;: &quot;[0,0,0]&quot;,
+  &quot;rot&quot;: &quot;[0,0,0]&quot;,
+  &quot;type&quot;: &quot;\&quot;positive\&quot;&quot;
+}</code></pre></details>
+              </div>
+            </article>
+            </div></section>
+
+    <section class="panel">
+      <h2>Variables</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>gridfinity_width</code></td><td>Width in Gridfinity units along X.</td><td>number</td><td><code>2</code></td></tr><tr><td><code>gridfinity_height</code></td><td>Height in Gridfinity units along Y.</td><td>number</td><td><code>1</code></td></tr><tr><td><code>gridfinity_depth</code></td><td>Depth in Gridfinity units along Z.</td><td>number</td><td><code>3</code></td></tr><tr><td><code>filled_in</code></td><td>Fill the cup into a solid block or fill the lip.</td><td>string</td><td><code>&quot;disabled&quot;</code></td></tr><tr><td><code>wall_thickness</code></td><td>Outer wall thickness in mm. Zero uses upstream auto sizing.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>headroom</code></td><td>Undersize the top by this amount for easier stacking.</td><td>number</td><td><code>0.8</code></td></tr><tr><td><code>lip_style</code></td><td>Cup lip style.</td><td>string</td><td><code>&quot;normal&quot;</code></td></tr><tr><td><code>vertical_chambers</code></td><td>Number of vertical chambers.</td><td>number</td><td><code>1</code></td></tr><tr><td><code>horizontal_chambers</code></td><td>Number of horizontal chambers.</td><td>number</td><td><code>1</code></td></tr><tr><td><code>enable_magnets</code></td><td>Enable base magnet holes.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>enable_screws</code></td><td>Enable base screw holes.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>magnet_size</code></td><td>Magnet diameter and height [d,h] in mm.</td><td>list</td><td><code>[6.5,2.4]</code></td></tr><tr><td><code>screw_size</code></td><td>Screw diameter and height [d,h] in mm.</td><td>list</td><td><code>[3,6]</code></td></tr><tr><td><code>floor_thickness</code></td><td>Minimum thickness above cutouts in the base.</td><td>number</td><td><code>0.7</code></td></tr><tr><td><code>efficient_floor</code></td><td>Efficient floor mode.</td><td>string</td><td><code>&quot;off&quot;</code></td></tr><tr><td><code>sub_pitch</code></td><td>Bottom pad subdivision pitch.</td><td>number</td><td><code>1</code></td></tr><tr><td><code>flat_base</code></td><td>Internal base style.</td><td>string</td><td><code>&quot;off&quot;</code></td></tr><tr><td><code>label_style</code></td><td>Label style.</td><td>string</td><td><code>&quot;disabled&quot;</code></td></tr><tr><td><code>label_position</code></td><td>Label position.</td><td>string</td><td><code>&quot;left&quot;</code></td></tr><tr><td><code>sliding_lid_enabled</code></td><td>Enable the sliding lid geometry.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>fingerslide</code></td><td>Finger slide style.</td><td>string</td><td><code>&quot;none&quot;</code></td></tr><tr><td><code>tapered_corner</code></td><td>Tapered corner style.</td><td>string</td><td><code>&quot;none&quot;</code></td></tr><tr><td><code>wallpattern_enabled</code></td><td>Enable wall cutout patterns.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>floorpattern_enabled</code></td><td>Enable floor patterns.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>wallcutout_vertical</code></td><td>Vertical wall cutout mode.</td><td>string</td><td><code>&quot;disabled&quot;</code></td></tr><tr><td><code>wallcutout_horizontal</code></td><td>Horizontal wall cutout mode.</td><td>string</td><td><code>&quot;disabled&quot;</code></td></tr><tr><td><code>extension_x_enabled</code></td><td>Extendable tab mode on X.</td><td>string</td><td><code>&quot;disabled&quot;</code></td></tr><tr><td><code>extension_y_enabled</code></td><td>Extendable tab mode on Y.</td><td>string</td><td><code>&quot;disabled&quot;</code></td></tr><tr><td><code>text_1</code></td><td>Add the bin size to the bottom text.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>text_2</code></td><td>Enable custom bottom text.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>text_2_text</code></td><td>Custom bottom text value.</td><td>string</td><td><code>&quot;Gridfinity Extended&quot;</code></td></tr><tr><td><code>pitch</code></td><td>Gridfinity pitch [x,y,z] in mm.</td><td>list</td><td><code>[42,42,7]</code></td></tr><tr><td><code>clearance</code></td><td>Clearance [x,y,z] in mm.</td><td>list</td><td><code>[0.5,0.5,0]</code></td></tr><tr><td><code>set_colour</code></td><td>Color handling mode for the upstream renderer.</td><td>string</td><td><code>&quot;enable&quot;</code></td></tr><tr><td><code>render_position</code></td><td>Upstream render position mode.</td><td>string</td><td><code>&quot;center&quot;</code></td></tr><tr><td><code>fa</code></td><td>OpenSCAD fragment angle.</td><td>number</td><td><code>6</code></td></tr><tr><td><code>fs</code></td><td>OpenSCAD fragment size.</td><td>number</td><td><code>0.4</code></td></tr><tr><td><code>fn</code></td><td>OpenSCAD fragment count override.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>random_seed</code></td><td>Random seed for procedural features.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>force_render</code></td><td>Force render on costly upstream components.</td><td>bool</td><td><code>True</code></td></tr><tr><td><code>pos</code></td><td>3-element [x,y,z] position.</td><td>list</td><td><code>[0,0,0]</code></td></tr><tr><td><code>rot</code></td><td>Rotation [rx,ry,rz] in degrees.</td><td>list</td><td><code>[0,0,0]</code></td></tr><tr><td><code>type</code></td><td>Geometry type: positive or negative.</td><td>string</td><td><code>&quot;positive&quot;</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel"><h2>More Details</h2><h1>gridfinity_tray_raw</h1>
+<p><strong>Gridfinity: Tray Raw</strong></p>
+<p>Returns a raw OpenSCAD wrapper around the vendored Gridfinity Extended basic cup, using gridfinity_width, gridfinity_depth, and gridfinity_height as the public size inputs.</p>
+<h2>Returns</h2>
+<p>Raw SCAD geometry component dict.</p>
+<h2>Variables</h2>
+<div class="markdown-table-wrap"><table class="markdown-table"><thead><tr><th>Name</th><th>Description</th><th>Type</th><th>Default</th></tr></thead><tbody><tr><td>gridfinity_width</td><td>Width in Gridfinity units.</td><td>number</td><td>2</td></tr><tr><td>gridfinity_depth</td><td>Depth in Gridfinity units.</td><td>number</td><td>1</td></tr><tr><td>gridfinity_height</td><td>Height in Gridfinity units.</td><td>number</td><td>3</td></tr><tr><td>filled_in</td><td>Fill the cup into a solid block or fill the lip.</td><td>string</td><td>"disabled"</td></tr><tr><td>wall_thickness</td><td>Outer wall thickness in mm. Zero uses upstream auto sizing.</td><td>number</td><td>0</td></tr><tr><td>headroom</td><td>Undersize the top by this amount for easier stacking.</td><td>number</td><td>0.8</td></tr><tr><td>lip_style</td><td>Cup lip style.</td><td>string</td><td>"normal"</td></tr><tr><td>vertical_chambers</td><td>Number of vertical chambers.</td><td>number</td><td>1</td></tr><tr><td>horizontal_chambers</td><td>Number of horizontal chambers.</td><td>number</td><td>1</td></tr><tr><td>enable_magnets</td><td>Enable base magnet holes.</td><td>bool</td><td>False</td></tr><tr><td>enable_screws</td><td>Enable base screw holes.</td><td>bool</td><td>False</td></tr><tr><td>magnet_size</td><td>Magnet diameter and height [d,h] in mm.</td><td>list</td><td>[6.5,2.4]</td></tr><tr><td>screw_size</td><td>Screw diameter and height [d,h] in mm.</td><td>list</td><td>[3,6]</td></tr><tr><td>floor_thickness</td><td>Minimum thickness above cutouts in the base.</td><td>number</td><td>0.7</td></tr><tr><td>efficient_floor</td><td>Efficient floor mode.</td><td>string</td><td>"off"</td></tr><tr><td>sub_pitch</td><td>Bottom pad subdivision pitch.</td><td>number</td><td>1</td></tr><tr><td>flat_base</td><td>Internal base style.</td><td>string</td><td>"off"</td></tr><tr><td>label_style</td><td>Label style.</td><td>string</td><td>"disabled"</td></tr><tr><td>label_position</td><td>Label position.</td><td>string</td><td>"left"</td></tr><tr><td>sliding_lid_enabled</td><td>Enable the sliding lid geometry.</td><td>bool</td><td>False</td></tr><tr><td>fingerslide</td><td>Finger slide style.</td><td>string</td><td>"none"</td></tr><tr><td>tapered_corner</td><td>Tapered corner style.</td><td>string</td><td>"none"</td></tr><tr><td>wallpattern_enabled</td><td>Enable wall cutout patterns.</td><td>bool</td><td>False</td></tr><tr><td>floorpattern_enabled</td><td>Enable floor patterns.</td><td>bool</td><td>False</td></tr><tr><td>wallcutout_vertical</td><td>Vertical wall cutout mode.</td><td>string</td><td>"disabled"</td></tr><tr><td>wallcutout_horizontal</td><td>Horizontal wall cutout mode.</td><td>string</td><td>"disabled"</td></tr><tr><td>extension_x_enabled</td><td>Extendable tab mode on X.</td><td>string</td><td>"disabled"</td></tr><tr><td>extension_y_enabled</td><td>Extendable tab mode on Y.</td><td>string</td><td>"disabled"</td></tr><tr><td>text_1</td><td>Add the bin size to the bottom text.</td><td>bool</td><td>False</td></tr><tr><td>text_2</td><td>Enable custom bottom text.</td><td>bool</td><td>False</td></tr><tr><td>text_2_text</td><td>Custom bottom text value.</td><td>string</td><td>"Gridfinity Extended"</td></tr><tr><td>pitch</td><td>Gridfinity pitch [x,y,z] in mm.</td><td>list</td><td>[42,42,7]</td></tr><tr><td>clearance</td><td>Clearance [x,y,z] in mm.</td><td>list</td><td>[0.5,0.5,0]</td></tr><tr><td>set_colour</td><td>Color handling mode for the upstream renderer.</td><td>string</td><td>"enable"</td></tr><tr><td>render_position</td><td>Upstream render position mode.</td><td>string</td><td>"center"</td></tr><tr><td>fa</td><td>OpenSCAD fragment angle.</td><td>number</td><td>6</td></tr><tr><td>fs</td><td>OpenSCAD fragment size.</td><td>number</td><td>0.4</td></tr><tr><td>fn</td><td>OpenSCAD fragment count override.</td><td>number</td><td>0</td></tr><tr><td>random_seed</td><td>Random seed for procedural features.</td><td>number</td><td>0</td></tr><tr><td>force_render</td><td>Force render on costly upstream components.</td><td>bool</td><td>True</td></tr><tr><td>pos</td><td>3-element [x,y,z] position.</td><td>list</td><td>[0,0,0]</td></tr><tr><td>rot</td><td>Rotation [rx,ry,rz] in degrees.</td><td>list</td><td>[0,0,0]</td></tr><tr><td>type</td><td>Geometry type: positive or negative.</td><td>string</td><td>"positive"</td></tr></tbody></table></div></section>
+  </main>
+  <script>
+    document.querySelectorAll('.sample-thumb').forEach((button) => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const fullSrc = button.getAttribute('data-full');
+        const altText = button.getAttribute('data-alt');
+        const target = document.getElementById(targetId);
+        if (!target || !fullSrc) return;
+        target.src = fullSrc;
+        if (altText) {
+          target.alt = altText;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

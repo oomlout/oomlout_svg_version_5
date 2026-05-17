@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RoboClick Action Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Pastel Rainbow Palette */
+      --pastel-pink: #ffd6e0;
+      --pastel-peach: #ffecd2;
+      --pastel-yellow: #fff9c4;
+      --pastel-mint: #c8f7dc;
+      --pastel-aqua: #c4f1f9;
+      --pastel-sky: #c3e0ff;
+      --pastel-lavender: #e5d4ff;
+      --pastel-rose: #ffc8dd;
+      
+      /* Accent Colors */
+      --accent-coral: #ff8fab;
+      --accent-peach: #ffb5a7;
+      --accent-mint: #80ed99;
+      --accent-sky: #90e0ef;
+      --accent-lavender: #b8c0ff;
+      --accent-pink: #ffc8dd;
+      
+      /* UI Colors */
+      --glass-bg: rgba(255, 255, 255, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-shadow: 0 8px 32px rgba(180, 130, 200, 0.2);
+      --text-dark: #2d3748;
+      --text-medium: #4a5568;
+      --text-light: #718096;
+      --border-radius: 24px;
+      --border-radius-sm: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    @keyframes rainbow-border {
+      0% { border-color: var(--pastel-pink); }
+      14% { border-color: var(--pastel-peach); }
+      28% { border-color: var(--pastel-yellow); }
+      42% { border-color: var(--pastel-mint); }
+      56% { border-color: var(--pastel-aqua); }
+      70% { border-color: var(--pastel-sky); }
+      84% { border-color: var(--pastel-lavender); }
+      100% { border-color: var(--pastel-pink); }
+    }
+
+    body {
+      font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, 
+        var(--pastel-pink), 
+        var(--pastel-peach), 
+        var(--pastel-yellow), 
+        var(--pastel-mint), 
+        var(--pastel-aqua), 
+        var(--pastel-sky), 
+        var(--pastel-lavender),
+        var(--pastel-rose)
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
+      color: var(--text-dark);
+    }
+
+    /* Decorative floating shapes */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.5;
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::before {
+      width: 400px;
+      height: 400px;
+      background: var(--pastel-lavender);
+      top: -100px;
+      right: -100px;
+      animation: float 8s ease-in-out infinite;
+    }
+    body::after {
+      width: 300px;
+      height: 300px;
+      background: var(--pastel-mint);
+      bottom: -80px;
+      left: -80px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    .main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1em 2vw 4em 2vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== HEADER STYLES ===== */
+    .header {
+      position: sticky;
+      top: 1em;
+      z-index: 100;
+      max-width: 800px;
+      width: 100%;
+      margin: 1.5em auto 2em auto;
+      padding: 2em 2.5em 1.8em 2.5em;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid var(--glass-border);
+      border-radius: var(--border-radius);
+      box-shadow: 
+        var(--glass-shadow),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2em;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin: 0;
+      background: linear-gradient(135deg, 
+        #ff6b9d, #c44ce0, #7b68ee, #00bcd4, #4caf50, #ffeb3b, #ff9800, #ff6b9d
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s linear infinite;
+    }
+
+    .header-subtitle {
+      font-size: 0.95em;
+      color: var(--text-medium);
+      margin-top: 0.4em;
+      font-weight: 500;
+    }
+
+    .header-controls {
+      margin-top: 1.5em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8em;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    #search-box, #category-filter {
+      border: 2px solid rgba(180, 130, 200, 0.25);
+      border-radius: 14px;
+      font-size: 0.95em;
+      padding: 0.75em 1.2em;
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--text-dark);
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    #search-box::placeholder { color: var(--text-light); }
+    #search-box:focus, #category-filter:focus {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: var(--accent-lavender);
+      box-shadow: 0 0 0 4px rgba(184, 192, 255, 0.3);
+    }
+    #search-box { 
+      width: 280px;
+      padding-left: 1em;
+    }
+    #category-filter { 
+      min-width: 150px;
+      cursor: pointer;
+    }
+
+    /* ===== QUICK FILTERS ===== */
+    .quick-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6em;
+      margin: 1.3em 0 0 0;
+      justify-content: center;
+    }
+
+    .quick-filter-btn {
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--text-dark);
+      border: 2px solid transparent;
+      border-radius: 50px;
+      padding: 0.5em 1.2em;
+      font-size: 0.9em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      outline: none;
+      font-family: inherit;
+    }
+
+    .quick-filter-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(180, 130, 200, 0.25);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .quick-filter-btn.active {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-lavender));
+      color: white;
+      border: 2px solid rgba(255,255,255,0.5);
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(180, 130, 200, 0.35);
+    }
+
+    /* ===== ACTIONS GRID ===== */
+    #actions-container {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8em;
+      width: 100%;
+    }
+
+    /* ===== ACTION CARDS ===== */
+    .action {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--border-radius);
+      box-shadow: 
+        0 4px 24px rgba(180, 130, 200, 0.12),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+      padding: 1.6em 1.8em 1.5em 1.8em;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      margin: 0;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease backwards;
+    }
+
+    /* Rainbow top accent bar */
+    .action::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, 
+        var(--pastel-pink),
+        var(--pastel-peach),
+        var(--pastel-yellow),
+        var(--pastel-mint),
+        var(--pastel-aqua),
+        var(--pastel-sky),
+        var(--pastel-lavender)
+      );
+      background-size: 200% 100%;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      transition: background-position 0.5s ease;
+    }
+
+    .action:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 20px 50px rgba(180, 130, 200, 0.25),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+      border-color: rgba(255, 255, 255, 0.8);
+      animation: rainbow-border 3s linear infinite;
+    }
+
+    .action:hover::before {
+      animation: shimmer 2s linear infinite;
+    }
+
+    .action-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.45em;
+      font-weight: 800;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-bottom: 0.2em;
+      margin-top: 0.5em;
+      line-height: 1.2;
+    }
+
+    .action-name-long {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.74em;
+      color: var(--text-light);
+      letter-spacing: 0.2px;
+      margin-bottom: 0.5em;
+      opacity: 0.9;
+      word-break: break-word;
+    }
+
+    .action-short-options {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45em;
+      margin: 0.45em 0 0.6em 0;
+      padding: 0;
+    }
+
+    .action-short-options li {
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-lavender));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.35em 0.85em;
+      font-size: 0.98em;
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(180, 130, 200, 0.22);
+    }
+
+    .action-summary {
+      margin: 0.2em 0 0.55em 0;
+      font-size: 0.97em;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.45;
+    }
+
+    .action-category { 
+      font-size: 0.9em; 
+      color: var(--text-medium); 
+      margin-bottom: 0.5em; 
+    }
+
+    .action-description {
+      margin: 0.6em 0 0.8em 0;
+      font-size: 0.95em;
+      color: var(--text-medium);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .action-variables {
+      margin: 0.5em 0 0 0;
+      padding-top: 0.8em;
+      border-top: 1px solid rgba(180, 130, 200, 0.15);
+    }
+
+    .action-variables strong {
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .var-list { 
+      list-style: none; 
+      padding-left: 0; 
+      margin: 0.5em 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+    }
+
+    .var-list li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .var-chip {
+      background: linear-gradient(135deg, var(--pastel-lavender), var(--pastel-sky));
+      color: var(--text-dark);
+      border: 0;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 0.82em;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(180, 130, 200, 0.15);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      padding: 0.35em 0.9em;
+      font-family: inherit;
+    }
+
+    .var-chip:hover {
+      transform: scale(1.08);
+      box-shadow: 0 4px 12px rgba(180, 130, 200, 0.25);
+    }
+
+    .var-chip:focus-visible {
+      outline: 3px solid rgba(144, 224, 239, 0.6);
+      outline-offset: 2px;
+    }
+
+    .var-chip-empty {
+      background: #f0f0f0;
+      color: #888;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .variable-popup {
+      margin-top: 0.75em;
+      padding: 0.7em 0.8em;
+      border-radius: 12px;
+      border: 1px solid rgba(180, 130, 200, 0.25);
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--text-dark);
+      font-size: 0.84em;
+      line-height: 1.45;
+    }
+
+    .variable-popup strong {
+      display: block;
+      margin-bottom: 0.25em;
+      font-size: 0.95em;
+    }
+
+    .emoji { 
+      font-size: 1.15em; 
+      margin-right: 0.15em; 
+    }
+
+    /* ===== CATEGORY BADGES ===== */
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
+      padding: 0.3em 1em;
+      border-radius: 50px;
+      font-size: 0.82em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .cat-AI { 
+      background: linear-gradient(135deg, #80ed99, #57cc99); 
+      color: #1b4332; 
+    }
+    .cat-Browser { 
+      background: linear-gradient(135deg, #ffd6a5, #ffb347); 
+      color: #7c4a03; 
+    }
+    .cat-File { 
+      background: linear-gradient(135deg, #e5d4ff, #c8b6ff); 
+      color: #4a3470; 
+    }
+    .cat-Google-Doc { 
+      background: linear-gradient(135deg, #a2d2ff, #90e0ef); 
+      color: #1d4e89; 
+    }
+    .cat-Other { 
+      background: linear-gradient(135deg, #ffc8dd, #ffafcc); 
+      color: #89023e; 
+    }
+    .cat-Uncategorized { 
+      background: linear-gradient(135deg, #dfe7fd, #cddafd); 
+      color: #4a5568; 
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      display: flex;
+      gap: 2em;
+      justify-content: center;
+      margin-bottom: 1.5em;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s ease 0.2s backwards;
+    }
+
+    .stat-item {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      padding: 0.8em 1.5em;
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 4px 16px rgba(180, 130, 200, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(180, 130, 200, 0.2);
+    }
+
+    .stat-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8em;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-lavender));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.8em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      #actions-container { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
+      #actions-container { grid-template-columns: 1fr; }
+      .header {
+        padding: 1.5em 1.2em;
+        border-radius: var(--border-radius-sm);
+        margin: 1em auto;
+        max-width: 96%;
+      }
+      h1 { font-size: 1.6em; }
+      #search-box { width: 100%; }
+      .main-content { padding: 0.5em 3vw 2em 3vw; }
+      .stats-bar { gap: 1em; }
+      .stat-item { padding: 0.6em 1em; }
+    }
+
+    /* ===== EMPTY STATE ===== */
+    .empty-state {
+      text-align: center;
+      padding: 4em 2em;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state-emoji {
+      font-size: 4em;
+      margin-bottom: 0.3em;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .empty-state-text {
+      font-size: 1.2em;
+      color: var(--text-medium);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 2em;
+      margin-top: 3em;
+      color: var(--text-light);
+      font-size: 0.9em;
+    }
+
+    .footer-heart {
+      color: var(--accent-coral);
+      animation: pulse 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--pastel-lavender), var(--pastel-pink));
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--accent-lavender), var(--accent-pink));
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>✨ RoboClick Actions ✨</h1>
+    <div class="header-subtitle">Your automation command reference</div>
+    <div class="header-controls">
+      <input id="search-box" type="text" placeholder="🔍 Search commands...">
+      <select id="category-filter">
+        <option value="">🌈 All Categories</option>
+      </select>
+    </div>
+    <div class="quick-filters" id="quick-filters"></div>
+  </div>
+  <div class="main-content">
+    <div class="stats-bar" id="stats-bar"></div>
+    <div id="actions-container"></div>
+    <div class="footer">
+      Made with <span class="footer-heart">♥</span> by RoboClick • Documentation auto-generated
+    </div>
+  </div>
+  <script>
+        // Quick filter definitions (add more as needed)
+        const QUICK_FILTERS = [
+          { label: 'AI', keyword: 'ai', emoji: '🤖' },
+          { label: 'Image', keyword: 'image', emoji: '🖼️' },
+          { label: 'Corel', keyword: 'corel', emoji: '🎨' },
+          { label: 'OpenSCAD', keyword: 'openscad', emoji: '📐' },
+          { label: 'File', keyword: 'file', emoji: '📁' },
+          { label: 'Browser', keyword: 'browser', emoji: '🌐' },
+          { label: 'Google Doc', keyword: 'google doc', emoji: '📄' },
+          { label: 'Other', keyword: 'other', emoji: '🛠️' },
+        ];
+    // DOCUMENTATION_DATA will be injected by the Python script
+    const DOCUMENTATION_DATA = {"actions":[{"command":"roboclick_action_ai_add_image","name_long":"roboclick_action_ai_add_image","name_short_options":["add_image","image","ai_add_image"],"description":"Add image.","summary":"Add image.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"position_click","description":"Screen position to click before executing the step.","type":"string","default":""},{"name":"mode -- source_files from source_files directory","description":"Value for mode -- source files from source files directory.","type":"string","default":""}],"variable_names":["file_source","position_click","mode -- source_files from source_files directory"],"category":"AI","returns":"Pass-through action result.","aliases":["add_image","image","ai_add_image"]},{"command":"roboclick_action_ai_continue_chat","name_long":"roboclick_action_ai_continue_chat","name_short_options":["continue_chat","chat","ai_continue_chat"],"description":"Continue chat.","summary":"Continue chat.","variables":[{"name":"url_chat","description":"Chat URL to continue an existing conversation.","type":"string","default":""},{"name":"log_url","description":"Whether to capture and store the current chat URL.","type":"string","default":""}],"variable_names":["url_chat","log_url"],"category":"AI","returns":"Pass-through action result.","aliases":["continue_chat","chat","ai_continue_chat"]},{"command":"roboclick_action_ai_file_add_file","name_long":"roboclick_action_ai_file_add_file","name_short_options":["add_file","ai_add_file","add_image","ai_add_image"],"description":"Add a file (alias for add_image).","summary":"Add a file (alias for add_image).","variables":[{"name":"file_source","description":"path of the file, referenced to current directory","type":"string","default":""}],"variable_names":["file_source"],"category":"ai","returns":"Pass-through action result.","aliases":["add_file","ai_add_file","add_image","ai_add_image"]},{"command":"roboclick_action_ai_image_save_generated","name_long":"roboclick_action_save_image_generated","name_short_options":["save_image_generated","generated"],"description":"Save image generated.","summary":"Save image generated.","variables":[{"name":"file_name","description":"File name to read or write for this action.","type":"string","default":""},{"name":"position_click","description":"Screen position used to open the generated image context menu.","type":"string","default":""},{"name":"mode_ai_wait","description":"AI wait strategy (slow, fast_button_state, or fast_clipboard_state).","type":"string","default":""}],"variable_names":["file_name","position_click","mode_ai_wait"],"category":"AI Image","returns":"Pass-through action result.","aliases":["save_image_generated","generated"]},{"command":"roboclick_action_ai_new_chat","name_long":"roboclick_action_ai_new_chat","name_short_options":["new_chat","chat","ai_new_chat"],"description":"New chat.","summary":"New chat.","variables":[{"name":"log_url","description":"Whether to capture and store the current chat URL.","type":"string","default":""},{"name":"description","description":"Optional kickoff note sent in the first chat message.","type":"string","default":""}],"variable_names":["log_url","description"],"category":"AI","returns":"Pass-through action result.","aliases":["new_chat","chat","ai_new_chat"]},{"command":"roboclick_action_ai_query","name_long":"roboclick_action_ai_query","name_short_options":["ai_query","query"],"description":"Ai query.","summary":"Ai query.","variables":[{"name":"text","description":"Text content used by this action.","type":"string","default":""},{"name":"file_name","description":"File name to read or write for this action. if folder name starts with source_files it will pull from project source_files rather than folder","type":"string","default":""},{"name":"delay","description":"Delay duration in seconds.","type":"string","default":""},{"name":"mode_ai_wait","description":"AI wait strategy (slow, fast_button_state, or fast_clipboard_state).","type":"string","default":""},{"name":"method","description":"Query input method (typing or paste).","type":"string","default":""}],"variable_names":["text","file_name","delay","mode_ai_wait","method"],"category":"AI","returns":"Pass-through action result.","aliases":["ai_query","query"]},{"command":"roboclick_action_ai_save_text","name_long":"roboclick_action_ai_save_text","name_short_options":["save_text","text","ai_save_text"],"description":"Save text.","summary":"Save text.","variables":[{"name":"file_name_full","description":"Full file path to save captured content.","type":"string","default":""},{"name":"file_name_clip","description":"File path used to store clipboard text.","type":"string","default":""},{"name":"clip","description":"Clipboard text payload to save.","type":"string","default":""}],"variable_names":["file_name_full","file_name_clip","clip"],"category":"AI","returns":"Pass-through action result.","aliases":["save_text","text","ai_save_text"]},{"command":"roboclick_action_ai_set_mode","name_long":"roboclick_action_ai_set_mode","name_short_options":["set_mode","mode","ai_set_mode"],"description":"Set mode.","summary":"Set mode.","variables":[{"name":"mode","description":"Mode selector controlling action behavior.","type":"string","default":""}],"variable_names":["mode"],"category":"AI","returns":"Pass-through action result.","aliases":["set_mode","mode","ai_set_mode"]},{"command":"roboclick_action_ai_skill_image_laser_cut_logo_full","name_long":"roboclick_action_ai_skill_image_laser_cut_logo_full","name_short_options":["image_laser_cut_logo_full","image","ai_skill_image_laser_cut_logo_full"],"description":"Image laser cut logo full.","summary":"Image laser cut logo full.","variables":[{"name":"image_detail","description":"Prompt detail level for generated image instructions.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["image_detail","file_destination"],"category":"AI Skill","returns":"Pass-through action result.","aliases":["image_laser_cut_logo_full","image","ai_skill_image_laser_cut_logo_full"]},{"command":"roboclick_action_ai_skill_image_prompt_full","name_long":"roboclick_action_ai_skill_image_prompt_full","name_short_options":["image_prompt_full","image","ai_skill_image_prompt_full"],"description":"Image prompt full.","summary":"Image prompt full.","variables":[{"name":"image_detail","description":"Prompt detail level for generated image instructions.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["image_detail","file_destination"],"category":"AI Skill","returns":"Pass-through action result.","aliases":["image_prompt_full","image","ai_skill_image_prompt_full"]},{"command":"roboclick_action_ai_skill_text_to_speech","name_long":"roboclick_action_ai_skill_text_to_speech","name_short_options":["text_to_speech","text","ai_skill_text_to_speech"],"description":"Text to speech.","summary":"Text to speech.","variables":[{"name":"text","description":"Text content used by this action.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["text","file_destination"],"category":"AI Skill","returns":"Pass-through action result.","aliases":["text_to_speech","text","ai_skill_text_to_speech"]},{"command":"roboclick_action_ai_skill_validate_json","name_long":"roboclick_action_ai_skill_validate_json","name_short_options":["validate_json","validate","ai_skill_validate_json"],"description":"Validate json.","summary":"Validate json.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["file_source","file_destination"],"category":"AI Skill","returns":"Pass-through action result.","aliases":["validate_json","validate","ai_skill_validate_json"]},{"command":"roboclick_action_ai_text_fix_yaml_copy_paste","name_long":"roboclick_action_ai_text_fix_yaml_copy_paste","name_short_options":["yaml_copy_paste","ai_fix_yaml_copy_paste","fix_yaml_copy_paste"],"description":"Fix YAML formatting from copy-pasted content.","summary":"Fix YAML formatting from copy-pasted content.","variables":[{"name":"file_source","description":"path of the file, referenced to current directory","type":"string","default":""},{"name":"file_destination","description":"path of the output file, referenced to current directory","type":"string","default":""},{"name":"remove_top_level","description":"list of top-level keys to remove from the YAML","type":"string","default":""},{"name":"new_item_name","description":"name of the new item to add to the YAML","type":"string","default":""},{"name":"search_and_replace","description":"list of search and replace operations to perform on the YAML","type":"string","default":""}],"variable_names":["file_source","file_destination","remove_top_level","new_item_name","search_and_replace"],"category":"ai","returns":"Pass-through action result.","aliases":["yaml_copy_paste","ai_fix_yaml_copy_paste","fix_yaml_copy_paste"]},{"command":"roboclick_action_alias_add_file","name_long":"roboclick_action_alias_add_file","name_short_options":["add_file","file","legacy_alias"],"description":"Add file.","summary":"Add file.","variables":[{"name":"file_name","description":"File name to read or write for this action.","type":"string","default":""}],"variable_names":["file_name"],"category":"Legacy Alias","returns":"Pass-through action result.","aliases":["add_file","file","legacy_alias"]},{"command":"roboclick_action_alias_add_image","name_long":"roboclick_action_alias_add_image","name_short_options":["add_image","image","legacy_alias"],"description":"Add image.","summary":"Add image.","variables":[{"name":"file_name","description":"File name to read or write for this action.","type":"string","default":""},{"name":"position_click","description":"Screen position to click before executing the step.","type":"string","default":""}],"variable_names":["file_name","position_click"],"category":"Legacy Alias","returns":"Pass-through action result.","aliases":["add_image","image","legacy_alias"]},{"command":"roboclick_action_alias_ai_save_image","name_long":"roboclick_action_alias_ai_save_image","name_short_options":["ai_save_image","save","save_image","legacy_alias"],"description":"Ai save image.","summary":"Ai save image.","variables":[{"name":"file_name","description":"File name to read or write for this action.","type":"string","default":""},{"name":"position_click","description":"Screen position to click before executing the step.","type":"string","default":""},{"name":"mode_ai_wait","description":"AI wait strategy (slow, fast_button_state, or fast_clipboard_state).","type":"string","default":""}],"variable_names":["file_name","position_click","mode_ai_wait"],"category":"Legacy Alias","returns":"Pass-through action result.","aliases":["ai_save_image","save","save_image","legacy_alias"]},{"command":"roboclick_action_alias_close_tab","name_long":"roboclick_action_alias_close_tab","name_short_options":["close_tab","tab","legacy_alias"],"description":"Close tab.","summary":"Close tab.","variables":[],"variable_names":[],"category":"Legacy Alias","returns":"Pass-through action result.","aliases":["close_tab","tab","legacy_alias"]},{"command":"roboclick_action_alias_new_chat","name_long":"roboclick_action_alias_new_chat","name_short_options":["new_chat","chat","legacy_alias"],"description":"New chat.","summary":"New chat.","variables":[{"name":"description","description":"Optional kickoff note sent in the first chat message.","type":"string","default":""},{"name":"log_url","description":"Whether to capture and store the current chat URL.","type":"string","default":""}],"variable_names":["description","log_url"],"category":"Legacy Alias","returns":"Pass-through action result.","aliases":["new_chat","chat","legacy_alias"]},{"command":"roboclick_action_alias_openscad_render_file","name_long":"roboclick_action_alias_openscad_render_file","name_short_options":["openscad_render_file","render","render_file","legacy_alias"],"description":"Openscad render file.","summary":"Openscad render file.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""},{"name":"delay","description":"Delay duration in seconds.","type":"string","default":""}],"variable_names":["file_source","file_destination","delay"],"category":"Legacy Alias","returns":"Pass-through action result.","aliases":["openscad_render_file","render","render_file","legacy_alias"]},{"command":"roboclick_action_alias_query","name_long":"roboclick_action_alias_query","name_short_options":["query","legacy_alias"],"description":"Query.","summary":"Query.","variables":[{"name":"text","description":"Text content used by this action.","type":"string","default":""},{"name":"delay","description":"Delay duration in seconds.","type":"string","default":""},{"name":"mode_ai_wait","description":"AI wait strategy (slow, fast_button_state, or fast_clipboard_state).","type":"string","default":""},{"name":"method","description":"Query input method (typing or paste).","type":"string","default":""}],"variable_names":["text","delay","mode_ai_wait","method"],"category":"Legacy Alias","returns":"Pass-through action result.","aliases":["query","legacy_alias"]},{"command":"roboclick_action_base_time_delay","name_long":"roboclick_action_base_time_delay","name_short_options":["robo_delay","delay","wait","sleep"],"description":"Pause execution for N seconds with optional skip mechanisms.","summary":"Pause execution for N seconds with optional skip mechanisms.","variables":[{"name":"delay","description":"Number of seconds to delay (default: 1)","type":"number","default":1},{"name":"rand","description":"Additional random seconds to add to delay (default: 0)","type":"number","default":0},{"name":"message","description":"Optional message to print before delaying","type":"string","default":""},{"name":"mode_skip_key","description":"Whether pressing 's' should skip the delay (default: true)","type":"boolean","default":true},{"name":"mode_scroll_lock_skip","description":"Whether toggling Scroll Lock should skip the delay (default: true, Windows only)","type":"boolean","default":true}],"variable_names":["delay","rand","message","mode_skip_key","mode_scroll_lock_skip"],"category":"Other","returns":"empty string normally; may early-return on skip","aliases":["robo_delay","delay","wait","sleep"]},{"command":"roboclick_action_browser_close_tab","name_long":"roboclick_action_browser_close_tab","name_short_options":["close_tab","tab","browser_close_tab"],"description":"Close tab.","summary":"Close tab.","variables":[],"variable_names":[],"category":"Browser","returns":"Pass-through action result.","aliases":["close_tab","tab","browser_close_tab"]},{"command":"roboclick_action_browser_open_url","name_long":"roboclick_action_browser_open_url","name_short_options":["open_url","url","browser_open_url"],"description":"Open url.","summary":"Open url.","variables":[{"name":"url","description":"URL to open or use for the operation.","type":"string","default":""}],"variable_names":["url"],"category":"Browser","returns":"Pass-through action result.","aliases":["open_url","url","browser_open_url"]},{"command":"roboclick_action_browser_save_url","name_long":"roboclick_action_browser_save_url","name_short_options":["save_url","url","browser_save_url"],"description":"Save url.","summary":"Save url.","variables":[{"name":"url","description":"URL to open or use for the operation.","type":"string","default":""},{"name":"url_directory","description":"Subdirectory used when saving URL snapshots.","type":"string","default":""}],"variable_names":["url","url_directory"],"category":"Browser","returns":"Pass-through action result.","aliases":["save_url","url","browser_save_url"]},{"command":"roboclick_action_convert_svg_to_pdf","name_long":"roboclick_action_convert_svg_to_pdf","name_short_options":["svg_to_pdf","to","convert_svg_to_pdf"],"description":"Svg to pdf.","summary":"Svg to pdf.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["file_source","file_destination"],"category":"Conversion","returns":"Pass-through action result.","aliases":["svg_to_pdf","to","convert_svg_to_pdf"]},{"command":"roboclick_action_convert_svg_to_png","name_long":"roboclick_action_convert_svg_to_png","name_short_options":["svg_to_png","to","convert_svg_to_png"],"description":"Svg to png.","summary":"Svg to png.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["file_source","file_destination"],"category":"Conversion","returns":"Pass-through action result.","aliases":["svg_to_png","to","convert_svg_to_png"]},{"command":"roboclick_action_corel_add_text","name_long":"roboclick_action_corel_add_text","name_short_options":["add_text","text","corel_add_text"],"description":"Add text.","summary":"Add text.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"text","description":"Text content used by this action.","type":"string","default":""},{"name":"x","description":"X coordinate for placement.","type":"string","default":""},{"name":"y","description":"Y coordinate for placement.","type":"string","default":""},{"name":"font","description":"Font family name to apply.","type":"string","default":""},{"name":"font_size","description":"Font size value to apply.","type":"string","default":""},{"name":"bold","description":"Whether text should be bold.","type":"string","default":""},{"name":"italic","description":"Whether text should be italic.","type":"string","default":""}],"variable_names":["file_source","text","x","y","font","font_size","bold","italic"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["add_text","text","corel_add_text"]},{"command":"roboclick_action_corel_add_text_box","name_long":"roboclick_action_corel_add_text_box","name_short_options":["add_text_box","text","corel_add_text_box"],"description":"Add text box.","summary":"Add text box.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"text","description":"Text content used by this action.","type":"string","default":""},{"name":"x","description":"X coordinate for placement.","type":"string","default":""},{"name":"y","description":"Y coordinate for placement.","type":"string","default":""},{"name":"width","description":"Target width for sizing or placement.","type":"string","default":""},{"name":"height","description":"Target height for sizing or placement.","type":"string","default":""},{"name":"font","description":"Font family name to apply.","type":"string","default":""},{"name":"font_size","description":"Font size value to apply.","type":"string","default":""},{"name":"bold","description":"Whether text should be bold.","type":"string","default":""},{"name":"italic","description":"Whether text should be italic.","type":"string","default":""}],"variable_names":["file_source","text","x","y","width","height","font","font_size","bold","italic"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["add_text_box","text","corel_add_text_box"]},{"command":"roboclick_action_corel_convert_to_curves","name_long":"roboclick_action_corel_convert_to_curves","name_short_options":["convert_to_curves","to","corel_convert_to_curves"],"description":"Convert to curves.","summary":"Convert to curves.","variables":[{"name":"ungroup","description":"Whether to ungroup objects after converting to curves.","type":"string","default":""},{"name":"delay","description":"Delay duration in seconds.","type":"string","default":""}],"variable_names":["ungroup","delay"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["convert_to_curves","to","corel_convert_to_curves"]},{"command":"roboclick_action_corel_copy","name_long":"roboclick_action_corel_copy","name_short_options":["corel_copy","copy"],"description":"Corel copy.","summary":"Corel copy.","variables":[],"variable_names":[],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_copy","copy"]},{"command":"roboclick_action_corel_export","name_long":"roboclick_action_corel_export","name_short_options":["corel_export","export"],"description":"Corel export.","summary":"Corel export.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""},{"name":"file_type","description":"Export file type or extension.","type":"string","default":""},{"name":"delay","description":"Delay duration in seconds.","type":"string","default":""}],"variable_names":["file_source","file_destination","file_type","delay"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_export","export"]},{"command":"roboclick_action_corel_file_close","name_long":"roboclick_action_corel_close_file","name_short_options":["corel_file_close","close_file","file","corel_close_file","corel_close"],"description":"Close file.","summary":"Close file.","variables":[],"variable_names":[],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_file_close","close_file","file","corel_close_file","corel_close"]},{"command":"roboclick_action_corel_group","name_long":"roboclick_action_corel_group","name_short_options":["corel_group","group"],"description":"Corel group.","summary":"Corel group.","variables":[],"variable_names":[],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_group","group"]},{"command":"roboclick_action_corel_import","name_long":"roboclick_action_corel_import","name_short_options":["corel_import","import"],"description":"Corel import.","summary":"Corel import.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"x","description":"X coordinate for placement.","type":"string","default":""},{"name":"y","description":"Y coordinate for placement.","type":"string","default":""},{"name":"width","description":"Target width for sizing or placement.","type":"string","default":""},{"name":"height","description":"Target height for sizing or placement.","type":"string","default":""},{"name":"max_dimension","description":"Maximum dimension allowed when scaling content.","type":"string","default":""},{"name":"angle","description":"Rotation angle in degrees.","type":"string","default":""},{"name":"special, 'no double click' - to deal with non square objects","description":"Special import flag to skip double-click sizing behavior for non-square objects.","type":"string","default":""}],"variable_names":["file_source","x","y","width","height","max_dimension","angle","special, 'no double click' - to deal with non square objects"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_import","import"]},{"command":"roboclick_action_corel_object_order","name_long":"roboclick_action_corel_object_order","name_short_options":["object_order","order","corel_object_order"],"description":"Object order.","summary":"Object order.","variables":[{"name":"order","description":"Object stacking order command (for example, to_front or to_back).","type":"string","default":""}],"variable_names":["order"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["object_order","order","corel_object_order"]},{"command":"roboclick_action_corel_open","name_long":"roboclick_action_corel_open","name_short_options":["corel_open","open"],"description":"Corel open.","summary":"Corel open.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""}],"variable_names":["file_source"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_open","open"]},{"command":"roboclick_action_corel_page_add","name_long":"roboclick_action_corel_page_goto","name_short_options":["page_add","add_page","corel_page_add"],"description":"Page add.","summary":"Page add.","variables":[{"name":"repeat","description":"Number of times to repeat.","type":"string","default":""}],"variable_names":["repeat"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["page_add","add_page","corel_page_add"]},{"command":"roboclick_action_corel_page_goto","name_long":"roboclick_action_corel_page_goto","name_short_options":["page_goto","goto","corel_page_goto"],"description":"Page goto.","summary":"Page goto.","variables":[{"name":"page_number","description":"Target page number to switch to.","type":"string","default":""}],"variable_names":["page_number"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["page_goto","goto","corel_page_goto"]},{"command":"roboclick_action_corel_paste","name_long":"roboclick_action_corel_paste","name_short_options":["corel_paste","paste"],"description":"Corel paste.","summary":"Corel paste.","variables":[{"name":"x","description":"X coordinate for placement.","type":"string","default":""},{"name":"y","description":"Y coordinate for placement.","type":"string","default":""},{"name":"width","description":"Target width for sizing or placement.","type":"string","default":""},{"name":"height","description":"Target height for sizing or placement.","type":"string","default":""}],"variable_names":["x","y","width","height"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_paste","paste"]},{"command":"roboclick_action_corel_save","name_long":"roboclick_action_corel_save","name_short_options":["corel_save","save"],"description":"Corel save.","summary":"Corel save.","variables":[],"variable_names":[],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_save","save"]},{"command":"roboclick_action_corel_save_as","name_long":"roboclick_action_corel_save_as","name_short_options":["save_as","as","corel_save_as"],"description":"Save as.","summary":"Save as.","variables":[{"name":"file_name","description":"File name to read or write for this action.","type":"string","default":""}],"variable_names":["file_name"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["save_as","as","corel_save_as"]},{"command":"roboclick_action_corel_set_position","name_long":"roboclick_action_corel_set_position","name_short_options":["set_position","position","corel_set_position"],"description":"Set position.","summary":"Set position.","variables":[{"name":"x","description":"X coordinate for placement.","type":"string","default":""},{"name":"y","description":"Y coordinate for placement.","type":"string","default":""}],"variable_names":["x","y"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["set_position","position","corel_set_position"]},{"command":"roboclick_action_corel_set_rotation","name_long":"roboclick_action_corel_set_rotation","name_short_options":["set_rotation","rotation","corel_set_rotation"],"description":"Set rotation.","summary":"Set rotation.","variables":[{"name":"angle","description":"Rotation angle in degrees.","type":"string","default":""}],"variable_names":["angle"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["set_rotation","rotation","corel_set_rotation"]},{"command":"roboclick_action_corel_set_size","name_long":"roboclick_action_corel_set_size","name_short_options":["set_size","size","corel_set_size"],"description":"Set size.","summary":"Set size.","variables":[{"name":"width","description":"Target width for sizing or placement.","type":"string","default":""},{"name":"height","description":"Target height for sizing or placement.","type":"string","default":""},{"name":"max_dimension","description":"Maximum dimension allowed when scaling content.","type":"string","default":""},{"name":"select_all","description":"Whether to select all objects before resizing.","type":"string","default":""}],"variable_names":["width","height","max_dimension","select_all"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["set_size","size","corel_set_size"]},{"command":"roboclick_action_corel_trace","name_long":"roboclick_action_corel_trace","name_short_options":["corel_trace","trace"],"description":"Corel trace.","summary":"Corel trace.","variables":[{"name":"file_name","description":"File name to read or write for this action.","type":"string","default":""},{"name":"remove_background_color_from_entire_image","description":"Whether to remove the background color before tracing.","type":"string","default":""},{"name":"delay_trace","description":"Delay in seconds before trace-specific steps.","type":"string","default":""},{"name":"number_of_colors","description":"Color count target used by trace settings.","type":"string","default":""},{"name":"detail_minus","description":"Trace detail reduction amount.","type":"string","default":""},{"name":"smoothing","description":"Trace smoothing level.","type":"string","default":""},{"name":"corner_smoothness","description":"Corner smoothing level for trace output.","type":"string","default":""}],"variable_names":["file_name","remove_background_color_from_entire_image","delay_trace","number_of_colors","detail_minus","smoothing","corner_smoothness"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["corel_trace","trace"]},{"command":"roboclick_action_corel_trace_full","name_long":"roboclick_action_corel_trace_full","name_short_options":["trace_full","full","corel_trace_full"],"description":"Trace full.","summary":"Trace full.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_source_trace","description":"Path to the raster file used for tracing.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""},{"name":"delay_trace","description":"Delay in seconds before trace-specific steps.","type":"string","default":""},{"name":"delay_png","description":"Delay in seconds before PNG export steps.","type":"string","default":""},{"name":"max_dimension","description":"Maximum dimension allowed when scaling content.","type":"string","default":""},{"name":"detail_minus","description":"Trace detail reduction amount.","type":"string","default":""},{"name":"x","description":"X coordinate for placement.","type":"string","default":""},{"name":"y","description":"Y coordinate for placement.","type":"string","default":""},{"name":"number_of_colors","description":"Color count target used by trace settings.","type":"string","default":""},{"name":"remove_background_color_from_entire_image","description":"Whether to remove the background color before tracing.","type":"string","default":""},{"name":"smoothing","description":"Trace smoothing level.","type":"string","default":""},{"name":"corner_smoothness","description":"Corner smoothing level for trace output.","type":"string","default":""}],"variable_names":["file_source","file_source_trace","file_destination","delay_trace","delay_png","max_dimension","detail_minus","x","y","number_of_colors","remove_background_color_from_entire_image","smoothing","corner_smoothness"],"category":"CorelDRAW","returns":"Pass-through action result.","aliases":["trace_full","full","corel_trace_full"]},{"command":"roboclick_action_file_copy","name_long":"roboclick_action_file_copy","name_short_options":["file_copy","copy"],"description":"File copy.","summary":"File copy.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["file_source","file_destination"],"category":"File","returns":"Pass-through action result.","aliases":["file_copy","copy"]},{"command":"roboclick_action_file_create_text_file","name_long":"roboclick_action_file_create_text_file","name_short_options":["create_text_file","text","file_create_text_file"],"description":"Create text file.","summary":"Create text file.","variables":[{"name":"file_name","description":"File name to read or write for this action.","type":"string","default":""},{"name":"content","description":"Text content to write into the created file.","type":"string","default":""}],"variable_names":["file_name","content"],"category":"File","returns":"Pass-through action result.","aliases":["create_text_file","text","file_create_text_file"]},{"command":"roboclick_action_google_doc_add_text","name_long":"roboclick_action_google_doc_add_text","name_short_options":["add_text","add","google_doc_add_text"],"description":"Add text.","summary":"Add text.","variables":[{"name":"url","description":"URL to open or use for the operation.","type":"string","default":""},{"name":"text","description":"Text content used by this action.","type":"string","default":""},{"name":"position","description":"Insertion position in the Google Doc (for example end).","type":"string","default":""}],"variable_names":["url","text","position"],"category":"Google Doc","returns":"Pass-through action result.","aliases":["add_text","add","google_doc_add_text"]},{"command":"roboclick_action_google_doc_new","name_long":"roboclick_action_google_doc_new","name_short_options":["google_doc_new","new"],"description":"Google doc new.","summary":"Google doc new.","variables":[{"name":"template","description":"Template name used when creating a new Google Doc.","type":"string","default":""},{"name":"title","description":"Title for the new Google Doc.","type":"string","default":""},{"name":"folder","description":"Drive folder destination for the new Google Doc.","type":"string","default":""}],"variable_names":["template","title","folder"],"category":"Google Doc","returns":"Pass-through action result.","aliases":["google_doc_new","new"]},{"command":"roboclick_action_image_crop","name_long":"roboclick_action_image_crop","name_short_options":["image_crop","crop"],"description":"Image crop.","summary":"Image crop.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""},{"name":"crop","description":"Crop box or crop mode applied to the image.","type":"string","default":""}],"variable_names":["file_source","file_destination","crop"],"category":"Image","returns":"Pass-through action result.","aliases":["image_crop","crop"]},{"command":"roboclick_action_image_png_transparent_to_white","name_long":"roboclick_action_image_png_transparent_to_white","name_short_options":["png_transparent_to_white","transparent","image_png_transparent_to_white"],"description":"Png transparent to white.","summary":"Png transparent to white.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["file_source","file_destination"],"category":"Image","returns":"Pass-through action result.","aliases":["png_transparent_to_white","transparent","image_png_transparent_to_white"]},{"command":"roboclick_action_image_quad_swap_for_tile","name_long":"roboclick_action_image_quad_swap_for_tile","name_short_options":["quad_swap_for_tile","swap","image_quad_swap_for_tile"],"description":"Quad swap for tile.","summary":"Quad swap for tile.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""}],"variable_names":["file_source","file_destination"],"category":"Image","returns":"Pass-through action result.","aliases":["quad_swap_for_tile","swap","image_quad_swap_for_tile"]},{"command":"roboclick_action_image_upscale","name_long":"roboclick_action_image_upscale","name_short_options":["image_upscale","upscale"],"description":"Image upscale.","summary":"Image upscale.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""},{"name":"scale","description":"Scale multiplier applied during image upscaling.","type":"string","default":""},{"name":"crop","description":"Crop box or crop mode applied to the image.","type":"string","default":""}],"variable_names":["file_source","file_destination","scale","crop"],"category":"Image","returns":"Pass-through action result.","aliases":["image_upscale","upscale"]},{"command":"roboclick_action_openscad_render","name_long":"roboclick_action_openscad_render","name_short_options":["openscad_render","render"],"description":"Openscad render.","summary":"Openscad render.","variables":[{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_destination","description":"Path to the output file to create or update.","type":"string","default":""},{"name":"render_type","description":"Rendering mode passed to the OpenSCAD render step.","type":"string","default":""},{"name":"delay","description":"Delay duration in seconds.","type":"string","default":""}],"variable_names":["file_source","file_destination","render_type","delay"],"category":"OpenSCAD","returns":"Pass-through action result.","aliases":["openscad_render","render"]},{"command":"roboclick_action_save_image_search_result","name_long":"roboclick_action_save_image_search_result","name_short_options":["save_image_search_result","search"],"description":"Save image search result.","summary":"Save image search result.","variables":[{"name":"index","description":"1-based search result index used to offset the click position.","type":"string","default":""},{"name":"file_name","description":"File name to read or write for this action.","type":"string","default":""},{"name":"overwrite","description":"Whether existing output files should be overwritten.","type":"string","default":""},{"name":"position_click","description":"Base screen position for search results before index offset.","type":"string","default":""}],"variable_names":["index","file_name","overwrite","position_click"],"category":"AI Image","returns":"Pass-through action result.","aliases":["save_image_search_result","search"]},{"command":"roboclick_action_text_jinja_template","name_long":"roboclick_action_text_jinja_template","name_short_options":["jinja_template","template","text_jinja_template"],"description":"Jinja template.","summary":"Jinja template.","variables":[{"name":"file_template","description":"Template file to render with Jinja variables.","type":"string","default":""},{"name":"file_source","description":"Path to the source input file.","type":"string","default":""},{"name":"file_output","description":"Output file path for rendered text or converted assets.","type":"string","default":""},{"name":"search_and_replace","description":"Search/replace rules applied during templating.","type":"string","default":""},{"name":"convert_to_pdf","description":"Whether to convert rendered output to PDF.","type":"string","default":""},{"name":"convert_to_png","description":"Whether to convert rendered output to PNG.","type":"string","default":""},{"name":"dict_data","description":"Dictionary data passed into template rendering.","type":"string","default":""}],"variable_names":["file_template","file_source","file_output","search_and_replace","convert_to_pdf","convert_to_png","dict_data"],"category":"Text","returns":"Pass-through action result.","aliases":["jinja_template","template","text_jinja_template"]},{"command":"roboclick_action_wait_for_file","name_long":"roboclick_action_wait_for_file","name_short_options":["wait_for_file","file"],"description":"Wait for file.","summary":"Wait for file.","variables":[{"name":"file_name","description":"Primary file name to wait for in the action directory.","type":"string","default":""},{"name":"file_name_1","description":"first candidate file name to wait for.","type":"string","default":""},{"name":"file_name_2","description":"second candidate file name to wait for.","type":"string","default":""},{"name":"file_name_3","description":"third candidate file name to wait for.","type":"string","default":""},{"name":"file_name_4","description":"fourth candidate file name to wait for.","type":"string","default":""},{"name":"file_name_5","description":"fifth candidate file name to wait for.","type":"string","default":""},{"name":"file_name_6","description":"sixth candidate file name to wait for.","type":"string","default":""}],"variable_names":["file_name","file_name_1","file_name_2","file_name_3","file_name_4","file_name_5","file_name_6"],"category":"Utility","returns":"Pass-through action result.","aliases":["wait_for_file","file"]}],"generated_date":"2026-03-19","total_actions":58};
+if (typeof window.DOCUMENTATION_DATA_READY === 'function') window.DOCUMENTATION_DATA_READY();
+
+    // Emoji for categories and commands
+    const CATEGORY_EMOJI = {
+      'AI': '🤖',
+      'Browser': '🌐',
+      'File': '📄',
+      'Google Doc': '📄',
+      'Other': '🛠️',
+    };
+    const COMMAND_EMOJI = {
+      'add': '➕',
+      'save': '💾',
+      'open': '📂',
+      'close': '❌',
+      'copy': '📋',
+      'paste': '📋',
+      'export': '📤',
+      'import': '📥',
+      'trace': '🔍',
+      'group': '👥',
+      'convert': '🔄',
+      'set': '⚙️',
+      'create': '✨',
+      'crop': '✂️',
+      'swap': '🔀',
+      'fix': '🩹',
+      'query': '❓',
+      'continue': '➡️',
+      'new': '🆕',
+      'object': '🧩',
+      'page': '📄',
+      'quad': '🟪',
+      'png': '🖼️',
+      'text': '🔤',
+      'url': '🔗',
+      'file': '📁',
+    };
+
+    function getUniqueCategories(actions) {
+      const cats = new Set();
+      actions.forEach(a => { if (a.category) cats.add(a.category); });
+      return Array.from(cats).sort();
+    }
+
+    function getCategoryBadge(category) {
+      const emoji = CATEGORY_EMOJI[category] || '';
+      const safeCat = category ? category.replace(/\s/g, '-') : 'Uncategorized';
+      return `<span class="category-badge cat-${safeCat}">${emoji} ${category || 'Uncategorized'}</span>`;
+    }
+
+    function getCommandEmoji(command) {
+      const text = (command || '').toString().toLowerCase();
+      // Try to match a keyword in the command
+      for (const key in COMMAND_EMOJI) {
+        if (text.includes(key)) return `<span class="emoji">${COMMAND_EMOJI[key]}</span>`;
+      }
+      return '';
+    }
+
+    function escapeHtml(text) {
+      return (text || '')
+        .toString()
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function getNameShortOptions(action) {
+      if (Array.isArray(action.name_short_options) && action.name_short_options.length > 0) {
+        return action.name_short_options.filter(x => typeof x === 'string' && x.trim()).map(x => x.trim());
+      }
+      if (Array.isArray(action.aliases) && action.aliases.length > 0) {
+        return action.aliases.filter(x => typeof x === 'string' && x.trim()).map(x => x.trim());
+      }
+      return [];
+    }
+
+    function getPrimaryDisplayName(action) {
+      const shortOptions = getNameShortOptions(action);
+      if (shortOptions.length > 0) return shortOptions[0];
+      return (action.command || '').toString();
+    }
+
+    function getLongName(action) {
+      return (action.name_long || action.command || '').toString();
+    }
+
+    function getVariableNames(action) {
+      if (Array.isArray(action.variable_names) && action.variable_names.length > 0) {
+        return action.variable_names.filter(x => typeof x === 'string' && x.trim()).map(x => x.trim());
+      }
+      if (!Array.isArray(action.variables)) return [];
+      return action.variables
+        .map(v => {
+          if (typeof v === 'string') return v;
+          if (v && typeof v === 'object' && typeof v.name === 'string') return v.name;
+          return '';
+        })
+        .filter(Boolean);
+    }
+
+    function getSearchHaystack(action) {
+      const pieces = [];
+      pieces.push(action.command || '');
+      pieces.push(action.name_long || '');
+      pieces.push(action.description || '');
+      pieces.push(action.summary || '');
+      pieces.push(action.category || '');
+      pieces.push(...getNameShortOptions(action));
+      pieces.push(...getVariableNames(action));
+      return pieces.join(' ').toLowerCase();
+    }
+
+    let activeQuickFilter = '';
+
+    function renderQuickFilters() {
+      const quickFiltersDiv = document.getElementById('quick-filters');
+      if (!quickFiltersDiv) return;
+      quickFiltersDiv.innerHTML = '';
+      QUICK_FILTERS.forEach(f => {
+        const btn = document.createElement('button');
+        btn.className = 'quick-filter-btn' + (activeQuickFilter === f.keyword ? ' active' : '');
+        btn.innerHTML = `${f.emoji} ${f.label}`;
+        btn.onclick = () => {
+          if (activeQuickFilter === f.keyword) {
+            activeQuickFilter = '';
+          } else {
+            activeQuickFilter = f.keyword;
+          }
+          renderDocumentation();
+        };
+        quickFiltersDiv.appendChild(btn);
+      });
+    }
+
+    function renderDocumentation() {
+      if (typeof DOCUMENTATION_DATA !== 'undefined' && DOCUMENTATION_DATA.actions) {
+        const actions = DOCUMENTATION_DATA.actions;
+        const container = document.getElementById('actions-container');
+        const searchBox = document.getElementById('search-box');
+        const categoryFilter = document.getElementById('category-filter');
+
+        // Populate category filter if not already
+        if (categoryFilter.options.length === 1) {
+          getUniqueCategories(actions).forEach(cat => {
+            const opt = document.createElement('option');
+            opt.value = cat;
+            opt.textContent = `${CATEGORY_EMOJI[cat] ? CATEGORY_EMOJI[cat] + ' ' : ''}${cat}`;
+            categoryFilter.appendChild(opt);
+          });
+        }
+
+        // Get filter values
+        const search = (searchBox && searchBox.value.trim().toLowerCase()) || '';
+        const selectedCat = (categoryFilter && categoryFilter.value) || '';
+
+        // Filter actions
+        let filtered = actions.filter(action => {
+          let matchesCat = !selectedCat || (action.category === selectedCat);
+          let matchesSearch = !search || getSearchHaystack(action).includes(search);
+          return matchesCat && matchesSearch;
+        });
+
+        // Apply quick filter if active
+        if (activeQuickFilter) {
+          filtered = filtered.filter(action => {
+            const kw = activeQuickFilter.toLowerCase();
+            return getSearchHaystack(action).includes(kw);
+          });
+        }
+
+        container.innerHTML = '';
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-state-emoji">🔍</div>
+              <div class="empty-state-text">No actions found matching your search.<br>Try a different keyword!</div>
+            </div>
+          `;
+        } else {
+          filtered.forEach((action, index) => {
+            const div = document.createElement('div');
+            div.className = 'action';
+            div.style.animationDelay = `${index * 0.05}s`;
+            const primaryName = getPrimaryDisplayName(action);
+            const longName = getLongName(action);
+            const shortOptions = getNameShortOptions(action);
+            const secondaryShortOptions = shortOptions.filter((_, idx) => idx > 0);
+            const variableNames = getVariableNames(action);
+            const summary = escapeHtml(action.summary || action.description || 'No summary available');
+            const desc = escapeHtml(action.description || '').replace(/\n/g, '<br>');
+            const showLongName = longName && longName !== primaryName;
+            const shortOptionsHtml = secondaryShortOptions.length > 0
+              ? `<ul class="action-short-options">${secondaryShortOptions.map(name => `<li>${escapeHtml(name)}</li>`).join('')}</ul>`
+              : '';
+            const descriptionHtml = desc && desc !== summary
+              ? `<div class="action-description">${desc}</div>`
+              : '';
+            // Build variable list with click-to-show descriptions
+            let variableListHtml = '';
+            if (Array.isArray(action.variables) && action.variables.length > 0) {
+              variableListHtml = action.variables.map((v, idx) => {
+                let name = typeof v === 'string' ? v : (v && v.name ? v.name : '');
+                return `<li><button type="button" class="var-chip" data-var-index="${idx}">${escapeHtml(name)}</button></li>`;
+              }).join('');
+            } else {
+              variableListHtml = '<li><button type="button" class="var-chip var-chip-empty" disabled>none</button></li>';
+            }
+            div.innerHTML = `
+              <div class="action-title">${getCommandEmoji(primaryName)}${escapeHtml(primaryName)}</div>
+              ${shortOptionsHtml}
+              ${showLongName ? `<div class="action-name-long">${escapeHtml(longName)}</div>` : ''}
+              <div class="action-category">${getCategoryBadge(action.category || 'Uncategorized')}</div>
+              <div class="action-summary">${summary}</div>
+              ${descriptionHtml}
+              <div class="action-variables"><strong>Variables</strong> <ul class="var-list">${variableListHtml}</ul><div class="variable-popup" hidden></div></div>
+            `;
+
+            const variablePopup = div.querySelector('.variable-popup');
+            const variableButtons = div.querySelectorAll('.var-chip[data-var-index]');
+            variableButtons.forEach(btn => {
+              btn.addEventListener('click', () => {
+                if (!variablePopup) return;
+                const index = Number(btn.getAttribute('data-var-index'));
+                const variable = Array.isArray(action.variables) ? action.variables[index] : null;
+                const variableName = typeof variable === 'string'
+                  ? variable
+                  : (variable && typeof variable.name === 'string' ? variable.name : '');
+                const variableDescription = variable && typeof variable === 'object' && typeof variable.description === 'string'
+                  ? variable.description
+                  : '';
+                const currentActive = variablePopup.getAttribute('data-active-index');
+                if (!variablePopup.hidden && currentActive === String(index)) {
+                  variablePopup.hidden = true;
+                  variablePopup.removeAttribute('data-active-index');
+                  variablePopup.innerHTML = '';
+                  return;
+                }
+                const displayDescription = variableDescription && variableDescription.trim()
+                  ? variableDescription.trim()
+                  : 'No description provided.';
+                variablePopup.innerHTML = `<strong>${escapeHtml(variableName)}</strong>${escapeHtml(displayDescription)}`;
+                variablePopup.hidden = false;
+                variablePopup.setAttribute('data-active-index', String(index));
+              });
+            });
+            container.appendChild(div);
+          });
+        }
+
+        // Update stats bar
+        const statsBar = document.getElementById('stats-bar');
+        if (statsBar) {
+          const categories = getUniqueCategories(actions);
+          statsBar.innerHTML = `
+            <div class="stat-item">
+              <div class="stat-number">${actions.length}</div>
+              <div class="stat-label">Total Actions</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">${filtered.length}</div>
+              <div class="stat-label">Showing</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">${categories.length}</div>
+              <div class="stat-label">Categories</div>
+            </div>
+          `;
+        }
+
+        renderQuickFilters();
+      } else {
+        document.getElementById('actions-container').innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-emoji">📄</div>
+            <div class="empty-state-text">No documentation data found.<br>Please run the update script.</div>
+          </div>
+        `;
+      }
+    }
+
+    // Add event listeners for search/filter and quick filters
+    function setupSearchFilterEvents() {
+      const searchBox = document.getElementById('search-box');
+      const categoryFilter = document.getElementById('category-filter');
+      if (searchBox) searchBox.addEventListener('input', renderDocumentation);
+      if (categoryFilter) categoryFilter.addEventListener('change', renderDocumentation);
+    }
+
+    // Try to render immediately, or after DOCUMENTATION_DATA is injected
+    if (typeof DOCUMENTATION_DATA !== 'undefined') {
+      renderDocumentation();
+      setupSearchFilterEvents();
+    } else {
+      window.DOCUMENTATION_DATA_READY = function() {
+        renderDocumentation();
+        setupSearchFilterEvents();
+      };
+    }
+  </script>
+</body>
+</html>

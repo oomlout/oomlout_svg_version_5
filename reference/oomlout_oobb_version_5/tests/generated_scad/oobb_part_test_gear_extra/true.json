@@ -1,0 +1,382 @@
+[
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0,
+        "clearance": 0,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            0,
+            100,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0,
+        "clearance": 0.5,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            0,
+            200,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0,
+        "clearance": 1,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            0,
+            300,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0,
+        "clearance": 2,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            0,
+            400,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0,
+        "clearance": -1,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            100,
+            0,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0.5,
+        "clearance": 0,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            100,
+            100,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0.5,
+        "clearance": 0.5,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            100,
+            200,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0.5,
+        "clearance": 1,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            100,
+            300,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0.5,
+        "clearance": 2,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            100,
+            400,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 0.5,
+        "clearance": -1,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            200,
+            0,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 1,
+        "clearance": 0,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            200,
+            100,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 1,
+        "clearance": 0.5,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            200,
+            200,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 1,
+        "clearance": 1,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            200,
+            300,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 1,
+        "clearance": 2,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            200,
+            400,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 1,
+        "clearance": -1,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            300,
+            0,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 5,
+        "clearance": 0,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            300,
+            100,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 5,
+        "clearance": 0.5,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            300,
+            200,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 5,
+        "clearance": 1,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            300,
+            300,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 5,
+        "clearance": 2,
+        "m": ""
+    },
+    {
+        "shape": "gear",
+        "type": "p",
+        "diametral_pitch": 0.53333333,
+        "number_of_teeth": 24,
+        "depth": 3,
+        "pos": [
+            300,
+            400,
+            0
+        ],
+        "comment_extra": "",
+        "comment_display": true,
+        "comment_shift_line": 30,
+        "extra": {},
+        "backlash": 5,
+        "clearance": -1,
+        "m": ""
+    }
+]

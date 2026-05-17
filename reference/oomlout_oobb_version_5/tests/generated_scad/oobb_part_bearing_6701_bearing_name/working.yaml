@@ -1,0 +1,20 @@
+bearing_name: '6701'
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: bearing 0x0x0
+description_extra: 6701_bearing_name
+description_main: ''
+folder: C:\gh\oomlout_oobb_version_5\tests\generated_scad\oobb_part_bearing_6701_bearing_name
+id: oobb_part_bearing_6701_bearing_name
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/bearing//6701_bearing_name/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/hardware_bearing_6701
+manufacturer: ''
+name: Oobb Part Bearing 6701 Bearing Name
+name_short: Bearing 6701 Bearing Name
+part_number: ''
+short_name: ''
+size: bearing
+type: part

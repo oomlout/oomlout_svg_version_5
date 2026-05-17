@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gridfinity_base_raw Documentation</title>
+  <style>
+    :root {
+      --bg: #f7f5ff;
+      --panel: rgba(255,255,255,0.92);
+      --border: #ddd5ff;
+      --text: #2f2850;
+      --subtle: #635c7e;
+      --accent: #7b68ee;
+      --accent-soft: #efeaff;
+      --shadow: 0 14px 40px rgba(78, 58, 140, 0.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #fff9ef, var(--bg) 45%, #eef6ff 100%);
+      color: var(--text);
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(244,240,255,0.92));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 22px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.1;
+    }
+    .name-long {
+      color: var(--subtle);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      margin: 0;
+      line-height: 1.7;
+      color: var(--subtle);
+      font-size: 16px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .meta-chip {
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+    .panel-intro {
+      margin: 0 0 18px;
+      color: var(--subtle);
+      line-height: 1.6;
+    }
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .sample-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.82);
+    }
+    .sample-image-wrap {
+      background: linear-gradient(180deg, #faf7ff, #f1ebff);
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+    .sample-image-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 10px 28px rgba(74, 52, 112, 0.14);
+    }
+    .sample-missing {
+      color: var(--subtle);
+      font-size: 14px;
+      padding: 24px;
+      text-align: center;
+    }
+    .sample-body {
+      padding: 16px;
+      color: var(--subtle);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .sample-body h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--text);
+    }
+    .sample-body p {
+      margin: 0 0 12px;
+    }
+    .sample-link-row {
+      margin-bottom: 10px;
+    }
+    .sample-link {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #efe8ff;
+      color: #4f3ca7;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid #d6c7ff;
+    }
+    .sample-link-disabled {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #f3f1f8;
+      color: var(--subtle);
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+    }
+    .sample-thumbs {
+      display: flex;
+      gap: 10px;
+      padding: 0 14px 12px;
+      flex-wrap: wrap;
+    }
+    .sample-thumb {
+      border: 1px solid var(--border);
+      background: #faf8ff;
+      border-radius: 12px;
+      padding: 4px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--subtle);
+      font-size: 12px;
+    }
+    .sample-thumb img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    details {
+      margin-top: 10px;
+      background: #faf8ff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .sample-empty {
+      margin-top: 10px;
+      color: var(--subtle);
+      line-height: 1.6;
+    }
+    pre {
+      margin: 10px 0 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #261f45;
+      color: #f7f4ff;
+      padding: 14px;
+      border-radius: 14px;
+      overflow: auto;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--subtle);
+    }
+    .markdown-table-wrap {
+      overflow-x: auto;
+    }
+    .markdown-table {
+      margin-top: 12px;
+    }
+    p, ul, ol {
+      line-height: 1.7;
+      color: var(--subtle);
+    }
+    h3, h4 {
+      margin-top: 1.2em;
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      .page { padding: 14px; }
+      .hero, .panel { padding: 18px; border-radius: 18px; }
+      h1 { font-size: 28px; }
+      .sample-image-wrap { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Component Detail</div>
+      <h1>gridfinity_base_raw</h1>
+      <div class="name-long">Gridfinity: Base Raw</div>
+      <p>Returns a raw OpenSCAD wrapper around the vendored Gridfinity Extended baseplate generator, using repo-style width and height inputs while keeping a broad first-pass upstream option surface.</p>
+      <div class="meta">
+        <div class="meta-chip"><strong>Category:</strong> Gridfinity</div>
+        <div class="meta-chip"><strong>Returns:</strong> Raw SCAD geometry component dict.</div>
+        <div class="meta-chip"><strong>Aliases:</strong> None</div>
+      </div>
+    </section>
+
+    <section class="panel"><h2>Sample Images</h2><p class="panel-intro">This component returns raw SCAD through a local wrapper around vendored Gridfinity Extended baseplate modules, so the test implementation should render the generated result rather than primitive component dicts.</p><div class="sample-grid">
+            <article class="sample-card">
+              <div class="sample-image-wrap"><div class="sample-missing">Image not generated yet</div></div>
+              
+              <div class="sample-body">
+                <h3>Default 2x1 Gridfinity Extended baseplate.</h3>
+                <p>Default 2x1 Gridfinity Extended baseplate.</p>
+                <div class="sample-link-row"><span class="sample-link-disabled">SCAD not generated yet</span></div><details><summary>Set Values</summary><pre><code>{
+  &quot;gridfinity_width&quot;: 2,
+  &quot;gridfinity_height&quot;: 1,
+  &quot;pos&quot;: [
+    0,
+    0,
+    0
+  ],
+  &quot;rot&quot;: [
+    0,
+    0,
+    0
+  ],
+  &quot;type&quot;: &quot;positive&quot;
+}</code></pre></details><details><summary>Default Values</summary><pre><code>{
+  &quot;gridfinity_width&quot;: 2,
+  &quot;gridfinity_height&quot;: 1,
+  &quot;outer_width&quot;: &quot;[0,0]&quot;,
+  &quot;outer_depth&quot;: &quot;[0,0]&quot;,
+  &quot;outer_height&quot;: 0,
+  &quot;oversize_method&quot;: &quot;\&quot;fill\&quot;&quot;,
+  &quot;position_fill_grid_x&quot;: &quot;\&quot;near\&quot;&quot;,
+  &quot;position_fill_grid_y&quot;: &quot;\&quot;near\&quot;&quot;,
+  &quot;position_grid_in_outer_x&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;position_grid_in_outer_y&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;plate_corner_radius&quot;: 3.75,
+  &quot;secondary_corner_radius&quot;: 3.75,
+  &quot;enable_magnets&quot;: false,
+  &quot;magnet_size&quot;: &quot;[6.5,2.4]&quot;,
+  &quot;magnet_release_method&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;corner_screw_enabled&quot;: false,
+  &quot;center_screw_enabled&quot;: false,
+  &quot;weighted_enable&quot;: false,
+  &quot;reduced_wall_height&quot;: -1,
+  &quot;reduce_wall_taper&quot;: false,
+  &quot;plate_options&quot;: &quot;\&quot;default\&quot;&quot;,
+  &quot;custom_grid_enabled&quot;: false,
+  &quot;grid_positions&quot;: &quot;[[1]]&quot;,
+  &quot;remove_bottom_taper&quot;: false,
+  &quot;connector_only&quot;: false,
+  &quot;connector_position&quot;: &quot;\&quot;center_wall\&quot;&quot;,
+  &quot;connector_clip_enabled&quot;: false,
+  &quot;connector_butterfly_enabled&quot;: false,
+  &quot;connector_filament_enabled&quot;: false,
+  &quot;connector_snaps_style&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;pitch&quot;: &quot;[42,42,7]&quot;,
+  &quot;clearance&quot;: &quot;[0.5,0.5,0]&quot;,
+  &quot;set_colour&quot;: &quot;\&quot;enable\&quot;&quot;,
+  &quot;render_position&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;cut&quot;: &quot;[0,0,0]&quot;,
+  &quot;fa&quot;: 6,
+  &quot;fs&quot;: 0.4,
+  &quot;fn&quot;: 0,
+  &quot;random_seed&quot;: 0,
+  &quot;force_render&quot;: true,
+  &quot;pos&quot;: &quot;[0,0,0]&quot;,
+  &quot;rot&quot;: &quot;[0,0,0]&quot;,
+  &quot;type&quot;: &quot;\&quot;positive\&quot;&quot;
+}</code></pre></details><div><strong>rule:</strong> Call `action()` and render the raw-SCAD payload directly.</div>
+              </div>
+            </article>
+            
+            <article class="sample-card">
+              <div class="sample-image-wrap"><div class="sample-missing">Image not generated yet</div></div>
+              
+              <div class="sample-body">
+                <h3>Fractional crop baseplate with magnets, corner screws, and clip connectors enabled.</h3>
+                <p>Fractional crop baseplate with magnets, corner screws, and clip connectors enabled.</p>
+                <div class="sample-link-row"><span class="sample-link-disabled">SCAD not generated yet</span></div><details><summary>Set Values</summary><pre><code>{
+  &quot;width&quot;: [
+    3.5,
+    0
+  ],
+  &quot;height&quot;: [
+    2.2,
+    0
+  ],
+  &quot;oversize_method&quot;: &quot;crop&quot;,
+  &quot;enable_magnets&quot;: true,
+  &quot;corner_screw_enabled&quot;: true,
+  &quot;connector_clip_enabled&quot;: true,
+  &quot;connector_position&quot;: &quot;both&quot;,
+  &quot;remove_bottom_taper&quot;: true,
+  &quot;pos&quot;: [
+    0,
+    0,
+    0
+  ],
+  &quot;rot&quot;: [
+    0,
+    0,
+    0
+  ],
+  &quot;type&quot;: &quot;positive&quot;
+}</code></pre></details><details><summary>Default Values</summary><pre><code>{
+  &quot;gridfinity_width&quot;: 2,
+  &quot;gridfinity_height&quot;: 1,
+  &quot;outer_width&quot;: &quot;[0,0]&quot;,
+  &quot;outer_depth&quot;: &quot;[0,0]&quot;,
+  &quot;outer_height&quot;: 0,
+  &quot;oversize_method&quot;: &quot;\&quot;fill\&quot;&quot;,
+  &quot;position_fill_grid_x&quot;: &quot;\&quot;near\&quot;&quot;,
+  &quot;position_fill_grid_y&quot;: &quot;\&quot;near\&quot;&quot;,
+  &quot;position_grid_in_outer_x&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;position_grid_in_outer_y&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;plate_corner_radius&quot;: 3.75,
+  &quot;secondary_corner_radius&quot;: 3.75,
+  &quot;enable_magnets&quot;: false,
+  &quot;magnet_size&quot;: &quot;[6.5,2.4]&quot;,
+  &quot;magnet_release_method&quot;: &quot;\&quot;none\&quot;&quot;,
+  &quot;corner_screw_enabled&quot;: false,
+  &quot;center_screw_enabled&quot;: false,
+  &quot;weighted_enable&quot;: false,
+  &quot;reduced_wall_height&quot;: -1,
+  &quot;reduce_wall_taper&quot;: false,
+  &quot;plate_options&quot;: &quot;\&quot;default\&quot;&quot;,
+  &quot;custom_grid_enabled&quot;: false,
+  &quot;grid_positions&quot;: &quot;[[1]]&quot;,
+  &quot;remove_bottom_taper&quot;: false,
+  &quot;connector_only&quot;: false,
+  &quot;connector_position&quot;: &quot;\&quot;center_wall\&quot;&quot;,
+  &quot;connector_clip_enabled&quot;: false,
+  &quot;connector_butterfly_enabled&quot;: false,
+  &quot;connector_filament_enabled&quot;: false,
+  &quot;connector_snaps_style&quot;: &quot;\&quot;disabled\&quot;&quot;,
+  &quot;pitch&quot;: &quot;[42,42,7]&quot;,
+  &quot;clearance&quot;: &quot;[0.5,0.5,0]&quot;,
+  &quot;set_colour&quot;: &quot;\&quot;enable\&quot;&quot;,
+  &quot;render_position&quot;: &quot;\&quot;center\&quot;&quot;,
+  &quot;cut&quot;: &quot;[0,0,0]&quot;,
+  &quot;fa&quot;: 6,
+  &quot;fs&quot;: 0.4,
+  &quot;fn&quot;: 0,
+  &quot;random_seed&quot;: 0,
+  &quot;force_render&quot;: true,
+  &quot;pos&quot;: &quot;[0,0,0]&quot;,
+  &quot;rot&quot;: &quot;[0,0,0]&quot;,
+  &quot;type&quot;: &quot;\&quot;positive\&quot;&quot;
+}</code></pre></details><div><strong>rule:</strong> Call `action()` and render the raw-SCAD payload directly.</div>
+              </div>
+            </article>
+            </div></section>
+
+    <section class="panel">
+      <h2>Variables</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>gridfinity_width</code></td><td>Width in Gridfinity units along X, or [grid,mm].</td><td>number|list</td><td><code>2</code></td></tr><tr><td><code>gridfinity_height</code></td><td>Height in Gridfinity units along Y, or [grid,mm].</td><td>number|list</td><td><code>1</code></td></tr><tr><td><code>outer_width</code></td><td>Outer width in Gridfinity units or [grid,mm].</td><td>number|list</td><td><code>[0,0]</code></td></tr><tr><td><code>outer_depth</code></td><td>Outer depth in Gridfinity units or [grid,mm].</td><td>number|list</td><td><code>[0,0]</code></td></tr><tr><td><code>outer_height</code></td><td>Outer frame height in millimeters.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>oversize_method</code></td><td>Oversize method: fill, crop, or outer.</td><td>string</td><td><code>&quot;fill&quot;</code></td></tr><tr><td><code>position_fill_grid_x</code></td><td>X alignment for filling partial grid space.</td><td>string</td><td><code>&quot;near&quot;</code></td></tr><tr><td><code>position_fill_grid_y</code></td><td>Y alignment for filling partial grid space.</td><td>string</td><td><code>&quot;near&quot;</code></td></tr><tr><td><code>position_grid_in_outer_x</code></td><td>X alignment of the grid inside the outer frame.</td><td>string</td><td><code>&quot;center&quot;</code></td></tr><tr><td><code>position_grid_in_outer_y</code></td><td>Y alignment of the grid inside the outer frame.</td><td>string</td><td><code>&quot;center&quot;</code></td></tr><tr><td><code>plate_corner_radius</code></td><td>Outer plate corner radius in millimeters.</td><td>number</td><td><code>3.75</code></td></tr><tr><td><code>secondary_corner_radius</code></td><td>Secondary inner corner radius in millimeters.</td><td>number</td><td><code>3.75</code></td></tr><tr><td><code>enable_magnets</code></td><td>Enable baseplate magnet pockets.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>magnet_size</code></td><td>Magnet diameter and height [d,h] in millimeters.</td><td>list</td><td><code>[6.5,2.4]</code></td></tr><tr><td><code>magnet_release_method</code></td><td>Magnet release method: none, slot, or hole.</td><td>string</td><td><code>&quot;none&quot;</code></td></tr><tr><td><code>corner_screw_enabled</code></td><td>Enable corner screw holes.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>center_screw_enabled</code></td><td>Enable the center hold-down screw hole.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>weighted_enable</code></td><td>Enable weight cavities in the frame.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>reduced_wall_height</code></td><td>Reduced wall height in millimeters. -1 keeps upstream behavior.</td><td>number</td><td><code>-1</code></td></tr><tr><td><code>reduce_wall_taper</code></td><td>Reduce wall taper when walls are shortened.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>plate_options</code></td><td>Baseplate style option, typically default or cnclaser.</td><td>string</td><td><code>&quot;default&quot;</code></td></tr><tr><td><code>custom_grid_enabled</code></td><td>Enable custom grid cell layout.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>grid_positions</code></td><td>Custom grid positions matrix passed to the upstream baseplate module.</td><td>list</td><td><code>[[1]]</code></td></tr><tr><td><code>remove_bottom_taper</code></td><td>Remove the default Gridfinity bottom taper.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>connector_only</code></td><td>Generate connector-only geometry for the frame system.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>connector_position</code></td><td>Frame connector position: disabled, center_wall, intersection, or both.</td><td>string</td><td><code>&quot;center_wall&quot;</code></td></tr><tr><td><code>connector_clip_enabled</code></td><td>Enable clip-style frame connectors.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>connector_butterfly_enabled</code></td><td>Enable butterfly frame connectors.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>connector_filament_enabled</code></td><td>Enable filament frame connectors.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>connector_snaps_style</code></td><td>Connector snap style: disabled, larger, smaller, or wall.</td><td>string</td><td><code>&quot;disabled&quot;</code></td></tr><tr><td><code>pitch</code></td><td>Gridfinity pitch [x,y,z] in millimeters.</td><td>list</td><td><code>[42,42,7]</code></td></tr><tr><td><code>clearance</code></td><td>Environment clearance [x,y,z] in millimeters.</td><td>list</td><td><code>[0.5,0.5,0]</code></td></tr><tr><td><code>set_colour</code></td><td>Color handling mode for the upstream renderer.</td><td>string</td><td><code>&quot;enable&quot;</code></td></tr><tr><td><code>render_position</code></td><td>Render position mode, usually center.</td><td>string</td><td><code>&quot;center&quot;</code></td></tr><tr><td><code>cut</code></td><td>Debug cut [x,y,z].</td><td>list</td><td><code>[0,0,0]</code></td></tr><tr><td><code>fa</code></td><td>OpenSCAD fragment angle.</td><td>number</td><td><code>6</code></td></tr><tr><td><code>fs</code></td><td>OpenSCAD fragment size.</td><td>number</td><td><code>0.4</code></td></tr><tr><td><code>fn</code></td><td>OpenSCAD fragment count override.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>random_seed</code></td><td>Random seed for the upstream environment.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>force_render</code></td><td>Force render on costly upstream components.</td><td>bool</td><td><code>True</code></td></tr><tr><td><code>pos</code></td><td>3-element [x,y,z] position.</td><td>list</td><td><code>[0,0,0]</code></td></tr><tr><td><code>rot</code></td><td>Rotation [rx,ry,rz] in degrees.</td><td>list</td><td><code>[0,0,0]</code></td></tr><tr><td><code>type</code></td><td>Geometry type: positive or negative.</td><td>string</td><td><code>&quot;positive&quot;</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel"><h2>More Details</h2><h1>gridfinity_base_raw</h1>
+<p><strong>Gridfinity: Base Raw</strong></p>
+<p>Returns a raw OpenSCAD wrapper around the vendored Gridfinity Extended baseplate generator, using repo-style width and height inputs while keeping a broad first-pass upstream option surface.</p>
+<h2>Returns</h2>
+<p>Raw SCAD geometry component dict.</p>
+<h2>Notes</h2>
+<ul><li>Backed by a self-contained vendored copy of <code>gridfinity_extended_openscad</code> inside this component folder.</li><li><code>gridfinity_width</code> and <code>gridfinity_height</code> accept either plain Gridfinity-unit numbers or upstream-style <code>[grid, mm]</code> tuples.</li><li>Legacy <code>gridfinity_depth</code> and <code>depth</code> aliases are still accepted for compatibility.</li><li>The wrapper bridges public width and height inputs into both <code>set_environment(...)</code> and the upstream <code>gridfinity_baseplate(...)</code> cell-count parameters.</li></ul>
+<h2>Key Variables</h2>
+<div class="markdown-table-wrap"><table class="markdown-table"><thead><tr><th>Name</th><th>Description</th><th>Type</th><th>Default</th></tr></thead><tbody><tr><td>gridfinity_width</td><td>Width in Gridfinity units along X, or <code>[grid,mm]</code>.</td><td>number\</td><td>list</td><td>2</td></tr><tr><td>gridfinity_height</td><td>Height in Gridfinity units along Y, or <code>[grid,mm]</code>.</td><td>number\</td><td>list</td><td>1</td></tr><tr><td>outer_width</td><td>Outer width in Gridfinity units or <code>[grid,mm]</code>.</td><td>number\</td><td>list</td><td>[0,0]</td></tr><tr><td>outer_depth</td><td>Outer depth in Gridfinity units or <code>[grid,mm]</code>.</td><td>number\</td><td>list</td><td>[0,0]</td></tr><tr><td>oversize_method</td><td>Oversize method: <code>fill</code>, <code>crop</code>, or <code>outer</code>.</td><td>string</td><td>"fill"</td></tr><tr><td>enable_magnets</td><td>Enable baseplate magnet pockets.</td><td>bool</td><td>False</td></tr><tr><td>magnet_size</td><td>Magnet diameter and height <code>[d,h]</code> in millimeters.</td><td>list</td><td>[6.5,2.4]</td></tr><tr><td>corner_screw_enabled</td><td>Enable corner screw holes.</td><td>bool</td><td>False</td></tr><tr><td>center_screw_enabled</td><td>Enable the center hold-down screw hole.</td><td>bool</td><td>False</td></tr><tr><td>weighted_enable</td><td>Enable weight cavities in the frame.</td><td>bool</td><td>False</td></tr><tr><td>plate_options</td><td>Baseplate style option, typically <code>default</code> or <code>cnclaser</code>.</td><td>string</td><td>"default"</td></tr><tr><td>custom_grid_enabled</td><td>Enable custom grid cell layout.</td><td>bool</td><td>False</td></tr><tr><td>connector_position</td><td>Frame connector position: <code>disabled</code>, <code>center_wall</code>, <code>intersection</code>, or <code>both</code>.</td><td>string</td><td>"center_wall"</td></tr><tr><td>connector_clip_enabled</td><td>Enable clip-style frame connectors.</td><td>bool</td><td>False</td></tr><tr><td>connector_butterfly_enabled</td><td>Enable butterfly frame connectors.</td><td>bool</td><td>False</td></tr><tr><td>connector_filament_enabled</td><td>Enable filament frame connectors.</td><td>bool</td><td>False</td></tr><tr><td>connector_snaps_style</td><td>Connector snap style: <code>disabled</code>, <code>larger</code>, <code>smaller</code>, or <code>wall</code>.</td><td>string</td><td>"disabled"</td></tr><tr><td>pitch</td><td>Gridfinity pitch <code>[x,y,z]</code> in millimeters.</td><td>list</td><td>[42,42,7]</td></tr><tr><td>clearance</td><td>Environment clearance <code>[x,y,z]</code> in millimeters.</td><td>list</td><td>[0.5,0.5,0]</td></tr><tr><td>pos</td><td>3-element <code>[x,y,z]</code> position.</td><td>list</td><td>[0,0,0]</td></tr><tr><td>rot</td><td>Rotation <code>[rx,ry,rz]</code> in degrees.</td><td>list</td><td>[0,0,0]</td></tr><tr><td>type</td><td>Geometry type: positive or negative.</td><td>string</td><td>"positive"</td></tr></tbody></table></div></section>
+  </main>
+  <script>
+    document.querySelectorAll('.sample-thumb').forEach((button) => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const fullSrc = button.getAttribute('data-full');
+        const altText = button.getAttribute('data-alt');
+        const target = document.getElementById(targetId);
+        if (!target || !fullSrc) return;
+        target.src = fullSrc;
+        if (altText) {
+          target.alt = altText;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

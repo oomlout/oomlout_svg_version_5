@@ -1,0 +1,26 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: mounting plate 5x4x3
+description_extra: ''
+description_main: 5_width_4_height_3_mm_depth
+folder: c:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_core_geometry\capability_core_geometry\generated\oobb_part_mounting_plate_5_width_4_height_3_mm_depth
+height: 4
+height_mm: 59
+id: oobb_part_mounting_plate_5_width_4_height_3_mm_depth
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/mounting_plate/5_width_4_height_3_mm_depth/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_mounting_plate_05_04_03_rh_m3_nm_aliexpress_dc_to_dc_converter_xl6009_48_mm_width_25_mm_height
+manufacturer: ''
+name: Oobb Part Mounting Plate 5 Width 4 Height 3 mm Depth
+name_short: 'Mounting Plate 5x4x3 '
+part_number: ''
+radius_hole: m3
+short_name: ''
+size: mounting_plate
+thickness: 3
+thickness_mm: 3
+type: part
+width: 5
+width_mm: 74

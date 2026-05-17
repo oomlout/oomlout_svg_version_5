@@ -1,0 +1,72 @@
+[
+    {
+        "extra": "motor",
+        "thickness": 2.54,
+        "width": 3,
+        "height": 3,
+        "pos": [
+            0,
+            0,
+            -2.54
+        ],
+        "pos_plate": [
+            0,
+            0,
+            -2.54
+        ],
+        "type": "positive",
+        "shape": "oobb_plate",
+        "depth": 2.54
+    },
+    {
+        "extra": "motor",
+        "thickness": 2.54,
+        "width": 3,
+        "height": 3,
+        "pos": [
+            0,
+            0,
+            -2.54
+        ],
+        "pos_plate": [
+            0,
+            0,
+            -2.54
+        ],
+        "hole_sides": [
+            "left",
+            "right",
+            "top"
+        ],
+        "type": "p",
+        "shape": "oobb_holes",
+        "holes": [
+            "left",
+            "right",
+            "top"
+        ],
+        "both_holes": true
+    },
+    {
+        "extra": "motor",
+        "thickness": 2.54,
+        "width": 3,
+        "height": 3,
+        "pos": [
+            0,
+            0,
+            -2.6
+        ],
+        "pos_plate": [
+            0,
+            0,
+            -2.54
+        ],
+        "shape": "oobb_wire_motor",
+        "rot": [
+            0,
+            0,
+            180
+        ]
+    }
+]

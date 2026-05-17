@@ -1,0 +1,25 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: tray 1x1x9
+description_extra: ''
+description_main: 1_width_1_height_9_mm_depth
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_holders_storage\capability_holders_storage\generated\oobb_part_tray_1_width_1_height_9_mm_depth
+height: 1
+height_mm: 14
+id: oobb_part_tray_1_width_1_height_9_mm_depth
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/tray/1_width_1_height_9_mm_depth/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_tray_01_01_09
+manufacturer: ''
+name: Oobb Part Tray 1 Width 1 Height 9 mm Depth
+name_short: 'Tray 1x1x9 '
+part_number: ''
+short_name: ''
+size: tray
+thickness: 9
+thickness_mm: 9
+type: part
+width: 1
+width_mm: 14

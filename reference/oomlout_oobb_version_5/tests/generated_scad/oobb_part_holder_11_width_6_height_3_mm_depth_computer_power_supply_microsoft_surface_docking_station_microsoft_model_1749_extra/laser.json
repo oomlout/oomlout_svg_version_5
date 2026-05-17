@@ -1,0 +1,90 @@
+[
+    {
+        "type": "positive",
+        "extra": "computer_power_supply_microsoft_surface_docking_station_microsoft_model_1749",
+        "width": 11,
+        "height": 6,
+        "thickness": 3,
+        "hole_sides": [
+            "left",
+            "right",
+            "top",
+            "bottom"
+        ],
+        "include_connecting_screws": false,
+        "pos_plate": [
+            0,
+            0,
+            -1.5
+        ],
+        "shape": "oobb_plate",
+        "depth": 3,
+        "pos": [
+            0,
+            0,
+            -1.5
+        ]
+    },
+    {
+        "type": "p",
+        "extra": "computer_power_supply_microsoft_surface_docking_station_microsoft_model_1749",
+        "width": 11,
+        "height": 6,
+        "thickness": 3,
+        "hole_sides": [
+            "left",
+            "right",
+            "top",
+            "bottom"
+        ],
+        "include_connecting_screws": false,
+        "pos_plate": [
+            0,
+            0,
+            -1.5
+        ],
+        "both_holes": true,
+        "shape": "oobb_holes",
+        "holes": [
+            "left",
+            "right",
+            "top",
+            "bottom"
+        ],
+        "pos": [
+            0,
+            0,
+            -1.5
+        ]
+    },
+    {
+        "type": "negative",
+        "extra": "computer_power_supply_microsoft_surface_docking_station_microsoft_model_1749",
+        "width": 11,
+        "height": 6,
+        "thickness": 3,
+        "hole_sides": [
+            "left",
+            "right",
+            "top",
+            "bottom"
+        ],
+        "include_connecting_screws": false,
+        "pos_plate": [
+            0,
+            0,
+            -1.5
+        ],
+        "shape": "oobb_computer_power_supply_microsoft_surface_docking_station_microsoft_model_1749",
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "rot": [
+            0,
+            0,
+            0
+        ]
+    }
+]

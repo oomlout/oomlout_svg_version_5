@@ -1,0 +1,22 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: shaft coupler 0x0x9
+description_extra: ''
+description_main: 2_diameter_9_mm_depth
+diameter: 2
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_motion_drive\capability_motion_drive\generated\oobb_part_shaft_coupler_2_diameter_9_mm_depth
+id: oobb_part_shaft_coupler_2_diameter_9_mm_depth
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/shaft_coupler/2_diameter_9_mm_depth/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_shaft_coupler_02_09
+manufacturer: ''
+name: Oobb Part Shaft Coupler 2 Diameter 9 mm Depth
+name_short: 'Shaft Coupler 2x9 '
+part_number: ''
+short_name: ''
+size: shaft_coupler
+thickness: 9
+thickness_mm: 9
+type: part

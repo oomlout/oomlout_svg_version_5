@@ -1,0 +1,726 @@
+{
+  "timestamp_utc": "2026-03-10T15:31:35.929191+00:00",
+  "total": 59,
+  "passed": 59,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Action audit: all action folders",
+      "kind": "audit",
+      "status": "passed",
+      "duration_seconds": 0.172,
+      "result": {
+        "all_passed": true,
+        "passed": 57,
+        "failed": 0,
+        "total_action_dirs": 57,
+        "discovered_actions": 57,
+        "documented_actions": 57,
+        "details": []
+      },
+      "error": "",
+      "log_file": "test_result\\action_audit_all_action_folders.log",
+      "definition_file": "run_tests.py"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_add_image",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_add_image.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_continue_chat",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.015,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_continue_chat.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_file_add_file",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_file_add_file.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_new_chat",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_new_chat.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_query",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_query.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_save_text",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_save_text.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_set_mode",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_set_mode.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_skill_image_laser_cut_logo_full",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.016,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_skill_image_laser_cut_logo_full.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_skill_image_prompt_full",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_skill_image_prompt_full.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_skill_text_to_speech",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_skill_text_to_speech.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_skill_validate_json",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_skill_validate_json.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_ai_text_fix_yaml_copy_paste",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_ai_text_fix_yaml_copy_paste.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_alias_add_file",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_alias_add_file.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_alias_add_image",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_alias_add_image.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_alias_ai_save_image",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_alias_ai_save_image.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_alias_close_tab",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_alias_close_tab.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_alias_new_chat",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_alias_new_chat.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_alias_openscad_render_file",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_alias_openscad_render_file.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_alias_query",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_alias_query.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_base_time_delay",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_base_time_delay.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_browser_close_tab",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_browser_close_tab.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_browser_open_url",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_browser_open_url.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_browser_save_url",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_browser_save_url.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_convert_svg_to_pdf",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_convert_svg_to_pdf.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_convert_svg_to_png",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_convert_svg_to_png.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_add_text",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_add_text.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_add_text_box",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.016,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_add_text_box.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_close_file",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_close_file.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_convert_to_curves",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_convert_to_curves.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_copy",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_copy.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_export",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_export.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_group",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_group.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_import",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_import.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_object_order",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_object_order.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_open",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_open.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_page_goto",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_page_goto.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_paste",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_paste.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_save",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_save.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_save_as",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_save_as.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_set_position",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_set_position.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_set_rotation",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_set_rotation.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_set_size",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_set_size.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_trace",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_trace.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_corel_trace_full",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_corel_trace_full.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_file_copy",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_file_copy.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_file_create_text_file",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_file_create_text_file.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_google_doc_add_text",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_google_doc_add_text.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_google_doc_new",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_google_doc_new.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_image_crop",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_image_crop.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_image_png_transparent_to_white",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_image_png_transparent_to_white.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_image_quad_swap_for_tile",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.015,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_image_quad_swap_for_tile.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_image_upscale",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_image_upscale.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_openscad_render",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_openscad_render.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_save_image_generated",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_save_image_generated.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_save_image_search_result",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_save_image_search_result.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_text_jinja_template",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_text_jinja_template.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Action test: roboclick_action_wait_for_file",
+      "kind": "action",
+      "status": "passed",
+      "duration_seconds": 0.016,
+      "result": {
+        "returned": true
+      },
+      "error": "",
+      "log_file": "test_result\\action_test_roboclick_action_wait_for_file.log",
+      "definition_file": "tests\\100_run_all_action_tests\\working.yaml"
+    },
+    {
+      "name": "Integration (python): run folder test_data/example_duirectory",
+      "kind": "integration",
+      "status": "passed",
+      "duration_seconds": 0.328,
+      "result": {
+        "all_passed": true,
+        "passed": 1,
+        "failed": 0,
+        "folder": "C:\\gh\\oomlout_roboclick\\test_data\\example_duirectory",
+        "working_file_used": "C:\\gh\\oomlout_roboclick\\test_data\\example_duirectory\\working.oomp"
+      },
+      "error": "",
+      "log_file": "test_result\\integration_python_run_folder_test_data_example_duirectory.log",
+      "definition_file": "tests\\working.py"
+    }
+  ]
+}

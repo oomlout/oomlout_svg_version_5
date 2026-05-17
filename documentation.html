@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Components</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent:       #E85D04;
+      --accent-dim:   #FDE8D8;
+      --accent-dark:  #B34400;
+      --surface:      #FFFFFF;
+      --surface-alt:  #F7F7F7;
+      --surface-code: #F0F0F0;
+      --border:       #E0E0E0;
+      --border-focus: #E85D04;
+      --text:         #111111;
+      --text-muted:   #666666;
+      --text-inverse: #FFFFFF;
+      --header-bg:    #111111;
+      --card-radius:  4px;
+      --drawer-width: 400px;
+      --header-h:     56px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--surface-alt);
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────────── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: var(--header-bg);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 24px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .header-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-inverse);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .header-title span {
+      color: var(--accent);
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 0;
+      max-width: 320px;
+      height: 34px;
+      padding: 0 12px;
+      font-family: inherit;
+      font-size: 13px;
+      background: #222;
+      color: var(--text-inverse);
+      border: 1px solid #444;
+      border-radius: var(--card-radius);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-input::placeholder { color: #888; }
+    .search-input:focus { border-color: var(--accent); }
+
+    .category-select {
+      height: 34px;
+      padding: 0 10px;
+      font-family: inherit;
+      font-size: 13px;
+      background: #222;
+      color: var(--text-inverse);
+      border: 1px solid #444;
+      border-radius: var(--card-radius);
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .category-select:focus { border-color: var(--accent); }
+
+    .header-stats {
+      margin-left: auto;
+      font-size: 12px;
+      color: #888;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Main layout ─────────────────────────────────────────────────────── */
+    .layout {
+      display: flex;
+      min-height: calc(100vh - var(--header-h));
+    }
+
+    .main {
+      flex: 1;
+      min-width: 0;
+      padding: 24px;
+      transition: margin-right 0.25s ease;
+    }
+    .main.drawer-open {
+      margin-right: var(--drawer-width);
+    }
+
+    /* ── Section headings ────────────────────────────────────────────────── */
+    .section-heading {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Card grid ───────────────────────────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-dim);
+    }
+    .card.active {
+      border-color: var(--accent);
+      border-left-width: 4px;
+      box-shadow: 0 0 0 2px var(--accent-dim);
+    }
+
+    .card-preview {
+      height: 110px;
+      background: var(--surface-alt);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 8px;
+    }
+    .card-preview svg {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+    .card-preview-empty {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .card-body {
+      padding: 10px 12px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-name {
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text);
+    }
+
+    .card-long-name {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .card-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .chip {
+      display: inline-block;
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 1px 6px;
+      border-radius: 2px;
+      background: var(--accent-dim);
+      color: var(--accent-dark);
+      font-weight: 500;
+    }
+    .chip.category {
+      background: var(--surface-code);
+      color: var(--text-muted);
+    }
+
+    /* ── Detail drawer ───────────────────────────────────────────────────── */
+    .drawer {
+      position: fixed;
+      top: var(--header-h);
+      right: 0;
+      bottom: 0;
+      width: var(--drawer-width);
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+      z-index: 90;
+      overflow: hidden;
+    }
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 16px 20px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .drawer-header-text { flex: 1; min-width: 0; }
+    .drawer-title {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text);
+    }
+    .drawer-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .drawer-close {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text-muted);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .drawer-close:hover { border-color: var(--accent); color: var(--accent); }
+
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .drawer-preview {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+    }
+    .drawer-preview svg {
+      max-width: 100%;
+      max-height: 200px;
+      width: auto;
+      height: auto;
+    }
+
+    .drawer-section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .drawer-description {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .aliases-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* ── Variable table ──────────────────────────────────────────────────── */
+    .var-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .var-table th {
+      text-align: left;
+      padding: 6px 8px;
+      background: var(--surface-alt);
+      border-bottom: 2px solid var(--border);
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .var-table td {
+      padding: 7px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .var-table tr:last-child td { border-bottom: none; }
+    .var-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+    .var-type {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .var-default {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--surface-code);
+      padding: 1px 5px;
+      border-radius: 2px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .var-desc { color: var(--text); }
+    .var-table-empty {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ── Parts section ───────────────────────────────────────────────────── */
+    .parts-section {
+      margin-top: 8px;
+    }
+    details > summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      user-select: none;
+    }
+    details > summary::-webkit-details-marker { display: none; }
+    .summary-arrow {
+      font-size: 10px;
+      transition: transform 0.15s;
+      display: inline-block;
+    }
+    details[open] > summary .summary-arrow { transform: rotate(90deg); }
+
+    .parts-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+    .parts-table th {
+      text-align: left;
+      padding: 6px 10px;
+      background: var(--surface-alt);
+      border-bottom: 2px solid var(--border);
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .parts-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+    }
+    .parts-table tr:last-child td { border-bottom: none; }
+    .parts-table tr:hover td { background: var(--surface-alt); }
+
+    /* ── Empty state ─────────────────────────────────────────────────────── */
+    .empty-state {
+      padding: 48px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    .empty-state-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ────────────────────────────────────────────────────────────── -->
+<header class="header">
+  <div class="header-title">SVG <span>Components</span></div>
+  <div class="header-controls">
+    <input id="search-input" class="search-input" type="search"
+           placeholder="Search components..." autocomplete="off">
+    <select id="category-select" class="category-select">
+      <option value="">All categories</option>
+    </select>
+  </div>
+  <div class="header-stats" id="header-stats"></div>
+</header>
+
+<!-- ── Layout ─────────────────────────────────────────────────────────────── -->
+<div class="layout">
+  <main class="main" id="main">
+
+    <!-- Components grid -->
+    <div class="section-heading" id="components-heading">Components</div>
+    <div class="card-grid" id="card-grid"></div>
+
+    <!-- Parts catalogue -->
+    <div class="parts-section">
+      <details id="parts-details">
+        <summary>
+          <span class="summary-arrow">&#9654;</span>
+          Generated Parts Catalogue
+        </summary>
+        <table class="parts-table" id="parts-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Builder</th>
+              <th>Classification</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody id="parts-tbody"></tbody>
+        </table>
+      </details>
+    </div>
+
+  </main>
+
+  <!-- ── Detail drawer ──────────────────────────────────────────────────── -->
+  <aside class="drawer" id="drawer">
+    <div class="drawer-header">
+      <div class="drawer-header-text">
+        <div class="drawer-title" id="drawer-title">Component</div>
+        <div class="drawer-subtitle" id="drawer-subtitle"></div>
+      </div>
+      <button class="drawer-close" id="drawer-close" aria-label="Close detail panel">&#x2715;</button>
+    </div>
+    <div class="drawer-body" id="drawer-body">
+      <div class="empty-state">
+        <div>Select a component card to view documentation.</div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script>
+window.DOCUMENTATION_DATA = {
+  "generated_date": "2026-05-17",
+  "total_components": 9,
+  "total_parts": 3,
+  "components": [
+    {
+      "name": "circle",
+      "name_long": "Circle / Hole",
+      "description": "Filled circle centred on pos. Use type='negative' to cut a hole; alias 'hole' is also accepted.",
+      "category": "SVG Primitives",
+      "shape_aliases": [
+        "hole"
+      ],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "r",
+          "description": "Radius in mm.",
+          "type": "float",
+          "default": 3.0
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"26.0000mm\" height=\"26.0000mm\"\n     viewBox=\"0 0 26.0000 26.0000\">\n  <circle cx=\"13.0000\" cy=\"13.0000\" r=\"8.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "oobb_circle",
+      "name_long": "OOBB Circle",
+      "description": "Solid disc sized to the OOBB grid. diameter is in OOBB units (osp=15 mm), so diameter=3 → 45 mm outer diameter.",
+      "category": "OOBB Shapes",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "diameter",
+          "description": "Disc diameter in OOBB units. Rendered radius = diameter × osp / 2.",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"55.0000mm\" height=\"55.0000mm\"\n     viewBox=\"0 0 55.0000 55.0000\">\n  <circle cx=\"27.5000\" cy=\"27.5000\" r=\"22.5000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "oobb_holes",
+      "name_long": "OOBB Hole Grid",
+      "description": "Grid of circles at every OOBB hole position for a width×height plate. radius_name selects the fastener size (e.g. 'm6', 'm3'). Typically used as type='negative' to cut holes through a plate.",
+      "category": "OOBB Shapes",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "width",
+          "description": "Grid width in OOBB units (number of hole columns).",
+          "type": "int",
+          "default": 1
+        },
+        {
+          "name": "height",
+          "description": "Grid height in OOBB units (number of hole rows).",
+          "type": "int",
+          "default": 1
+        },
+        {
+          "name": "radius_name",
+          "description": "Fastener size key, e.g. 'm6', 'm3', 'm4'. Resolved via opsvg._gv('hole_radius_<name>').",
+          "type": "string",
+          "default": "m6"
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up). Must match the pos of the companion oobb_plate.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"10.0000mm\" height=\"10.0000mm\"\n     viewBox=\"0 0 10.0000 10.0000\">\n  <g fill=\"#333333\" stroke=\"none\">\n    <circle cx=\"-2.5000\" cy=\"12.5000\" r=\"3.0000\" />\n    <circle cx=\"-2.5000\" cy=\"-2.5000\" r=\"3.0000\" />\n    <circle cx=\"12.5000\" cy=\"12.5000\" r=\"3.0000\" />\n    <circle cx=\"12.5000\" cy=\"-2.5000\" r=\"3.0000\" />\n  </g>\n</svg>"
+    },
+    {
+      "name": "oobb_plate",
+      "name_long": "OOBB Plate",
+      "description": "OOBB grid plate: a rounded rectangle whose dimensions are computed from width/height in OOBB units (osp=15 mm, osp_minus=1 mm). A 2×1 plate is 29×14 mm.",
+      "category": "OOBB Shapes",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "width",
+          "description": "Plate width in OOBB units.",
+          "type": "int",
+          "default": 1
+        },
+        {
+          "name": "height",
+          "description": "Plate height in OOBB units.",
+          "type": "int",
+          "default": 1
+        },
+        {
+          "name": "corner_radius",
+          "description": "Corner radius in mm.",
+          "type": "float",
+          "default": 2.0
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"39.0000mm\" height=\"39.0000mm\"\n     viewBox=\"0 0 39.0000 39.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"29.0000\" height=\"29.0000\" rx=\"2.0000\" ry=\"2.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "polygon",
+      "name_long": "Polygon",
+      "description": "Arbitrary filled polygon. Points are relative to pos, so repositioning is done by changing pos alone.",
+      "category": "SVG Primitives",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "points",
+          "description": "List of [x, y] vertices in mm, relative to pos. The polygon is automatically closed.",
+          "type": "list",
+          "default": [
+            [
+              0,
+              5
+            ],
+            [
+              -5,
+              -5
+            ],
+            [
+              5,
+              -5
+            ]
+          ]
+        },
+        {
+          "name": "pos",
+          "description": "Origin offset [x, y, z] in OOBB mm (Y-up). All points are translated by this value.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"30.0000mm\" height=\"28.0000mm\"\n     viewBox=\"0 0 30.0000 28.0000\">\n  <polygon points=\"15.0000,5.0000 5.0000,23.0000 25.0000,23.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "rect",
+      "name_long": "Rectangle",
+      "description": "Axis-aligned filled rectangle, centred on pos.",
+      "category": "SVG Primitives",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "size",
+          "description": "Width, height and depth in mm as [w, h, d]. Depth is carried through but ignored by the 2-D renderer.",
+          "type": "list",
+          "default": [
+            10,
+            10,
+            3
+          ]
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] in degrees. Only rz (Z-axis) affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"40.0000mm\" height=\"30.0000mm\"\n     viewBox=\"0 0 40.0000 30.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"30.0000\" height=\"20.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "rounded_rectangle",
+      "name_long": "Rounded Rectangle",
+      "description": "Axis-aligned rectangle with uniform corner radii, centred on pos. Accepts aliases 'rounded_rect' and 'rrect'.",
+      "category": "SVG Primitives",
+      "shape_aliases": [
+        "rounded_rect",
+        "rrect"
+      ],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "size",
+          "description": "Width, height, depth in mm as [w, h, d]. Depth is carried through but ignored by the 2-D renderer.",
+          "type": "list",
+          "default": [
+            20,
+            10,
+            3
+          ]
+        },
+        {
+          "name": "r",
+          "description": "Corner radius in mm.",
+          "type": "float",
+          "default": 2.0
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"40.0000mm\" height=\"30.0000mm\"\n     viewBox=\"0 0 40.0000 30.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"30.0000\" height=\"20.0000\" rx=\"4.0000\" ry=\"4.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "slot",
+      "name_long": "Slot (Capsule)",
+      "description": "Capsule shape: two semicircles joined by a rectangle. Horizontal by default; use rot=[0,0,90] for a vertical slot.",
+      "category": "SVG Primitives",
+      "shape_aliases": [
+        "capsule"
+      ],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "r",
+          "description": "End-cap radius in mm (also controls slot width = 2r).",
+          "type": "float",
+          "default": 3.0
+        },
+        {
+          "name": "w",
+          "description": "Centre-to-centre travel distance in mm (total length = w + 2r).",
+          "type": "float",
+          "default": 10.0
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Use rz=90 for vertical.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"38.0000mm\" height=\"18.0000mm\"\n     viewBox=\"0 0 38.0000 18.0000\">\n  <path d=\"M 9.0000 5.0000 A 4.0000 4.0000 0 0 0 9.0000 13.0000 L 29.0000 13.0000 A 4.0000 4.0000 0 0 0 29.0000 5.0000 Z\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "text",
+      "name_long": "Text Label",
+      "description": "SVG text element positioned at pos. Supports horizontal/vertical alignment, font family, and size. Use the color kwarg to override the default fill colour.",
+      "category": "SVG Annotations",
+      "shape_aliases": [
+        "label"
+      ],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "text",
+          "description": "The string to render.",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "size",
+          "description": "Font size in mm.",
+          "type": "float",
+          "default": 4.0
+        },
+        {
+          "name": "font",
+          "description": "Font family name. A ':style=Bold' suffix is stripped to keep the SVG font-family clean.",
+          "type": "string",
+          "default": "sans-serif"
+        },
+        {
+          "name": "halign",
+          "description": "Horizontal alignment: 'left', 'center', or 'right'.",
+          "type": "string",
+          "default": "center"
+        },
+        {
+          "name": "valign",
+          "description": "Vertical alignment: 'bottom', 'center', or 'top'.",
+          "type": "string",
+          "default": "center"
+        },
+        {
+          "name": "color",
+          "description": "Optional explicit fill colour (CSS colour string). Overrides the type-based fill so white text can sit on a dark header bar.",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "pos",
+          "description": "Anchor position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"10.0000mm\" height=\"10.0000mm\"\n     viewBox=\"0 0 10.0000 10.0000\">\n  <text x=\"5.0000\" y=\"5.0000\" font-family=\"sans-serif\" font-size=\"10.0000\" text-anchor=\"middle\" dominant-baseline=\"middle\" fill=\"#333333\">Sample</text>\n</svg>"
+    }
+  ],
+  "parts": [
+    {
+      "id": "project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin",
+      "oobb_name": "tin_insert",
+      "svg_name": "tin_insert",
+      "classification": "",
+      "description_main": "",
+      "size": "",
+      "folder": "parts\\project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin"
+    },
+    {
+      "id": "svg_demo_a4_a4_sheet",
+      "oobb_name": "a4_sheet",
+      "svg_name": "a4_sheet",
+      "classification": "svg",
+      "description_main": "a4_sheet",
+      "size": "a4",
+      "folder": "parts\\svg_demo_a4_a4_sheet"
+    },
+    {
+      "id": "svg_label_76x50_label_76x50",
+      "oobb_name": "label_76x50",
+      "svg_name": "label_76x50",
+      "classification": "svg",
+      "description_main": "label_76x50",
+      "size": "76x50",
+      "folder": "parts\\svg_label_76x50_label_76x50"
+    }
+  ]
+};
+</script>
+
+<script>
+  // ── Utilities ──────────────────────────────────────────────────────────────
+  function esc(str) {
+    return String(str ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function defaultStr(val) {
+    if (val === null || val === undefined || val === '') return '';
+    if (typeof val === 'object') return JSON.stringify(val);
+    return String(val);
+  }
+
+  // ── Card rendering ─────────────────────────────────────────────────────────
+  function buildCard(comp) {
+    const preview = comp.sample_svg
+      ? `<div class="card-preview">${comp.sample_svg}</div>`
+      : `<div class="card-preview"><span class="card-preview-empty">no preview</span></div>`;
+
+    const aliases = (comp.shape_aliases || [])
+      .map(a => `<span class="chip">${esc(a)}</span>`).join('');
+
+    return `
+      <div class="card" data-name="${esc(comp.name)}"
+           data-search="${esc([comp.name, comp.name_long, comp.category, (comp.shape_aliases||[]).join(' ')].join(' ').toLowerCase())}">
+        ${preview}
+        <div class="card-body">
+          <div class="card-name">${esc(comp.name)}</div>
+          <div class="card-long-name">${esc(comp.name_long)}</div>
+          <div class="card-chips">
+            <span class="chip category">${esc(comp.category)}</span>
+            ${aliases}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ── Drawer content ─────────────────────────────────────────────────────────
+  function buildDrawerBody(comp) {
+    const preview = comp.sample_svg
+      ? `<div class="drawer-preview">${comp.sample_svg}</div>`
+      : '';
+
+    const aliases = (comp.shape_aliases || []).length
+      ? `<div>
+           <div class="drawer-section-label">Aliases</div>
+           <div class="aliases-list">
+             ${comp.shape_aliases.map(a => `<span class="chip">${esc(a)}</span>`).join('')}
+           </div>
+         </div>`
+      : '';
+
+    const vars = (comp.variables || []);
+    let varTable;
+    if (vars.length === 0) {
+      varTable = `<div class="drawer-section-label">Variables</div>
+                  <p class="var-table-empty">No variables declared.</p>`;
+    } else {
+      const rows = vars.map(v => `
+        <tr>
+          <td><span class="var-name">${esc(v.name)}</span></td>
+          <td><span class="var-type">${esc(v.type)}</span></td>
+          <td><span class="var-default">${esc(defaultStr(v.default))}</span></td>
+          <td class="var-desc">${esc(v.description)}</td>
+        </tr>`).join('');
+      varTable = `
+        <div>
+          <div class="drawer-section-label">Variables</div>
+          <table class="var-table">
+            <thead>
+              <tr>
+                <th>Name</th><th>Type</th><th>Default</th><th>Description</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
+    }
+
+    const returns = comp.returns
+      ? `<div>
+           <div class="drawer-section-label">Returns</div>
+           <div class="drawer-description">${esc(comp.returns)}</div>
+         </div>`
+      : '';
+
+    return `
+      ${preview}
+      <div>
+        <div class="drawer-section-label">Description</div>
+        <div class="drawer-description">${esc(comp.description || 'No description.')}</div>
+      </div>
+      ${aliases}
+      ${varTable}
+      ${returns}
+    `;
+  }
+
+  // ── Drawer open / close ────────────────────────────────────────────────────
+  let activeCard = null;
+
+  function openDrawer(comp, cardEl) {
+    document.getElementById('drawer-title').textContent   = comp.name;
+    document.getElementById('drawer-subtitle').textContent = comp.name_long + ' — ' + comp.category;
+    document.getElementById('drawer-body').innerHTML = buildDrawerBody(comp);
+
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('main').classList.add('drawer-open');
+
+    if (activeCard) activeCard.classList.remove('active');
+    activeCard = cardEl;
+    activeCard.classList.add('active');
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('main').classList.remove('drawer-open');
+    if (activeCard) { activeCard.classList.remove('active'); activeCard = null; }
+  }
+
+  // ── Rendering ──────────────────────────────────────────────────────────────
+  function renderCards(components) {
+    const grid    = document.getElementById('card-grid');
+    const heading = document.getElementById('components-heading');
+    const stats   = document.getElementById('header-stats');
+    const search  = (document.getElementById('search-input').value || '').trim().toLowerCase();
+    const cat     = document.getElementById('category-select').value;
+
+    const filtered = components.filter(c => {
+      const matchCat  = !cat    || c.category === cat;
+      const haystack  = [c.name, c.name_long, c.category, (c.shape_aliases||[]).join(' ')].join(' ').toLowerCase();
+      const matchText = !search || haystack.includes(search);
+      return matchCat && matchText;
+    });
+
+    heading.textContent = `Components (${filtered.length})`;
+    stats.textContent   = `${components.length} total`;
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div class="empty-state">
+        <div>No components match this filter.</div>
+        <div class="empty-state-code">${esc(search || cat)}</div>
+      </div>`;
+      return;
+    }
+
+    grid.innerHTML = filtered.map(buildCard).join('');
+
+    grid.querySelectorAll('.card').forEach(cardEl => {
+      const name = cardEl.dataset.name;
+      const comp = components.find(c => c.name === name);
+      cardEl.addEventListener('click', () => openDrawer(comp, cardEl));
+    });
+  }
+
+  // ── Parts table ────────────────────────────────────────────────────────────
+  function renderParts(parts) {
+    const tbody = document.getElementById('parts-tbody');
+    if (!parts || parts.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="4" style="color:var(--text-muted);font-style:italic;padding:12px 10px;">No parts found.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = parts.map(p => `
+      <tr>
+        <td>${esc(p.id)}</td>
+        <td>${esc(p.svg_name || p.oobb_name)}</td>
+        <td>${esc(p.classification)}</td>
+        <td>${esc(p.size)}</td>
+      </tr>`).join('');
+  }
+
+  // ── Category filter population ─────────────────────────────────────────────
+  function populateCategories(components) {
+    const cats = [...new Set(components.map(c => c.category || 'General'))].sort();
+    const sel  = document.getElementById('category-select');
+    cats.forEach(cat => {
+      const opt = document.createElement('option');
+      opt.value       = cat;
+      opt.textContent = cat;
+      sel.appendChild(opt);
+    });
+  }
+
+  // ── Init ───────────────────────────────────────────────────────────────────
+  (function init() {
+    if (typeof window.DOCUMENTATION_DATA === 'undefined') {
+      document.getElementById('card-grid').innerHTML =
+        '<div class="empty-state"><div>No documentation data found.</div>' +
+        '<div class="empty-state-code">Run: python svg_documentation.py</div></div>';
+      return;
+    }
+
+    const data       = window.DOCUMENTATION_DATA;
+    const components = data.components || [];
+    const parts      = data.parts      || [];
+
+    populateCategories(components);
+    renderCards(components);
+    renderParts(parts);
+
+    document.getElementById('search-input').addEventListener('input',  () => renderCards(components));
+    document.getElementById('category-select').addEventListener('change', () => renderCards(components));
+    document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeDrawer();
+    });
+  })();
+</script>
+</body>
+</html>

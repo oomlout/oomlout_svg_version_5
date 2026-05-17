@@ -1,0 +1,1 @@
+module main(){difference(){cube([20,12,6], center=true); translate([0,0,0]) cube([10,6,8], center=true);}}

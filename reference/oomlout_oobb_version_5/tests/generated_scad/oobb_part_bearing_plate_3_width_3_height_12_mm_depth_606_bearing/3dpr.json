@@ -1,0 +1,300 @@
+[
+    {
+        "type": "p",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_plate",
+        "extra_mm": true,
+        "depth": 12,
+        "pos": [
+            0,
+            0,
+            -6.0
+        ],
+        "holes": false
+    },
+    {
+        "type": "negative",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_bearing",
+        "depth": 12,
+        "pos": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "type": "n",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_holes",
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "holes": "single",
+        "loc": [
+            [
+                1,
+                1
+            ],
+            [
+                2,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                1,
+                2
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                1,
+                3
+            ],
+            [
+                2,
+                3
+            ],
+            [
+                3,
+                3
+            ]
+        ],
+        "radius_name": "m6"
+    },
+    {
+        "type": "n",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_holes",
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "holes": "single",
+        "loc": [
+            [
+                1.5,
+                1
+            ],
+            [
+                1,
+                1.5
+            ],
+            [
+                2.5,
+                1
+            ],
+            [
+                3,
+                1.5
+            ],
+            [
+                1,
+                2.5
+            ],
+            [
+                3,
+                2.5
+            ],
+            [
+                1.5,
+                3
+            ],
+            [
+                2.5,
+                3
+            ]
+        ],
+        "radius_name": "m3"
+    },
+    {
+        "type": "n",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_holes",
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "holes": "just_middle",
+        "radius_name": "m6"
+    },
+    {
+        "type": "n",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_screw_countersunk",
+        "pos": [
+            15.0,
+            7.5,
+            6.0
+        ],
+        "rot": [
+            0,
+            0,
+            30.0
+        ],
+        "depth": 12,
+        "radius_name": "m3",
+        "nut": true,
+        "overhang": true
+    },
+    {
+        "type": "n",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_screw_countersunk",
+        "pos": [
+            -15.0,
+            -7.5,
+            6.0
+        ],
+        "rot": [
+            0,
+            0,
+            30.0
+        ],
+        "depth": 12,
+        "radius_name": "m3",
+        "nut": true,
+        "overhang": true
+    },
+    {
+        "type": "n",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_screw_countersunk",
+        "pos": [
+            7.5,
+            -15.0,
+            -6.0
+        ],
+        "rot": [
+            0,
+            180,
+            0
+        ],
+        "depth": 12,
+        "radius_name": "m3",
+        "nut": true,
+        "overhang": true
+    },
+    {
+        "type": "n",
+        "width": 3,
+        "height": 3,
+        "thickness": 12,
+        "bearing": "606",
+        "pos_plate": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_screw_countersunk",
+        "pos": [
+            -7.5,
+            15.0,
+            -6.0
+        ],
+        "rot": [
+            0,
+            180,
+            0
+        ],
+        "depth": 12,
+        "radius_name": "m3",
+        "nut": true,
+        "overhang": true
+    },
+    {
+        "type": "n",
+        "shape": "oobb_slice",
+        "mode": "3dpr",
+        "pos": [
+            0,
+            0,
+            6.0
+        ],
+        "zz": "bottom"
+    },
+    {
+        "type": "n",
+        "shape": "oobb_slice",
+        "mode": "3dpr",
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "zz": "top"
+    }
+]

@@ -1,0 +1,25 @@
+classification: svg
+color: ''
+description_extra: ''
+description_main: a4_sheet
+id: svg_demo_a4_a4_sheet
+id_svg: svg_demo_a4_a4_sheet
+kwargs:
+  depth: 3
+  filter: ''
+  navigation: true
+  oobb_name: a4_sheet
+  oomp_description_extra: ''
+  oomp_description_main: a4_a4_sheet
+  oomp_mode: project
+  output_formats: []
+  overwrite: true
+  svg_name: a4_sheet
+  type: C:\gh\oomlout_svg_version_5_a4_sheet
+oobb_name: a4_sheet
+project_name: C:\gh\oomlout_svg_version_5
+size: a4
+svg_details:
+  depth: 3
+  svg_name: a4_sheet
+type: demo

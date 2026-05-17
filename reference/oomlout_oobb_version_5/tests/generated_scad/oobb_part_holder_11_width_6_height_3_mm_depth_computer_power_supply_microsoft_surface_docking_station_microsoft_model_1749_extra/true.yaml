@@ -1,0 +1,71 @@
+-   depth: 3
+    extra: computer_power_supply_microsoft_surface_docking_station_microsoft_model_1749
+    height: 6
+    hole_sides:
+    - left
+    - right
+    - top
+    - bottom
+    include_connecting_screws: false
+    pos:
+    - 0
+    - 0
+    - -1.5
+    pos_plate:
+    - 0
+    - 0
+    - -1.5
+    shape: oobb_plate
+    thickness: 3
+    type: positive
+    width: 11
+-   both_holes: true
+    extra: computer_power_supply_microsoft_surface_docking_station_microsoft_model_1749
+    height: 6
+    hole_sides:
+    - left
+    - right
+    - top
+    - bottom
+    holes:
+    - left
+    - right
+    - top
+    - bottom
+    include_connecting_screws: false
+    pos:
+    - 0
+    - 0
+    - -1.5
+    pos_plate:
+    - 0
+    - 0
+    - -1.5
+    shape: oobb_holes
+    thickness: 3
+    type: p
+    width: 11
+-   extra: computer_power_supply_microsoft_surface_docking_station_microsoft_model_1749
+    height: 6
+    hole_sides:
+    - left
+    - right
+    - top
+    - bottom
+    include_connecting_screws: false
+    pos:
+    - 0
+    - 0
+    - 0
+    pos_plate:
+    - 0
+    - 0
+    - -1.5
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: oobb_computer_power_supply_microsoft_surface_docking_station_microsoft_model_1749
+    thickness: 3
+    type: negative
+    width: 11

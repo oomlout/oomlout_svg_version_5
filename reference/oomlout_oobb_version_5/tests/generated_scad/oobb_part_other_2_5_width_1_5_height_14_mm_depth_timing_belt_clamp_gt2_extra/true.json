@@ -1,0 +1,140 @@
+[
+    {
+        "type": "p",
+        "extra": "timing_belt_clamp_gt2",
+        "width": 2.5,
+        "height": 1.5,
+        "thickness": 14,
+        "shape": "rounded_rectangle",
+        "size": [
+            40.5,
+            25.5,
+            14
+        ],
+        "pos": [
+            0,
+            0,
+            -7.0
+        ]
+    },
+    {
+        "type": "n",
+        "extra": "timing_belt_clamp_gt2",
+        "width": 2.5,
+        "height": 1.5,
+        "thickness": 14,
+        "shape": "oobb_hole_new",
+        "zz": "middle",
+        "pos": [
+            15,
+            7.5,
+            0
+        ],
+        "rot": [
+            0,
+            0,
+            0
+        ],
+        "radius_name": "m3"
+    },
+    {
+        "type": "n",
+        "extra": "timing_belt_clamp_gt2",
+        "width": 2.5,
+        "height": 1.5,
+        "thickness": 14,
+        "shape": "oobb_hole_new",
+        "zz": "middle",
+        "pos": [
+            15,
+            -7.5,
+            0
+        ],
+        "rot": [
+            0,
+            0,
+            0
+        ],
+        "radius_name": "m3"
+    },
+    {
+        "type": "n",
+        "extra": "timing_belt_clamp_gt2",
+        "width": 2.5,
+        "height": 1.5,
+        "thickness": 14,
+        "shape": "oobb_hole_new",
+        "zz": "middle",
+        "pos": [
+            0,
+            7.5,
+            0
+        ],
+        "rot": [
+            0,
+            0,
+            0
+        ],
+        "radius_name": "m3"
+    },
+    {
+        "type": "n",
+        "extra": "timing_belt_clamp_gt2",
+        "width": 2.5,
+        "height": 1.5,
+        "thickness": 14,
+        "shape": "oobb_hole_new",
+        "zz": "middle",
+        "pos": [
+            0,
+            -7.5,
+            0
+        ],
+        "rot": [
+            0,
+            0,
+            0
+        ],
+        "radius_name": "m3"
+    },
+    {
+        "type": "n",
+        "extra": "timing_belt_clamp_gt2",
+        "width": 2.5,
+        "height": 1.5,
+        "thickness": 14,
+        "shape": "oobb_hole_new",
+        "zz": "middle",
+        "pos": [
+            -15,
+            7.5,
+            0
+        ],
+        "rot": [
+            0,
+            0,
+            0
+        ],
+        "radius_name": "m3"
+    },
+    {
+        "type": "n",
+        "extra": "timing_belt_clamp_gt2",
+        "width": 2.5,
+        "height": 1.5,
+        "thickness": 14,
+        "shape": "oobb_hole_new",
+        "zz": "middle",
+        "pos": [
+            -15,
+            -7.5,
+            0
+        ],
+        "rot": [
+            0,
+            0,
+            0
+        ],
+        "radius_name": "m3"
+    }
+]

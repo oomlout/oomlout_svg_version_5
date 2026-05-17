@@ -1,0 +1,46 @@
+[
+    {
+        "type": "positive",
+        "thickness": 6,
+        "oring_type": "314",
+        "both_holes": true,
+        "diameter": 1.5833333333333333,
+        "shape": "oobb_circle",
+        "depth": 6,
+        "radius": 11.875,
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "zz": "middle"
+    },
+    {
+        "type": "negative",
+        "thickness": 6,
+        "oring_type": "314",
+        "both_holes": true,
+        "diameter": 1.5833333333333333,
+        "shape": "oobb_holes",
+        "diameter_center_clearance": 15,
+        "circle": true,
+        "pos": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "type": "negative",
+        "thickness": 6,
+        "oring_type": "314",
+        "both_holes": true,
+        "diameter": 1.5833333333333333,
+        "shape": "oobb_oring",
+        "pos": [
+            0,
+            0,
+            0
+        ]
+    }
+]

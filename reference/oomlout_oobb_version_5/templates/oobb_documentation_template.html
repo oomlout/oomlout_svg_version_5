@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOBB Parts Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Pastel Rainbow Palette */
+      --pastel-pink: #ffd6e0;
+      --pastel-peach: #ffecd2;
+      --pastel-yellow: #fff9c4;
+      --pastel-mint: #c8f7dc;
+      --pastel-aqua: #c4f1f9;
+      --pastel-sky: #c3e0ff;
+      --pastel-lavender: #e5d4ff;
+      --pastel-rose: #ffc8dd;
+
+      /* Accent Colors */
+      --accent-coral: #ff8fab;
+      --accent-peach: #ffb5a7;
+      --accent-mint: #80ed99;
+      --accent-sky: #90e0ef;
+      --accent-lavender: #b8c0ff;
+      --accent-pink: #ffc8dd;
+
+      /* UI Colors */
+      --glass-bg: rgba(255, 255, 255, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-shadow: 0 8px 32px rgba(180, 130, 200, 0.2);
+      --text-dark: #2d3748;
+      --text-medium: #4a5568;
+      --text-light: #718096;
+      --border-radius: 24px;
+      --border-radius-sm: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-10px); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.02); }
+    }
+    @keyframes rainbow-border {
+      0%   { border-color: var(--pastel-pink); }
+      14%  { border-color: var(--pastel-peach); }
+      28%  { border-color: var(--pastel-yellow); }
+      42%  { border-color: var(--pastel-mint); }
+      56%  { border-color: var(--pastel-aqua); }
+      70%  { border-color: var(--pastel-sky); }
+      84%  { border-color: var(--pastel-lavender); }
+      100% { border-color: var(--pastel-pink); }
+    }
+
+    body {
+      font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(-45deg,
+        var(--pastel-pink),
+        var(--pastel-peach),
+        var(--pastel-yellow),
+        var(--pastel-mint),
+        var(--pastel-aqua),
+        var(--pastel-sky),
+        var(--pastel-lavender),
+        var(--pastel-rose)
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
+      color: var(--text-dark);
+    }
+
+    /* Decorative floating blobs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.5;
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::before {
+      width: 400px; height: 400px;
+      background: var(--pastel-lavender);
+      top: -100px; right: -100px;
+      animation: float 8s ease-in-out infinite;
+    }
+    body::after {
+      width: 300px; height: 300px;
+      background: var(--pastel-mint);
+      bottom: -80px; left: -80px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    .main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1em 2vw 4em 2vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: sticky;
+      top: 1em;
+      z-index: 100;
+      max-width: 820px;
+      width: 100%;
+      margin: 1.5em auto 2em auto;
+      padding: 2em 2.5em 1.8em 2.5em;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid var(--glass-border);
+      border-radius: var(--border-radius);
+      box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2em;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin: 0;
+      background: linear-gradient(135deg,
+        #ff6b9d, #c44ce0, #7b68ee, #00bcd4, #4caf50, #ffeb3b, #ff9800, #ff6b9d
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s linear infinite;
+    }
+
+    .header-subtitle {
+      font-size: 0.95em;
+      color: var(--text-medium);
+      margin-top: 0.4em;
+      font-weight: 500;
+    }
+
+    .header-meta-links {
+      margin-top: 0.9em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8em;
+      flex-wrap: wrap;
+    }
+
+    .header-link-button {
+      border: 0;
+      border-radius: 999px;
+      padding: 0.7em 1.1em;
+      font-size: 0.82em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, var(--pastel-yellow), var(--pastel-lavender));
+      box-shadow: 0 4px 12px rgba(180,130,200,0.16);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-family: inherit;
+    }
+    .header-link-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(180,130,200,0.24);
+    }
+    .header-link-button:focus-visible {
+      outline: 3px solid rgba(184,192,255,0.55);
+      outline-offset: 2px;
+    }
+
+    .header-controls {
+      margin-top: 1.5em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8em;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    #search-box, #category-filter {
+      border: 2px solid rgba(180, 130, 200, 0.25);
+      border-radius: 14px;
+      font-size: 0.95em;
+      padding: 0.75em 1.2em;
+      background: rgba(255,255,255,0.7);
+      color: var(--text-dark);
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    #search-box::placeholder { color: var(--text-light); }
+    #search-box:focus, #category-filter:focus {
+      background: rgba(255,255,255,0.9);
+      border-color: var(--accent-lavender);
+      box-shadow: 0 0 0 4px rgba(184,192,255,0.3);
+    }
+    #search-box  { width: 280px; }
+    #category-filter { min-width: 160px; cursor: pointer; }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      display: flex;
+      gap: 2em;
+      justify-content: center;
+      margin-bottom: 1.5em;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s ease 0.2s backwards;
+    }
+
+    .stat-item {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      padding: 0.8em 1.5em;
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 4px 16px rgba(180,130,200,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .stat-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(180,130,200,0.2); }
+    .stat-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8em;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-lavender));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-label {
+      font-size: 0.8em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* ===== CARD GRID ===== */
+    #objects-container {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8em;
+      width: 100%;
+    }
+
+    /* ===== OBJECT CARDS ===== */
+    .object-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 24px rgba(180,130,200,0.12), inset 0 1px 0 rgba(255,255,255,0.6);
+      padding: 1.6em 1.8em 1.5em 1.8em;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid rgba(255,255,255,0.5);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease backwards;
+    }
+
+    /* Rainbow top-bar accent */
+    .object-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg,
+        var(--pastel-pink), var(--pastel-peach), var(--pastel-yellow),
+        var(--pastel-mint), var(--pastel-aqua), var(--pastel-sky), var(--pastel-lavender)
+      );
+      background-size: 200% 100%;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      transition: background-position 0.5s ease;
+    }
+
+    .object-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(180,130,200,0.25), inset 0 1px 0 rgba(255,255,255,0.8);
+      border-color: rgba(255,255,255,0.8);
+      animation: rainbow-border 3s linear infinite;
+    }
+    .object-card:hover::before { animation: shimmer 2s linear infinite; }
+
+    .card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2em;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.15em;
+      margin-top: 0.5em;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .card-name-long {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.72em;
+      color: var(--text-light);
+      letter-spacing: 0.2px;
+      margin-bottom: 0.5em;
+      word-break: break-word;
+    }
+
+    .card-category {
+      margin-bottom: 0.5em;
+    }
+
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
+      padding: 0.3em 1em;
+      border-radius: 50px;
+      font-size: 0.82em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .cat-OOBB-Geometry-Primitives    { background: linear-gradient(135deg, var(--pastel-aqua),     var(--pastel-sky));      color: #1d4e89; }
+    .cat-OOBB-Geometry-Helpers       { background: linear-gradient(135deg, var(--pastel-mint),     var(--pastel-aqua));     color: #1b4332; }
+    .cat-Fasteners                   { background: linear-gradient(135deg, var(--pastel-peach),    var(--pastel-yellow));   color: #7c4a03; }
+    .cat-Gridfinity                  { background: linear-gradient(135deg, var(--pastel-lavender), var(--pastel-sky));      color: #4a3470; }
+    .cat-Other                       { background: linear-gradient(135deg, var(--pastel-pink),     var(--pastel-rose));     color: #89023e; }
+    .cat-General                     { background: linear-gradient(135deg, #dfe7fd,                #cddafd);                color: #4a5568; }
+
+    .card-description {
+      margin: 0.3em 0 0.8em 0;
+      font-size: 0.93em;
+      color: var(--text-medium);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .card-variables {
+      margin: 0.3em 0 0 0;
+      padding-top: 0.8em;
+      border-top: 1px solid rgba(180,130,200,0.15);
+    }
+    .card-variables strong {
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.83em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-variables-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75em;
+      flex-wrap: wrap;
+    }
+
+    .variable-summary-toggle {
+      border: 0;
+      border-radius: 999px;
+      padding: 0.45em 0.95em;
+      font-size: 0.76em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, var(--pastel-yellow), var(--pastel-peach));
+      box-shadow: 0 2px 8px rgba(180,130,200,0.14);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-family: inherit;
+    }
+    .variable-summary-toggle:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(180,130,200,0.22);
+    }
+    .variable-summary-toggle:focus-visible {
+      outline: 3px solid rgba(255, 181, 167, 0.6);
+      outline-offset: 2px;
+    }
+
+    .var-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5em 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+    }
+    .var-list li { margin: 0; padding: 0; }
+
+    .var-chip {
+      background: linear-gradient(135deg, var(--pastel-lavender), var(--pastel-sky));
+      color: var(--text-dark);
+      border: 0;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 0.82em;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(180,130,200,0.15);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      padding: 0.35em 0.9em;
+      font-family: inherit;
+    }
+    .var-chip:hover  { transform: scale(1.08); box-shadow: 0 4px 12px rgba(180,130,200,0.25); }
+    .var-chip:focus-visible { outline: 3px solid rgba(144,224,239,0.6); outline-offset: 2px; }
+    .var-chip-empty { background: #f0f0f0; color: #888; cursor: default; box-shadow: none; }
+
+    .variable-popup {
+      margin-top: 0.75em;
+      padding: 0.7em 0.9em;
+      border-radius: 12px;
+      border: 1px solid rgba(180,130,200,0.25);
+      background: rgba(255,255,255,0.78);
+      color: var(--text-dark);
+      font-size: 0.84em;
+      line-height: 1.5;
+    }
+    .variable-popup strong { display: block; margin-bottom: 0.25em; }
+
+    .variable-summary-popup {
+      margin-top: 0.75em;
+      padding: 0.9em 1em;
+      border-radius: 14px;
+      border: 1px solid rgba(180,130,200,0.24);
+      background: rgba(255,255,255,0.84);
+      color: var(--text-dark);
+      font-size: 0.84em;
+      line-height: 1.55;
+    }
+
+    .variable-summary-popup-title {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 0.65em;
+      color: var(--text-dark);
+    }
+
+    .variable-summary-list {
+      display: grid;
+      gap: 0.55em;
+    }
+
+    .variable-summary-item {
+      padding: 0.6em 0.7em;
+      border-radius: 12px;
+      background: rgba(245, 243, 255, 0.95);
+      border: 1px solid rgba(184, 192, 255, 0.22);
+    }
+
+    .variable-summary-name {
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .variable-summary-default {
+      display: inline-block;
+      margin-top: 0.25em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+      color: #5a4c8f;
+      word-break: break-word;
+    }
+
+    .variable-summary-meta {
+      display: block;
+      margin-top: 0.28em;
+      color: var(--text-light);
+      font-size: 0.95em;
+    }
+
+    .variable-summary-empty {
+      color: var(--text-light);
+    }
+
+    .card-detail-hint {
+      margin-top: 0.9em;
+      font-size: 0.82em;
+      font-weight: 700;
+      color: #7b68ee;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .object-card.is-clickable {
+      cursor: pointer;
+    }
+
+    .object-card:focus-visible {
+      outline: 4px solid rgba(144,224,239,0.65);
+      outline-offset: 3px;
+    }
+
+    .detail-modal[hidden] {
+      display: none !important;
+    }
+
+    .detail-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2em;
+      background: rgba(38, 28, 64, 0.42);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .detail-modal-panel {
+      width: min(1200px, 100%);
+      height: min(88vh, 900px);
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(54, 35, 96, 0.28);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1em;
+      padding: 1em 1.2em;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(244,240,255,0.88));
+      border-bottom: 1px solid rgba(180,130,200,0.15);
+    }
+
+    .detail-modal-title {
+      min-width: 0;
+    }
+
+    .detail-modal-title strong {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05em;
+      color: var(--text-dark);
+    }
+
+    .detail-modal-title span {
+      display: block;
+      font-size: 0.86em;
+      color: var(--text-light);
+      margin-top: 0.2em;
+    }
+
+    .detail-modal-close {
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-lavender));
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 0.95em;
+      padding: 0.75em 1em;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(180,130,200,0.18);
+    }
+
+    .detail-modal-close:hover {
+      transform: translateY(-1px);
+    }
+
+    .detail-modal-body {
+      flex: 1;
+      min-height: 0;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .detail-modal-frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: rgba(255,255,255,0.4);
+    }
+
+    .detail-modal-empty {
+      padding: 2em;
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+
+    .variable-catalog-shell {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .variable-catalog-toolbar {
+      padding: 1em 1.2em;
+      border-bottom: 1px solid rgba(180,130,200,0.15);
+      background: rgba(255,255,255,0.62);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+
+    .variable-catalog-toolbar-main {
+      display: grid;
+      gap: 0.25em;
+      min-width: 0;
+    }
+
+    .variable-catalog-toolbar strong {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      font-size: 1em;
+    }
+
+    .variable-catalog-toolbar span {
+      color: var(--text-light);
+      font-size: 0.9em;
+    }
+
+    .variable-catalog-filter {
+      border: 2px solid rgba(180, 130, 200, 0.2);
+      border-radius: 14px;
+      font-size: 0.92em;
+      padding: 0.75em 1em;
+      background: rgba(255,255,255,0.82);
+      color: var(--text-dark);
+      outline: none;
+      min-width: min(360px, 100%);
+      width: 360px;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+    .variable-catalog-filter:focus {
+      border-color: var(--accent-lavender);
+      box-shadow: 0 0 0 4px rgba(184,192,255,0.22);
+      background: rgba(255,255,255,0.95);
+    }
+
+    .variable-catalog-body {
+      flex: 1;
+      overflow: auto;
+      padding: 1.2em;
+    }
+
+    .variable-catalog-table-wrap {
+      overflow: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(180,130,200,0.14);
+      background: rgba(255,255,255,0.82);
+      box-shadow: 0 4px 14px rgba(180,130,200,0.08);
+    }
+
+    .variable-catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+    }
+
+    .variable-catalog-table th,
+    .variable-catalog-table td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.9em 1em;
+      border-bottom: 1px solid rgba(180,130,200,0.12);
+    }
+
+    .variable-catalog-table th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(245,243,255,0.96));
+      color: var(--text-light);
+      font-size: 0.78em;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .variable-catalog-row:hover td {
+      background: rgba(250,248,255,0.8);
+    }
+
+    .variable-catalog-name {
+      font-weight: 800;
+      color: var(--text-dark);
+      word-break: break-word;
+    }
+
+    .variable-catalog-value {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+      color: #5a4c8f;
+      background: rgba(245,243,255,0.95);
+      border-radius: 12px;
+      padding: 0.45em 0.6em;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .variable-catalog-mode-cell {
+      min-width: 140px;
+    }
+
+    .variable-catalog-empty {
+      padding: 2em;
+      color: var(--text-medium);
+      text-align: center;
+    }
+
+    .variable-catalog-empty[hidden] {
+      display: none !important;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) { #objects-container { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 700px) {
+      #objects-container { grid-template-columns: 1fr; }
+      .header { padding: 1.5em 1.2em; border-radius: var(--border-radius-sm); margin: 1em auto; max-width: 96%; }
+      h1 { font-size: 1.6em; }
+      #search-box { width: 100%; }
+      .main-content { padding: 0.5em 3vw 2em 3vw; }
+      .stats-bar { gap: 1em; }
+      .detail-modal {
+        padding: 0.75em;
+      }
+      .detail-modal-panel {
+        height: min(92vh, 980px);
+        border-radius: 20px;
+      }
+    }
+
+    /* ===== EMPTY STATE ===== */
+    .empty-state { text-align: center; padding: 4em 2em; grid-column: 1 / -1; }
+    .empty-state-emoji { font-size: 4em; margin-bottom: 0.3em; animation: float 3s ease-in-out infinite; }
+    .empty-state-text { font-size: 1.2em; color: var(--text-medium); }
+
+    /* ===== FOOTER ===== */
+    .footer { text-align: center; padding: 2em; margin-top: 3em; color: var(--text-light); font-size: 0.9em; }
+    .footer-heart { color: var(--accent-coral); animation: pulse 1.5s ease-in-out infinite; display: inline-block; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: rgba(255,255,255,0.2); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--pastel-lavender), var(--pastel-pink)); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--accent-lavender), var(--accent-pink)); }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>✨ OOBB Parts ✨</h1>
+    <div class="header-subtitle">Component reference — auto-generated</div>
+    <div class="header-meta-links">
+      <button type="button" class="header-link-button" id="variables-summary-link">OOBB Variables Summary</button>
+    </div>
+    <div class="header-controls">
+      <input id="search-box" type="text" placeholder="🔍 Search components...">
+      <select id="category-filter">
+        <option value="">🌈 All Categories</option>
+      </select>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="stats-bar" id="stats-bar"></div>
+    <div id="objects-container"></div>
+    <div class="footer">
+      Made with <span class="footer-heart">♥</span> by OOBB &bull; Documentation auto-generated
+    </div>
+  </div>
+
+  <div class="detail-modal" id="detail-modal" hidden>
+    <div class="detail-modal-panel" role="dialog" aria-modal="true" aria-labelledby="detail-modal-heading">
+      <div class="detail-modal-header">
+        <div class="detail-modal-title">
+          <strong id="detail-modal-heading">Component details</strong>
+          <span id="detail-modal-subtitle">Open a component card to view the full documentation.</span>
+        </div>
+        <button type="button" class="detail-modal-close" id="detail-modal-close">Close</button>
+      </div>
+      <div class="detail-modal-body" id="detail-modal-body">
+        <div class="detail-modal-empty">Click any component card to open its richer documentation here.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // DOCUMENTATION_DATA will be injected by the Python script
+    <!-- DOCUMENTATION_DATA_PLACEHOLDER -->
+
+    const CATEGORY_EMOJI = {
+      'OOBB Geometry Primitives': '🔷',
+      'OOBB Geometry Helpers':    '🔧',
+      'Fasteners':                '🔩',
+      'Gridfinity':               '🟦',
+      'Other':                    '🛠️',
+      'General':                  '📦',
+    };
+
+    function escapeHtml(text) {
+      return (text || '').toString()
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function getCategoryClass(category) {
+      return (category || 'General').replace(/\s+/g, '-').replace(/[^a-zA-Z0-9\-]/g, '');
+    }
+
+    function getCategoryBadge(category) {
+      const emoji = CATEGORY_EMOJI[category] || '📦';
+      const cls   = getCategoryClass(category);
+      return `<span class="category-badge cat-${cls}">${emoji} ${escapeHtml(category || 'General')}</span>`;
+    }
+
+    function getVariables(obj) {
+      if (!Array.isArray(obj.variables)) return [];
+      return obj.variables;
+    }
+
+    function getVariableDefault(variable) {
+      if (!variable || typeof variable !== 'object') return '';
+      if (!Object.prototype.hasOwnProperty.call(variable, 'default')) return '';
+      const value = variable.default;
+      if (value == null || value === '') return '';
+      return typeof value === 'string' ? value : JSON.stringify(value);
+    }
+
+    function buildVariableSummaryHtml(vars) {
+      if (!vars.length) {
+        return '<div class="variable-summary-empty">No documented variables yet.</div>';
+      }
+
+      const items = vars.map(variable => {
+        const name = typeof variable === 'string' ? variable : (variable.name || '');
+        const description = variable && typeof variable === 'object' ? (variable.description || '') : '';
+        const type = variable && typeof variable === 'object' ? (variable.type || '') : '';
+        const defaultValue = getVariableDefault(variable);
+
+        return `
+          <div class="variable-summary-item">
+            <div class="variable-summary-name">${escapeHtml(name || 'unnamed')}</div>
+            <div class="variable-summary-default">${defaultValue ? escapeHtml(defaultValue) : 'undocumented'}</div>
+            ${type ? `<span class="variable-summary-meta">Type: ${escapeHtml(type)}</span>` : ''}
+            ${description ? `<span class="variable-summary-meta">${escapeHtml(description)}</span>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <strong class="variable-summary-popup-title">Available Variables And Values</strong>
+        <div class="variable-summary-list">${items}</div>
+      `;
+    }
+
+    function getSearchHaystack(obj) {
+      const v = getVariables(obj).map(v => {
+        if (typeof v === 'string') return v;
+        return [v.name || '', getVariableDefault(v), v.type || '', v.description || ''].join(' ');
+      }).join(' ');
+      return [obj.command, obj.name_long, obj.description, obj.summary, obj.category, v].join(' ').toLowerCase();
+    }
+
+    function renderCard(obj, index) {
+      const div = document.createElement('div');
+      div.className = 'object-card';
+      div.style.animationDelay = `${index * 0.05}s`;
+      div.tabIndex = 0;
+      div.setAttribute('role', 'button');
+      div.setAttribute('aria-label', `Open details for ${obj.command || obj.name || 'component'}`);
+
+      const hasDetails = !!obj.detail_page;
+      if (hasDetails) {
+        div.classList.add('is-clickable');
+      }
+
+      const title    = escapeHtml(obj.command || obj.name || '');
+      const nameLong = escapeHtml(obj.name_long || '');
+      const desc     = escapeHtml(obj.description || obj.summary || 'No description available.');
+      const showLong = nameLong && nameLong !== title;
+
+      const vars = getVariables(obj);
+      const varHtml = vars.length > 0
+        ? vars.map((v, i) => {
+            const name = typeof v === 'string' ? v : (v.name || '');
+            return `<li><button type="button" class="var-chip" data-var-index="${i}">${escapeHtml(name)}</button></li>`;
+          }).join('')
+        : '<li><button type="button" class="var-chip var-chip-empty" disabled>none</button></li>';
+
+      div.innerHTML = `
+        <div class="card-title">${title}</div>
+        ${showLong ? `<div class="card-name-long">${nameLong}</div>` : ''}
+        <div class="card-category">${getCategoryBadge(obj.category)}</div>
+        <div class="card-description">${desc}</div>
+        <div class="card-variables">
+          <div class="card-variables-header">
+            <strong>Variables</strong>
+            <button type="button" class="variable-summary-toggle">Variable Summary</button>
+          </div>
+          <ul class="var-list">${varHtml}</ul>
+          <div class="variable-popup" hidden></div>
+          <div class="variable-summary-popup" hidden></div>
+        </div>
+        ${hasDetails ? '<div class="card-detail-hint">Click For Details</div>' : ''}
+      `;
+
+      const popup = div.querySelector('.variable-popup');
+      const summaryPopup = div.querySelector('.variable-summary-popup');
+      const summaryToggle = div.querySelector('.variable-summary-toggle');
+
+      summaryToggle.addEventListener('click', evt => {
+        evt.stopPropagation();
+        popup.hidden = true;
+        popup.removeAttribute('data-active-index');
+        popup.innerHTML = '';
+
+        const expanded = summaryToggle.getAttribute('aria-expanded') === 'true';
+        if (expanded) {
+          summaryPopup.hidden = true;
+          summaryPopup.innerHTML = '';
+          summaryToggle.setAttribute('aria-expanded', 'false');
+          return;
+        }
+
+        summaryPopup.innerHTML = buildVariableSummaryHtml(vars);
+        summaryPopup.hidden = false;
+        summaryToggle.setAttribute('aria-expanded', 'true');
+      });
+      summaryToggle.addEventListener('keydown', evt => evt.stopPropagation());
+      summaryToggle.addEventListener('mousedown', evt => evt.stopPropagation());
+
+      div.querySelectorAll('.var-chip[data-var-index]').forEach(btn => {
+        btn.addEventListener('click', evt => {
+          evt.stopPropagation();
+          summaryPopup.hidden = true;
+          summaryPopup.innerHTML = '';
+          summaryToggle.setAttribute('aria-expanded', 'false');
+          const idx = Number(btn.getAttribute('data-var-index'));
+          const variable = vars[idx];
+          const vName = typeof variable === 'string' ? variable : (variable && variable.name ? variable.name : '');
+          const vDesc = (variable && typeof variable === 'object' && variable.description) ? variable.description.trim() : '';
+          const vType = (variable && typeof variable === 'object' && variable.type) ? variable.type : '';
+          const vDef  = (variable && typeof variable === 'object' && variable.default != null) ? String(variable.default) : '';
+
+          if (!popup.hidden && popup.getAttribute('data-active-index') === String(idx)) {
+            popup.hidden = true;
+            popup.removeAttribute('data-active-index');
+            popup.innerHTML = '';
+            return;
+          }
+
+          const detail = [
+            vDesc || 'No description.',
+            vType ? `<em>Type: ${escapeHtml(vType)}</em>` : '',
+            vDef  ? `<em>Default: <code>${escapeHtml(vDef)}</code></em>` : '',
+          ].filter(Boolean).join('<br>');
+
+          popup.innerHTML = `<strong>${escapeHtml(vName)}</strong>${detail}`;
+          popup.hidden = false;
+          popup.setAttribute('data-active-index', String(idx));
+        });
+        btn.addEventListener('keydown', evt => evt.stopPropagation());
+        btn.addEventListener('mousedown', evt => evt.stopPropagation());
+      });
+
+      if (hasDetails) {
+        div.addEventListener('click', evt => {
+          if (evt.target.closest('.var-chip')) return;
+          openComponentModal(obj);
+        });
+        div.addEventListener('keydown', evt => {
+          if (evt.key === 'Enter' || evt.key === ' ') {
+            evt.preventDefault();
+            openComponentModal(obj);
+          }
+        });
+      }
+
+      return div;
+    }
+
+    function buildDetailFrame(obj) {
+      if (obj.detail_page) {
+        return `<iframe class="detail-modal-frame" src="${encodeURI(obj.detail_page)}" title="Details for ${escapeHtml(obj.command || '')}"></iframe>`;
+      }
+      return '<div class="detail-modal-empty">No detail page has been generated for this component yet.</div>';
+    }
+
+    function buildVariableCatalogFrame() {
+      const catalog = Array.isArray(window.DOCUMENTATION_DATA?.variable_catalog)
+        ? window.DOCUMENTATION_DATA.variable_catalog
+        : [];
+
+      if (!catalog.length) {
+        return '<div class="variable-catalog-empty">No OOBB variables were found.</div>';
+      }
+
+      const rows = catalog.map(entry => {
+        const baseValue = entry.value
+          ? `<div class="variable-catalog-value">${escapeHtml(entry.value)}</div>`
+          : '<span class="variable-catalog-empty-value">-</span>';
+
+        const modes = entry.modes && typeof entry.modes === 'object'
+          ? entry.modes
+          : {};
+        const laserValue = modes.laser
+          ? `<div class="variable-catalog-value">${escapeHtml(modes.laser)}</div>`
+          : '<span class="variable-catalog-empty-value">-</span>';
+        const trueValue = modes.true
+          ? `<div class="variable-catalog-value">${escapeHtml(modes.true)}</div>`
+          : '<span class="variable-catalog-empty-value">-</span>';
+        const threeDprValue = modes['3dpr']
+          ? `<div class="variable-catalog-value">${escapeHtml(modes['3dpr'])}</div>`
+          : '<span class="variable-catalog-empty-value">-</span>';
+
+        const searchText = [
+          entry.name || '',
+          entry.value || '',
+          modes.laser || '',
+          modes.true || '',
+          modes['3dpr'] || '',
+        ].join(' ').toLowerCase();
+
+        return `
+          <tr class="variable-catalog-row" data-search="${escapeHtml(searchText)}">
+            <td><div class="variable-catalog-name">${escapeHtml(entry.name || '')}</div></td>
+            <td>${baseValue}</td>
+            <td class="variable-catalog-mode-cell">${laserValue}</td>
+            <td class="variable-catalog-mode-cell">${trueValue}</td>
+            <td class="variable-catalog-mode-cell">${threeDprValue}</td>
+          </tr>
+        `;
+      }).join('');
+
+      return `
+        <div class="variable-catalog-shell">
+          <div class="variable-catalog-toolbar">
+            <div class="variable-catalog-toolbar-main">
+              <strong>OOBB Variables</strong>
+              <span id="variable-catalog-count">${catalog.length} entries</span>
+            </div>
+            <input
+              type="text"
+              class="variable-catalog-filter"
+              id="variable-catalog-filter"
+              placeholder="Filter by name or value..."
+            >
+          </div>
+          <div class="variable-catalog-body">
+            <div class="variable-catalog-table-wrap">
+              <table class="variable-catalog-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Laser</th>
+                    <th>True</th>
+                    <th>3DPR</th>
+                  </tr>
+                </thead>
+                <tbody id="variable-catalog-table-body">${rows}</tbody>
+              </table>
+            </div>
+            <div class="variable-catalog-empty" id="variable-catalog-empty" hidden>No variables match this filter.</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function initializeVariableCatalogFilter() {
+      const input = document.getElementById('variable-catalog-filter');
+      const rows = Array.from(document.querySelectorAll('.variable-catalog-row'));
+      const count = document.getElementById('variable-catalog-count');
+      const empty = document.getElementById('variable-catalog-empty');
+      if (!input || !rows.length || !count || !empty) return;
+
+      const update = () => {
+        const query = (input.value || '').trim().toLowerCase();
+        const terms = query ? query.split(/\s+/).filter(Boolean) : [];
+        let visible = 0;
+
+        rows.forEach(row => {
+          const haystack = row.getAttribute('data-search') || '';
+          const match = !terms.length || terms.every(term => haystack.includes(term));
+          row.hidden = !match;
+          if (match) visible += 1;
+        });
+
+        count.textContent = `${visible} entries`;
+        empty.hidden = visible !== 0;
+      };
+
+      input.addEventListener('input', update);
+      input.focus();
+      update();
+    }
+
+    function openComponentModal(obj) {
+      const modal = document.getElementById('detail-modal');
+      const heading = document.getElementById('detail-modal-heading');
+      const subtitle = document.getElementById('detail-modal-subtitle');
+      const body = document.getElementById('detail-modal-body');
+
+      heading.textContent = obj.command || 'Component';
+      subtitle.textContent = obj.name_long || obj.category || 'Documentation detail';
+      body.innerHTML = buildDetailFrame(obj);
+      modal.hidden = false;
+      document.body.classList.add('modal-open');
+    }
+
+    function openVariableCatalogModal() {
+      const modal = document.getElementById('detail-modal');
+      const heading = document.getElementById('detail-modal-heading');
+      const subtitle = document.getElementById('detail-modal-subtitle');
+      const body = document.getElementById('detail-modal-body');
+
+      heading.textContent = 'OOBB Variables Summary';
+      subtitle.textContent = 'Auto-generated from oobb_variables.py';
+      body.innerHTML = buildVariableCatalogFrame();
+      modal.hidden = false;
+      document.body.classList.add('modal-open');
+      initializeVariableCatalogFilter();
+    }
+
+    function closeComponentModal() {
+      const modal = document.getElementById('detail-modal');
+      const body = document.getElementById('detail-modal-body');
+      modal.hidden = true;
+      body.innerHTML = '<div class="detail-modal-empty">Click any component card to open its richer documentation here.</div>';
+      document.body.classList.remove('modal-open');
+    }
+
+    function populateCategoryFilter(objects) {
+      const cats = [...new Set(objects.map(o => o.category || 'General'))].sort();
+      const sel  = document.getElementById('category-filter');
+      cats.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.textContent = `${CATEGORY_EMOJI[cat] ? CATEGORY_EMOJI[cat] + ' ' : ''}${cat}`;
+        sel.appendChild(opt);
+      });
+    }
+
+    function renderStatsBar(total) {
+      const bar = document.getElementById('stats-bar');
+      bar.innerHTML = `
+        <div class="stat-item">
+          <div class="stat-number">${total}</div>
+          <div class="stat-label">Components</div>
+        </div>
+      `;
+    }
+
+    function renderDocumentation() {
+      if (typeof window.DOCUMENTATION_DATA === 'undefined') return;
+
+      const data    = window.DOCUMENTATION_DATA;
+      const objects = (data.objects || []).concat(data.part_sets || []);
+      const container = document.getElementById('objects-container');
+      const search  = (document.getElementById('search-box').value || '').trim().toLowerCase();
+      const catSel  = (document.getElementById('category-filter').value || '');
+
+      const filtered = objects.filter(o => {
+        const matchCat  = !catSel  || (o.category === catSel);
+        const matchText = !search  || getSearchHaystack(o).includes(search);
+        return matchCat && matchText;
+      });
+
+      container.innerHTML = '';
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-emoji">🔍</div>
+            <div class="empty-state-text">No components found.<br>Try a different search term!</div>
+          </div>`;
+        return;
+      }
+      filtered.forEach((obj, i) => container.appendChild(renderCard(obj, i)));
+    }
+
+    // Initialise once data is available
+    (function init() {
+      if (typeof window.DOCUMENTATION_DATA === 'undefined') return;
+      const data    = window.DOCUMENTATION_DATA;
+      const objects = (data.objects || []).concat(data.part_sets || []);
+      populateCategoryFilter(objects);
+      renderStatsBar(objects.length);
+      renderDocumentation();
+
+      document.getElementById('search-box').addEventListener('input', renderDocumentation);
+      document.getElementById('category-filter').addEventListener('change', renderDocumentation);
+      document.getElementById('variables-summary-link').addEventListener('click', openVariableCatalogModal);
+      document.getElementById('detail-modal-close').addEventListener('click', closeComponentModal);
+      document.getElementById('detail-modal').addEventListener('click', evt => {
+        if (evt.target.id === 'detail-modal') {
+          closeComponentModal();
+        }
+      });
+      document.addEventListener('keydown', evt => {
+        if (evt.key === 'Escape' && !document.getElementById('detail-modal').hidden) {
+          closeComponentModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

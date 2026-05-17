@@ -1,0 +1,173 @@
+classification: food
+classification_capital: Food
+classification_first_letter: f
+classification_first_letter_upper: F
+classification_upper: FOOD
+color: label
+color_capital: Label
+color_first_letter: l
+color_first_letter_upper: L
+color_upper: LABEL
+date: '2025_10'
+date_display: 2025-10
+date_space: 2025 10
+description_extra: 2025_10_date
+description_extra_capital: 2025.10 Date
+description_extra_first_letter: '2'
+description_extra_first_letter_upper: '2'
+description_extra_upper: 2025_10_DATE
+description_main: hong_kong_chicken_curry_recipe
+description_main_capital: Hong Kong Chicken Curry Recipe
+description_main_first_letter: h
+description_main_first_letter_upper: H
+description_main_upper: HONG_KONG_CHICKEN_CURRY_RECIPE
+description_only_numbers: ''
+description_only_numbers_short: ' '
+description_or_color: 'L '
+description_or_color_upper: 'L '
+directory: parts/food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date
+file_input: ''
+github_link: https://github.com/oomlout/oomlout_oomp_part_src/tree/main/parts/food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date/working
+id: food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date
+id_no_class: cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date
+id_no_size: label_hong_kong_chicken_curry_recipe_2025_10_date
+id_no_type: hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date
+manufacturer: ''
+manufacturer_capital: ''
+manufacturer_first_letter: ''
+manufacturer_first_letter_upper: ''
+manufacturer_upper: ''
+manufacturers: []
+markdown_full: '[food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date](https://github.com/oomlout/oomlout_oomp_part_src/tree/main/parts/food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date/working)<br>[](https://github.com/oomlout/oomlout_oomp_part_src/tree/main/parts/food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date/working)<br>[Food
+    Cooking Hyper Cook Label Hong Kong Chicken Curry Recipe 2025 10 Date](https://github.com/oomlout/oomlout_oomp_part_src/tree/main/parts/food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date/working)<br><br>'
+markdown_short: '[food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date](https://github.com/oomlout/oomlout_oomp_part_src/tree/main/parts/food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date/working)<br><br>'
+md5: d683c61c55fafb3f00f6cbed7bf6382e
+md5_10: d683c61c55
+md5_10_upper: D683C61C55
+md5_5: d683c
+md5_5_upper: D683C
+md5_6: d683c6
+md5_6_alpha: 8dbk6
+md5_6_alpha_upper: 8DBK6
+md5_6_upper: D683C6
+name: Food Cooking Hyper Cook Label Hong Kong Chicken Curry Recipe 2025 10 Date
+name_no_class: Cooking Hyper Cook Label Hong Kong Chicken Curry Recipe 2025 10 Date
+name_no_size: Label Hong Kong Chicken Curry Recipe 2025 10 Date
+name_no_size_short: Label Hong Kong Chicken Curry Recipe 2025 10 Date
+name_no_type: Hyper Cook Label Hong Kong Chicken Curry Recipe 2025 10 Date
+name_proper: Hong Kong Chicken Curry
+name_space: hong kong chicken curry
+name_upper: HONG KONG CHICKEN CURRY
+oomlout_ai_roboclick_1:
+    actions:
+    -   command: new_chat
+        description: hyper cook label image hong_kong_chicken_curry
+    -   command: query
+        delay: 60
+        text: Create a prompt for generating a 1-colour (black on white) chibi-style
+            mascot illustration designed for a 40x40 mm thermal label that visually
+            represents a given recipe name (recipe_name). The artwork should feature
+            one central cute anthropomorphic mascot themed to the recipe (for example
+            a smiling sausage, happy bowl of curry, or cheerful casserole pot) with
+            up to two simple surrounding icons that fit the meal's personality (such
+            as a heart puff, herb sprig, spoon, bowl, or local motif). Use pure black
+            on white only with no grey, shading, gradients, or text. Keep bold linework
+            (outer 3.5-4.5 pt, inner 2-2.5 pt at 300 dpi), centered composition with
+            3-4 mm margins and no border. Style should be kawaii, playful, sticker-like,
+            minimal detail, high contrast, screen-print inspired, with composition
+            filling about 70-80 % of the square and background icons arranged loosely
+            for balance. The output should be a ready-to-paste image-generation prompt
+            with (recipe_name) as a placeholder variable. Take all the time you need
+    -   command: query
+        delay: 60
+        text: That is so so great! please do it for Hong Kong Chicken Curry recipe.
+            Take all the time you need
+    -   command: query
+        delay: 60
+        text: You are a star that's perfect! now pelase geenrate the image remember
+            square proportions and take as much time as you need
+    -   command: save_image_generated
+        file_name: initial_generated.png
+    -   command: add_image
+        file_name: initial_generated.png
+    -   command: close_tab
+    file_test: initial_generated.png
+oomlout_corel_roboclick_1:
+    actions:
+    -   command: wait_for_file
+        file_name: initial_generated.png
+    -   command: corel_trace_full
+        file_destination: trace.cdr
+        file_source: template\working_square\working.cdr
+        file_source_trace: initial_generated.png
+        max_dimension: 95
+        number_of_colors: 2
+        remove_background_color_from_entire_image: true
+        x: 50
+        y: 50
+    file_test: trace.png
+oomlout_corel_roboclick_2:
+    actions:
+    -   command: wait_for_file
+        file_name: trace.png
+    -   command: file_copy
+        file_destination: working.cdr
+        file_source: template\working_label\working.cdr
+    -   command: corel_open
+        file_name: working.cdr
+    -   command: corel_import
+        file_name: trace.cdr
+        max_dimension: 35
+        x: 20
+        y: 30
+    -   command: corel_add_text_box
+        font: Segoe UI
+        font_size: 14
+        height: 20
+        text: Hong Kong Chicken Curry
+        width: 35
+        x: 56
+        y: 32
+    -   command: corel_add_text
+        font: Segoe UI
+        font_alignment: center
+        font_size: 14
+        text: 2025 10
+        x: 56
+        y: 11
+    -   command: corel_save
+    -   command: corel_export
+        file_name: working.pdf
+        file_type: pdf
+    -   command: corel_close_file
+    file_test: working.pdf
+oomp_key: oomp_food_cooking_hyper_cook_label_hong_kong_chicken_curry_recipe_2025_10_date
+oomp_word: school lock lollipop
+oomp_word_emoji: ':school: :lock: :lollipop:'
+oomp_word_emoji_list:
+- ':school:'
+- ':lock:'
+- ':lollipop:'
+oomp_word_list:
+- school
+- lock
+- lollipop
+part_number: ''
+part_number_capital: ''
+part_number_first_letter: ''
+part_number_first_letter_upper: ''
+part_number_upper: ''
+short_code: ''
+short_code_upper: ''
+size: hyper_cook
+size_capital: Hyper Cook
+size_first_letter: h
+size_first_letter_upper: H
+size_only_numbers: ''
+size_only_numbers_no_zeros: ''
+size_upper: HYPER_COOK
+type: cooking
+type_capital: Cooking
+type_first_letter: c
+type_first_letter_upper: C
+type_upper: COOKING

@@ -1,0 +1,23 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: ziptie holder jack 1x0x12
+description_extra: ''
+description_main: 1_width_12_mm_depth
+folder: C:\gh\oomlout_oobb_version_5\tests\generated_scad\oobb_part_ziptie_holder_jack_1_width_12_mm_depth
+id: oobb_part_ziptie_holder_jack_1_width_12_mm_depth
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/ziptie_holder_jack/1_width_12_mm_depth/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_ziptie_holder_jack_01_12
+manufacturer: ''
+name: Oobb Part Ziptie Holder Jack 1 Width 12 mm Depth
+name_short: 'Ziptie Holder Jack 1x12 '
+part_number: ''
+short_name: ''
+size: ziptie_holder_jack
+thickness: 12
+thickness_mm: 12
+type: part
+width: 1
+width_mm: 14

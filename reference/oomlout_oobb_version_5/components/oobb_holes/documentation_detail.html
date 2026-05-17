@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oobb_holes Documentation</title>
+  <style>
+    :root {
+      --bg: #f7f5ff;
+      --panel: rgba(255,255,255,0.92);
+      --border: #ddd5ff;
+      --text: #2f2850;
+      --subtle: #635c7e;
+      --accent: #7b68ee;
+      --accent-soft: #efeaff;
+      --shadow: 0 14px 40px rgba(78, 58, 140, 0.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #fff9ef, var(--bg) 45%, #eef6ff 100%);
+      color: var(--text);
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(244,240,255,0.92));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 22px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.1;
+    }
+    .name-long {
+      color: var(--subtle);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      margin: 0;
+      line-height: 1.7;
+      color: var(--subtle);
+      font-size: 16px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .meta-chip {
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+    .panel-intro {
+      margin: 0 0 18px;
+      color: var(--subtle);
+      line-height: 1.6;
+    }
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .sample-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.82);
+    }
+    .sample-image-wrap {
+      background: linear-gradient(180deg, #faf7ff, #f1ebff);
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+    .sample-image-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 10px 28px rgba(74, 52, 112, 0.14);
+    }
+    .sample-missing {
+      color: var(--subtle);
+      font-size: 14px;
+      padding: 24px;
+      text-align: center;
+    }
+    .sample-body {
+      padding: 16px;
+      color: var(--subtle);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .sample-body h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--text);
+    }
+    .sample-body p {
+      margin: 0 0 12px;
+    }
+    .sample-link-row {
+      margin-bottom: 10px;
+    }
+    .sample-link {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #efe8ff;
+      color: #4f3ca7;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid #d6c7ff;
+    }
+    .sample-link-disabled {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #f3f1f8;
+      color: var(--subtle);
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+    }
+    .sample-thumbs {
+      display: flex;
+      gap: 10px;
+      padding: 0 14px 12px;
+      flex-wrap: wrap;
+    }
+    .sample-thumb {
+      border: 1px solid var(--border);
+      background: #faf8ff;
+      border-radius: 12px;
+      padding: 4px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--subtle);
+      font-size: 12px;
+    }
+    .sample-thumb img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    details {
+      margin-top: 10px;
+      background: #faf8ff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .sample-empty {
+      margin-top: 10px;
+      color: var(--subtle);
+      line-height: 1.6;
+    }
+    pre {
+      margin: 10px 0 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #261f45;
+      color: #f7f4ff;
+      padding: 14px;
+      border-radius: 14px;
+      overflow: auto;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--subtle);
+    }
+    .markdown-table-wrap {
+      overflow-x: auto;
+    }
+    .markdown-table {
+      margin-top: 12px;
+    }
+    p, ul, ol {
+      line-height: 1.7;
+      color: var(--subtle);
+    }
+    h3, h4 {
+      margin-top: 1.2em;
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      .page { padding: 14px; }
+      .hero, .panel { padding: 18px; border-radius: 18px; }
+      h1 { font-size: 28px; }
+      .sample-image-wrap { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Component Detail</div>
+      <h1>oobb_holes</h1>
+      <div class="name-long">OOBB Geometry Helpers: Hole Array</div>
+      <p>Places OOBB-grid-aligned screw holes across a rectangular or circular area using named hole patterns. Use `holes` to choose one or more layouts such as `[&quot;all&quot;]`, `[&quot;perimeter&quot;]`, or `[&quot;single&quot;]` with `loc=[x,y]`.</p>
+      <div class="meta">
+        <div class="meta-chip"><strong>Category:</strong> OOBB Geometry Helpers</div>
+        <div class="meta-chip"><strong>Returns:</strong> List of geometry component dicts.</div>
+        <div class="meta-chip"><strong>Aliases:</strong> None</div>
+      </div>
+    </section>
+
+    <section class="panel"><h2>Sample Images</h2><p class="panel-intro">render as positive cylinders so the array pattern is visible.</p><div class="sample-grid">
+            <article class="sample-card">
+              <div class="sample-image-wrap"><img id="sample-main-test_1" src="test/test_1/image_400.png" alt="3x2 rectangular hole array."></div>
+              <div class="sample-thumbs"><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_400.png" data-alt="3x2 rectangular hole array. iso view"><img src="test/test_1/image_120.png" alt="3x2 rectangular hole array. iso thumbnail"><span>Iso</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_top_400.png" data-alt="3x2 rectangular hole array. top view"><img src="test/test_1/image_top_120.png" alt="3x2 rectangular hole array. top thumbnail"><span>Top</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_side_400.png" data-alt="3x2 rectangular hole array. side view"><img src="test/test_1/image_side_120.png" alt="3x2 rectangular hole array. side thumbnail"><span>Side</span></button></div>
+              <div class="sample-body">
+                <h3>3x2 rectangular hole array.</h3>
+                <p>3x2 rectangular hole array.</p>
+                <div class="sample-link-row"><a class="sample-link" href="test/test_1/working.scad" download>Download SCAD</a></div><details><summary>Set Values</summary><pre><code>{
+  &quot;holes&quot;: [
+    &quot;all&quot;
+  ],
+  &quot;width&quot;: 3,
+  &quot;height&quot;: 2,
+  &quot;pos&quot;: [
+    0,
+    0,
+    0
+  ],
+  &quot;depth&quot;: 6,
+  &quot;radius_name&quot;: &quot;m3&quot;,
+  &quot;both_holes&quot;: false
+}</code></pre></details><details><summary>Default Values</summary><pre><code>{
+  &quot;holes&quot;: &quot;[\&quot;all\&quot;]&quot;,
+  &quot;width&quot;: 0,
+  &quot;height&quot;: 0,
+  &quot;pos&quot;: &quot;[0,0,0]&quot;,
+  &quot;depth&quot;: 100,
+  &quot;radius_name&quot;: &quot;\&quot;m6\&quot;&quot;,
+  &quot;middle&quot;: true,
+  &quot;size&quot;: &quot;\&quot;oobb\&quot;&quot;,
+  &quot;both_holes&quot;: false,
+  &quot;circle&quot;: false,
+  &quot;diameter&quot;: 0,
+  &quot;diameter_clearance&quot;: 7.5,
+  &quot;diameter_center_clearance&quot;: 0,
+  &quot;loc&quot;: &quot;[0,0]&quot;
+}</code></pre></details><div><strong>rule:</strong> keep the sample values exactly as written. If `kwargs` already contains `rot`, do not replace it; use `preview_rot` only as the outer rotation wrapper for the final rendered scene.</div>
+              </div>
+            </article>
+            
+            <article class="sample-card">
+              <div class="sample-image-wrap"><img id="sample-main-test_2" src="test/test_2/image_400.png" alt="circular pattern style."></div>
+              <div class="sample-thumbs"><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_400.png" data-alt="circular pattern style. iso view"><img src="test/test_2/image_120.png" alt="circular pattern style. iso thumbnail"><span>Iso</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_top_400.png" data-alt="circular pattern style. top view"><img src="test/test_2/image_top_120.png" alt="circular pattern style. top thumbnail"><span>Top</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_side_400.png" data-alt="circular pattern style. side view"><img src="test/test_2/image_side_120.png" alt="circular pattern style. side thumbnail"><span>Side</span></button></div>
+              <div class="sample-body">
+                <h3>circular pattern style.</h3>
+                <p>circular pattern style.</p>
+                <div class="sample-link-row"><a class="sample-link" href="test/test_2/working.scad" download>Download SCAD</a></div><details><summary>Set Values</summary><pre><code>{
+  &quot;holes&quot;: [
+    &quot;circle&quot;
+  ],
+  &quot;circle&quot;: true,
+  &quot;diameter&quot;: 3,
+  &quot;pos&quot;: [
+    0,
+    0,
+    0
+  ],
+  &quot;depth&quot;: 6,
+  &quot;radius_name&quot;: &quot;m3&quot;
+}</code></pre></details><details><summary>Default Values</summary><pre><code>{
+  &quot;holes&quot;: &quot;[\&quot;all\&quot;]&quot;,
+  &quot;width&quot;: 0,
+  &quot;height&quot;: 0,
+  &quot;pos&quot;: &quot;[0,0,0]&quot;,
+  &quot;depth&quot;: 100,
+  &quot;radius_name&quot;: &quot;\&quot;m6\&quot;&quot;,
+  &quot;middle&quot;: true,
+  &quot;size&quot;: &quot;\&quot;oobb\&quot;&quot;,
+  &quot;both_holes&quot;: false,
+  &quot;circle&quot;: false,
+  &quot;diameter&quot;: 0,
+  &quot;diameter_clearance&quot;: 7.5,
+  &quot;diameter_center_clearance&quot;: 0,
+  &quot;loc&quot;: &quot;[0,0]&quot;
+}</code></pre></details><div><strong>rule:</strong> keep the sample values exactly as written. If `kwargs` already contains `rot`, do not replace it; use `preview_rot` only as the outer rotation wrapper for the final rendered scene.</div>
+              </div>
+            </article>
+            </div></section>
+
+    <section class="panel">
+      <h2>Variables</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>holes</code></td><td>Hole pattern or list of patterns to generate. Accepts a single string or a list such as `[&quot;all&quot;]`, `[&quot;perimeter&quot;, &quot;just_middle&quot;]`, or `[&quot;single&quot;]`. Supported values: `all`, `perimeter`, `perimeter_miss_middle`, `u`, `top`, `bottom`, `left`, `right`, `corners`, `single`, `missing_middle`, `just_middle`, `circle`.</td><td>list</td><td><code>[&quot;all&quot;]</code></td></tr><tr><td><code>width</code></td><td>Width of the hole grid in OOBB units. Example: `width=3` gives 3 hole positions across.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>height</code></td><td>Height of the hole grid in OOBB units. Example: `height=2` gives 2 hole positions vertically.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>pos</code></td><td>Base position `[x, y, z]` in mm for the whole pattern. Usually leave as `[0,0,0]` unless you want to offset the array.</td><td>list</td><td><code>[0,0,0]</code></td></tr><tr><td><code>depth</code></td><td>Hole depth in mm for generated negative geometry.</td><td>number</td><td><code>100</code></td></tr><tr><td><code>radius_name</code></td><td>Named hole size key, for example `m3`, `m6`, or another radius name available in the project.</td><td>string</td><td><code>&quot;m6&quot;</code></td></tr><tr><td><code>middle</code></td><td>Controls whether the centre hole is included for patterns that can have one, especially circular or full-grid layouts.</td><td>bool</td><td><code>True</code></td></tr><tr><td><code>size</code></td><td>Grid spacing mode. Use `oobb` for normal OOBB spacing or `oobe` for half-step spacing.</td><td>string</td><td><code>&quot;oobb&quot;</code></td></tr><tr><td><code>both_holes</code></td><td>When `True`, also adds matching OOBE half-grid holes in addition to the main OOBB holes.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>circle</code></td><td>When `True`, filters an `all` grid so only holes inside a circular boundary are kept. Usually used together with `diameter`.</td><td>bool</td><td><code>False</code></td></tr><tr><td><code>diameter</code></td><td>Circular pattern diameter in OOBB units. When non-zero it overrides `width` and `height`, for example `diameter=3`.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>diameter_clearance</code></td><td>Edge clearance in mm for circular filtering. Increase this to keep holes farther away from the outer circle edge.</td><td>number</td><td><code>7.5</code></td></tr><tr><td><code>diameter_center_clearance</code></td><td>Minimum distance from the centre in mm before a hole is allowed. Use this to create a clear area in the middle of a circular layout.</td><td>number</td><td><code>0</code></td></tr><tr><td><code>loc</code></td><td>Grid location or list of locations used when `holes` includes `single`. Coordinates are 1-based `[x, y]` grid positions, so `loc=[1,1]` is one corner and `loc=[[1,1],[3,2]]` places two single holes. The aliases `location`, `locations`, and `positions` are also accepted.</td><td>list</td><td><code>[0,0]</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel"><h2>More Details</h2><h1>oobb_holes</h1>
+<p><strong>OOBB Geometry Helpers: Hole Array</strong></p>
+<p>Places OOBB-grid-aligned screw holes across a rectangular or circular area using named hole patterns.</p>
+<h2>Variables</h2>
+<div class="markdown-table-wrap"><table class="markdown-table"><thead><tr><th>Name</th><th>Description</th><th>Type</th><th>Default</th></tr></thead><tbody><tr><td>holes</td><td>Hole pattern(s): all, perimeter, perimeter_miss_middle, u, top, bottom, left, right, corners, single, missing_middle, just_middle, circle.</td><td>list</td><td>["all"]</td></tr><tr><td>width</td><td>Width in OOBB grid units.</td><td>number</td><td>0</td></tr><tr><td>height</td><td>Height in OOBB grid units.</td><td>number</td><td>0</td></tr><tr><td>pos</td><td>3-element [x,y,z] position.</td><td>list</td><td>[0,0,0]</td></tr><tr><td>depth</td><td>Hole depth in mm.</td><td>number</td><td>100</td></tr><tr><td>radius_name</td><td>Named radius key, e.g. m6, m3.</td><td>string</td><td>"m6"</td></tr><tr><td>middle</td><td>Include the centre hole.</td><td>bool</td><td>True</td></tr><tr><td>size</td><td>Grid spacing scale: oobb or oobe.</td><td>string</td><td>"oobb"</td></tr><tr><td>both_holes</td><td>Also add matching oobe half-grid holes.</td><td>bool</td><td>False</td></tr><tr><td>circle</td><td>Filter holes to lie inside a circle boundary.</td><td>bool</td><td>False</td></tr><tr><td>diameter</td><td>Diameter in OOBB units (overrides width/height).</td><td>number</td><td>0</td></tr><tr><td>diameter_clearance</td><td>Clearance from circle edge (mm) when circle=True.</td><td>number</td><td>7.5</td></tr><tr><td>diameter_center_clearance</td><td>Minimum distance from centre to include hole (mm).</td><td>number</td><td>0</td></tr><tr><td>loc</td><td>Grid location(s) [x,y] for single pattern.</td><td>list</td><td>[0,0]</td></tr></tbody></table></div>
+<h2>Category</h2>
+<p>OOBB Geometry Helpers</p></section>
+  </main>
+  <script>
+    document.querySelectorAll('.sample-thumb').forEach((button) => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const fullSrc = button.getAttribute('data-full');
+        const altText = button.getAttribute('data-alt');
+        const target = document.getElementById(targetId);
+        if (!target || !fullSrc) return;
+        target.src = fullSrc;
+        if (altText) {
+          target.alt = altText;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

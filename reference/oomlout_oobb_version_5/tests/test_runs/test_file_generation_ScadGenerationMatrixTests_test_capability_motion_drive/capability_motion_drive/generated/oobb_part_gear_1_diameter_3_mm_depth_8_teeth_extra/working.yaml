@@ -1,0 +1,24 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: gear 0x0x3
+description_extra: 8_teeth_extra
+description_main: 1_diameter_3_mm_depth
+diameter: 1
+extra: 8_teeth
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_motion_drive\capability_motion_drive\generated\oobb_part_gear_1_diameter_3_mm_depth_8_teeth_extra
+id: oobb_part_gear_1_diameter_3_mm_depth_8_teeth_extra
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/gear/1_diameter_3_mm_depth/8_teeth_extra/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_gear_01_03_ex_8_teeth
+manufacturer: ''
+name: Oobb Part Gear 1 Diameter 3 mm Depth 8 Teeth Extra
+name_short: Gear 1x3 8 Teeth Extra
+part_number: ''
+shaft: ''
+short_name: ''
+size: gear
+thickness: 3
+thickness_mm: 3
+type: part

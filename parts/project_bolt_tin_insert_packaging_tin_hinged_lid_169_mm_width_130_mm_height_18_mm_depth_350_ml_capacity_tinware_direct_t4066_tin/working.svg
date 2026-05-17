@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="24.0000mm" height="24.0000mm"
+     viewBox="0 0 24.0000 24.0000">
+  <rect x="5.0000" y="5.0000" width="14.0000" height="14.0000" rx="2.0000" ry="2.0000"  fill="#333333" stroke="none" />
+  <g fill="#333333" stroke="none">
+    <circle cx="12.0000" cy="12.0000" r="3.0000" />
+  </g>
+  <text x="12.0000" y="12.0000" font-family="sans-serif" font-size="10.0000" text-anchor="start" dominant-baseline="middle" fill="#000000">Base Plate</text>
+</svg>

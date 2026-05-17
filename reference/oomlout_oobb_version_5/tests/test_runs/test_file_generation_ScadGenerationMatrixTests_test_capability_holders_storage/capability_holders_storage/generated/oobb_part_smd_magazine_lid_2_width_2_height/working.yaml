@@ -1,0 +1,23 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: smd magazine lid 2x2x0
+description_extra: ''
+description_main: 2_width_2_height
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_holders_storage\capability_holders_storage\generated\oobb_part_smd_magazine_lid_2_width_2_height
+height: 2
+height_mm: 29
+id: oobb_part_smd_magazine_lid_2_width_2_height
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/smd_magazine_lid/2_width_2_height/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_smd_magazine_lid_02_02
+manufacturer: ''
+name: Oobb Part Smd Magazine Lid 2 Width 2 Height
+name_short: Smd Magazine Lid 2x2 Height
+part_number: ''
+short_name: ''
+size: smd_magazine_lid
+type: part
+width: 2
+width_mm: 29

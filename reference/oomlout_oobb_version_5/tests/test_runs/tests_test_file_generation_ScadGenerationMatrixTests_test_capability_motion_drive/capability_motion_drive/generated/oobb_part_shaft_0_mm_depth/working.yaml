@@ -1,0 +1,22 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: shaft 0x0x0
+description_extra: ''
+description_main: 0_mm_depth
+extra: ''
+folder: c:\gh\oomlout_oobb_version_5\tests\test_runs\tests_test_file_generation_ScadGenerationMatrixTests_test_capability_motion_drive\capability_motion_drive\generated\oobb_part_shaft_0_mm_depth
+id: oobb_part_shaft_0_mm_depth
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/shaft/0_mm_depth/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_shaft_00
+manufacturer: ''
+name: Oobb Part Shaft 0 mm Depth
+name_short: 'Shaft 0 '
+part_number: ''
+short_name: ''
+size: shaft
+thickness: 0
+thickness_mm: 0
+type: part

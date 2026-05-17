@@ -1,0 +1,24 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: pulley gt2 0x0x6
+description_extra: 16_teeth_shield_extra
+description_main: 1_diameter_6_mm_depth
+diameter: 1
+extra: 16_teeth_shield
+folder: C:\gh\oomlout_oobb_version_5\tests\generated_scad\oobb_part_pulley_gt2_1_diameter_6_mm_depth_16_teeth_shield_extra
+id: oobb_part_pulley_gt2_1_diameter_6_mm_depth_16_teeth_shield_extra
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/pulley_gt2/1_diameter_6_mm_depth/16_teeth_shield_extra/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_pulley_gt2_01_06_ex_16_teeth_shield
+manufacturer: ''
+name: Oobb Part Pulley Gt2 1 Diameter 6 mm Depth 16 Teeth Shield Extra
+name_short: Pulley Gt2 1x6 16 Teeth Shield Extra
+part_number: ''
+shaft: ''
+short_name: ''
+size: pulley_gt2
+thickness: 6
+thickness_mm: 6
+type: part

@@ -1,0 +1,26 @@
+bearing: '606'
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: bearing plate 3x3x12
+description_extra: 606_bearing
+description_main: 3_width_3_height_12_mm_depth
+folder: C:\gh\oomlout_oobb_version_5\tests\generated_scad\oobb_part_bearing_plate_3_width_3_height_12_mm_depth_606_bearing
+height: 3
+height_mm: 44
+id: oobb_part_bearing_plate_3_width_3_height_12_mm_depth_606_bearing
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/bearing_plate/3_width_3_height_12_mm_depth/606_bearing/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_bearing_plate_03_03_12_606
+manufacturer: ''
+name: Oobb Part Bearing Plate 3 Width 3 Height 12 mm Depth 606 Bearing
+name_short: Bearing Plate 3x3x12 606 Bearing
+part_number: ''
+short_name: ''
+size: bearing_plate
+thickness: 12
+thickness_mm: 12
+type: part
+width: 3
+width_mm: 44

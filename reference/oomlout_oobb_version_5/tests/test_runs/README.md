@@ -1,0 +1,38 @@
+# Test Run Reports
+
+- Total tests with reports: **32**
+
+| Test Folder | Status | Artifact Files | Report |
+| --- | --- | ---: | --- |
+| `test_file_generation_FileGenerationTests_test_copy_and_rename_file_copies_matching_files` | **PASS** | 0 | [`test_report.md`](test_file_generation_FileGenerationTests_test_copy_and_rename_file_copies_matching_files/test_report.md) |
+| `test_file_generation_FileGenerationTests_test_folders_to_folder_all_calls_all_steps` | **PASS** | 0 | [`test_report.md`](test_file_generation_FileGenerationTests_test_folders_to_folder_all_calls_all_steps/test_report.md) |
+| `test_file_generation_FileGenerationTests_test_make_markdown_creates_index_and_part_readme` | **PASS** | 0 | [`test_report.md`](test_file_generation_FileGenerationTests_test_make_markdown_creates_index_and_part_readme/test_report.md) |
+| `test_file_generation_FileGenerationTests_test_markdown_format_handles_nested_data` | **PASS** | 0 | [`test_report.md`](test_file_generation_FileGenerationTests_test_markdown_format_handles_nested_data/test_report.md) |
+| `test_file_generation_FileGenerationTests_test_release_3d_printable_copies_expected_files` | **PASS** | 0 | [`test_report.md`](test_file_generation_FileGenerationTests_test_release_3d_printable_copies_expected_files/test_report.md) |
+| `test_file_generation_FileGenerationTests_test_release_laser_cut_copies_expected_files` | **PASS** | 0 | [`test_report.md`](test_file_generation_FileGenerationTests_test_release_laser_cut_copies_expected_files/test_report.md) |
+| `test_file_generation_OobbBaseFileGenerationTests_test_build_thing_filename_calls_renderer_for_all_modes` | **PASS** | 0 | [`test_report.md`](test_file_generation_OobbBaseFileGenerationTests_test_build_thing_filename_calls_renderer_for_all_modes/test_report.md) |
+| `test_file_generation_OobbBaseFileGenerationTests_test_build_thing_writes_mode_files_and_calls_renderer` | **PASS** | 0 | [`test_report.md`](test_file_generation_OobbBaseFileGenerationTests_test_build_thing_writes_mode_files_and_calls_renderer/test_report.md) |
+| `test_file_generation_OobbBaseFileGenerationTests_test_dump_folder_creates_details_files` | **PASS** | 0 | [`test_report.md`](test_file_generation_OobbBaseFileGenerationTests_test_dump_folder_creates_details_files/test_report.md) |
+| `test_file_generation_OobbBaseFileGenerationTests_test_dump_json_and_load_json_round_trip` | **PASS** | 0 | [`test_report.md`](test_file_generation_OobbBaseFileGenerationTests_test_dump_json_and_load_json_round_trip/test_report.md) |
+| `test_file_generation_OobbBaseFileGenerationTests_test_dump_pickle_creates_pickle_files` | **PASS** | 0 | [`test_report.md`](test_file_generation_OobbBaseFileGenerationTests_test_dump_pickle_creates_pickle_files/test_report.md) |
+| `test_file_generation_ScadGenerationMatrixTests_test_capability_fasteners_connectors` | **PASS** | 68 | [`test_report.md`](test_file_generation_ScadGenerationMatrixTests_test_capability_fasteners_connectors/test_report.md) |
+| `test_file_generation_ScadGenerationMatrixTests_test_capability_holders_storage` | **FAIL** | 85 | [`test_report.md`](test_file_generation_ScadGenerationMatrixTests_test_capability_holders_storage/test_report.md) |
+| `test_file_generation_ScadGenerationMatrixTests_test_capability_motion_drive` | **FAIL** | 102 | [`test_report.md`](test_file_generation_ScadGenerationMatrixTests_test_capability_motion_drive/test_report.md) |
+| `test_file_generation_ScadGenerationMatrixTests_test_scad_matrix_snapshot_across_many_item_types` | **PASS** | 0 | [`test_report.md`](test_file_generation_ScadGenerationMatrixTests_test_scad_matrix_snapshot_across_many_item_types/test_report.md) |
+| `test_file_generation_SnapshotTests_test_markdown_generation_snapshot` | **PASS** | 0 | [`test_report.md`](test_file_generation_SnapshotTests_test_markdown_generation_snapshot/test_report.md) |
+| `tests_test_file_generation_FileGenerationTests_test_copy_and_rename_file_copies_matching_files` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_FileGenerationTests_test_copy_and_rename_file_copies_matching_files/test_report.md) |
+| `tests_test_file_generation_FileGenerationTests_test_folders_to_folder_all_calls_all_steps` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_FileGenerationTests_test_folders_to_folder_all_calls_all_steps/test_report.md) |
+| `tests_test_file_generation_FileGenerationTests_test_make_markdown_creates_index_and_part_readme` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_FileGenerationTests_test_make_markdown_creates_index_and_part_readme/test_report.md) |
+| `tests_test_file_generation_FileGenerationTests_test_markdown_format_handles_nested_data` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_FileGenerationTests_test_markdown_format_handles_nested_data/test_report.md) |
+| `tests_test_file_generation_FileGenerationTests_test_release_3d_printable_copies_expected_files` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_FileGenerationTests_test_release_3d_printable_copies_expected_files/test_report.md) |
+| `tests_test_file_generation_FileGenerationTests_test_release_laser_cut_copies_expected_files` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_FileGenerationTests_test_release_laser_cut_copies_expected_files/test_report.md) |
+| `tests_test_file_generation_OobbBaseFileGenerationTests_test_build_thing_filename_calls_renderer_for_all_modes` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_OobbBaseFileGenerationTests_test_build_thing_filename_calls_renderer_for_all_modes/test_report.md) |
+| `tests_test_file_generation_OobbBaseFileGenerationTests_test_build_thing_writes_mode_files_and_calls_renderer` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_OobbBaseFileGenerationTests_test_build_thing_writes_mode_files_and_calls_renderer/test_report.md) |
+| `tests_test_file_generation_OobbBaseFileGenerationTests_test_dump_folder_creates_details_files` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_OobbBaseFileGenerationTests_test_dump_folder_creates_details_files/test_report.md) |
+| `tests_test_file_generation_OobbBaseFileGenerationTests_test_dump_json_and_load_json_round_trip` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_OobbBaseFileGenerationTests_test_dump_json_and_load_json_round_trip/test_report.md) |
+| `tests_test_file_generation_OobbBaseFileGenerationTests_test_dump_pickle_creates_pickle_files` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_OobbBaseFileGenerationTests_test_dump_pickle_creates_pickle_files/test_report.md) |
+| `tests_test_file_generation_ScadGenerationMatrixTests_test_capability_core_geometry` | **PASS** | 119 | [`test_report.md`](tests_test_file_generation_ScadGenerationMatrixTests_test_capability_core_geometry/test_report.md) |
+| `tests_test_file_generation_ScadGenerationMatrixTests_test_capability_fasteners_connectors` | **PASS** | 68 | [`test_report.md`](tests_test_file_generation_ScadGenerationMatrixTests_test_capability_fasteners_connectors/test_report.md) |
+| `tests_test_file_generation_ScadGenerationMatrixTests_test_capability_holders_storage` | **PASS** | 85 | [`test_report.md`](tests_test_file_generation_ScadGenerationMatrixTests_test_capability_holders_storage/test_report.md) |
+| `tests_test_file_generation_ScadGenerationMatrixTests_test_capability_motion_drive` | **PASS** | 102 | [`test_report.md`](tests_test_file_generation_ScadGenerationMatrixTests_test_capability_motion_drive/test_report.md) |
+| `tests_test_file_generation_SnapshotTests_test_markdown_generation_snapshot` | **PASS** | 0 | [`test_report.md`](tests_test_file_generation_SnapshotTests_test_markdown_generation_snapshot/test_report.md) |

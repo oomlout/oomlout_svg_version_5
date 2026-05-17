@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RoboClick Action Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Pastel Rainbow Palette */
+      --pastel-pink: #ffd6e0;
+      --pastel-peach: #ffecd2;
+      --pastel-yellow: #fff9c4;
+      --pastel-mint: #c8f7dc;
+      --pastel-aqua: #c4f1f9;
+      --pastel-sky: #c3e0ff;
+      --pastel-lavender: #e5d4ff;
+      --pastel-rose: #ffc8dd;
+      
+      /* Accent Colors */
+      --accent-coral: #ff8fab;
+      --accent-peach: #ffb5a7;
+      --accent-mint: #80ed99;
+      --accent-sky: #90e0ef;
+      --accent-lavender: #b8c0ff;
+      --accent-pink: #ffc8dd;
+      
+      /* UI Colors */
+      --glass-bg: rgba(255, 255, 255, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-shadow: 0 8px 32px rgba(180, 130, 200, 0.2);
+      --text-dark: #2d3748;
+      --text-medium: #4a5568;
+      --text-light: #718096;
+      --border-radius: 24px;
+      --border-radius-sm: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    @keyframes rainbow-border {
+      0% { border-color: var(--pastel-pink); }
+      14% { border-color: var(--pastel-peach); }
+      28% { border-color: var(--pastel-yellow); }
+      42% { border-color: var(--pastel-mint); }
+      56% { border-color: var(--pastel-aqua); }
+      70% { border-color: var(--pastel-sky); }
+      84% { border-color: var(--pastel-lavender); }
+      100% { border-color: var(--pastel-pink); }
+    }
+
+    body {
+      font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, 
+        var(--pastel-pink), 
+        var(--pastel-peach), 
+        var(--pastel-yellow), 
+        var(--pastel-mint), 
+        var(--pastel-aqua), 
+        var(--pastel-sky), 
+        var(--pastel-lavender),
+        var(--pastel-rose)
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
+      color: var(--text-dark);
+    }
+
+    /* Decorative floating shapes */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.5;
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::before {
+      width: 400px;
+      height: 400px;
+      background: var(--pastel-lavender);
+      top: -100px;
+      right: -100px;
+      animation: float 8s ease-in-out infinite;
+    }
+    body::after {
+      width: 300px;
+      height: 300px;
+      background: var(--pastel-mint);
+      bottom: -80px;
+      left: -80px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    .main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1em 2vw 4em 2vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== HEADER STYLES ===== */
+    .header {
+      position: sticky;
+      top: 1em;
+      z-index: 100;
+      max-width: 800px;
+      width: 100%;
+      margin: 1.5em auto 2em auto;
+      padding: 2em 2.5em 1.8em 2.5em;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid var(--glass-border);
+      border-radius: var(--border-radius);
+      box-shadow: 
+        var(--glass-shadow),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2em;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin: 0;
+      background: linear-gradient(135deg, 
+        #ff6b9d, #c44ce0, #7b68ee, #00bcd4, #4caf50, #ffeb3b, #ff9800, #ff6b9d
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s linear infinite;
+    }
+
+    .header-subtitle {
+      font-size: 0.95em;
+      color: var(--text-medium);
+      margin-top: 0.4em;
+      font-weight: 500;
+    }
+
+    .header-controls {
+      margin-top: 1.5em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8em;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    #search-box, #category-filter {
+      border: 2px solid rgba(180, 130, 200, 0.25);
+      border-radius: 14px;
+      font-size: 0.95em;
+      padding: 0.75em 1.2em;
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--text-dark);
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    #search-box::placeholder { color: var(--text-light); }
+    #search-box:focus, #category-filter:focus {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: var(--accent-lavender);
+      box-shadow: 0 0 0 4px rgba(184, 192, 255, 0.3);
+    }
+    #search-box { 
+      width: 280px;
+      padding-left: 1em;
+    }
+    #category-filter { 
+      min-width: 150px;
+      cursor: pointer;
+    }
+
+    /* ===== QUICK FILTERS ===== */
+    .quick-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6em;
+      margin: 1.3em 0 0 0;
+      justify-content: center;
+    }
+
+    .quick-filter-btn {
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--text-dark);
+      border: 2px solid transparent;
+      border-radius: 50px;
+      padding: 0.5em 1.2em;
+      font-size: 0.9em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      outline: none;
+      font-family: inherit;
+    }
+
+    .quick-filter-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(180, 130, 200, 0.25);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .quick-filter-btn.active {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-lavender));
+      color: white;
+      border: 2px solid rgba(255,255,255,0.5);
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(180, 130, 200, 0.35);
+    }
+
+    /* ===== ACTIONS GRID ===== */
+    #actions-container {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8em;
+      width: 100%;
+    }
+
+    /* ===== ACTION CARDS ===== */
+    .action {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--border-radius);
+      box-shadow: 
+        0 4px 24px rgba(180, 130, 200, 0.12),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+      padding: 1.6em 1.8em 1.5em 1.8em;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      margin: 0;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease backwards;
+    }
+
+    /* Rainbow top accent bar */
+    .action::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, 
+        var(--pastel-pink),
+        var(--pastel-peach),
+        var(--pastel-yellow),
+        var(--pastel-mint),
+        var(--pastel-aqua),
+        var(--pastel-sky),
+        var(--pastel-lavender)
+      );
+      background-size: 200% 100%;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      transition: background-position 0.5s ease;
+    }
+
+    .action:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 20px 50px rgba(180, 130, 200, 0.25),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+      border-color: rgba(255, 255, 255, 0.8);
+      animation: rainbow-border 3s linear infinite;
+    }
+
+    .action:hover::before {
+      animation: shimmer 2s linear infinite;
+    }
+
+    .action-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.45em;
+      font-weight: 800;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-bottom: 0.2em;
+      margin-top: 0.5em;
+      line-height: 1.2;
+    }
+
+    .action-name-long {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.74em;
+      color: var(--text-light);
+      letter-spacing: 0.2px;
+      margin-bottom: 0.5em;
+      opacity: 0.9;
+      word-break: break-word;
+    }
+
+    .action-short-options {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45em;
+      margin: 0.45em 0 0.6em 0;
+      padding: 0;
+    }
+
+    .action-short-options li {
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-lavender));
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.35em 0.85em;
+      font-size: 0.98em;
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(180, 130, 200, 0.22);
+    }
+
+    .action-summary {
+      margin: 0.2em 0 0.55em 0;
+      font-size: 0.97em;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.45;
+    }
+
+    .action-category { 
+      font-size: 0.9em; 
+      color: var(--text-medium); 
+      margin-bottom: 0.5em; 
+    }
+
+    .action-description {
+      margin: 0.6em 0 0.8em 0;
+      font-size: 0.95em;
+      color: var(--text-medium);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .action-variables {
+      margin: 0.5em 0 0 0;
+      padding-top: 0.8em;
+      border-top: 1px solid rgba(180, 130, 200, 0.15);
+    }
+
+    .action-variables strong {
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .var-list { 
+      list-style: none; 
+      padding-left: 0; 
+      margin: 0.5em 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+    }
+
+    .var-list li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .var-chip {
+      background: linear-gradient(135deg, var(--pastel-lavender), var(--pastel-sky));
+      color: var(--text-dark);
+      border: 0;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 0.82em;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(180, 130, 200, 0.15);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      padding: 0.35em 0.9em;
+      font-family: inherit;
+    }
+
+    .var-chip:hover {
+      transform: scale(1.08);
+      box-shadow: 0 4px 12px rgba(180, 130, 200, 0.25);
+    }
+
+    .var-chip:focus-visible {
+      outline: 3px solid rgba(144, 224, 239, 0.6);
+      outline-offset: 2px;
+    }
+
+    .var-chip-empty {
+      background: #f0f0f0;
+      color: #888;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .variable-popup {
+      margin-top: 0.75em;
+      padding: 0.7em 0.8em;
+      border-radius: 12px;
+      border: 1px solid rgba(180, 130, 200, 0.25);
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--text-dark);
+      font-size: 0.84em;
+      line-height: 1.45;
+    }
+
+    .variable-popup strong {
+      display: block;
+      margin-bottom: 0.25em;
+      font-size: 0.95em;
+    }
+
+    .emoji { 
+      font-size: 1.15em; 
+      margin-right: 0.15em; 
+    }
+
+    /* ===== CATEGORY BADGES ===== */
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
+      padding: 0.3em 1em;
+      border-radius: 50px;
+      font-size: 0.82em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .cat-AI { 
+      background: linear-gradient(135deg, #80ed99, #57cc99); 
+      color: #1b4332; 
+    }
+    .cat-Browser { 
+      background: linear-gradient(135deg, #ffd6a5, #ffb347); 
+      color: #7c4a03; 
+    }
+    .cat-File { 
+      background: linear-gradient(135deg, #e5d4ff, #c8b6ff); 
+      color: #4a3470; 
+    }
+    .cat-Google-Doc { 
+      background: linear-gradient(135deg, #a2d2ff, #90e0ef); 
+      color: #1d4e89; 
+    }
+    .cat-Other { 
+      background: linear-gradient(135deg, #ffc8dd, #ffafcc); 
+      color: #89023e; 
+    }
+    .cat-Uncategorized { 
+      background: linear-gradient(135deg, #dfe7fd, #cddafd); 
+      color: #4a5568; 
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      display: flex;
+      gap: 2em;
+      justify-content: center;
+      margin-bottom: 1.5em;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s ease 0.2s backwards;
+    }
+
+    .stat-item {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      padding: 0.8em 1.5em;
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 4px 16px rgba(180, 130, 200, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(180, 130, 200, 0.2);
+    }
+
+    .stat-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8em;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-lavender));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.8em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      #actions-container { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
+      #actions-container { grid-template-columns: 1fr; }
+      .header {
+        padding: 1.5em 1.2em;
+        border-radius: var(--border-radius-sm);
+        margin: 1em auto;
+        max-width: 96%;
+      }
+      h1 { font-size: 1.6em; }
+      #search-box { width: 100%; }
+      .main-content { padding: 0.5em 3vw 2em 3vw; }
+      .stats-bar { gap: 1em; }
+      .stat-item { padding: 0.6em 1em; }
+    }
+
+    /* ===== EMPTY STATE ===== */
+    .empty-state {
+      text-align: center;
+      padding: 4em 2em;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state-emoji {
+      font-size: 4em;
+      margin-bottom: 0.3em;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .empty-state-text {
+      font-size: 1.2em;
+      color: var(--text-medium);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 2em;
+      margin-top: 3em;
+      color: var(--text-light);
+      font-size: 0.9em;
+    }
+
+    .footer-heart {
+      color: var(--accent-coral);
+      animation: pulse 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--pastel-lavender), var(--pastel-pink));
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--accent-lavender), var(--accent-pink));
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>✨ RoboClick Actions ✨</h1>
+    <div class="header-subtitle">Your automation command reference</div>
+    <div class="header-controls">
+      <input id="search-box" type="text" placeholder="🔍 Search commands...">
+      <select id="category-filter">
+        <option value="">🌈 All Categories</option>
+      </select>
+    </div>
+    <div class="quick-filters" id="quick-filters"></div>
+  </div>
+  <div class="main-content">
+    <div class="stats-bar" id="stats-bar"></div>
+    <div id="actions-container"></div>
+    <div class="footer">
+      Made with <span class="footer-heart">♥</span> by RoboClick • Documentation auto-generated
+    </div>
+  </div>
+  <script>
+        // Quick filter definitions (add more as needed)
+        const QUICK_FILTERS = [
+          { label: 'AI', keyword: 'ai', emoji: '🤖' },
+          { label: 'Image', keyword: 'image', emoji: '🖼️' },
+          { label: 'Corel', keyword: 'corel', emoji: '🎨' },
+          { label: 'OpenSCAD', keyword: 'openscad', emoji: '📐' },
+          { label: 'File', keyword: 'file', emoji: '📁' },
+          { label: 'Browser', keyword: 'browser', emoji: '🌐' },
+          { label: 'Google Doc', keyword: 'google doc', emoji: '📄' },
+          { label: 'Other', keyword: 'other', emoji: '🛠️' },
+        ];
+    // DOCUMENTATION_DATA will be injected by the Python script
+    <!-- DOCUMENTATION_DATA_PLACEHOLDER -->
+    // Emoji for categories and commands
+    const CATEGORY_EMOJI = {
+      'AI': '🤖',
+      'Browser': '🌐',
+      'File': '📄',
+      'Google Doc': '📄',
+      'Other': '🛠️',
+    };
+    const COMMAND_EMOJI = {
+      'add': '➕',
+      'save': '💾',
+      'open': '📂',
+      'close': '❌',
+      'copy': '📋',
+      'paste': '📋',
+      'export': '📤',
+      'import': '📥',
+      'trace': '🔍',
+      'group': '👥',
+      'convert': '🔄',
+      'set': '⚙️',
+      'create': '✨',
+      'crop': '✂️',
+      'swap': '🔀',
+      'fix': '🩹',
+      'query': '❓',
+      'continue': '➡️',
+      'new': '🆕',
+      'object': '🧩',
+      'page': '📄',
+      'quad': '🟪',
+      'png': '🖼️',
+      'text': '🔤',
+      'url': '🔗',
+      'file': '📁',
+    };
+
+    function getUniqueCategories(actions) {
+      const cats = new Set();
+      actions.forEach(a => { if (a.category) cats.add(a.category); });
+      return Array.from(cats).sort();
+    }
+
+    function getCategoryBadge(category) {
+      const emoji = CATEGORY_EMOJI[category] || '';
+      const safeCat = category ? category.replace(/\s/g, '-') : 'Uncategorized';
+      return `<span class="category-badge cat-${safeCat}">${emoji} ${category || 'Uncategorized'}</span>`;
+    }
+
+    function getCommandEmoji(command) {
+      const text = (command || '').toString().toLowerCase();
+      // Try to match a keyword in the command
+      for (const key in COMMAND_EMOJI) {
+        if (text.includes(key)) return `<span class="emoji">${COMMAND_EMOJI[key]}</span>`;
+      }
+      return '';
+    }
+
+    function escapeHtml(text) {
+      return (text || '')
+        .toString()
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function getNameShortOptions(action) {
+      if (Array.isArray(action.name_short_options) && action.name_short_options.length > 0) {
+        return action.name_short_options.filter(x => typeof x === 'string' && x.trim()).map(x => x.trim());
+      }
+      if (Array.isArray(action.aliases) && action.aliases.length > 0) {
+        return action.aliases.filter(x => typeof x === 'string' && x.trim()).map(x => x.trim());
+      }
+      return [];
+    }
+
+    function getPrimaryDisplayName(action) {
+      const shortOptions = getNameShortOptions(action);
+      if (shortOptions.length > 0) return shortOptions[0];
+      return (action.command || '').toString();
+    }
+
+    function getLongName(action) {
+      return (action.name_long || action.command || '').toString();
+    }
+
+    function getVariableNames(action) {
+      if (Array.isArray(action.variable_names) && action.variable_names.length > 0) {
+        return action.variable_names.filter(x => typeof x === 'string' && x.trim()).map(x => x.trim());
+      }
+      if (!Array.isArray(action.variables)) return [];
+      return action.variables
+        .map(v => {
+          if (typeof v === 'string') return v;
+          if (v && typeof v === 'object' && typeof v.name === 'string') return v.name;
+          return '';
+        })
+        .filter(Boolean);
+    }
+
+    function getSearchHaystack(action) {
+      const pieces = [];
+      pieces.push(action.command || '');
+      pieces.push(action.name_long || '');
+      pieces.push(action.description || '');
+      pieces.push(action.summary || '');
+      pieces.push(action.category || '');
+      pieces.push(...getNameShortOptions(action));
+      pieces.push(...getVariableNames(action));
+      return pieces.join(' ').toLowerCase();
+    }
+
+    let activeQuickFilter = '';
+
+    function renderQuickFilters() {
+      const quickFiltersDiv = document.getElementById('quick-filters');
+      if (!quickFiltersDiv) return;
+      quickFiltersDiv.innerHTML = '';
+      QUICK_FILTERS.forEach(f => {
+        const btn = document.createElement('button');
+        btn.className = 'quick-filter-btn' + (activeQuickFilter === f.keyword ? ' active' : '');
+        btn.innerHTML = `${f.emoji} ${f.label}`;
+        btn.onclick = () => {
+          if (activeQuickFilter === f.keyword) {
+            activeQuickFilter = '';
+          } else {
+            activeQuickFilter = f.keyword;
+          }
+          renderDocumentation();
+        };
+        quickFiltersDiv.appendChild(btn);
+      });
+    }
+
+    function renderDocumentation() {
+      if (typeof DOCUMENTATION_DATA !== 'undefined' && DOCUMENTATION_DATA.actions) {
+        const actions = DOCUMENTATION_DATA.actions;
+        const container = document.getElementById('actions-container');
+        const searchBox = document.getElementById('search-box');
+        const categoryFilter = document.getElementById('category-filter');
+
+        // Populate category filter if not already
+        if (categoryFilter.options.length === 1) {
+          getUniqueCategories(actions).forEach(cat => {
+            const opt = document.createElement('option');
+            opt.value = cat;
+            opt.textContent = `${CATEGORY_EMOJI[cat] ? CATEGORY_EMOJI[cat] + ' ' : ''}${cat}`;
+            categoryFilter.appendChild(opt);
+          });
+        }
+
+        // Get filter values
+        const search = (searchBox && searchBox.value.trim().toLowerCase()) || '';
+        const selectedCat = (categoryFilter && categoryFilter.value) || '';
+
+        // Filter actions
+        let filtered = actions.filter(action => {
+          let matchesCat = !selectedCat || (action.category === selectedCat);
+          let matchesSearch = !search || getSearchHaystack(action).includes(search);
+          return matchesCat && matchesSearch;
+        });
+
+        // Apply quick filter if active
+        if (activeQuickFilter) {
+          filtered = filtered.filter(action => {
+            const kw = activeQuickFilter.toLowerCase();
+            return getSearchHaystack(action).includes(kw);
+          });
+        }
+
+        container.innerHTML = '';
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-state-emoji">🔍</div>
+              <div class="empty-state-text">No actions found matching your search.<br>Try a different keyword!</div>
+            </div>
+          `;
+        } else {
+          filtered.forEach((action, index) => {
+            const div = document.createElement('div');
+            div.className = 'action';
+            div.style.animationDelay = `${index * 0.05}s`;
+            const primaryName = getPrimaryDisplayName(action);
+            const longName = getLongName(action);
+            const shortOptions = getNameShortOptions(action);
+            const secondaryShortOptions = shortOptions.filter((_, idx) => idx > 0);
+            const variableNames = getVariableNames(action);
+            const summary = escapeHtml(action.summary || action.description || 'No summary available');
+            const desc = escapeHtml(action.description || '').replace(/\n/g, '<br>');
+            const showLongName = longName && longName !== primaryName;
+            const shortOptionsHtml = secondaryShortOptions.length > 0
+              ? `<ul class="action-short-options">${secondaryShortOptions.map(name => `<li>${escapeHtml(name)}</li>`).join('')}</ul>`
+              : '';
+            const descriptionHtml = desc && desc !== summary
+              ? `<div class="action-description">${desc}</div>`
+              : '';
+            // Build variable list with click-to-show descriptions
+            let variableListHtml = '';
+            if (Array.isArray(action.variables) && action.variables.length > 0) {
+              variableListHtml = action.variables.map((v, idx) => {
+                let name = typeof v === 'string' ? v : (v && v.name ? v.name : '');
+                return `<li><button type="button" class="var-chip" data-var-index="${idx}">${escapeHtml(name)}</button></li>`;
+              }).join('');
+            } else {
+              variableListHtml = '<li><button type="button" class="var-chip var-chip-empty" disabled>none</button></li>';
+            }
+            div.innerHTML = `
+              <div class="action-title">${getCommandEmoji(primaryName)}${escapeHtml(primaryName)}</div>
+              ${shortOptionsHtml}
+              ${showLongName ? `<div class="action-name-long">${escapeHtml(longName)}</div>` : ''}
+              <div class="action-category">${getCategoryBadge(action.category || 'Uncategorized')}</div>
+              <div class="action-summary">${summary}</div>
+              ${descriptionHtml}
+              <div class="action-variables"><strong>Variables</strong> <ul class="var-list">${variableListHtml}</ul><div class="variable-popup" hidden></div></div>
+            `;
+
+            const variablePopup = div.querySelector('.variable-popup');
+            const variableButtons = div.querySelectorAll('.var-chip[data-var-index]');
+            variableButtons.forEach(btn => {
+              btn.addEventListener('click', () => {
+                if (!variablePopup) return;
+                const index = Number(btn.getAttribute('data-var-index'));
+                const variable = Array.isArray(action.variables) ? action.variables[index] : null;
+                const variableName = typeof variable === 'string'
+                  ? variable
+                  : (variable && typeof variable.name === 'string' ? variable.name : '');
+                const variableDescription = variable && typeof variable === 'object' && typeof variable.description === 'string'
+                  ? variable.description
+                  : '';
+                const currentActive = variablePopup.getAttribute('data-active-index');
+                if (!variablePopup.hidden && currentActive === String(index)) {
+                  variablePopup.hidden = true;
+                  variablePopup.removeAttribute('data-active-index');
+                  variablePopup.innerHTML = '';
+                  return;
+                }
+                const displayDescription = variableDescription && variableDescription.trim()
+                  ? variableDescription.trim()
+                  : 'No description provided.';
+                variablePopup.innerHTML = `<strong>${escapeHtml(variableName)}</strong>${escapeHtml(displayDescription)}`;
+                variablePopup.hidden = false;
+                variablePopup.setAttribute('data-active-index', String(index));
+              });
+            });
+            container.appendChild(div);
+          });
+        }
+
+        // Update stats bar
+        const statsBar = document.getElementById('stats-bar');
+        if (statsBar) {
+          const categories = getUniqueCategories(actions);
+          statsBar.innerHTML = `
+            <div class="stat-item">
+              <div class="stat-number">${actions.length}</div>
+              <div class="stat-label">Total Actions</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">${filtered.length}</div>
+              <div class="stat-label">Showing</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">${categories.length}</div>
+              <div class="stat-label">Categories</div>
+            </div>
+          `;
+        }
+
+        renderQuickFilters();
+      } else {
+        document.getElementById('actions-container').innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-emoji">📄</div>
+            <div class="empty-state-text">No documentation data found.<br>Please run the update script.</div>
+          </div>
+        `;
+      }
+    }
+
+    // Add event listeners for search/filter and quick filters
+    function setupSearchFilterEvents() {
+      const searchBox = document.getElementById('search-box');
+      const categoryFilter = document.getElementById('category-filter');
+      if (searchBox) searchBox.addEventListener('input', renderDocumentation);
+      if (categoryFilter) categoryFilter.addEventListener('change', renderDocumentation);
+    }
+
+    // Try to render immediately, or after DOCUMENTATION_DATA is injected
+    if (typeof DOCUMENTATION_DATA !== 'undefined') {
+      renderDocumentation();
+      setupSearchFilterEvents();
+    } else {
+      window.DOCUMENTATION_DATA_READY = function() {
+        renderDocumentation();
+        setupSearchFilterEvents();
+      };
+    }
+  </script>
+</body>
+</html>

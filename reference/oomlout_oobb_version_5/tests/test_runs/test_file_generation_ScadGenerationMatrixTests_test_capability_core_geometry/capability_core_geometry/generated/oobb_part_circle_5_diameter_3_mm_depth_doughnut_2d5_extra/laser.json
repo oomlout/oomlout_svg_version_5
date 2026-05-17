@@ -1,0 +1,49 @@
+[
+    {
+        "type": "p",
+        "diameter": 5,
+        "thickness": 3,
+        "extra": "doughnut_2.5",
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_circle",
+        "width": 5,
+        "height": 5,
+        "depth": 3
+    },
+    {
+        "type": "n",
+        "diameter": 2.5,
+        "thickness": 3,
+        "extra": "doughnut_2.5",
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_circle",
+        "width": 2.5,
+        "height": 2.5,
+        "depth": 3
+    },
+    {
+        "type": "n",
+        "diameter": 5,
+        "thickness": 3,
+        "extra": "doughnut_2.5",
+        "pos": [
+            0,
+            0,
+            0
+        ],
+        "shape": "oobb_holes",
+        "width": 5,
+        "height": 5,
+        "holes": "all",
+        "both_holes": true,
+        "circle": true
+    }
+]

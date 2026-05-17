@@ -1,0 +1,6 @@
+name: "Integration: run folder test_data/example_directory"
+enabled: false
+type: run_folder
+kind: integration
+folder: test_data/example_directory
+mode: all

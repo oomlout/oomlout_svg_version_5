@@ -1,0 +1,218 @@
+-   bearing: '606'
+    depth: 12
+    extra_mm: true
+    height: 3
+    holes: false
+    pos:
+    - 0
+    - 0
+    - -6.0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    shape: oobb_plate
+    thickness: 12
+    type: p
+    width: 3
+-   bearing: '606'
+    depth: 12
+    height: 3
+    pos:
+    - 0
+    - 0
+    - 0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    shape: oobb_bearing
+    thickness: 12
+    type: negative
+    width: 3
+-   bearing: '606'
+    height: 3
+    holes: single
+    loc:
+    -   - 1
+        - 1
+    -   - 2
+        - 1
+    -   - 3
+        - 1
+    -   - 1
+        - 2
+    -   - 3
+        - 2
+    -   - 1
+        - 3
+    -   - 2
+        - 3
+    -   - 3
+        - 3
+    pos:
+    - 0
+    - 0
+    - 0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    radius_name: m6
+    shape: oobb_holes
+    thickness: 12
+    type: n
+    width: 3
+-   bearing: '606'
+    height: 3
+    holes: single
+    loc:
+    -   - 1.5
+        - 1
+    -   - 1
+        - 1.5
+    -   - 2.5
+        - 1
+    -   - 3
+        - 1.5
+    -   - 1
+        - 2.5
+    -   - 3
+        - 2.5
+    -   - 1.5
+        - 3
+    -   - 2.5
+        - 3
+    pos:
+    - 0
+    - 0
+    - 0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    radius_name: m3
+    shape: oobb_holes
+    thickness: 12
+    type: n
+    width: 3
+-   bearing: '606'
+    height: 3
+    holes: just_middle
+    pos:
+    - 0
+    - 0
+    - 0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    radius_name: m6
+    shape: oobb_holes
+    thickness: 12
+    type: n
+    width: 3
+-   bearing: '606'
+    depth: 12
+    height: 3
+    nut: true
+    overhang: true
+    pos:
+    - 15.0
+    - 7.5
+    - 6.0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    radius_name: m3
+    rot:
+    - 0
+    - 0
+    - 30.0
+    shape: oobb_screw_countersunk
+    thickness: 12
+    type: n
+    width: 3
+-   bearing: '606'
+    depth: 12
+    height: 3
+    nut: true
+    overhang: true
+    pos:
+    - -15.0
+    - -7.5
+    - 6.0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    radius_name: m3
+    rot:
+    - 0
+    - 0
+    - 30.0
+    shape: oobb_screw_countersunk
+    thickness: 12
+    type: n
+    width: 3
+-   bearing: '606'
+    depth: 12
+    height: 3
+    nut: true
+    overhang: true
+    pos:
+    - 7.5
+    - -15.0
+    - -6.0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    radius_name: m3
+    rot:
+    - 0
+    - 180
+    - 0
+    shape: oobb_screw_countersunk
+    thickness: 12
+    type: n
+    width: 3
+-   bearing: '606'
+    depth: 12
+    height: 3
+    nut: true
+    overhang: true
+    pos:
+    - -7.5
+    - 15.0
+    - -6.0
+    pos_plate:
+    - 0
+    - 0
+    - 0
+    radius_name: m3
+    rot:
+    - 0
+    - 180
+    - 0
+    shape: oobb_screw_countersunk
+    thickness: 12
+    type: n
+    width: 3
+-   mode: 3dpr
+    pos:
+    - 0
+    - 0
+    - 6.0
+    shape: oobb_slice
+    type: n
+    zz: bottom
+-   mode: 3dpr
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_slice
+    type: n
+    zz: top

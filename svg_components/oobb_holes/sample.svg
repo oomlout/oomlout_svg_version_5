@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="10.0000mm" height="10.0000mm"
+     viewBox="0 0 10.0000 10.0000">
+  <g fill="#333333" stroke="none">
+    <circle cx="-2.5000" cy="12.5000" r="3.0000" />
+    <circle cx="-2.5000" cy="-2.5000" r="3.0000" />
+    <circle cx="12.5000" cy="12.5000" r="3.0000" />
+    <circle cx="12.5000" cy="-2.5000" r="3.0000" />
+  </g>
+</svg>

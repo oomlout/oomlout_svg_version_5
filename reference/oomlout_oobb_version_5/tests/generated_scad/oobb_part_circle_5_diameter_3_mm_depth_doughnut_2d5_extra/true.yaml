@@ -1,0 +1,38 @@
+-   depth: 3
+    diameter: 5
+    extra: doughnut_2.5
+    height: 5
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_circle
+    thickness: 3
+    type: p
+    width: 5
+-   depth: 3
+    diameter: 2.5
+    extra: doughnut_2.5
+    height: 2.5
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_circle
+    thickness: 3
+    type: n
+    width: 2.5
+-   both_holes: true
+    circle: true
+    diameter: 5
+    extra: doughnut_2.5
+    height: 5
+    holes: all
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_holes
+    thickness: 3
+    type: n
+    width: 5

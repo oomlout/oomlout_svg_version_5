@@ -1,0 +1,23 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: circle 0x0x3
+description_extra: doughnut_2.5_extra
+description_main: 5_diameter_3_mm_depth
+diameter: 5
+extra: doughnut_2.5
+folder: c:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_core_geometry\capability_core_geometry\generated\oobb_part_circle_5_diameter_3_mm_depth_doughnut_2d5_extra
+id: oobb_part_circle_5_diameter_3_mm_depth_doughnut_2d5_extra
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/circle/5_diameter_3_mm_depth/doughnut_2.5_extra/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_circle_05_03_ex_doughnut_2d5
+manufacturer: ''
+name: Oobb Part Circle 5 Diameter 3 mm Depth Doughnut 2D5 Extra
+name_short: Circle 5x3 Doughnut 2D5 Extra
+part_number: ''
+short_name: ''
+size: circle
+thickness: 3
+thickness_mm: 3
+type: part

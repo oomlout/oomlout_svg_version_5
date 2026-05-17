@@ -1,0 +1,13 @@
+oomlout_ai_roboclick_1:
+  actions:
+    - command: delay
+      delay: 0.1
+      mode_skip_key: false
+      mode_scroll_lock_skip: false
+
+oomlout_corel_roboclick_1:
+  actions:
+    - command: wait
+      delay: 0.1
+      mode_skip_key: false
+      mode_scroll_lock_skip: false

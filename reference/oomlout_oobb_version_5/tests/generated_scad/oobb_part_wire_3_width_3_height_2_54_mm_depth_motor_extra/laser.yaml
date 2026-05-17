@@ -1,0 +1,55 @@
+-   depth: 2.54
+    extra: motor
+    height: 3
+    pos:
+    - 0
+    - 0
+    - -2.54
+    pos_plate:
+    - 0
+    - 0
+    - -2.54
+    shape: oobb_plate
+    thickness: 2.54
+    type: positive
+    width: 3
+-   both_holes: true
+    extra: motor
+    height: 3
+    hole_sides:
+    - left
+    - right
+    - top
+    holes:
+    - left
+    - right
+    - top
+    pos:
+    - 0
+    - 0
+    - -2.54
+    pos_plate:
+    - 0
+    - 0
+    - -2.54
+    shape: oobb_holes
+    thickness: 2.54
+    type: p
+    width: 3
+-   extra: motor
+    height: 3
+    pos:
+    - 0
+    - 0
+    - -2.6
+    pos_plate:
+    - 0
+    - 0
+    - -2.54
+    rot:
+    - 0
+    - 0
+    - 180
+    shape: oobb_wire_motor
+    thickness: 2.54
+    width: 3

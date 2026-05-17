@@ -1,0 +1,21 @@
+-   both_holes: true
+    depth: 3
+    height: 1
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_plate
+    thickness: 3
+    type: p
+    width: 1
+-   both_holes: true
+    height: 1
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_holes
+    thickness: 3
+    type: n
+    width: 1

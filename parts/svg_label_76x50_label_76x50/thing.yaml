@@ -1,0 +1,235 @@
+classification: svg
+color: ''
+description_extra: ''
+description_main: label_76x50
+id: svg_label_76x50_label_76x50
+id_svg: svg_label_76x50_label_76x50
+kwargs:
+  depth: 3
+  filter: ''
+  navigation: true
+  oobb_name: label_76x50
+  oomp_description_extra: ''
+  oomp_description_main: 76x50_label_76x50
+  oomp_mode: project
+  output_formats: []
+  overwrite: true
+  svg_name: label_76x50
+  type: C:\gh\oomlout_svg_version_5_label_76x50
+oobb_name: label_76x50
+project_name: C:\gh\oomlout_svg_version_5
+size: 76x50
+svg_details:
+  depth: 3
+  svg_name: label_76x50
+thing:
+  classification: svg
+  color: ''
+  depth: 3
+  depth_mm: 3
+  description: ''
+  description_extra: ''
+  description_main: label_76x50
+  extra: ''
+  height: 1
+  height_mm: 14.0
+  id: svg_label_76x50_label_76x50
+  id_svg: svg_label_76x50_label_76x50
+  kwargs:
+    depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: label_76x50
+    oomp_description_extra: ''
+    oomp_description_main: 76x50_label_76x50
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    save_type: all
+    svg_name: label_76x50
+    type: C:\gh\oomlout_svg_version_5_label_76x50
+  oobb_name: label_76x50
+  project_name: C:\gh\oomlout_svg_version_5
+  size: 76x50
+  svg_components:
+  - depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: label_76x50
+    oomp_description_extra: ''
+    oomp_description_main: 76x50_label_76x50
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 0
+    - 0
+    - 0
+    r: 3.0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: rounded_rectangle
+    size:
+    - 76.2
+    - 50.4
+    - 3
+    svg_name: label_76x50
+    type: C:\gh\oomlout_svg_version_5_label_76x50
+  - depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: label_76x50
+    oomp_description_extra: ''
+    oomp_description_main: 76x50_label_76x50
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 0
+    - 19.2
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: rect
+    size:
+    - 76.2
+    - 12.0
+    - 3
+    svg_name: label_76x50
+    type: C:\gh\oomlout_svg_version_5_label_76x50
+  - color: '#ffffff'
+    depth: 3
+    filter: ''
+    font: sans-serif
+    halign: center
+    navigation: true
+    oobb_name: label_76x50
+    oomp_description_extra: ''
+    oomp_description_main: 76x50_label_76x50
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 0
+    - 19.2
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: text
+    size: 9.0
+    svg_name: label_76x50
+    text: OOMLOUT
+    type: C:\gh\oomlout_svg_version_5_label_76x50
+    valign: center
+  - depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: label_76x50
+    oomp_description_extra: ''
+    oomp_description_main: 76x50_label_76x50
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - -30.1
+    - 3.1999999999999993
+    - 0
+    r: 1.5
+    save_type: all
+    shape: circle
+    svg_name: label_76x50
+    type: C:\gh\oomlout_svg_version_5_label_76x50
+  - depth: 3
+    filter: ''
+    font: sans-serif
+    halign: left
+    navigation: true
+    oobb_name: label_76x50
+    oomp_description_extra: ''
+    oomp_description_main: 76x50_label_76x50
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - -25.1
+    - 3.1999999999999993
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: text
+    size: 5.0
+    svg_name: label_76x50
+    text: Bracket  4 x 2
+    type: C:\gh\oomlout_svg_version_5_label_76x50
+    valign: center
+  - depth: 3
+    filter: ''
+    font: sans-serif
+    halign: left
+    navigation: true
+    oobb_name: label_76x50
+    oomp_description_extra: ''
+    oomp_description_main: 76x50_label_76x50
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - -32.1
+    - -3.8000000000000007
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: text
+    size: 4.0
+    svg_name: label_76x50
+    text: L-shaped laser-cut plate
+    type: C:\gh\oomlout_svg_version_5_label_76x50
+    valign: center
+  - depth: 3
+    filter: ''
+    font: sans-serif
+    halign: right
+    navigation: true
+    oobb_name: label_76x50
+    oomp_description_extra: ''
+    oomp_description_main: 76x50_label_76x50
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 34.1
+    - -20.2
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: text
+    size: 3.0
+    svg_name: label_76x50
+    text: OOBB-BKT-4x2-001
+    type: C:\gh\oomlout_svg_version_5_label_76x50
+    valign: center
+  svg_details:
+    depth: 3
+    svg_name: label_76x50
+  type: label
+  width: 1
+  width_mm: 14.0
+type: label

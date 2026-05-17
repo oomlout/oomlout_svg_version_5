@@ -1,0 +1,262 @@
+classification: svg
+color: ''
+description_extra: ''
+description_main: a4_sheet
+id: svg_demo_a4_a4_sheet
+id_svg: svg_demo_a4_a4_sheet
+kwargs:
+  depth: 3
+  filter: ''
+  navigation: true
+  oobb_name: a4_sheet
+  oomp_description_extra: ''
+  oomp_description_main: a4_a4_sheet
+  oomp_mode: project
+  output_formats: []
+  overwrite: true
+  svg_name: a4_sheet
+  type: C:\gh\oomlout_svg_version_5_a4_sheet
+oobb_name: a4_sheet
+project_name: C:\gh\oomlout_svg_version_5
+size: a4
+svg_details:
+  depth: 3
+  svg_name: a4_sheet
+thing:
+  classification: svg
+  color: ''
+  depth: 3
+  depth_mm: 3
+  description: ''
+  description_extra: ''
+  description_main: a4_sheet
+  extra: ''
+  height: 1
+  height_mm: 14.0
+  id: svg_demo_a4_a4_sheet
+  id_svg: svg_demo_a4_a4_sheet
+  kwargs:
+    depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    save_type: all
+    svg_name: a4_sheet
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+  oobb_name: a4_sheet
+  project_name: C:\gh\oomlout_svg_version_5
+  size: a4
+  svg_components:
+  - depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 0
+    - 0
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: rect
+    size:
+    - 210.0
+    - 297.0
+    - 3
+    svg_name: a4_sheet
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+  - depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 0
+    - 0
+    - 0
+    r: 5.0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: rounded_rectangle
+    size:
+    - 190.0
+    - 277.0
+    - 3
+    svg_name: a4_sheet
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+  - color: '#ffffff'
+    depth: 3
+    filter: ''
+    font: sans-serif
+    halign: center
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 0
+    - 118.5
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: text
+    size: 14.0
+    svg_name: a4_sheet
+    text: A4 Demo Sheet
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+    valign: center
+  - color: '#ffffff'
+    depth: 3
+    filter: ''
+    font: sans-serif
+    halign: center
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 0
+    - 100.5
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: text
+    size: 7.0
+    svg_name: a4_sheet
+    text: oomlout SVG pipeline
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+    valign: center
+  - color: '#ffffff'
+    depth: 3
+    filter: ''
+    font: sans-serif
+    halign: right
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 97.0
+    - -140.5
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: text
+    size: 4.0
+    svg_name: a4_sheet
+    text: v1.0
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+    valign: center
+  - depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    points:
+    - - 0
+      - 4
+    - - -6
+      - -4
+    - - 6
+      - -4
+    pos:
+    - 85.0
+    - 128.5
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: polygon
+    svg_name: a4_sheet
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+  - depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - -85.0
+    - 128.5
+    - 0
+    r: 4.0
+    save_type: all
+    shape: circle
+    svg_name: a4_sheet
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+  - depth: 3
+    filter: ''
+    navigation: true
+    oobb_name: a4_sheet
+    oomp_description_extra: ''
+    oomp_description_main: a4_a4_sheet
+    oomp_mode: project
+    output_formats: []
+    overwrite: true
+    pos:
+    - 0
+    - -128.5
+    - 0
+    r: 3.0
+    rot:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: slot
+    svg_name: a4_sheet
+    type: C:\gh\oomlout_svg_version_5_a4_sheet
+    w: 40.0
+  svg_details:
+    depth: 3
+    svg_name: a4_sheet
+  type: demo
+  width: 1
+  width_mm: 14.0
+type: demo

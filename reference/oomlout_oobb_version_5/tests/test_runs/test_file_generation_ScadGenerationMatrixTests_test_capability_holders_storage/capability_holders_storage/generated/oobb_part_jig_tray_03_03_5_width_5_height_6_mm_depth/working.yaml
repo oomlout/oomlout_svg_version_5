@@ -1,0 +1,25 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: jig tray 03 03 5x5x6
+description_extra: ''
+description_main: 5_width_5_height_6_mm_depth
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_holders_storage\capability_holders_storage\generated\oobb_part_jig_tray_03_03_5_width_5_height_6_mm_depth
+height: 5
+height_mm: 74
+id: oobb_part_jig_tray_03_03_5_width_5_height_6_mm_depth
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/jig_tray_03_03/5_width_5_height_6_mm_depth/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_jig_tray_03_03_05_05_06
+manufacturer: ''
+name: Oobb Part Jig Tray 03 03 5 Width 5 Height 6 mm Depth
+name_short: 'Jig Tray 03 03 5x5x6 '
+part_number: ''
+short_name: ''
+size: jig_tray_03_03
+thickness: 6
+thickness_mm: 6
+type: part
+width: 5
+width_mm: 74

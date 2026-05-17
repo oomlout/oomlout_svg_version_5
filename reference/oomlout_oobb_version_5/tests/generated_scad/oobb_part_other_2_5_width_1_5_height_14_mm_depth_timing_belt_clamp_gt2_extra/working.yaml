@@ -1,0 +1,26 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: other 2.5x1.5x14
+description_extra: timing_belt_clamp_gt2_extra
+description_main: 2_5_width_1_5_height_14_mm_depth
+extra: timing_belt_clamp_gt2
+folder: C:\gh\oomlout_oobb_version_5\tests\generated_scad\oobb_part_other_2_5_width_1_5_height_14_mm_depth_timing_belt_clamp_gt2_extra
+height: 1.5
+height_mm: 21.5
+id: oobb_part_other_2_5_width_1_5_height_14_mm_depth_timing_belt_clamp_gt2_extra
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/other/2_5_width_1_5_height_14_mm_depth/timing_belt_clamp_gt2_extra/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_other_2d5_1d5_14_ex_timing_belt_clamp_gt2
+manufacturer: ''
+name: Oobb Part Other 2 5 Width 1 5 Height 14 mm Depth Timing Belt Clamp Gt2 Extra
+name_short: Other 2 5x1 5x14 Timing Belt Clamp Gt2
+part_number: ''
+short_name: ''
+size: other
+thickness: 14
+thickness_mm: 14
+type: part
+width: 2.5
+width_mm: 36.5

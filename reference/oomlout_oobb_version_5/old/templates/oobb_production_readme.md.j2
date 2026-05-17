@@ -1,0 +1,6 @@
+# OOBB Production File Summary for {{ p.name }}
+{{ p.description }}
+## files
+{% for f in p.oobb_production_file %}
+* ![image](images/{{ f.file_type }}_{{ f.index }}_140.png) {{ f.file_type }}_{{ f.index }}.{{ f.file_extension }}  - {{ f.file_name }} - {{ f.file_description }}  {% endfor %}
+

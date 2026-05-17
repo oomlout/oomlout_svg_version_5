@@ -1,0 +1,21 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+depth: 8
+description: screw countersunk 0x0x0
+description_extra: m3_radius_name_8_depth
+description_main: ''
+folder: C:\gh\oomlout_oobb_version_5\tests\generated_scad\oobb_part_screw_countersunk_m3_radius_name_8_depth
+id: oobb_part_screw_countersunk_m3_radius_name_8_depth
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/screw_countersunk//m3_radius_name_8_depth/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/hardware_screw_countersunk_m3_08
+manufacturer: ''
+name: Oobb Part Screw Countersunk M3 Radius Name 8 Depth
+name_short: Screw Countersunk M3 Radius Name 8 Depth
+part_number: ''
+radius_name: m3
+short_name: ''
+size: screw_countersunk
+type: part

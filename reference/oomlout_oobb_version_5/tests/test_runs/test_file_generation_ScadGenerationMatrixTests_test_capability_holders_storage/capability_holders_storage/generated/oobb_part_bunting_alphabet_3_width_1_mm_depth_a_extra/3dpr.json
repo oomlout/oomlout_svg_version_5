@@ -1,0 +1,35 @@
+[
+    {
+        "type": "p",
+        "width": 3,
+        "thickness": 1,
+        "extra": "a",
+        "size": "oobb",
+        "shape": "oobb_plate",
+        "depth": 1,
+        "pos": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "type": "n",
+        "width": 3,
+        "thickness": 1,
+        "extra": "a",
+        "size": "oobb",
+        "shape": "oobb_holes",
+        "height": 1,
+        "holes": [
+            "all"
+        ],
+        "both_holes": true,
+        "m": "#",
+        "pos": [
+            0,
+            0,
+            0
+        ]
+    }
+]

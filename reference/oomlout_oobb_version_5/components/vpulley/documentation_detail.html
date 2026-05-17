@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vpulley Documentation</title>
+  <style>
+    :root {
+      --bg: #f7f5ff;
+      --panel: rgba(255,255,255,0.92);
+      --border: #ddd5ff;
+      --text: #2f2850;
+      --subtle: #635c7e;
+      --accent: #7b68ee;
+      --accent-soft: #efeaff;
+      --shadow: 0 14px 40px rgba(78, 58, 140, 0.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #fff9ef, var(--bg) 45%, #eef6ff 100%);
+      color: var(--text);
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(244,240,255,0.92));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 22px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.1;
+    }
+    .name-long {
+      color: var(--subtle);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      margin: 0;
+      line-height: 1.7;
+      color: var(--subtle);
+      font-size: 16px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .meta-chip {
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+    .panel-intro {
+      margin: 0 0 18px;
+      color: var(--subtle);
+      line-height: 1.6;
+    }
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .sample-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.82);
+    }
+    .sample-image-wrap {
+      background: linear-gradient(180deg, #faf7ff, #f1ebff);
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+    .sample-image-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 10px 28px rgba(74, 52, 112, 0.14);
+    }
+    .sample-missing {
+      color: var(--subtle);
+      font-size: 14px;
+      padding: 24px;
+      text-align: center;
+    }
+    .sample-body {
+      padding: 16px;
+      color: var(--subtle);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .sample-body h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--text);
+    }
+    .sample-body p {
+      margin: 0 0 12px;
+    }
+    .sample-link-row {
+      margin-bottom: 10px;
+    }
+    .sample-link {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #efe8ff;
+      color: #4f3ca7;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid #d6c7ff;
+    }
+    .sample-link-disabled {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #f3f1f8;
+      color: var(--subtle);
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+    }
+    .sample-thumbs {
+      display: flex;
+      gap: 10px;
+      padding: 0 14px 12px;
+      flex-wrap: wrap;
+    }
+    .sample-thumb {
+      border: 1px solid var(--border);
+      background: #faf8ff;
+      border-radius: 12px;
+      padding: 4px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--subtle);
+      font-size: 12px;
+    }
+    .sample-thumb img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    details {
+      margin-top: 10px;
+      background: #faf8ff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .sample-empty {
+      margin-top: 10px;
+      color: var(--subtle);
+      line-height: 1.6;
+    }
+    pre {
+      margin: 10px 0 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #261f45;
+      color: #f7f4ff;
+      padding: 14px;
+      border-radius: 14px;
+      overflow: auto;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--subtle);
+    }
+    .markdown-table-wrap {
+      overflow-x: auto;
+    }
+    .markdown-table {
+      margin-top: 12px;
+    }
+    p, ul, ol {
+      line-height: 1.7;
+      color: var(--subtle);
+    }
+    h3, h4 {
+      margin-top: 1.2em;
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      .page { padding: 14px; }
+      .hero, .panel { padding: 18px; border-radius: 18px; }
+      h1 { font-size: 28px; }
+      .sample-image-wrap { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Component Detail</div>
+      <h1>vpulley</h1>
+      <div class="name-long">OPSC Mechanical Shapes: V Pulley</div>
+      <p>Legacy opsc V-pulley profile shape migrated into the component system.</p>
+      <div class="meta">
+        <div class="meta-chip"><strong>Category:</strong> OPSC Mechanical Shapes</div>
+        <div class="meta-chip"><strong>Returns:</strong> List of geometry component dicts.</div>
+        <div class="meta-chip"><strong>Aliases:</strong> None</div>
+      </div>
+    </section>
+
+    <section class="panel"><h2>Sample Images</h2><p class="panel-intro">use the listed `preview_rot` to show the groove profile.</p><div class="sample-grid">
+            <article class="sample-card">
+              <div class="sample-image-wrap"><img id="sample-main-test_1" src="test/test_1/image_400.png" alt="compact V pulley."></div>
+              <div class="sample-thumbs"><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_400.png" data-alt="compact V pulley. iso view"><img src="test/test_1/image_120.png" alt="compact V pulley. iso thumbnail"><span>Iso</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_top_400.png" data-alt="compact V pulley. top view"><img src="test/test_1/image_top_120.png" alt="compact V pulley. top thumbnail"><span>Top</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_1" data-full="test/test_1/image_side_400.png" data-alt="compact V pulley. side view"><img src="test/test_1/image_side_120.png" alt="compact V pulley. side thumbnail"><span>Side</span></button></div>
+              <div class="sample-body">
+                <h3>compact V pulley.</h3>
+                <p>compact V pulley.</p>
+                <div class="sample-link-row"><a class="sample-link" href="test/test_1/working.scad" download>Download SCAD</a></div><details><summary>Set Values</summary><pre><code>{
+  &quot;type&quot;: &quot;positive&quot;,
+  &quot;id&quot;: 8,
+  &quot;pos&quot;: [
+    0,
+    0,
+    0
+  ]
+}</code></pre></details><details><summary>Default Values</summary><pre><code>{}</code></pre></details><div><strong>rule:</strong> keep the sample values exactly as written. If `kwargs` already contains `rot`, do not replace it; use `preview_rot` only as the outer rotation wrapper for the final rendered scene.</div>
+              </div>
+            </article>
+            
+            <article class="sample-card">
+              <div class="sample-image-wrap"><img id="sample-main-test_2" src="test/test_2/image_400.png" alt="larger V pulley."></div>
+              <div class="sample-thumbs"><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_400.png" data-alt="larger V pulley. iso view"><img src="test/test_2/image_120.png" alt="larger V pulley. iso thumbnail"><span>Iso</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_top_400.png" data-alt="larger V pulley. top view"><img src="test/test_2/image_top_120.png" alt="larger V pulley. top thumbnail"><span>Top</span></button><button class="sample-thumb" type="button" data-target="sample-main-test_2" data-full="test/test_2/image_side_400.png" data-alt="larger V pulley. side view"><img src="test/test_2/image_side_120.png" alt="larger V pulley. side thumbnail"><span>Side</span></button></div>
+              <div class="sample-body">
+                <h3>larger V pulley.</h3>
+                <p>larger V pulley.</p>
+                <div class="sample-link-row"><a class="sample-link" href="test/test_2/working.scad" download>Download SCAD</a></div><details><summary>Set Values</summary><pre><code>{
+  &quot;type&quot;: &quot;positive&quot;,
+  &quot;id&quot;: 12,
+  &quot;pos&quot;: [
+    0,
+    0,
+    0
+  ]
+}</code></pre></details><details><summary>Default Values</summary><pre><code>{}</code></pre></details><div><strong>rule:</strong> keep the sample values exactly as written. If `kwargs` already contains `rot`, do not replace it; use `preview_rot` only as the outer rotation wrapper for the final rendered scene.</div>
+              </div>
+            </article>
+            </div></section>
+
+    <section class="panel">
+      <h2>Variables</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="4">No variables documented.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel"><h2>More Details</h2><h1>vpulley</h1>
+<p><strong>OPSC Mechanical Shapes: V Pulley</strong></p>
+<p>Legacy opsc V-pulley profile shape migrated into the component system.</p>
+<h2>Returns</h2>
+<p>List of geometry component dicts.</p>
+<h2>Variables</h2>
+<div class="markdown-table-wrap"><table class="markdown-table"><thead><tr><th>Name</th><th>Description</th><th>Type</th><th>Default</th></tr></thead><tbody><tr><td>-</td><td>-</td><td>-</td><td>-</td></tr></tbody></table></div>
+<h2>Sample Notes</h2>
+<p>use the listed <code>preview_rot</code> to show the groove profile.</p></section>
+  </main>
+  <script>
+    document.querySelectorAll('.sample-thumb').forEach((button) => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const fullSrc = button.getAttribute('data-full');
+        const altText = button.getAttribute('data-alt');
+        const target = document.getElementById(targetId);
+        if (!target || !fullSrc) return;
+        target.src = fullSrc;
+        if (altText) {
+          target.alt = altText;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

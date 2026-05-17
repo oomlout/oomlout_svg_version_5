@@ -1,0 +1,26 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: wire 3x3x2.54
+description_extra: motor_extra
+description_main: 3_width_3_height_2_54_mm_depth
+extra: motor
+folder: C:\gh\oomlout_oobb_version_5\tests\generated_scad\oobb_part_wire_3_width_3_height_2_54_mm_depth_motor_extra
+height: 3
+height_mm: 44
+id: oobb_part_wire_3_width_3_height_2_54_mm_depth_motor_extra
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/wire/3_width_3_height_2_54_mm_depth/motor_extra/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_wire_03_03_2d54_ex_motor
+manufacturer: ''
+name: Oobb Part Wire 3 Width 3 Height 2 54 mm Depth Motor Extra
+name_short: Wire 3x3x2 54 Motor Extra
+part_number: ''
+short_name: ''
+size: wire
+thickness: 2.54
+thickness_mm: 2.54
+type: part
+width: 3
+width_mm: 44

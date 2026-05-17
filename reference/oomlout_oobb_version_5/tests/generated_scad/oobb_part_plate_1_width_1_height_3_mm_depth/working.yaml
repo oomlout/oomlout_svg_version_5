@@ -1,0 +1,25 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: plate 1x1x3
+description_extra: ''
+description_main: 1_width_1_height_3_mm_depth
+folder: C:\gh\oomlout_oobb_version_5\tests\generated_scad\oobb_part_plate_1_width_1_height_3_mm_depth
+height: 1
+height_mm: 14
+id: oobb_part_plate_1_width_1_height_3_mm_depth
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/plate/1_width_1_height_3_mm_depth/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_plate_01_01_03
+manufacturer: ''
+name: Oobb Part Plate 1 Width 1 Height 3 mm Depth
+name_short: 'Plate 1x1x3 '
+part_number: ''
+short_name: ''
+size: plate
+thickness: 3
+thickness_mm: 3
+type: part
+width: 1
+width_mm: 14

@@ -1,0 +1,20 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: nut 0x0x0
+description_extra: m1d5_radius_name
+description_main: ''
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_fasteners_connectors\capability_fasteners_connectors\generated\oobb_part_nut_m1d5_radius_name
+id: oobb_part_nut_m1d5_radius_name
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/nut//m1d5_radius_name/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/hardware_nut_m1d5
+manufacturer: ''
+name: Oobb Part Nut M1D5 Radius Name
+name_short: Nut M1D5 Radius Name
+part_number: ''
+radius_name: m1d5
+short_name: ''
+size: nut
+type: part

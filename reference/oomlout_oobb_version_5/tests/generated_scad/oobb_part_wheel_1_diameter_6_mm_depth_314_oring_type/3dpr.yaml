@@ -1,0 +1,35 @@
+-   both_holes: true
+    depth: 6
+    diameter: 1.5833333333333333
+    oring_type: '314'
+    pos:
+    - 0
+    - 0
+    - 0
+    radius: 11.875
+    shape: oobb_circle
+    thickness: 6
+    type: positive
+    zz: middle
+-   both_holes: true
+    circle: true
+    diameter: 1.5833333333333333
+    diameter_center_clearance: 15
+    oring_type: '314'
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_holes
+    thickness: 6
+    type: negative
+-   both_holes: true
+    diameter: 1.5833333333333333
+    oring_type: '314'
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_oring
+    thickness: 6
+    type: negative

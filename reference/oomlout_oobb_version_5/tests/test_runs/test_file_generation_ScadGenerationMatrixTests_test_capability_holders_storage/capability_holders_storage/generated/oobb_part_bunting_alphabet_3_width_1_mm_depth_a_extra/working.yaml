@@ -1,0 +1,24 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: bunting alphabet 3x0x1
+description_extra: a_extra
+description_main: 3_width_1_mm_depth
+extra: a
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_holders_storage\capability_holders_storage\generated\oobb_part_bunting_alphabet_3_width_1_mm_depth_a_extra
+id: oobb_part_bunting_alphabet_3_width_1_mm_depth_a_extra
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/bunting_alphabet/3_width_1_mm_depth/a_extra/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_bunting_alphabet_03_01_ex_a
+manufacturer: ''
+name: Oobb Part Bunting Alphabet 3 Width 1 mm Depth A Extra
+name_short: Bunting Alphabet 3x1 A Extra
+part_number: ''
+short_name: ''
+size: bunting_alphabet
+thickness: 1
+thickness_mm: 1
+type: part
+width: 3
+width_mm: 44

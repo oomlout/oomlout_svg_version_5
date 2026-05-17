@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OOBB Documentation</title>
+  <style>
+    :root {
+      --bg: #f5f7ff;
+      --card: rgba(255, 255, 255, 0.75);
+      --text: #20243a;
+      --muted: #5e6685;
+      --border: #dbe1ff;
+      --accent: #6a7dff;
+      --accent-2: #8eecf5;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 20% 10%, #eaf0ff, #f7f9ff 60%);
+    }
+
+    header {
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, #eef2ff, #f6fcff);
+    }
+
+    h1 { margin: 0; }
+    .meta { color: var(--muted); margin-top: 8px; }
+
+    main {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    aside, section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+      padding: 14px;
+    }
+
+    input[type="search"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+
+    .tabs button,
+    .filters button {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin: 4px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .tabs button.active,
+    .filters button.active {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      color: #3542a8;
+      background: #e8ecff;
+      border-radius: 999px;
+      padding: 3px 8px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 6px;
+      text-align: left;
+    }
+
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OOBB Part Documentation</h1>
+    <div class="meta" id="meta">Loading…</div>
+  </header>
+
+  <main>
+    <aside>
+      <input id="search" type="search" placeholder="Search objects and part sets..." />
+      <div class="tabs">
+        <button id="tab-objects" class="active" data-tab="objects">Objects</button>
+        <button id="tab-sets" data-tab="part_sets">Part Sets</button>
+      </div>
+      <h3>Categories</h3>
+      <div class="filters" id="filters"></div>
+    </aside>
+
+    <section>
+      <div class="grid" id="cards"></div>
+    </section>
+  </main>
+
+  <!-- DOCUMENTATION_DATA_PLACEHOLDER -->
+
+  <script>
+    const data = window.DOCUMENTATION_DATA || { objects: [], part_sets: [], generated_date: "", total_objects: 0, total_part_sets: 0 };
+
+    const state = {
+      tab: "objects",
+      category: "All",
+      search: "",
+    };
+
+    const meta = document.getElementById("meta");
+    const cards = document.getElementById("cards");
+    const filters = document.getElementById("filters");
+    const search = document.getElementById("search");
+
+    function allCategories() {
+      const source = data[state.tab] || [];
+      const set = new Set(source.map(item => item.category || "General"));
+      return ["All", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
+    }
+
+    function renderFilters() {
+      const cats = allCategories();
+      filters.innerHTML = "";
+      cats.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.textContent = cat;
+        if (cat === state.category) btn.classList.add("active");
+        btn.onclick = () => { state.category = cat; render(); };
+        filters.appendChild(btn);
+      });
+    }
+
+    function match(item) {
+      if (state.category !== "All" && (item.category || "General") !== state.category) return false;
+      const q = state.search.trim().toLowerCase();
+      if (!q) return true;
+      const blob = [
+        item.command,
+        item.name_long,
+        item.description,
+        item.summary,
+        (item.aliases || []).join(" "),
+        (item.variable_names || []).join(" "),
+      ].join(" ").toLowerCase();
+      return blob.includes(q);
+    }
+
+    function renderCard(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+
+      const aliases = (item.aliases || []).map(a => `<span class="badge">${a}</span>`).join("");
+      const vars = (item.variables || []).map(v => `
+        <tr>
+          <td>${v.name || ""}</td>
+          <td>${v.description || ""}</td>
+          <td>${v.type || ""}</td>
+          <td>${v.default ?? ""}</td>
+        </tr>
+      `).join("");
+
+      card.innerHTML = `
+        <h3>${item.command}</h3>
+        <p><strong>${item.name_long || ""}</strong></p>
+        <p>${item.description || ""}</p>
+        <div><span class="badge">${item.category || "General"}</span>${aliases}</div>
+        <details>
+          <summary>Variables (${(item.variables || []).length})</summary>
+          <table>
+            <thead><tr><th>Name</th><th>Description</th><th>Type</th><th>Default</th></tr></thead>
+            <tbody>${vars || "<tr><td colspan='4'>No variables</td></tr>"}</tbody>
+          </table>
+        </details>
+      `;
+      return card;
+    }
+
+    function render() {
+      meta.textContent = `Generated: ${data.generated_date} • Objects: ${data.total_objects} • Part Sets: ${data.total_part_sets}`;
+
+      document.querySelectorAll(".tabs button").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.tab === state.tab);
+      });
+
+      renderFilters();
+
+      const source = data[state.tab] || [];
+      const visible = source.filter(match);
+      cards.innerHTML = "";
+      visible.forEach(item => cards.appendChild(renderCard(item)));
+    }
+
+    document.querySelectorAll(".tabs button").forEach(btn => {
+      btn.onclick = () => {
+        state.tab = btn.dataset.tab;
+        state.category = "All";
+        render();
+      };
+    });
+
+    search.addEventListener("input", () => {
+      state.search = search.value;
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

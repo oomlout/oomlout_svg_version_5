@@ -1,0 +1,425 @@
+{
+  "generated_date": "2026-05-17",
+  "total_components": 9,
+  "total_parts": 3,
+  "components": [
+    {
+      "name": "circle",
+      "name_long": "Circle / Hole",
+      "description": "Filled circle centred on pos. Use type='negative' to cut a hole; alias 'hole' is also accepted.",
+      "category": "SVG Primitives",
+      "shape_aliases": [
+        "hole"
+      ],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "r",
+          "description": "Radius in mm.",
+          "type": "float",
+          "default": 3.0
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"26.0000mm\" height=\"26.0000mm\"\n     viewBox=\"0 0 26.0000 26.0000\">\n  <circle cx=\"13.0000\" cy=\"13.0000\" r=\"8.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "oobb_circle",
+      "name_long": "OOBB Circle",
+      "description": "Solid disc sized to the OOBB grid. diameter is in OOBB units (osp=15 mm), so diameter=3 → 45 mm outer diameter.",
+      "category": "OOBB Shapes",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "diameter",
+          "description": "Disc diameter in OOBB units. Rendered radius = diameter × osp / 2.",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"55.0000mm\" height=\"55.0000mm\"\n     viewBox=\"0 0 55.0000 55.0000\">\n  <circle cx=\"27.5000\" cy=\"27.5000\" r=\"22.5000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "oobb_holes",
+      "name_long": "OOBB Hole Grid",
+      "description": "Grid of circles at every OOBB hole position for a width×height plate. radius_name selects the fastener size (e.g. 'm6', 'm3'). Typically used as type='negative' to cut holes through a plate.",
+      "category": "OOBB Shapes",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "width",
+          "description": "Grid width in OOBB units (number of hole columns).",
+          "type": "int",
+          "default": 1
+        },
+        {
+          "name": "height",
+          "description": "Grid height in OOBB units (number of hole rows).",
+          "type": "int",
+          "default": 1
+        },
+        {
+          "name": "radius_name",
+          "description": "Fastener size key, e.g. 'm6', 'm3', 'm4'. Resolved via opsvg._gv('hole_radius_<name>').",
+          "type": "string",
+          "default": "m6"
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up). Must match the pos of the companion oobb_plate.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"10.0000mm\" height=\"10.0000mm\"\n     viewBox=\"0 0 10.0000 10.0000\">\n  <g fill=\"#333333\" stroke=\"none\">\n    <circle cx=\"-2.5000\" cy=\"12.5000\" r=\"3.0000\" />\n    <circle cx=\"-2.5000\" cy=\"-2.5000\" r=\"3.0000\" />\n    <circle cx=\"12.5000\" cy=\"12.5000\" r=\"3.0000\" />\n    <circle cx=\"12.5000\" cy=\"-2.5000\" r=\"3.0000\" />\n  </g>\n</svg>"
+    },
+    {
+      "name": "oobb_plate",
+      "name_long": "OOBB Plate",
+      "description": "OOBB grid plate: a rounded rectangle whose dimensions are computed from width/height in OOBB units (osp=15 mm, osp_minus=1 mm). A 2×1 plate is 29×14 mm.",
+      "category": "OOBB Shapes",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "width",
+          "description": "Plate width in OOBB units.",
+          "type": "int",
+          "default": 1
+        },
+        {
+          "name": "height",
+          "description": "Plate height in OOBB units.",
+          "type": "int",
+          "default": 1
+        },
+        {
+          "name": "corner_radius",
+          "description": "Corner radius in mm.",
+          "type": "float",
+          "default": 2.0
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"39.0000mm\" height=\"39.0000mm\"\n     viewBox=\"0 0 39.0000 39.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"29.0000\" height=\"29.0000\" rx=\"2.0000\" ry=\"2.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "polygon",
+      "name_long": "Polygon",
+      "description": "Arbitrary filled polygon. Points are relative to pos, so repositioning is done by changing pos alone.",
+      "category": "SVG Primitives",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "points",
+          "description": "List of [x, y] vertices in mm, relative to pos. The polygon is automatically closed.",
+          "type": "list",
+          "default": [
+            [
+              0,
+              5
+            ],
+            [
+              -5,
+              -5
+            ],
+            [
+              5,
+              -5
+            ]
+          ]
+        },
+        {
+          "name": "pos",
+          "description": "Origin offset [x, y, z] in OOBB mm (Y-up). All points are translated by this value.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"30.0000mm\" height=\"28.0000mm\"\n     viewBox=\"0 0 30.0000 28.0000\">\n  <polygon points=\"15.0000,5.0000 5.0000,23.0000 25.0000,23.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "rect",
+      "name_long": "Rectangle",
+      "description": "Axis-aligned filled rectangle, centred on pos.",
+      "category": "SVG Primitives",
+      "shape_aliases": [],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "size",
+          "description": "Width, height and depth in mm as [w, h, d]. Depth is carried through but ignored by the 2-D renderer.",
+          "type": "list",
+          "default": [
+            10,
+            10,
+            3
+          ]
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] in degrees. Only rz (Z-axis) affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"40.0000mm\" height=\"30.0000mm\"\n     viewBox=\"0 0 40.0000 30.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"30.0000\" height=\"20.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "rounded_rectangle",
+      "name_long": "Rounded Rectangle",
+      "description": "Axis-aligned rectangle with uniform corner radii, centred on pos. Accepts aliases 'rounded_rect' and 'rrect'.",
+      "category": "SVG Primitives",
+      "shape_aliases": [
+        "rounded_rect",
+        "rrect"
+      ],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "size",
+          "description": "Width, height, depth in mm as [w, h, d]. Depth is carried through but ignored by the 2-D renderer.",
+          "type": "list",
+          "default": [
+            20,
+            10,
+            3
+          ]
+        },
+        {
+          "name": "r",
+          "description": "Corner radius in mm.",
+          "type": "float",
+          "default": 2.0
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"40.0000mm\" height=\"30.0000mm\"\n     viewBox=\"0 0 40.0000 30.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"30.0000\" height=\"20.0000\" rx=\"4.0000\" ry=\"4.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "slot",
+      "name_long": "Slot (Capsule)",
+      "description": "Capsule shape: two semicircles joined by a rectangle. Horizontal by default; use rot=[0,0,90] for a vertical slot.",
+      "category": "SVG Primitives",
+      "shape_aliases": [
+        "capsule"
+      ],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "r",
+          "description": "End-cap radius in mm (also controls slot width = 2r).",
+          "type": "float",
+          "default": 3.0
+        },
+        {
+          "name": "w",
+          "description": "Centre-to-centre travel distance in mm (total length = w + 2r).",
+          "type": "float",
+          "default": 10.0
+        },
+        {
+          "name": "pos",
+          "description": "Centre position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Use rz=90 for vertical.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"38.0000mm\" height=\"18.0000mm\"\n     viewBox=\"0 0 38.0000 18.0000\">\n  <path d=\"M 9.0000 5.0000 A 4.0000 4.0000 0 0 0 9.0000 13.0000 L 29.0000 13.0000 A 4.0000 4.0000 0 0 0 29.0000 5.0000 Z\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "text",
+      "name_long": "Text Label",
+      "description": "SVG text element positioned at pos. Supports horizontal/vertical alignment, font family, and size. Use the color kwarg to override the default fill colour.",
+      "category": "SVG Annotations",
+      "shape_aliases": [
+        "label"
+      ],
+      "returns": "List containing one shape-descriptor dict.",
+      "variables": [
+        {
+          "name": "text",
+          "description": "The string to render.",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "size",
+          "description": "Font size in mm.",
+          "type": "float",
+          "default": 4.0
+        },
+        {
+          "name": "font",
+          "description": "Font family name. A ':style=Bold' suffix is stripped to keep the SVG font-family clean.",
+          "type": "string",
+          "default": "sans-serif"
+        },
+        {
+          "name": "halign",
+          "description": "Horizontal alignment: 'left', 'center', or 'right'.",
+          "type": "string",
+          "default": "center"
+        },
+        {
+          "name": "valign",
+          "description": "Vertical alignment: 'bottom', 'center', or 'top'.",
+          "type": "string",
+          "default": "center"
+        },
+        {
+          "name": "color",
+          "description": "Optional explicit fill colour (CSS colour string). Overrides the type-based fill so white text can sit on a dark header bar.",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "pos",
+          "description": "Anchor position [x, y, z] in OOBB mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"10.0000mm\" height=\"10.0000mm\"\n     viewBox=\"0 0 10.0000 10.0000\">\n  <text x=\"5.0000\" y=\"5.0000\" font-family=\"sans-serif\" font-size=\"10.0000\" text-anchor=\"middle\" dominant-baseline=\"middle\" fill=\"#333333\">Sample</text>\n</svg>"
+    }
+  ],
+  "parts": [
+    {
+      "id": "project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin",
+      "oobb_name": "tin_insert",
+      "svg_name": "tin_insert",
+      "classification": "",
+      "description_main": "",
+      "size": "",
+      "folder": "parts\\project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin"
+    },
+    {
+      "id": "svg_demo_a4_a4_sheet",
+      "oobb_name": "a4_sheet",
+      "svg_name": "a4_sheet",
+      "classification": "svg",
+      "description_main": "a4_sheet",
+      "size": "a4",
+      "folder": "parts\\svg_demo_a4_a4_sheet"
+    },
+    {
+      "id": "svg_label_76x50_label_76x50",
+      "oobb_name": "label_76x50",
+      "svg_name": "label_76x50",
+      "classification": "svg",
+      "description_main": "label_76x50",
+      "size": "76x50",
+      "folder": "parts\\svg_label_76x50_label_76x50"
+    }
+  ]
+}

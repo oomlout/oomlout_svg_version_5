@@ -1,0 +1,928 @@
+base_style: tin_insert
+bip_39_2_word_array:
+- mobile
+- concert
+bip_39_2_word_no_space: mobileconcert
+bip_39_2_word_space: mobile concert
+bip_39_2_word_underscore: mobile_concert
+bip_39_3_word_array:
+- mobile
+- concert
+- squeeze
+bip_39_3_word_no_space: mobileconcertsqueeze
+bip_39_3_word_space: mobile concert squeeze
+bip_39_3_word_underscore: mobile_concert_squeeze
+bip_39_full_array:
+- mobile
+- concert
+- squeeze
+- toast
+- survey
+- cheap
+- result
+- grit
+- sphere
+- action
+- key
+- glance
+bip_39_full_no_space: mobileconcertsqueezetoastsurveycheapresultgritsphereactionkeyglance
+bip_39_full_space: mobile concert squeeze toast survey cheap result grit sphere action
+  key glance
+bip_39_full_underscore: mobile_concert_squeeze_toast_survey_cheap_result_grit_sphere_action_key_glance
+directory: parts/project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+id: project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+id_no_class: project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+id_no_size: project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+id_no_type: project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+id_svg: project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+kwargs:
+  filter: ''
+  navigation: false
+  oomp_description_extra: ''
+  oomp_description_main: _
+  oomp_mode: project
+  overwrite: true
+  style_name: fill_in_the_blanks
+  svg_name: tin_insert
+  type: C:\gh\oomlout_svg_version_5_tin_insert
+link_github: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+link_main: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+link_redirect: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+md5: 8e65d74e718daa4dedf335d16051e831
+md5_10: 8e65d74e71
+md5_10_upper: 8E65D74E71
+md5_5: 8e65d
+md5_5_upper: 8E65D
+md5_6: 8e65d7
+md5_6_alpha: 5k0rb
+md5_6_alpha_upper: 5K0RB
+md5_6_upper: 8E65D7
+name: Project Bolt Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130 Mm Height
+  18 Mm Depth 350 Ml Capacity Tinware Direct T4066 Tin
+name_no_class: Project Bolt Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130 Mm
+  Height 18 Mm Depth 350 Ml Capacity Tinware Direct T4066 Tin
+name_no_size: Project Bolt Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130 Mm
+  Height 18 Mm Depth 350 Ml Capacity Tinware Direct T4066 Tin
+name_no_type: Project Bolt Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130 Mm
+  Height 18 Mm Depth 350 Ml Capacity Tinware Direct T4066 Tin
+name_proper: Project Bolt Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130 Mm
+  Height 18 Mm Depth 350 Ml Capacity Tinware Direct T4066 Tin
+name_space: project bolt tin insert packaging tin hinged lid 169 mm width 130 mm height
+  18 mm depth 350 ml capacity tinware direct t4066 tin
+name_upper: PROJECT BOLT TIN INSERT PACKAGING TIN HINGED LID 169 MM WIDTH 130 MM HEIGHT
+  18 MM DEPTH 350 ML CAPACITY TINWARE DIRECT T4066 TIN
+oobb_details:
+  depth: 18.0
+  oobb_name: tin_insert
+  tin: packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066
+oobb_name: tin_insert
+oomlout_ai_roboclick_1:
+  actions:
+  - command: new_chat
+    description: step_1_create_icon
+  - command: ai_query
+    delay: '120'
+    mode_ai_wait: slow
+    text: 'This is a context-loading and exploration step for a laser-cuttable mascot
+      logo. Take your time and think expansively before answering. Explore multiple
+      mascot directions, compare several line-art approaches, stress-test them for
+      charm, readability, manufacturability, and overall polish, and explain everything
+      that would be useful for the next step. The goal here is not brevity. The goal
+      is to surface strong options, useful observations, and a well-reasoned direction
+      for a square, single-colour, black-on-white mascot logo drawing that is charming,
+      original, cute, polished, and instantly readable at small size.
+
+
+      Creative direction:
+
+      - Invent one central mascot concept based on the theme, but push beyond generic
+      clip art. The mascot should feel witty, memorable, and slightly surprising while
+      still being cute and simple.
+
+      - Favor an adorable line-drawing character with a clear face, pose, and identity.
+      Anthropomorphize only as much as needed for charm and readability.
+
+      - Supporting elements and text are allowed and can be important when they help
+      define the identity, dimensions, category, mood, or story of the logo.
+
+      - Favor iconic themed props, symbols, labels, and shape cues over random decoration.
+      Every element should help the logo read faster and feel more complete.
+
+      - Think in stages before writing: concept search, line-language search, simplification,
+      and final refinement. Prefer the idea that stays most legible after simplification.
+
+      - Deliberately look for a concept that feels specific to the theme rather than
+      generic kawaii branding.
+
+      - Keep the cute details genuinely sweet and lovable: soft expressions, appealing
+      proportions, simple cheeks, tiny hands or feet only if they help, and charming
+      gesture choices.
+
+      - Search for a direction that feels like a designed branded icon rather than
+      a loose doodle page.
+
+      - Make all parts of the image feel like they were designed by one illustrator
+      in one visual family, with consistent shape logic, line language, facial styling,
+      spacing, and proportion choices.
+
+      - Favor rounded geometric simplification, clear negative space, gentle symmetry
+      or balance where useful, and a visual hierarchy where the mascot leads and the
+      supporting details and text reinforce.
+
+
+      Format and manufacturing constraints:
+
+      - Pure black artwork on a pure white background only.
+
+      - No grey, no shading, no gradients, no halftones, no texture, no color, no
+      transparency, and no background scene.
+
+      - Prefer line drawing over large filled black areas. Use clean outlines and
+      sparse interior detail instead of heavy solid shapes.
+
+      - Design for laser cutting: lines should be confident and durable rather than
+      hairline-thin; details should be simple; no dense crosshatching; and any islands
+      should be connected if the design depends on physical continuity.
+
+      - Keep the artwork centered in a square composition with comfortable margins
+      and a clean airy overall read.
+
+      - The drawing should feel cute, open, and light rather than dark, chunky, or
+      posterized.
+
+      - If text is used, it should be bold, simple, highly legible, and visually integrated
+      with the illustration.
+
+      - Border-like framing is allowed only if it strengthens the logo as a clean
+      badge or label shape rather than making it feel boxed in.
+
+      - Prioritize readability, cuteness, manufacturability, clarity, cohesion, and
+      polish over detail.
+
+
+      What to include in your response:
+
+      - Several candidate mascot directions for the theme, with notes on why each
+      could work.
+
+      - Observations about line clarity, readability at small size, cuteness, and
+      laser-cut safety.
+
+      - Notes on what details should be simplified, merged, thickened, connected,
+      or removed to keep the drawing light and appealing.
+
+      - Suggestions for supporting motifs and text treatments only where they genuinely
+      improve the idea.
+
+      - Observations about what makes the composition feel polished, cohesive, brandable,
+      and visually unified rather than random or clip-art-like.
+
+      - A recommended direction, with an explanation of why it is strongest.
+
+      - One strong final image-generation prompt at the end, ready for later use.
+
+
+      Response style:
+
+      - Explain your reasoning clearly and include all useful detail.
+
+      - It is fine to use structure, bullets, short sections, and comparisons if that
+      helps clarity.
+
+      - The final prompt should explicitly say the image is square and black on white.
+
+      '
+  - command: ai_query
+    delay: '120'
+    mode_ai_wait: slow
+    text: 'Now use the exploration work to develop the direction for this theme: an
+      image of project bolt tin insert packaging tin hinged lid 169 mm width 130 mm
+      height 18 mm depth 350 ml capacity tinware direct t4066 tin make Project Bolt
+      Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130 Mm Height 18 Mm Depth 350
+      Ml Capacity Tinware Direct T4066 Tin cute
+
+
+      Take your time and search outward before narrowing down. Flesh the theme out
+      beyond its obvious first interpretation. Explore multiple mascot angles, visual
+      metaphors, poses, supporting motifs, text treatments, and line-drawing approaches,
+      and explain what becomes more interesting, more readable, cuter, more cohesive,
+      or more manufacturable as you develop the idea. Make it more creatively specific
+      than the theme name alone while staying laser-cut safe.
+
+
+      What to do:
+
+      - Explore a healthy range of possible directions, not just the first few obvious
+      ones.
+
+      - Search for specific, memorable, and theme-native ideas rather than generic
+      cute branding.
+
+      - Compare different mascot interpretations, poses, prop choices, supporting
+      motifs, and label or badge text treatments where relevant.
+
+      - Compare different outline and interior-line strategies, especially ones that
+      avoid large dark filled areas.
+
+      - Discuss what helps or hurts the drawing at small size.
+
+      - Call out what should be simplified, thickened, connected, merged, or removed
+      for laser cutting.
+
+      - Surface tradeoffs between charm, cuteness, clarity, uniqueness, and manufacturability.
+
+      - Favor directions that feel sweet, lovable, and visually light. Avoid details
+      that make the mascot feel fussy, stern, generic, or overdesigned.
+
+      - Favor directions where the mascot, supporting details, and text feel like
+      one designed system rather than separate assets placed next to each other.
+
+      - Look for ways to make the composition feel more polished, premium, badge-like,
+      and visually intentional without losing warmth.
+
+      - Recommend the strongest direction only after the exploration feels well developed.
+
+      - End with one polished final image-generation prompt paragraph for the recommended
+      direction.
+
+
+      Response style:
+
+      - Explain everything that seems useful for the next step.
+
+      - It is good to be expansive here; do not compress the thinking prematurely.
+
+      - Structured notes, comparisons, bullets, and short sections are welcome if
+      they help clarity.
+
+      - The final prompt should explicitly say the image is square and black on white.
+
+      '
+  - command: ai_query
+    delay: '120'
+    mode_ai_wait: slow
+    text: Generate the image take all the time you need
+  - command: save_image_generated
+    file_name: initial_generated_icon.png
+    mode_ai_wait: slow
+  - command: close_tab
+  file_test: initial_generated_icon.png
+oomlout_ai_roboclick_2:
+  actions:
+  - command: new_chat
+    description: step_2_create_image_chibi
+  - command: ai_query
+    delay: '120'
+    mode_ai_wait: slow
+    text: 'This is a context-loading and exploration step for a fun chibi CGI-inspired
+      illustration. Take your time and think expansively before answering. Explore
+      multiple character directions, toy-like proportions, expressive poses, surface
+      treatments, prop ideas, and composition approaches, then explain what will make
+      the final image cutest, clearest, and most polished. The goal here is to develop
+      a premium, lovable, highly readable image direction before the final render
+      is generated.
+
+
+      Creative direction:
+
+      - Invent one central chibi character concept based on the theme, but push beyond
+      generic stock mascot art. The character should feel specific, playful, and emotionally
+      appealing.
+
+      - Favor oversized head proportions, small expressive limbs, simple hands, bright
+      eyes, a sweet face, and an instantly readable silhouette.
+
+      - Aim for a polished CGI or high-end 3D illustration feel: smooth forms, soft
+      rounded edges, tactile materials, subtle reflections, and the charm of a carefully
+      art-directed animated collectible.
+
+      - Supporting props are encouraged when they help the image read faster or add
+      a small story beat, but avoid clutter.
+
+      - Look for ways to make the character feel huggable, friendly, and slightly
+      mischievous in a warm, fun way.
+
+      - Keep the styling cohesive so the face, body, props, clothing, markings, and
+      materials all feel like one intentional design system.
+
+      - Search for the version that feels cutest after simplification rather than
+      the one with the most detail.
+
+      - Favor a centered hero composition that reads well immediately.
+
+
+      Image constraints:
+
+      - Full-color image is allowed and encouraged.
+
+      - Prefer a simple, clean background or soft studio-style setting that keeps
+      the character as the clear focus.
+
+      - Avoid busy scenery, tiny unreadable details, muddy textures, harsh shadows,
+      or photoreal grit.
+
+      - Keep the composition readable at thumbnail size with clear separation between
+      major forms.
+
+      - Favor soft lighting, clean specular highlights, and material contrast that
+      helps the image feel premium without becoming noisy.
+
+      - Avoid creepy facial proportions, aggressive expressions, or overly realistic
+      anatomy.
+
+      - No text unless it is absolutely essential to the design concept.
+
+
+      What to include in your response:
+
+      - Several candidate chibi directions for the theme, with notes on why each could
+      work.
+
+      - Observations about silhouette clarity, proportions, pose readability, color/material
+      opportunities, and overall cuteness.
+
+      - Notes on what details should be simplified, enlarged, grouped, or removed
+      to keep the result strong.
+
+      - Suggestions for props, accessories, clothing cues, or supporting motifs only
+      where they genuinely improve the idea.
+
+      - Observations about what makes the image feel like a polished CGI render rather
+      than a flat illustration.
+
+      - A recommended direction, with an explanation of why it is strongest.
+
+      - One strong final image-generation prompt at the end, ready for later use.
+
+
+      Response style:
+
+      - Explain your reasoning clearly and include all useful detail.
+
+      - Use structure, comparisons, and short sections when that helps clarity.
+
+      - The final prompt should explicitly call for a fun chibi CGI-inspired image
+      with a polished, premium result.
+
+
+      Take this context and research and search and make extra decisions based on
+      your findings tell me all about them!'
+  - command: ai_query
+    delay: '120'
+    mode_ai_wait: slow
+    text: 'Now use the exploration work to develop the direction for this theme: a
+      fun chibi CGI inspired picture of project bolt tin insert packaging tin hinged
+      lid 169 mm width 130 mm height 18 mm depth 350 ml capacity tinware direct t4066
+      tin make Project Bolt Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130 Mm
+      Height 18 Mm Depth 350 Ml Capacity Tinware Direct T4066 Tin cute
+
+
+      Take your time and search outward before narrowing down. Explore multiple character
+      interpretations, facial expressions, prop choices, costumes or markings, color
+      families, pose options, and CGI material treatments. Compare what becomes more
+      memorable, cuter, clearer, and more emotionally engaging as the idea develops.
+      Make the character feel more specific and lovable than the theme name alone.
+
+
+      What to do:
+
+      - Explore a healthy range of possible chibi directions, not just the first obvious
+      one.
+
+      - Search for character ideas that feel unique to the theme rather than generic
+      cute branding.
+
+      - Compare different head-to-body ratios, pose choices, facial expressions, and
+      gesture ideas.
+
+      - Compare different prop and accessory choices that reinforce the theme without
+      clutter.
+
+      - Discuss what helps or hurts the silhouette at small size.
+
+      - Surface tradeoffs between charm, clarity, detail, polish, and simplicity.
+
+      - Favor rounded forms, clean separation of shapes, and a pose that feels alive.
+
+      - Favor material ideas that support a premium CGI feel: glossy plastic, satin
+      fabric, rubber accents, soft translucent elements, brushed metal highlights,
+      or similar carefully chosen surfaces where appropriate.
+
+      - Keep the mood joyful, warm, playful, and inviting.
+
+      - Recommend the strongest direction only after the exploration feels well developed.
+
+      - End with one polished final image-generation prompt paragraph for the recommended
+      direction.
+
+
+      Response style:
+
+      - Explain everything that seems useful for the next step.
+
+      - It is good to be expansive here; do not compress the thinking prematurely.
+
+      - Structured notes, comparisons, bullets, and short sections are welcome if
+      they help clarity.
+
+      - The final prompt should explicitly call for a clean, polished CGI-style chibi
+      render with the theme centered clearly.
+
+      '
+  - command: ai_query
+    delay: '120'
+    mode_ai_wait: slow
+    text: Generate the image take all the time you need
+  - command: save_image_generated
+    file_name: initial_generated_chibi.png
+    mode_ai_wait: slow
+  - command: close_tab
+  file_test: initial_generated_chibi.png
+oomlout_ai_roboclick_3:
+  actions:
+  - command: text_jinja_template
+    convert_to_pdf: false
+    convert_to_png: false
+    dict_data:
+      base_style: tin_insert
+      directory: parts\project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+      name: project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+      name_proper: Project Bolt Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130
+        Mm Height 18 Mm Depth 350 Ml Capacity Tinware Direct T4066 Tin
+      name_space: project bolt tin insert packaging tin hinged lid 169 mm width 130
+        mm height 18 mm depth 350 ml capacity tinware direct t4066 tin
+      name_upper: PROJECT BOLT TIN INSERT PACKAGING TIN HINGED LID 169 MM WIDTH 130
+        MM HEIGHT 18 MM DEPTH 350 ML CAPACITY TINWARE DIRECT T4066 TIN
+      oobb_details:
+        depth: 18.0
+        oobb_name: tin_insert
+        tin: packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066
+      oomlout_ai_roboclick_1:
+        actions:
+        - command: new_chat
+          description: step_1_create_icon
+        - command: ai_query
+          delay: '120'
+          mode_ai_wait: slow
+          text: 'This is a context-loading and exploration step for a laser-cuttable
+            mascot logo. Take your time and think expansively before answering. Explore
+            multiple mascot directions, compare several line-art approaches, stress-test
+            them for charm, readability, manufacturability, and overall polish, and
+            explain everything that would be useful for the next step. The goal here
+            is not brevity. The goal is to surface strong options, useful observations,
+            and a well-reasoned direction for a square, single-colour, black-on-white
+            mascot logo drawing that is charming, original, cute, polished, and instantly
+            readable at small size.
+
+
+            Creative direction:
+
+            - Invent one central mascot concept based on the theme, but push beyond
+            generic clip art. The mascot should feel witty, memorable, and slightly
+            surprising while still being cute and simple.
+
+            - Favor an adorable line-drawing character with a clear face, pose, and
+            identity. Anthropomorphize only as much as needed for charm and readability.
+
+            - Supporting elements and text are allowed and can be important when they
+            help define the identity, dimensions, category, mood, or story of the
+            logo.
+
+            - Favor iconic themed props, symbols, labels, and shape cues over random
+            decoration. Every element should help the logo read faster and feel more
+            complete.
+
+            - Think in stages before writing: concept search, line-language search,
+            simplification, and final refinement. Prefer the idea that stays most
+            legible after simplification.
+
+            - Deliberately look for a concept that feels specific to the theme rather
+            than generic kawaii branding.
+
+            - Keep the cute details genuinely sweet and lovable: soft expressions,
+            appealing proportions, simple cheeks, tiny hands or feet only if they
+            help, and charming gesture choices.
+
+            - Search for a direction that feels like a designed branded icon rather
+            than a loose doodle page.
+
+            - Make all parts of the image feel like they were designed by one illustrator
+            in one visual family, with consistent shape logic, line language, facial
+            styling, spacing, and proportion choices.
+
+            - Favor rounded geometric simplification, clear negative space, gentle
+            symmetry or balance where useful, and a visual hierarchy where the mascot
+            leads and the supporting details and text reinforce.
+
+
+            Format and manufacturing constraints:
+
+            - Pure black artwork on a pure white background only.
+
+            - No grey, no shading, no gradients, no halftones, no texture, no color,
+            no transparency, and no background scene.
+
+            - Prefer line drawing over large filled black areas. Use clean outlines
+            and sparse interior detail instead of heavy solid shapes.
+
+            - Design for laser cutting: lines should be confident and durable rather
+            than hairline-thin; details should be simple; no dense crosshatching;
+            and any islands should be connected if the design depends on physical
+            continuity.
+
+            - Keep the artwork centered in a square composition with comfortable margins
+            and a clean airy overall read.
+
+            - The drawing should feel cute, open, and light rather than dark, chunky,
+            or posterized.
+
+            - If text is used, it should be bold, simple, highly legible, and visually
+            integrated with the illustration.
+
+            - Border-like framing is allowed only if it strengthens the logo as a
+            clean badge or label shape rather than making it feel boxed in.
+
+            - Prioritize readability, cuteness, manufacturability, clarity, cohesion,
+            and polish over detail.
+
+
+            What to include in your response:
+
+            - Several candidate mascot directions for the theme, with notes on why
+            each could work.
+
+            - Observations about line clarity, readability at small size, cuteness,
+            and laser-cut safety.
+
+            - Notes on what details should be simplified, merged, thickened, connected,
+            or removed to keep the drawing light and appealing.
+
+            - Suggestions for supporting motifs and text treatments only where they
+            genuinely improve the idea.
+
+            - Observations about what makes the composition feel polished, cohesive,
+            brandable, and visually unified rather than random or clip-art-like.
+
+            - A recommended direction, with an explanation of why it is strongest.
+
+            - One strong final image-generation prompt at the end, ready for later
+            use.
+
+
+            Response style:
+
+            - Explain your reasoning clearly and include all useful detail.
+
+            - It is fine to use structure, bullets, short sections, and comparisons
+            if that helps clarity.
+
+            - The final prompt should explicitly say the image is square and black
+            on white.
+
+            '
+        - command: ai_query
+          delay: '120'
+          mode_ai_wait: slow
+          text: 'Now use the exploration work to develop the direction for this theme:
+            an image of project bolt tin insert packaging tin hinged lid 169 mm width
+            130 mm height 18 mm depth 350 ml capacity tinware direct t4066 tin make
+            Project Bolt Tin Insert Packaging Tin Hinged Lid 169 Mm Width 130 Mm Height
+            18 Mm Depth 350 Ml Capacity Tinware Direct T4066 Tin cute
+
+
+            Take your time and search outward before narrowing down. Flesh the theme
+            out beyond its obvious first interpretation. Explore multiple mascot angles,
+            visual metaphors, poses, supporting motifs, text treatments, and line-drawing
+            approaches, and explain what becomes more interesting, more readable,
+            cuter, more cohesive, or more manufacturable as you develop the idea.
+            Make it more creatively specific than the theme name alone while staying
+            laser-cut safe.
+
+
+            What to do:
+
+            - Explore a healthy range of possible directions, not just the first few
+            obvious ones.
+
+            - Search for specific, memorable, and theme-native ideas rather than generic
+            cute branding.
+
+            - Compare different mascot interpretations, poses, prop choices, supporting
+            motifs, and label or badge text treatments where relevant.
+
+            - Compare different outline and interior-line strategies, especially ones
+            that avoid large dark filled areas.
+
+            - Discuss what helps or hurts the drawing at small size.
+
+            - Call out what should be simplified, thickened, connected, merged, or
+            removed for laser cutting.
+
+            - Surface tradeoffs between charm, cuteness, clarity, uniqueness, and
+            manufacturability.
+
+            - Favor directions that feel sweet, lovable, and visually light. Avoid
+            details that make the mascot feel fussy, stern, generic, or overdesigned.
+
+            - Favor directions where the mascot, supporting details, and text feel
+            like one designed system rather than separate assets placed next to each
+            other.
+
+            - Look for ways to make the composition feel more polished, premium, badge-like,
+            and visually intentional without losing warmth.
+
+            - Recommend the strongest direction only after the exploration feels well
+            developed.
+
+            - End with one polished final image-generation prompt paragraph for the
+            recommended direction.
+
+
+            Response style:
+
+            - Explain everything that seems useful for the next step.
+
+            - It is good to be expansive here; do not compress the thinking prematurely.
+
+            - Structured notes, comparisons, bullets, and short sections are welcome
+            if they help clarity.
+
+            - The final prompt should explicitly say the image is square and black
+            on white.
+
+            '
+        - command: ai_query
+          delay: '120'
+          mode_ai_wait: slow
+          text: Generate the image take all the time you need
+        - command: save_image_generated
+          file_name: initial_generated_icon.png
+          mode_ai_wait: slow
+        - command: close_tab
+        file_test: initial_generated_icon.png
+      oomlout_ai_roboclick_2:
+        actions:
+        - command: new_chat
+          description: step_2_create_image_chibi
+        - command: ai_query
+          delay: '120'
+          mode_ai_wait: slow
+          text: 'This is a context-loading and exploration step for a fun chibi CGI-inspired
+            illustration. Take your time and think expansively before answering. Explore
+            multiple character directions, toy-like proportions, expressive poses,
+            surface treatments, prop ideas, and composition approaches, then explain
+            what will make the final image cutest, clearest, and most polished. The
+            goal here is to develop a premium, lovable, highly readable image direction
+            before the final render is generated.
+
+
+            Creative direction:
+
+            - Invent one central chibi character concept based on the theme, but push
+            beyond generic stock mascot art. The character should feel specific, playful,
+            and emotionally appealing.
+
+            - Favor oversized head proportions, small expressive limbs, simple hands,
+            bright eyes, a sweet face, and an instantly readable silhouette.
+
+            - Aim for a polished CGI or high-end 3D illustration feel: smooth forms,
+            soft rounded edges, tactile materials, subtle reflections, and the charm
+            of a carefully art-directed animated collectible.
+
+            - Supporting props are encouraged when they help the image read faster
+            or add a small story beat, but avoid clutter.
+
+            - Look for ways to make the character feel huggable, friendly, and slightly
+            mischievous in a warm, fun way.
+
+            - Keep the styling cohesive so the face, body, props, clothing, markings,
+            and materials all feel like one intentional design system.
+
+            - Search for the version that feels cutest after simplification rather
+            than the one with the most detail.
+
+            - Favor a centered hero composition that reads well immediately.
+
+
+            Image constraints:
+
+            - Full-color image is allowed and encouraged.
+
+            - Prefer a simple, clean background or soft studio-style setting that
+            keeps the character as the clear focus.
+
+            - Avoid busy scenery, tiny unreadable details, muddy textures, harsh shadows,
+            or photoreal grit.
+
+            - Keep the composition readable at thumbnail size with clear separation
+            between major forms.
+
+            - Favor soft lighting, clean specular highlights, and material contrast
+            that helps the image feel premium without becoming noisy.
+
+            - Avoid creepy facial proportions, aggressive expressions, or overly realistic
+            anatomy.
+
+            - No text unless it is absolutely essential to the design concept.
+
+
+            What to include in your response:
+
+            - Several candidate chibi directions for the theme, with notes on why
+            each could work.
+
+            - Observations about silhouette clarity, proportions, pose readability,
+            color/material opportunities, and overall cuteness.
+
+            - Notes on what details should be simplified, enlarged, grouped, or removed
+            to keep the result strong.
+
+            - Suggestions for props, accessories, clothing cues, or supporting motifs
+            only where they genuinely improve the idea.
+
+            - Observations about what makes the image feel like a polished CGI render
+            rather than a flat illustration.
+
+            - A recommended direction, with an explanation of why it is strongest.
+
+            - One strong final image-generation prompt at the end, ready for later
+            use.
+
+
+            Response style:
+
+            - Explain your reasoning clearly and include all useful detail.
+
+            - Use structure, comparisons, and short sections when that helps clarity.
+
+            - The final prompt should explicitly call for a fun chibi CGI-inspired
+            image with a polished, premium result.
+
+
+            Take this context and research and search and make extra decisions based
+            on your findings tell me all about them!'
+        - command: ai_query
+          delay: '120'
+          mode_ai_wait: slow
+          text: 'Now use the exploration work to develop the direction for this theme:
+            a fun chibi CGI inspired picture of project bolt tin insert packaging
+            tin hinged lid 169 mm width 130 mm height 18 mm depth 350 ml capacity
+            tinware direct t4066 tin make Project Bolt Tin Insert Packaging Tin Hinged
+            Lid 169 Mm Width 130 Mm Height 18 Mm Depth 350 Ml Capacity Tinware Direct
+            T4066 Tin cute
+
+
+            Take your time and search outward before narrowing down. Explore multiple
+            character interpretations, facial expressions, prop choices, costumes
+            or markings, color families, pose options, and CGI material treatments.
+            Compare what becomes more memorable, cuter, clearer, and more emotionally
+            engaging as the idea develops. Make the character feel more specific and
+            lovable than the theme name alone.
+
+
+            What to do:
+
+            - Explore a healthy range of possible chibi directions, not just the first
+            obvious one.
+
+            - Search for character ideas that feel unique to the theme rather than
+            generic cute branding.
+
+            - Compare different head-to-body ratios, pose choices, facial expressions,
+            and gesture ideas.
+
+            - Compare different prop and accessory choices that reinforce the theme
+            without clutter.
+
+            - Discuss what helps or hurts the silhouette at small size.
+
+            - Surface tradeoffs between charm, clarity, detail, polish, and simplicity.
+
+            - Favor rounded forms, clean separation of shapes, and a pose that feels
+            alive.
+
+            - Favor material ideas that support a premium CGI feel: glossy plastic,
+            satin fabric, rubber accents, soft translucent elements, brushed metal
+            highlights, or similar carefully chosen surfaces where appropriate.
+
+            - Keep the mood joyful, warm, playful, and inviting.
+
+            - Recommend the strongest direction only after the exploration feels well
+            developed.
+
+            - End with one polished final image-generation prompt paragraph for the
+            recommended direction.
+
+
+            Response style:
+
+            - Explain everything that seems useful for the next step.
+
+            - It is good to be expansive here; do not compress the thinking prematurely.
+
+            - Structured notes, comparisons, bullets, and short sections are welcome
+            if they help clarity.
+
+            - The final prompt should explicitly call for a clean, polished CGI-style
+            chibi render with the theme centered clearly.
+
+            '
+        - command: ai_query
+          delay: '120'
+          mode_ai_wait: slow
+          text: Generate the image take all the time you need
+        - command: save_image_generated
+          file_name: initial_generated_chibi.png
+          mode_ai_wait: slow
+        - command: close_tab
+        file_test: initial_generated_chibi.png
+      svg_details:
+        height: 169_mm
+        style_name: fill_in_the_blanks
+        svg_name: tin_insert
+        width: 130_mm
+      taxonomy_1: project_bolt
+      taxonomy_10: ''
+      taxonomy_11: ''
+      taxonomy_12: ''
+      taxonomy_13: ''
+      taxonomy_14: ''
+      taxonomy_15: ''
+      taxonomy_2: tin_insert
+      taxonomy_3: packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+      taxonomy_4: ''
+      taxonomy_5: ''
+      taxonomy_6: ''
+      taxonomy_7: ''
+      taxonomy_8: ''
+      taxonomy_9: ''
+      tin: packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066
+      url_chat: ''
+    file_output: label_oomp.svg
+    file_template: source_file\template_jinja\template_jinja_label_oomlout_76_2_mm_50_8_mm\working.svg.j2
+    search_and_replace: []
+  file_test: label_oomp.pdf
+oomp_key: oomp_project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+project_name: C:\gh\oomlout_svg_version_5
+svg_details:
+  svg_name: tin_insert
+taxonomy_1: project_bolt
+taxonomy_10: ''
+taxonomy_11: ''
+taxonomy_12: ''
+taxonomy_13: ''
+taxonomy_14: ''
+taxonomy_15: ''
+taxonomy_1_capital: Project Bolt
+taxonomy_1_first_letter: p
+taxonomy_1_first_letter_upper: P
+taxonomy_1_length_1: p
+taxonomy_1_length_2: pr
+taxonomy_1_length_3: pro
+taxonomy_1_length_4: proj
+taxonomy_1_length_5: proje
+taxonomy_1_upper: PROJECT_BOLT
+taxonomy_1_upper_length_1: P
+taxonomy_1_upper_length_2: PR
+taxonomy_1_upper_length_3: PRO
+taxonomy_1_upper_length_4: PROJ
+taxonomy_1_upper_length_5: PROJE
+taxonomy_2: tin_insert
+taxonomy_2_capital: Tin Insert
+taxonomy_2_first_letter: t
+taxonomy_2_first_letter_upper: T
+taxonomy_2_length_1: t
+taxonomy_2_length_2: ti
+taxonomy_2_length_3: tin
+taxonomy_2_length_4: tin_
+taxonomy_2_length_5: tin_i
+taxonomy_2_upper: TIN_INSERT
+taxonomy_2_upper_length_1: T
+taxonomy_2_upper_length_2: TI
+taxonomy_2_upper_length_3: TIN
+taxonomy_2_upper_length_4: TIN_
+taxonomy_2_upper_length_5: TIN_I
+taxonomy_3: packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
+taxonomy_3_capital: Packaging Tin Hinged Lid 169 mm Width 130 mm Height 18 mm Depth
+  350 Ml Capacity Tinware Direct T4066 Tin
+taxonomy_3_first_letter: p
+taxonomy_3_first_letter_upper: P
+taxonomy_3_length_1: p
+taxonomy_3_length_2: pa
+taxonomy_3_length_3: pac
+taxonomy_3_length_4: pack
+taxonomy_3_length_5: packa
+taxonomy_3_upper: PACKAGING_TIN_HINGED_LID_169_MM_WIDTH_130_MM_HEIGHT_18_MM_DEPTH_350_ML_CAPACITY_TINWARE_DIRECT_T4066_TIN
+taxonomy_3_upper_length_1: P
+taxonomy_3_upper_length_2: PA
+taxonomy_3_upper_length_3: PAC
+taxonomy_3_upper_length_4: PACK
+taxonomy_3_upper_length_5: PACKA
+taxonomy_4: ''
+taxonomy_5: ''
+taxonomy_6: ''
+taxonomy_7: ''
+taxonomy_8: ''
+taxonomy_9: ''
+tin: packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066
+url_chat: ''

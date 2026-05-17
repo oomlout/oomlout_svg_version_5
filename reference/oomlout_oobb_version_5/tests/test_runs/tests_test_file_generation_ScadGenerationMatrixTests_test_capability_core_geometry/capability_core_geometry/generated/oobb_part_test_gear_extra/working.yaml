@@ -1,0 +1,20 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: test 0x0x0
+description_extra: gear_extra
+description_main: ''
+extra: gear
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\tests_test_file_generation_ScadGenerationMatrixTests_test_capability_core_geometry\capability_core_geometry\generated\oobb_part_test_gear_extra
+id: oobb_part_test_gear_extra
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/test//gear_extra/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_test_ex_gear
+manufacturer: ''
+name: Oobb Part Test Gear Extra
+name_short: Test Gear Extra
+part_number: ''
+short_name: ''
+size: test
+type: part

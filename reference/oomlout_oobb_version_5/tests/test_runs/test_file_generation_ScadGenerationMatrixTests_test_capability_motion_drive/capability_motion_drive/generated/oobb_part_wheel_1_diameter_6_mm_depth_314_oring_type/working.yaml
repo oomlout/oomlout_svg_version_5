@@ -1,0 +1,23 @@
+classification: oobb
+color: ''
+components: []
+components_objects: []
+components_string: []
+description: wheel 0x0x6
+description_extra: 314_oring_type
+description_main: 1_diameter_6_mm_depth
+diameter: 1
+folder: C:\gh\oomlout_oobb_version_5\tests\test_runs\test_file_generation_ScadGenerationMatrixTests_test_capability_motion_drive\capability_motion_drive\generated\oobb_part_wheel_1_diameter_6_mm_depth_314_oring_type
+id: oobb_part_wheel_1_diameter_6_mm_depth_314_oring_type
+link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/wheel/1_diameter_6_mm_depth/314_oring_type/part
+link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_wheel_01_06_or_314
+manufacturer: ''
+name: Oobb Part Wheel 1 Diameter 6 mm Depth 314 Oring Type
+name_short: Wheel 1x6 314 Oring Type
+oring_type: '314'
+part_number: ''
+short_name: ''
+size: wheel
+thickness: 6
+thickness_mm: 6
+type: part

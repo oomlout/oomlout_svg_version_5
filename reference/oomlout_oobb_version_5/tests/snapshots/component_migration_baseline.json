@@ -1,0 +1,2558 @@
+{
+  "objects": {
+    "bearing_circles": {
+      "error": "unsupported operand type(s) for /: 'str' and 'int'"
+    },
+    "bearing_plate_connecting_screw_center": {
+      "error": "get_bearing_plate_connecting_screw_center() missing 1 required positional argument: 'thing'"
+    },
+    "bearing_plate_connecting_screw_perimeter": {
+      "error": "get_bearing_plate_connecting_screw_perimeter() missing 1 required positional argument: 'thing'"
+    },
+    "bearing_plate_hole_center": {
+      "error": "get_bearing_plate_hole_center() missing 1 required positional argument: 'thing'"
+    },
+    "bearing_plate_hole_perimeter": {
+      "error": "get_bearing_plate_hole_perimeter() missing 1 required positional argument: 'thing'"
+    },
+    "bearing_plate_hole_perimeter_base": {
+      "error": "get_bearing_plate_hole_perimeter_base() missing 1 required positional argument: 'thing'"
+    },
+    "bearing_plate_hole_perimeter_shifted": {
+      "error": "get_bearing_plate_hole_perimeter_shifted() missing 1 required positional argument: 'thing'"
+    },
+    "bearing_plate_hole_shaft": {
+      "error": "get_bearing_plate_hole_shaft() missing 1 required positional argument: 'thing'"
+    },
+    "bearing_plate_jack": {
+      "component_count": 43,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "bearing_plate_jack_basic": {
+      "component_count": 78,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "bearing_plate_old": {
+      "error": "'_laser'"
+    },
+    "bearing_plate_plate": {
+      "error": "get_bearing_plate_plate() missing 1 required positional argument: 'thing'"
+    },
+    "bearing_plate_shim": {
+      "component_count": 2,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "bearing_plates": {
+      "error": "'bearing_608_od_3dpr'"
+    },
+    "bearing_wheel": {
+      "error": "name 'get_circle' is not defined"
+    },
+    "bearings": {
+      "error": "'bearing_name'"
+    },
+    "bolt": {
+      "error": "'radius_name'"
+    },
+    "bracket_2020_aluminium_extrusion": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "buntings": {
+      "error": "'width'"
+    },
+    "ci_holes_center": {
+      "error": "get_ci_holes_center() missing 1 required positional argument: 'thing'"
+    },
+    "circle_base": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "circle_captive": {
+      "error": "name 'get_circle' is not defined"
+    },
+    "circle_old_1": {
+      "error": "get_ci_holes_center() missing 1 required positional argument: 'thing'"
+    },
+    "circles": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "gear_double_stack": {
+      "error": "object of type 'int' has no len()"
+    },
+    "gears": {
+      "component_count": 5,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_electronic_battery_box_aa_battery_4_cell": {
+      "error": "'width'"
+    },
+    "holder_electronic_button_11_mm_panel_mount": {
+      "error": "'width'"
+    },
+    "holder_electronic_button_11_mm_panel_mount_x4": {
+      "error": "'width'"
+    },
+    "holder_electronic_potentiometer_17_mm": {
+      "error": "'width'"
+    },
+    "holder_electronic_potentiometer_stick_single_axis_16_mm": {
+      "error": "'width'"
+    },
+    "holder_electronic_potentiometer_stick_single_axis_16_mm_arm": {
+      "error": "'width'"
+    },
+    "holder_electronics_base_03_03": {
+      "type": "<class 'list'>"
+    },
+    "holder_electronics_mcu_atmega328_shennie": {
+      "component_count": 5,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_electronics_microswitch_standard": {
+      "component_count": 149,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_electronics_potentiometer_17": {
+      "component_count": 152,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_electronics_pushbutton_11": {
+      "component_count": 152,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_electronics_pushbutton_11_x4": {
+      "component_count": 155,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_fan_120_mm": {
+      "error": "'size'"
+    },
+    "holder_motor_building_block_large_01": {
+      "component_count": 11,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_building_block_large_01_bottom": {
+      "component_count": 13,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_building_block_small_01_bottom": {
+      "component_count": 13,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_gearmotor_01": {
+      "error": "'get_oobb_motor_gearmotor_01'"
+    },
+    "holder_motor_gearmotor_01_old_01": {
+      "error": "'get_oobb_motor_gearmotor_01'"
+    },
+    "holder_motor_gearmotor_01_old_02": {
+      "error": "'get_oobb_motor_gearmotor_01'"
+    },
+    "holder_motor_generic": {
+      "error": "list index out of range"
+    },
+    "holder_motor_servo_micro_01": {
+      "component_count": 14,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_servo_standard_01": {
+      "component_count": 9,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_servo_standard_01_all_debug": {
+      "component_count": 28,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_servo_standard_01_all_print": {
+      "component_count": 3686,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_servo_standard_01_base": {
+      "component_count": 8,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_servo_standard_01_base_extra_variables": {
+      "component_count": 0,
+      "has_components": false,
+      "keys": [
+        "screw_bottom_length",
+        "screw_bottom_middle",
+        "thickness_bottom",
+        "thickness_middle",
+        "thickness_top",
+        "type"
+      ]
+    },
+    "holder_motor_servo_standard_01_bottom": {
+      "component_count": 10,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_servo_standard_01_bottom_old_1": {
+      "error": "'size'"
+    },
+    "holder_motor_servo_standard_01_old": {
+      "error": "name 'get_bearing_plate' is not defined"
+    },
+    "holder_motor_servo_standard_01_old_1": {
+      "error": "'size'"
+    },
+    "holder_motor_servo_standard_01_top": {
+      "component_count": 9,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_stepper_motor_nema_17_both": {
+      "error": "'width'"
+    },
+    "holder_motor_stepper_motor_nema_17_flat": {
+      "component_count": 97,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_stepper_motor_nema_17_jack": {
+      "component_count": 12,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "holder_motor_stepper_nema_17_flat": {
+      "error": "'get_oobb_'"
+    },
+    "holder_motor_stepper_nema_17_flat_shifted": {
+      "error": "'get_oobb_'"
+    },
+    "holder_motor_stepper_nema_17_flat_shifted_spacer_10_mm": {
+      "error": "'get_oobb_'"
+    },
+    "holder_motor_tt_01": {
+      "error": "'get_oobb_'"
+    },
+    "holder_old": {
+      "error": "'extra'"
+    },
+    "holder_powerbank_anker_323": {
+      "error": "'size'"
+    },
+    "holders": {
+      "error": "'extra'"
+    },
+    "jack_basic": {
+      "component_count": 9,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "jacks": {
+      "component_count": 9,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "jig_screw_sorter_m3_03_03": {
+      "component_count": 363,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "jig_tray_03_03": {
+      "component_count": 18,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "jigs": {
+      "error": "'extra'"
+    },
+    "mounting_plate_generic": {
+      "component_count": 14,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "mounting_plate_side": {
+      "component_count": 14,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "mounting_plate_top": {
+      "component_count": 14,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "mounting_plate_u": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "mounting_plates": {
+      "component_count": 14,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "nut_m3": {
+      "error": "get_nut_m3() got an unexpected keyword argument 'type'"
+    },
+    "nuts": {
+      "error": "'radius_name'"
+    },
+    "oobb_circle": {
+      "type": "<class 'list'>"
+    },
+    "oobb_coupler_flanged": {
+      "type": "<class 'NoneType'>"
+    },
+    "oobb_cube": {
+      "error": "'pos'"
+    },
+    "oobb_cube_center": {
+      "error": "'pos'"
+    },
+    "oobb_cube_new": {
+      "error": "'size'"
+    },
+    "oobb_cylinder": {
+      "type": "<class 'list'>"
+    },
+    "oobb_cylinder_hollow": {
+      "error": "'r'"
+    },
+    "oobb_electronic_battery_box_aa_battery_4_cell": {
+      "type": "<class 'list'>"
+    },
+    "oobb_electronic_button_11_mm_panel_mount": {
+      "type": "<class 'list'>"
+    },
+    "oobb_electronic_potentiometer_17_mm": {
+      "type": "<class 'list'>"
+    },
+    "oobb_electronic_potentiometer_stick_single_axis_16_mm": {
+      "type": "<class 'list'>"
+    },
+    "oobb_hole_new": {
+      "type": "<class 'list'>"
+    },
+    "oobb_mechanical_motor_with_encoder_30_mm_diameter_cricut_maker_compatible": {
+      "type": "<class 'list'>"
+    },
+    "oobb_motor_servo_standard_01": {
+      "type": "<class 'list'>"
+    },
+    "oobb_motor_stepper_nema_17": {
+      "type": "<class 'list'>"
+    },
+    "oobb_motor_tt_01": {
+      "type": "<class 'list'>"
+    },
+    "oobb_nut": {
+      "error": "'radius_name'"
+    },
+    "oobb_overhang": {
+      "error": "'pos'"
+    },
+    "oobb_plate": {
+      "error": "'width'"
+    },
+    "oobb_rounded_rectangle_hollow": {
+      "error": "'width'"
+    },
+    "oobb_rounded_rectangle_rounded": {
+      "type": "<class 'list'>"
+    },
+    "oobb_screw": {
+      "type": "<class 'list'>"
+    },
+    "oobb_screw_countersunk": {
+      "type": "<class 'list'>"
+    },
+    "oobb_screw_self_tapping": {
+      "type": "<class 'list'>"
+    },
+    "oobb_screw_socket_cap": {
+      "type": "<class 'list'>"
+    },
+    "oobb_slice": {
+      "type": "<class 'list'>"
+    },
+    "oobb_slot": {
+      "type": "<class 'list'>"
+    },
+    "oobb_sphere": {
+      "error": "unsupported operand type(s) for *: 'NoneType' and 'int'"
+    },
+    "oobb_tube": {
+      "error": "can only concatenate str (not \"float\") to str"
+    },
+    "oobb_tube_new": {
+      "error": "unsupported operand type(s) for -: 'str' and 'float'"
+    },
+    "oobb_wire_base": {
+      "error": "'width'"
+    },
+    "oobb_wire_basic": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_cutout": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_higher_voltage": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_i2c": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_motor": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_motor_stepper": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_spacer": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_spacer_base": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_spacer_long": {
+      "type": "<class 'list'>"
+    },
+    "oobb_wire_spacer_u": {
+      "type": "<class 'list'>"
+    },
+    "oobb_zip_tie_clearance_small": {
+      "type": "<class 'list'>"
+    },
+    "other_bolt_stacker": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "other_bolt_stacker_cylinder": {
+      "error": "unsupported operand type(s) for -: 'str' and 'int'"
+    },
+    "other_corner_cube": {
+      "component_count": 8,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "other_corner_cube_basic": {
+      "component_count": 7,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "other_corner_cube_relief": {
+      "component_count": 8,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "other_ptfe_tube_holder": {
+      "error": "list index out of range"
+    },
+    "other_ptfe_tube_holder_ninety_degree": {
+      "error": "list index out of range"
+    },
+    "other_timing_belt_clamp_gt2": {
+      "component_count": 7,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "others": {
+      "error": "'extra'"
+    },
+    "plate_base": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "plate_dict": {
+      "component_count": 0,
+      "has_components": false,
+      "keys": [
+        "depth",
+        "pos",
+        "shape",
+        "type"
+      ]
+    },
+    "plate_hole_dict": {
+      "component_count": 0,
+      "has_components": false,
+      "keys": [
+        "both_holes",
+        "holes",
+        "pos",
+        "shape",
+        "type"
+      ]
+    },
+    "plate_l": {
+      "component_count": 2,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "plate_label": {
+      "component_count": 1,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "plate_ninety_degree": {
+      "component_count": 2,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "plate_nut_dict": {
+      "component_count": 0,
+      "has_components": false,
+      "keys": [
+        "hole",
+        "nut",
+        "overhang",
+        "pos",
+        "radius_name",
+        "rot",
+        "shape",
+        "type",
+        "zz"
+      ]
+    },
+    "plate_old": {
+      "component_count": 2,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "plate_t": {
+      "component_count": 2,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "plate_u": {
+      "component_count": 2,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "plate_u_double": {
+      "component_count": 2,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "plates": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "pulley_gt2_shield_double": {
+      "error": "invalid literal for int() with base 10: ''"
+    },
+    "pulleys": {
+      "error": "invalid literal for int() with base 10: ''"
+    },
+    "screw_countersunk": {
+      "error": "'radius_name'"
+    },
+    "screw_self_tapping": {
+      "error": "'radius_name'"
+    },
+    "screw_socket_cap": {
+      "error": "'radius_name'"
+    },
+    "shaft_center": {
+      "error": "get_shaft_center() missing 1 required positional argument: 'thing'"
+    },
+    "shaft_couplers": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "shafts": {
+      "component_count": 3,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "smd_magazine_joiner": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "smd_magazine_label_holder": {
+      "component_count": 5,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "smd_magazine_large": {
+      "error": "unsupported operand type(s) for /: 'str' and 'int'"
+    },
+    "smd_magazine_lid": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "smd_magazine_old_1": {
+      "error": "'<=' not supported between instances of 'str' and 'int'"
+    },
+    "smd_magazine_refiller": {
+      "component_count": 3,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "smd_magazine_small": {
+      "error": "unsupported operand type(s) for /: 'str' and 'int'"
+    },
+    "smd_magazine_small_old": {
+      "error": "unsupported operand type(s) for /: 'str' and 'int'"
+    },
+    "smd_magazines": {
+      "error": "unsupported operand type(s) for /: 'str' and 'int'"
+    },
+    "soldering_jig_electronics_mcu_pi_pico_socket": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "soldering_jigs": {
+      "error": "'extra'"
+    },
+    "standoff": {
+      "error": "'radius_name'"
+    },
+    "test_gear": {
+      "component_count": 20,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_hole": {
+      "component_count": 10,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_motor_n20_shaft": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_motor_tt_01": {
+      "component_count": 1,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_motor_tt_01_shaft": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_motor_servo_standard_01": {
+      "component_count": 5,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_nut": {
+      "component_count": 44,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_screw": {
+      "component_count": 56,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_screw_countersunk": {
+      "component_count": 56,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_screw_self_tapping": {
+      "component_count": 56,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_screw_socket_cap": {
+      "component_count": 56,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_screw_socket_cap_old_1": {
+      "component_count": 47,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_shape_slot": {
+      "component_count": 16,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_oobb_wire": {
+      "component_count": 24,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "test_rotation": {
+      "component_count": 2,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "tests": {
+      "error": "'extra'"
+    },
+    "threaded_insert": {
+      "error": "'radius_name'"
+    },
+    "tool_holder_tool_holder_basic": {
+      "component_count": 16,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "tool_holder_tool_holder_basic_old_01": {
+      "component_count": 14,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "tool_holder_vertical": {
+      "error": "cannot access local variable 'e' where it is not associated with a value"
+    },
+    "tool_holders": {
+      "error": "'extra'"
+    },
+    "tray_lid": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "tray_lid_thin": {
+      "component_count": 8,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "tray_lid_thin_spin": {
+      "component_count": 10,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "tray_thin": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "tray_thin_spin": {
+      "component_count": 11,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "tray_vertical": {
+      "component_count": 8,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "trays": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "trt_old": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "wheel_old_1": {
+      "error": "name 'get_circle' is not defined"
+    },
+    "wheels": {
+      "component_count": 3,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "diameter",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "wire_basic": {
+      "error": "'width'"
+    },
+    "wire_basic_basic_basic": {
+      "error": "'width'"
+    },
+    "wire_basic_basic_basic_basic": {
+      "error": "'width'"
+    },
+    "wire_basic_basic_motor": {
+      "error": "'width'"
+    },
+    "wire_higher_voltage": {
+      "error": "'width'"
+    },
+    "wire_higher_voltage_basic_basic_motor_stepper": {
+      "error": "'width'"
+    },
+    "wire_higher_voltage_motor_stepper": {
+      "error": "'width'"
+    },
+    "wire_i2c": {
+      "error": "'width'"
+    },
+    "wire_motor": {
+      "error": "'width'"
+    },
+    "wire_motor_basic": {
+      "error": "'width'"
+    },
+    "wire_motor_stepper": {
+      "error": "'width'"
+    },
+    "wire_old": {
+      "error": "'extra'"
+    },
+    "wire_spacer": {
+      "error": "'width'"
+    },
+    "wire_spacer_long": {
+      "error": "'width'"
+    },
+    "wire_spacer_u": {
+      "error": "'width'"
+    },
+    "wires": {
+      "error": "'extra'"
+    },
+    "ziptie_holder_jack": {
+      "component_count": 6,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    },
+    "ziptie_holders": {
+      "component_count": 4,
+      "has_components": true,
+      "keys": [
+        "classification",
+        "color",
+        "components",
+        "components_objects",
+        "components_string",
+        "description",
+        "description_extra",
+        "description_main",
+        "folder",
+        "id",
+        "link_main",
+        "link_redirect",
+        "manufacturer",
+        "name",
+        "name_short",
+        "part_number",
+        "short_name",
+        "size",
+        "type"
+      ]
+    }
+  },
+  "sets": {
+    "bearing_circles": {
+      "count": 1,
+      "first_type": "bearing_circle"
+    },
+    "bearing_plates": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "bearings": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "buntings": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "circles": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "gears": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "holders": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "jacks": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "jigs": {
+      "count": 2,
+      "first_type": "jig"
+    },
+    "mounting_plates": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "nuts": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "others": {
+      "count": 17,
+      "first_type": "other"
+    },
+    "plates": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "pulleys": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "screws": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "shaft_couplers": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "shafts": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "smd_magazines": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "soldering_jigs": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "tests": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "tool_holders": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "trays": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "wheels": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "wires": {
+      "error": "No module named 'oobb_make_sets'"
+    },
+    "ziptie_holders": {
+      "error": "No module named 'oobb_make_sets'"
+    }
+  }
+}
