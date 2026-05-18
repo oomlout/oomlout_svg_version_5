@@ -43,7 +43,10 @@ kwargs:
   oomp_mode: project
   overwrite: true
   style_name: fill_in_the_blanks
-  svg_name: tin_insert
+  stylesheet: project_bolt
+  svg_name: fill_in_the_blanks
+  table_label: Contents
+  title: Prototyping Tin
   type: C:\gh\oomlout_svg_version_5_tin_insert
 link_github: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
 link_main: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
@@ -839,7 +842,7 @@ oomlout_ai_roboclick_3:
       svg_details:
         height: 169_mm
         style_name: fill_in_the_blanks
-        svg_name: tin_insert
+        svg_name: fill_in_the_blanks
         width: 130_mm
       taxonomy_1: project_bolt
       taxonomy_10: ''
@@ -865,7 +868,7 @@ oomlout_ai_roboclick_3:
 oomp_key: oomp_project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin
 project_name: C:\gh\oomlout_svg_version_5
 svg_details:
-  svg_name: tin_insert
+  svg_name: fill_in_the_blanks
 taxonomy_1: project_bolt
 taxonomy_10: ''
 taxonomy_11: ''

@@ -1,0 +1,161 @@
+meta:
+  name: High Contrast
+  description: >-
+    Maximum contrast black and white palette. Bold fills, thick outlines,
+    and white text on black. Ideal for accessibility requirements,
+    photocopying, vinyl cutting, or single-colour laser engraving.
+
+# ── Plate / body geometry ────────────────────────────────────────────────────
+plate:
+  color: "#000000"
+  stroke: "none"
+  stroke_width: 0
+
+plate.accent:
+  color: "#222222"
+
+plate.light:
+  color: "#444444"
+
+plate.outline:
+  color: "none"
+  stroke: "#000000"
+  stroke_width: 1.0
+
+# plate + stroke weight (merges with plate fill, adds a visible border)
+plate.hairline:
+  stroke: "#000000"
+  stroke_width: 0.1
+
+plate.thin:
+  stroke: "#000000"
+  stroke_width: 0.25
+
+plate.thick:
+  stroke: "#000000"
+  stroke_width: 1.0
+
+plate.heavy:
+  stroke: "#000000"
+  stroke_width: 2.0
+
+# ── Holes & slots ────────────────────────────────────────────────────────────
+hole:
+  color: "#FFFFFF"
+  stroke: "#000000"
+  stroke_width: 0.5
+
+hole.cut:
+  color: "#FFFFFF"
+  stroke: "none"
+  stroke_width: 0
+
+slot:
+  color: "#FFFFFF"
+  stroke: "#000000"
+  stroke_width: 0.5
+
+# ── Outline-only shapes ───────────────────────────────────────────────────────
+outline:
+  color: "none"
+  stroke: "#000000"
+  stroke_width: 1.0
+
+outline.accent:
+  color: "none"
+  stroke: "#000000"
+  stroke_width: 2.0
+
+outline.light:
+  color: "none"
+  stroke: "#555555"
+  stroke_width: 0.5
+
+# outline weight variants — inherit stroke color from base outline
+outline.hairline:
+  stroke_width: 0.1
+
+outline.thin:
+  stroke_width: 0.25
+
+outline.thick:
+  stroke_width: 1.0
+
+outline.heavy:
+  stroke_width: 2.0
+
+# ── Line drawing ─────────────────────────────────────────────────────────────
+line:
+  color: "none"
+  stroke: "#000000"
+  stroke_width: 0.5
+
+line.muted:
+  stroke: "#555555"
+
+line.hairline:
+  stroke_width: 0.1
+
+line.thin:
+  stroke_width: 0.25
+
+line.thick:
+  stroke_width: 1.0
+
+line.heavy:
+  stroke_width: 2.0
+
+# ── Text / labels ─────────────────────────────────────────────────────────────
+label:
+  color: "#FFFFFF"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 4.0
+  halign: center
+  valign: center
+
+label.small:
+  size: 2.5
+
+label.large:
+  size: 7.0
+
+label.mono:
+  font: "JetBrains Mono, Fira Code, monospace"
+
+label.light:
+  color: "#FFFFFF"
+
+label.muted:
+  color: "#AAAAAA"
+
+label.accent:
+  color: "#FFFFFF"
+
+# ── Header bar ────────────────────────────────────────────────────────────────
+header:
+  color: "#000000"
+  stroke: "#FFFFFF"
+  stroke_width: 0.5
+
+header.label:
+  color: "#FFFFFF"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 5.0
+  halign: center
+  valign: center
+
+header.accent:
+  color: "#FFFFFF"
+
+# ── Engraved / etched ─────────────────────────────────────────────────────────
+engraved:
+  color: "#666666"
+  stroke: "none"
+  stroke_width: 0
+
+engraved.light:
+  color: "#999999"

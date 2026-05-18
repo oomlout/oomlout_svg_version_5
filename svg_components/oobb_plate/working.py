@@ -58,6 +58,32 @@ def describe():
             "type": "list",
             "default": [0, 0, 0],
         },
+        {
+            "name": "rot",
+            "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+            "type": "list",
+            "default": [0, 0, 0],
+        },
+        {
+            "name": "color",
+            "description": "Fill colour (CSS colour string, e.g. '#333333'). "
+                           "Set to 'none' for an outline-only shape.",
+            "type": "string",
+            "default": "#333333",
+        },
+        {
+            "name": "stroke",
+            "description": "Outline colour (CSS colour string). "
+                           "Set to a colour to draw an outline; 'none' disables it.",
+            "type": "string",
+            "default": "none",
+        },
+        {
+            "name": "stroke_width",
+            "description": "Outline width in mm. Only visible when stroke is set.",
+            "type": "float",
+            "default": 0,
+        },
     ]
     return _d
 
@@ -77,11 +103,14 @@ def action(**kwargs):
 
     Parameters
     ----------
-    type          : str   "positive" or "negative"
     width         : int   plate width in OOBB units
     height        : int   plate height in OOBB units
-    corner_radius : float corner radius in mm (default 2.0)
+    corner_radius : float corner radius in mm
     pos           : list  [x, y, z] centre in OOBB mm
+    rot           : list  [rx, ry, rz] degrees
+    color         : str   fill colour (CSS); 'none' = transparent
+    stroke        : str   outline colour (CSS); 'none' = no outline
+    stroke_width  : float outline width in mm
     """
     descriptor = copy.deepcopy(kwargs)
     descriptor["shape"] = "oobb_plate"
@@ -89,4 +118,8 @@ def action(**kwargs):
     descriptor.setdefault("height",        1)
     descriptor.setdefault("corner_radius", 2.0)
     descriptor.setdefault("pos",           [0, 0, 0])
+    descriptor.setdefault("rot",           [0, 0, 0])
+    descriptor.setdefault("color",         "#333333")
+    descriptor.setdefault("stroke",        "none")
+    descriptor.setdefault("stroke_width",  0)
     return [descriptor]

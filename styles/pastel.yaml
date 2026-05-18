@@ -1,0 +1,167 @@
+meta:
+  name: Pastel
+  description: >-
+    Soft pastel palette. Blush pinks, mints, periwinkles, and creams with
+    warm rose accents. Gentle and approachable — ideal for educational
+    materials, decorative labels, or anywhere a friendly tone is needed.
+
+# ── Plate / body geometry ────────────────────────────────────────────────────
+plate:
+  color: "#FFE5EC"
+  stroke: "#D4A5A5"
+  stroke_width: 0.3
+
+plate.accent:
+  color: "#FFB3C1"
+
+plate.pop:
+  color: "#C7CEEA"
+
+plate.light:
+  color: "#E8F4F8"
+
+plate.outline:
+  color: "none"
+  stroke: "#D4A5A5"
+  stroke_width: 0.5
+
+# plate + stroke weight (merges with plate fill, adds a visible border)
+plate.hairline:
+  stroke: "#D4A5A5"
+  stroke_width: 0.1
+
+plate.thin:
+  stroke: "#D4A5A5"
+  stroke_width: 0.25
+
+plate.thick:
+  stroke: "#D4A5A5"
+  stroke_width: 1.0
+
+plate.heavy:
+  stroke: "#D4A5A5"
+  stroke_width: 2.0
+
+# ── Holes & slots ────────────────────────────────────────────────────────────
+hole:
+  color: "#B5EAD7"
+  stroke: "#7DC9A8"
+  stroke_width: 0.3
+
+hole.cut:
+  color: "#FFFFFF"
+  stroke: "#B5EAD7"
+  stroke_width: 0.3
+
+slot:
+  color: "#C7CEEA"
+  stroke: "none"
+  stroke_width: 0
+
+# ── Outline-only shapes ───────────────────────────────────────────────────────
+outline:
+  color: "none"
+  stroke: "#D4A5A5"
+  stroke_width: 0.5
+
+outline.accent:
+  color: "none"
+  stroke: "#FFB347"
+  stroke_width: 0.5
+
+outline.light:
+  color: "none"
+  stroke: "#C7CEEA"
+  stroke_width: 0.3
+
+# outline weight variants — inherit stroke color from base outline
+outline.hairline:
+  stroke_width: 0.1
+
+outline.thin:
+  stroke_width: 0.25
+
+outline.thick:
+  stroke_width: 1.0
+
+outline.heavy:
+  stroke_width: 2.0
+
+# ── Line drawing ─────────────────────────────────────────────────────────────
+line:
+  color: "none"
+  stroke: "#D4A5A5"
+  stroke_width: 0.5
+
+line.accent:
+  stroke: "#FFB347"
+
+line.muted:
+  stroke: "#C7CEEA"
+
+line.hairline:
+  stroke_width: 0.1
+
+line.thin:
+  stroke_width: 0.25
+
+line.thick:
+  stroke_width: 1.0
+
+line.heavy:
+  stroke_width: 2.0
+
+# ── Text / labels ─────────────────────────────────────────────────────────────
+label:
+  color: "#5C5C5C"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 4.0
+  halign: center
+  valign: center
+
+label.small:
+  size: 2.5
+
+label.large:
+  size: 7.0
+
+label.mono:
+  font: "JetBrains Mono, Fira Code, monospace"
+
+label.light:
+  color: "#FFFFFF"
+
+label.muted:
+  color: "#9E9E9E"
+
+label.accent:
+  color: "#E07B9A"
+
+# ── Header bar ────────────────────────────────────────────────────────────────
+header:
+  color: "#D4A5C9"
+  stroke: "none"
+  stroke_width: 0
+
+header.label:
+  color: "#FFFFFF"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 5.0
+  halign: center
+  valign: center
+
+header.accent:
+  color: "#FFB347"
+
+# ── Engraved / etched ─────────────────────────────────────────────────────────
+engraved:
+  color: "#AABFCC"
+  stroke: "none"
+  stroke_width: 0
+
+engraved.light:
+  color: "#C8D8E4"

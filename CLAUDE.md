@@ -12,9 +12,11 @@ A fully standalone SVG rendering pipeline for OOBB (Object Oriented Building Blo
 | `opsvg.py` | SVG renderer + component discovery + `se()` dispatcher | `opsc.py` |
 | `svg_help.py` | Pipeline orchestrator: thing dict, parts/ output | `scad_help.py` |
 | `working_svg.py` | Part definitions + builder functions | `working_scad.py` |
+| `svg_styles.py` | Stylesheet system — named styles, dot-notation variants, YAML file loading | — |
 | `svg_components/*/working.py` | Self-contained shape components | `components/*/working.py` |
 | `svg_documentation.py` | Documentation generator (JSON + HTML) | `components/documentation.py` |
 | `generate_samples.py` | Renders default sample SVG per component | — |
+| `regenerate_docs.bat` | One-click: regenerate samples + documentation | — |
 
 ## Running Parts Generation
 
@@ -43,7 +45,13 @@ python svg_documentation.py --out docs/ # custom output folder
 ```
 
 Open `documentation.html` in a browser — component cards with inline SVG previews,
-search + category filter, click-to-expand detail drawer.
+search + category filter, click-to-expand detail drawer, and a Stylesheets section
+showing swatches for every built-in and file-based stylesheet.
+
+One-click regeneration (Windows):
+```
+regenerate_docs.bat        # runs generate_samples.py --force then svg_documentation.py
+```
 
 ## Tests
 
@@ -52,10 +60,11 @@ python -m pytest tests/ -v
 UPDATE_SNAPSHOTS=1 python -m pytest tests/test_svg_rendering.py -v   # regenerate hash snapshots
 ```
 
-Three test files:
+Four test files:
 - `tests/test_svg_components.py` — component contract (define/action interface, 9+ components)
 - `tests/test_documentation.py`  — doc generation (JSON/HTML export, key validation)
 - `tests/test_svg_rendering.py`  — SVG validity + snapshot regression
+- `tests/test_svg_styles.py`     — stylesheet system (120 tests: resolve, merge, apply, YAML loading, se() integration)
 
 ## Output structure
 
@@ -86,13 +95,56 @@ The folder name is built from the part descriptor's metadata fields:
 ```python
 p3          = copy.deepcopy(kwargs)
 p3["shape"] = f"oobb_plate"    # see shape vocabulary below
-p3["color"] = "#333333"        # explicit per-shape color
+p3["style"] = "plate"          # named style (optional; inline color still wins)
 p3["pos"]   = copy.deepcopy(pos)
 opsvg.se(thing, **p3)          # high-level dispatcher (preferred)
 ```
 
 No positive/negative type — shapes render in append order, each using its `color` kwarg
-(falls back to the default fill if not set).
+(or resolved from `style=`) as fill.  `stroke` and `stroke_width` are also supported
+per-shape.
+
+### Stylesheet system
+
+**Built-in sheets:** `default` (technical monochrome, burnt-orange accent), `jazzy` (vivid purple/coral)  
+**File-based sheets** (in `styles/`): `blueprint`, `high_contrast`, `neon`, `pastel`, `minimal`
+
+```python
+import svg_styles as _ss
+
+# Resolve a named style (dot-notation merges base + variant)
+props = _ss.resolve("plate.accent", thing["styles"])
+
+# Merge two stylesheets (last wins per property)
+merged = _ss.get_stylesheet(["default", "neon"])
+
+# Override a style for one part
+_ss.set_style(thing, "plate", {"color": "#FF6600"})
+```
+
+**In `se()` calls** — use `style=` kwarg; inline kwargs always win:
+```python
+opsvg.se(thing, shape="rect",    style="plate",        ...)
+opsvg.se(thing, shape="text",    style="label.small",  halign="left", ...)
+opsvg.se(thing, shape="oobb_plate", style="plate",     ...)
+```
+
+**In `working.yaml`** — no Python needed:
+```yaml
+svg_details:
+  svg_name: my_part
+  stylesheet: blueprint          # single name
+  # stylesheet: [default, neon]  # or a list — merges left-to-right
+  styles:
+    plate:
+      color: "#FF6600"
+    label:
+      font: "JetBrains Mono, monospace"
+```
+
+**Adding a custom stylesheet:** drop a `styles/mysheet.yaml` file.  It shadows any
+built-in with the same name and is auto-discovered by `list_available_stylesheets()`
+and the documentation generator.
 
 ### svg_details — the reload key
 
@@ -169,7 +221,7 @@ computes the viewBox from the bounding box — canvas size is never set manually
 
 | package | required | purpose |
 |---|---|---|
-| `pyyaml` | yes | `working.yaml` / `thing.yaml` output |
+| `pyyaml` | yes | `working.yaml` / `thing.yaml` output; `styles/*.yaml` loading |
 
 ## Reference: Upstream OOBB Project
 

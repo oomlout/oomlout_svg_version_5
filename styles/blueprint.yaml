@@ -1,0 +1,169 @@
+meta:
+  name: Blueprint
+  description: >-
+    Engineering blueprint aesthetic. Deep navy background with technical cyan
+    detailing and gold dimension-line accents. Evokes CAD schematics and
+    technical drawings — clear, precise, professional.
+
+# ── Plate / body geometry ────────────────────────────────────────────────────
+plate:
+  color: "#0B3D91"
+  stroke: "#4FC3F7"
+  stroke_width: 0.3
+
+plate.accent:
+  color: "#1565C0"
+  stroke: "#4FC3F7"
+  stroke_width: 0.3
+
+plate.pop:
+  color: "#0277BD"
+
+plate.light:
+  color: "#1976D2"
+
+plate.outline:
+  color: "none"
+  stroke: "#4FC3F7"
+  stroke_width: 0.5
+
+# plate + stroke weight (merges with plate fill, adds a visible border)
+plate.hairline:
+  stroke: "#4FC3F7"
+  stroke_width: 0.1
+
+plate.thin:
+  stroke: "#4FC3F7"
+  stroke_width: 0.25
+
+plate.thick:
+  stroke: "#4FC3F7"
+  stroke_width: 1.0
+
+plate.heavy:
+  stroke: "#4FC3F7"
+  stroke_width: 2.0
+
+# ── Holes & slots ────────────────────────────────────────────────────────────
+hole:
+  color: "#0D2B6E"
+  stroke: "#4FC3F7"
+  stroke_width: 0.3
+
+hole.cut:
+  color: "#062050"
+  stroke: "#7EC8E3"
+  stroke_width: 0.2
+
+slot:
+  color: "#0D2B6E"
+  stroke: "#4FC3F7"
+  stroke_width: 0.3
+
+# ── Outline-only shapes ───────────────────────────────────────────────────────
+outline:
+  color: "none"
+  stroke: "#4FC3F7"
+  stroke_width: 0.5
+
+outline.accent:
+  color: "none"
+  stroke: "#FFD700"
+  stroke_width: 0.5
+
+outline.cool:
+  color: "none"
+  stroke: "#B3E5FC"
+  stroke_width: 0.3
+
+# outline weight variants — inherit stroke color from base outline
+outline.hairline:
+  stroke_width: 0.1
+
+outline.thin:
+  stroke_width: 0.25
+
+outline.thick:
+  stroke_width: 1.0
+
+outline.heavy:
+  stroke_width: 2.0
+
+# ── Line drawing ─────────────────────────────────────────────────────────────
+line:
+  color: "none"
+  stroke: "#4FC3F7"
+  stroke_width: 0.5
+
+line.accent:
+  stroke: "#FFD700"
+
+line.muted:
+  stroke: "#546E7A"
+
+line.hairline:
+  stroke_width: 0.1
+
+line.thin:
+  stroke_width: 0.25
+
+line.thick:
+  stroke_width: 1.0
+
+line.heavy:
+  stroke_width: 2.0
+
+# ── Text / labels ─────────────────────────────────────────────────────────────
+label:
+  color: "#B3E5FC"
+  stroke: "none"
+  stroke_width: 0
+  font: "JetBrains Mono, Fira Code, monospace"
+  size: 4.0
+  halign: center
+  valign: center
+
+label.small:
+  size: 2.5
+
+label.large:
+  size: 7.0
+
+label.mono:
+  font: "JetBrains Mono, Fira Code, monospace"
+
+label.light:
+  color: "#E3F2FD"
+
+label.muted:
+  color: "#546E7A"
+
+label.accent:
+  color: "#FFD700"
+
+# ── Header bar ────────────────────────────────────────────────────────────────
+header:
+  color: "#062550"
+  stroke: "#4FC3F7"
+  stroke_width: 0.3
+
+header.label:
+  color: "#4FC3F7"
+  stroke: "none"
+  stroke_width: 0
+  font: "JetBrains Mono, Fira Code, monospace"
+  size: 5.0
+  halign: center
+  valign: center
+
+header.accent:
+  color: "#FFD700"
+
+# ── Engraved / etched ─────────────────────────────────────────────────────────
+engraved:
+  color: "#1A6B9E"
+  stroke: "none"
+  stroke_width: 0
+
+engraved.light:
+  color: "#4FC3F7"

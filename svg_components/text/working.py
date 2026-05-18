@@ -61,11 +61,24 @@ def describe():
         },
         {
             "name": "color",
-            "description": "Optional explicit fill colour (CSS colour string). "
-                           "Overrides the type-based fill so white text can sit "
-                           "on a dark header bar.",
+            "description": "Fill colour (CSS colour string). "
+                           "Use 'none' for invisible fill (stroke-only text). "
+                           "Defaults to the global fill colour when empty.",
             "type": "string",
-            "default": "",
+            "default": "#333333",
+        },
+        {
+            "name": "stroke",
+            "description": "Outline colour for the text glyphs (CSS colour string). "
+                           "Set to a colour to draw outlined/hollow text; 'none' disables it.",
+            "type": "string",
+            "default": "none",
+        },
+        {
+            "name": "stroke_width",
+            "description": "Glyph outline width in mm. Only visible when stroke is set.",
+            "type": "float",
+            "default": 0,
         },
         {
             "name": "pos",
@@ -98,23 +111,27 @@ def action(**kwargs):
 
     Parameters
     ----------
-    type   : str   "positive" or "negative"
-    text   : str   string to render
-    size   : float font size in mm
-    font   : str   font-family (web-safe name or 'Name:style=Bold')
-    halign : str   "left" | "center" | "right"
-    valign : str   "bottom" | "center" | "top"
-    color  : str   optional explicit CSS colour
-    pos    : list  [x, y, z] anchor in OOBB mm
-    rot    : list  [rx, ry, rz] degrees
+    text         : str    string to render
+    size         : float  font size in mm
+    font         : str    font-family (web-safe name or 'Name:style=Bold')
+    halign       : str    'left' | 'center' | 'right'
+    valign       : str    'bottom' | 'center' | 'top'
+    color        : str    fill colour (CSS); 'none' = transparent fill
+    stroke       : str    glyph outline colour (CSS); 'none' = no outline
+    stroke_width : float  glyph outline width in mm
+    pos          : list   [x, y, z] anchor in OOBB mm
+    rot          : list   [rx, ry, rz] degrees
     """
     descriptor = copy.deepcopy(kwargs)
     descriptor["shape"] = "text"
-    descriptor.setdefault("text",   "")
-    descriptor.setdefault("size",   4.0)
-    descriptor.setdefault("font",   "sans-serif")
-    descriptor.setdefault("halign", "center")
-    descriptor.setdefault("valign", "center")
-    descriptor.setdefault("pos",    [0, 0, 0])
-    descriptor.setdefault("rot",    [0, 0, 0])
+    descriptor.setdefault("text",         "")
+    descriptor.setdefault("size",         4.0)
+    descriptor.setdefault("font",         "sans-serif")
+    descriptor.setdefault("halign",       "center")
+    descriptor.setdefault("valign",       "center")
+    descriptor.setdefault("color",        "#333333")
+    descriptor.setdefault("stroke",       "none")
+    descriptor.setdefault("stroke_width", 0)
+    descriptor.setdefault("pos",          [0, 0, 0])
+    descriptor.setdefault("rot",          [0, 0, 0])
     return [descriptor]

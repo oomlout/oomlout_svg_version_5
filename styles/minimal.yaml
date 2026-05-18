@@ -1,0 +1,169 @@
+meta:
+  name: Minimal
+  description: >-
+    Ultra-clean outline style. Near-white fills, hairline borders, and small
+    grey labels. Inspired by architectural drawings and wireframe mockups —
+    invisible until you look closely, precise when you do.
+
+# ── Plate / body geometry ────────────────────────────────────────────────────
+plate:
+  color: "#FAFAFA"
+  stroke: "#CCCCCC"
+  stroke_width: 0.2
+
+plate.accent:
+  color: "#F5F5F5"
+  stroke: "#999999"
+  stroke_width: 0.2
+
+plate.light:
+  color: "#FFFFFF"
+  stroke: "#E0E0E0"
+  stroke_width: 0.2
+
+plate.outline:
+  color: "none"
+  stroke: "#AAAAAA"
+  stroke_width: 0.3
+
+# plate + stroke weight (merges with plate fill, adds a visible border)
+plate.hairline:
+  stroke: "#CCCCCC"
+  stroke_width: 0.1
+
+plate.thin:
+  stroke: "#CCCCCC"
+  stroke_width: 0.25
+
+plate.thick:
+  stroke: "#999999"
+  stroke_width: 1.0
+
+plate.heavy:
+  stroke: "#999999"
+  stroke_width: 2.0
+
+# ── Holes & slots ────────────────────────────────────────────────────────────
+hole:
+  color: "#E8E8E8"
+  stroke: "#AAAAAA"
+  stroke_width: 0.2
+
+hole.cut:
+  color: "#FFFFFF"
+  stroke: "#CCCCCC"
+  stroke_width: 0.2
+
+slot:
+  color: "#F0F0F0"
+  stroke: "#BBBBBB"
+  stroke_width: 0.2
+
+# ── Outline-only shapes ───────────────────────────────────────────────────────
+outline:
+  color: "none"
+  stroke: "#999999"
+  stroke_width: 0.3
+
+outline.accent:
+  color: "none"
+  stroke: "#555555"
+  stroke_width: 0.3
+
+outline.light:
+  color: "none"
+  stroke: "#CCCCCC"
+  stroke_width: 0.2
+
+# outline weight variants — inherit stroke color from base outline
+outline.hairline:
+  stroke_width: 0.1
+
+outline.thin:
+  stroke_width: 0.25
+
+outline.thick:
+  stroke_width: 1.0
+
+outline.heavy:
+  stroke_width: 2.0
+
+# ── Line drawing ─────────────────────────────────────────────────────────────
+line:
+  color: "none"
+  stroke: "#999999"
+  stroke_width: 0.3
+
+line.accent:
+  stroke: "#555555"
+
+line.muted:
+  stroke: "#CCCCCC"
+
+line.hairline:
+  stroke_width: 0.1
+
+line.thin:
+  stroke_width: 0.25
+
+line.thick:
+  stroke_width: 1.0
+
+line.heavy:
+  stroke_width: 2.0
+
+# ── Text / labels ─────────────────────────────────────────────────────────────
+label:
+  color: "#333333"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 3.5
+  halign: center
+  valign: center
+
+label.small:
+  size: 2.0
+
+label.large:
+  size: 6.0
+
+label.mono:
+  font: "JetBrains Mono, Fira Code, monospace"
+  size: 3.0
+
+label.light:
+  color: "#888888"
+
+label.muted:
+  color: "#AAAAAA"
+
+label.accent:
+  color: "#555555"
+
+# ── Header bar ────────────────────────────────────────────────────────────────
+header:
+  color: "#F0F0F0"
+  stroke: "#CCCCCC"
+  stroke_width: 0.2
+
+header.label:
+  color: "#444444"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 4.5
+  halign: center
+  valign: center
+
+header.accent:
+  color: "#888888"
+
+# ── Engraved / etched ─────────────────────────────────────────────────────────
+engraved:
+  color: "#BBBBBB"
+  stroke: "none"
+  stroke_width: 0
+
+engraved.light:
+  color: "#DDDDDD"

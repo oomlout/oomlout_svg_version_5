@@ -85,12 +85,19 @@ def action(**kwargs):
 
     Parameters
     ----------
-    type     : str   "positive" or "negative"
-    diameter : float disc diameter in OOBB units
-    pos      : list  [x, y, z] centre in OOBB mm
+    diameter     : float  disc diameter in OOBB units
+    pos          : list   [x, y, z] centre in OOBB mm
+    rot          : list   [rx, ry, rz] degrees (rz has no visual effect on a circle)
+    color        : str    fill colour (CSS); 'none' = transparent
+    stroke       : str    outline colour (CSS); 'none' = no outline
+    stroke_width : float  outline width in mm
     """
     descriptor = copy.deepcopy(kwargs)
     descriptor["shape"] = "oobb_circle"
-    descriptor.setdefault("diameter", 1)
-    descriptor.setdefault("pos",      [0, 0, 0])
+    descriptor.setdefault("diameter",     1)
+    descriptor.setdefault("pos",          [0, 0, 0])
+    descriptor.setdefault("rot",          [0, 0, 0])
+    descriptor.setdefault("color",        "#333333")
+    descriptor.setdefault("stroke",       "none")
+    descriptor.setdefault("stroke_width", 0)
     return [descriptor]

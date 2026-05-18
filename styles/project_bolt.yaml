@@ -1,0 +1,205 @@
+meta:
+  name: Project Bolt
+  description: >-
+    Clean utilitarian hardware-bin card style. Crisp white body, near-black
+    double border, bold sans-serif title, light-grey ruled lines, and a strong
+    dark "Contents" header cell in the bottom table. Inspired by the physical
+    Project Bolt tin label cards.
+
+# ── Card body ─────────────────────────────────────────────────────────────────
+# Use plate for the outer card and plate.inner for the inner border ring
+plate:
+  color: "#FAFAFA"
+  stroke: "#1A1A1A"
+  stroke_width: 1.2
+
+plate.inner:
+  color: "none"
+  stroke: "#2E2E2E"
+  stroke_width: 0.35
+
+plate.accent:
+  color: "#E8E8E8"
+  stroke: "#1A1A1A"
+  stroke_width: 0.5
+
+plate.light:
+  color: "#F0F0F0"
+  stroke: "#333333"
+  stroke_width: 0.5
+
+plate.outline:
+  color: "none"
+  stroke: "#1A1A1A"
+  stroke_width: 0.8
+
+# plate + stroke weight (merges with plate fill, adds a visible border)
+plate.hairline:
+  stroke: "#333333"
+  stroke_width: 0.1
+
+plate.thin:
+  stroke: "#333333"
+  stroke_width: 0.25
+
+plate.thick:
+  stroke: "#333333"
+  stroke_width: 1.0
+
+plate.heavy:
+  stroke: "#333333"
+  stroke_width: 2.0
+
+# ── Table cells ───────────────────────────────────────────────────────────────
+# plate.cell: standard white data cell with grid border
+plate.cell:
+  color: "#FFFFFF"
+  stroke: "#2E2E2E"
+  stroke_width: 0.5
+
+# ── Ruled lines ───────────────────────────────────────────────────────────────
+# Rendered as a very thin filled rect — horizontal underline
+rule:
+  color: "#BBBBBB"
+  stroke: "none"
+  stroke_width: 0
+
+# ── Holes & slots ────────────────────────────────────────────────────────────
+hole:
+  color: "#DDDDDD"
+  stroke: "#1A1A1A"
+  stroke_width: 0.4
+
+hole.cut:
+  color: "#FFFFFF"
+  stroke: "#444444"
+  stroke_width: 0.3
+
+slot:
+  color: "#DDDDDD"
+  stroke: "#1A1A1A"
+  stroke_width: 0.4
+
+# ── Outline-only shapes ───────────────────────────────────────────────────────
+outline:
+  color: "none"
+  stroke: "#1A1A1A"
+  stroke_width: 0.5
+
+outline.accent:
+  color: "none"
+  stroke: "#555555"
+  stroke_width: 0.5
+
+outline.light:
+  color: "none"
+  stroke: "#AAAAAA"
+  stroke_width: 0.3
+
+# outline weight variants — inherit stroke color from base outline
+outline.hairline:
+  stroke_width: 0.1
+
+outline.thin:
+  stroke_width: 0.25
+
+outline.thick:
+  stroke_width: 1.0
+
+outline.heavy:
+  stroke_width: 2.0
+
+# ── Line drawing ─────────────────────────────────────────────────────────────
+line:
+  color: "none"
+  stroke: "#333333"
+  stroke_width: 0.5
+
+line.accent:
+  stroke: "#111111"
+
+line.muted:
+  stroke: "#AAAAAA"
+
+# line weight variants
+line.hairline:
+  stroke_width: 0.1
+
+line.thin:
+  stroke_width: 0.25
+
+line.thick:
+  stroke_width: 1.0
+
+line.heavy:
+  stroke_width: 2.0
+
+# ── Text / labels ─────────────────────────────────────────────────────────────
+label:
+  color: "#1A1A1A"
+  stroke: "none"
+  stroke_width: 0
+  font: "Swis721 Blk BT, comic sans ms"
+  size: 5.0
+  halign: center
+  valign: center
+
+# label.title — technical drawing display font
+# DIN Alternate / DIN Condensed: ISO/DIN 1451 standard — the classic
+#   engineering drawing typeface, used on German road signs, instrument
+#   panels, and technical documentation since the 1930s
+# Eurostile: 1962 Novarese design for technical/industrial print
+# Din Alternate: Windows built-in condensed technical-drawing staple
+# Arial Narrow: safe condensed fallback
+label.title:
+  size: 14.0
+  font: "Swis721 Blk BT, comic sans ms"
+  font_weight: bold
+  color: "#111111"
+
+label.small:
+  size: 2.5
+
+label.large:
+  size: 8.0
+
+label.mono:
+  font: "JetBrains Mono, Fira Code, Consolas, monospace"
+
+label.light:
+  color: "#FFFFFF"
+
+label.muted:
+  color: "#888888"
+
+label.accent:
+  color: "#333333"
+
+# ── Header bar ────────────────────────────────────────────────────────────────
+# Used for the dark "Contents" cell in the bottom table
+header:
+  color: "#1C1C1C"
+  stroke: "#1C1C1C"
+  stroke_width: 0.5
+
+header.label:
+  color: "#FFFFFF"
+  stroke: "none"
+  stroke_width: 0
+  font: "Swis721 Blk BT, comic sans ms"
+  font_weight: bold
+  size: 7.0
+  halign: center
+  valign: center
+
+header.accent:
+  color: "#444444"
+
+# ── Engraved / etched ─────────────────────────────────────────────────────────
+engraved:
+  color: "#CCCCCC"
+  stroke: "none"
+  stroke_width: 0
+
+engraved.light:
+  color: "#E0E0E0"

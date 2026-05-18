@@ -1,0 +1,823 @@
+classification: svg
+description_main: internal_label_sheet_workbench
+id: svg_internal_label_sheet_workbench
+id_svg: svg_internal_label_sheet_workbench
+kwargs:
+  boxes:
+  - h: 0.5
+    halign: center
+    name: project
+    style: plate.light
+    text: Project
+    w: 2.0
+    x: 0.0
+    y: 0.0
+  - h: 0.5
+    halign: center
+    name: date
+    style: plate.light
+    text: Date
+    w: 1.0
+    x: 2.0
+    y: 0.0
+  - h: 2.0
+    line_spacing_mm: 6.0
+    lined: true
+    name: notes
+    text: Notes
+    text_size: 4.5
+    w: 2.0
+    x: 0.0
+    y: 0.5
+  - h: 0.75
+    name: ref_1
+    text: Ref 1
+    w: 1.0
+    x: 2.0
+    y: 0.5
+  - h: 0.75
+    name: ref_2
+    text: Ref 2
+    w: 1.0
+    x: 2.0
+    y: 1.25
+  - h: 0.5
+    name: ref_3
+    text: Ref 3
+    w: 1.0
+    x: 2.0
+    y: 2.0
+  - h: 1.0
+    line_spacing_mm: 7.5
+    lined: true
+    name: tasks
+    text: Tasks
+    text_size: 4.5
+    w: 3.0
+    x: 0.0
+    y: 2.5
+  card_margin_mm: 2.0
+  card_r: 8.0
+  filter: ''
+  grid_h: 3.5
+  grid_w: 3.0
+  navigation: false
+  oomp_description_extra: ''
+  oomp_description_main: _internal_label_sheet_workbench
+  oomp_mode: project
+  overwrite: true
+  stylesheet: project_bolt
+  svg_name: internal_label_sheet
+  type: C:\gh\oomlout_svg_version_5_internal_label_sheet_workbench
+  unit_mm: 42.0
+oobb_name: internal_label_sheet_workbench
+project_name: C:\gh\oomlout_svg_version_5
+svg_details:
+  svg_name: internal_label_sheet
+thing:
+  classification: svg
+  color: ''
+  depth: 3
+  depth_mm: 3
+  description: ''
+  description_extra: ''
+  description_main: internal_label_sheet_workbench
+  extra: ''
+  height: 1
+  height_mm: 14.0
+  id: svg_internal_label_sheet_workbench
+  id_svg: svg_internal_label_sheet_workbench
+  kwargs:
+    boxes:
+    - h: 0.5
+      halign: center
+      name: project
+      style: plate.light
+      text: Project
+      w: 2.0
+      x: 0.0
+      y: 0.0
+    - h: 0.5
+      halign: center
+      name: date
+      style: plate.light
+      text: Date
+      w: 1.0
+      x: 2.0
+      y: 0.0
+    - h: 2.0
+      line_spacing_mm: 6.0
+      lined: true
+      name: notes
+      text: Notes
+      text_size: 4.5
+      w: 2.0
+      x: 0.0
+      y: 0.5
+    - h: 0.75
+      name: ref_1
+      text: Ref 1
+      w: 1.0
+      x: 2.0
+      y: 0.5
+    - h: 0.75
+      name: ref_2
+      text: Ref 2
+      w: 1.0
+      x: 2.0
+      y: 1.25
+    - h: 0.5
+      name: ref_3
+      text: Ref 3
+      w: 1.0
+      x: 2.0
+      y: 2.0
+    - h: 1.0
+      line_spacing_mm: 7.5
+      lined: true
+      name: tasks
+      text: Tasks
+      text_size: 4.5
+      w: 3.0
+      x: 0.0
+      y: 2.5
+    card_margin_mm: 2.0
+    card_r: 8.0
+    filter: ''
+    grid_h: 3.5
+    grid_w: 3.0
+    navigation: false
+    oomp_description_extra: ''
+    oomp_description_main: _internal_label_sheet_workbench
+    oomp_mode: project
+    overwrite: true
+    save_type: all
+    stylesheet: project_bolt
+    svg_name: internal_label_sheet
+    type: C:\gh\oomlout_svg_version_5_internal_label_sheet_workbench
+    unit_mm: 42.0
+  oobb_name: internal_label_sheet_workbench
+  project_name: C:\gh\oomlout_svg_version_5
+  size: ''
+  styles:
+    engraved:
+      color: '#CCCCCC'
+      stroke: none
+      stroke_width: 0
+    engraved.light:
+      color: '#E0E0E0'
+    header:
+      color: '#1C1C1C'
+      stroke: '#1C1C1C'
+      stroke_width: 0.5
+    header.accent:
+      color: '#444444'
+    header.label:
+      color: '#FFFFFF'
+      font: Swis721 Blk BT, comic sans ms
+      font_weight: bold
+      halign: center
+      size: 7.0
+      stroke: none
+      stroke_width: 0
+      valign: center
+    hole:
+      color: '#DDDDDD'
+      stroke: '#1A1A1A'
+      stroke_width: 0.4
+    hole.cut:
+      color: '#FFFFFF'
+      stroke: '#444444'
+      stroke_width: 0.3
+    label:
+      color: '#1A1A1A'
+      font: Swis721 Blk BT, comic sans ms
+      halign: center
+      size: 5.0
+      stroke: none
+      stroke_width: 0
+      valign: center
+    label.accent:
+      color: '#333333'
+    label.large:
+      size: 8.0
+    label.light:
+      color: '#FFFFFF'
+    label.mono:
+      font: JetBrains Mono, Fira Code, Consolas, monospace
+    label.muted:
+      color: '#888888'
+    label.small:
+      size: 2.5
+    label.title:
+      color: '#111111'
+      font: Swis721 Blk BT, comic sans ms
+      font_weight: bold
+      size: 14.0
+    line:
+      color: none
+      stroke: '#333333'
+      stroke_width: 0.5
+    line.accent:
+      stroke: '#111111'
+    line.hairline:
+      stroke_width: 0.1
+    line.heavy:
+      stroke_width: 2.0
+    line.muted:
+      stroke: '#AAAAAA'
+    line.thick:
+      stroke_width: 1.0
+    line.thin:
+      stroke_width: 0.25
+    outline:
+      color: none
+      stroke: '#1A1A1A'
+      stroke_width: 0.5
+    outline.accent:
+      color: none
+      stroke: '#555555'
+      stroke_width: 0.5
+    outline.hairline:
+      stroke_width: 0.1
+    outline.heavy:
+      stroke_width: 2.0
+    outline.light:
+      color: none
+      stroke: '#AAAAAA'
+      stroke_width: 0.3
+    outline.thick:
+      stroke_width: 1.0
+    outline.thin:
+      stroke_width: 0.25
+    plate:
+      color: '#FAFAFA'
+      stroke: '#1A1A1A'
+      stroke_width: 1.2
+    plate.accent:
+      color: '#E8E8E8'
+      stroke: '#1A1A1A'
+      stroke_width: 0.5
+    plate.cell:
+      color: '#FFFFFF'
+      stroke: '#2E2E2E'
+      stroke_width: 0.5
+    plate.hairline:
+      stroke: '#333333'
+      stroke_width: 0.1
+    plate.heavy:
+      stroke: '#333333'
+      stroke_width: 2.0
+    plate.inner:
+      color: none
+      stroke: '#2E2E2E'
+      stroke_width: 0.35
+    plate.light:
+      color: '#F0F0F0'
+      stroke: '#333333'
+      stroke_width: 0.5
+    plate.outline:
+      color: none
+      stroke: '#1A1A1A'
+      stroke_width: 0.8
+    plate.thick:
+      stroke: '#333333'
+      stroke_width: 1.0
+    plate.thin:
+      stroke: '#333333'
+      stroke_width: 0.25
+    rule:
+      color: '#BBBBBB'
+      stroke: none
+      stroke_width: 0
+    slot:
+      color: '#DDDDDD'
+      stroke: '#1A1A1A'
+      stroke_width: 0.4
+  svg_components:
+  - color: '#FAFAFA'
+    pos:
+    - 0
+    - 0
+    - 0
+    r: 8.0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rounded_rectangle
+    size:
+    - 130.0
+    - 151.0
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#F0F0F0'
+    pos:
+    - -21.0
+    - 63.0
+    - 0
+    r_bl: 1.4700000000000002
+    r_br: 1.4700000000000002
+    r_tl: 6.0
+    r_tr: 1.4700000000000002
+    shape: rrect_corners
+    size:
+    - 81.06
+    - 18.06
+    - 0
+    stroke: '#333333'
+    stroke_width: 0.5
+  - color: '#1A1A1A'
+    font: Swis721 Blk BT, comic sans ms
+    halign: center
+    pos:
+    - -21.0
+    - 63.0
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: text
+    size: 5.0
+    stroke: none
+    stroke_width: 0
+    text: Project
+    valign: center
+  - color: '#F0F0F0'
+    pos:
+    - 42.0
+    - 63.0
+    - 0
+    r_bl: 1.4700000000000002
+    r_br: 1.4700000000000002
+    r_tl: 1.4700000000000002
+    r_tr: 6.0
+    shape: rrect_corners
+    size:
+    - 39.06
+    - 18.06
+    - 0
+    stroke: '#333333'
+    stroke_width: 0.5
+  - color: '#1A1A1A'
+    font: Swis721 Blk BT, comic sans ms
+    halign: center
+    pos:
+    - 42.0
+    - 63.0
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: text
+    size: 5.0
+    stroke: none
+    stroke_width: 0
+    text: Date
+    valign: center
+  - color: '#FFFFFF'
+    pos:
+    - -21.0
+    - 10.5
+    - 0
+    r_bl: 1.4700000000000002
+    r_br: 1.4700000000000002
+    r_tl: 1.4700000000000002
+    r_tr: 1.4700000000000002
+    shape: rrect_corners
+    size:
+    - 81.06
+    - 81.06
+    - 0
+    stroke: '#2E2E2E'
+    stroke_width: 0.5
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - 44.19
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - 38.19
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - 32.19
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - 26.19
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - 20.19
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - 14.189999999999998
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - 8.189999999999998
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - 2.1899999999999977
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - -3.8100000000000023
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - -9.810000000000002
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - -15.810000000000002
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - -21.0
+    - -21.810000000000002
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 72.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#1A1A1A'
+    font: Swis721 Blk BT, comic sans ms
+    halign: left
+    pos:
+    - -58.59
+    - 48.09
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: text
+    size: 4.5
+    stroke: none
+    stroke_width: 0
+    text: Notes
+    valign: top
+  - color: '#FFFFFF'
+    pos:
+    - 42.0
+    - 36.75
+    - 0
+    r_bl: 1.4700000000000002
+    r_br: 1.4700000000000002
+    r_tl: 1.4700000000000002
+    r_tr: 1.4700000000000002
+    shape: rrect_corners
+    size:
+    - 39.06
+    - 28.56
+    - 0
+    stroke: '#2E2E2E'
+    stroke_width: 0.5
+  - color: '#1A1A1A'
+    font: Swis721 Blk BT, comic sans ms
+    halign: center
+    pos:
+    - 42.0
+    - 36.75
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: text
+    size: 5.0
+    stroke: none
+    stroke_width: 0
+    text: Ref 1
+    valign: center
+  - color: '#FFFFFF'
+    pos:
+    - 42.0
+    - 5.25
+    - 0
+    r_bl: 1.4700000000000002
+    r_br: 1.4700000000000002
+    r_tl: 1.4700000000000002
+    r_tr: 1.4700000000000002
+    shape: rrect_corners
+    size:
+    - 39.06
+    - 28.56
+    - 0
+    stroke: '#2E2E2E'
+    stroke_width: 0.5
+  - color: '#1A1A1A'
+    font: Swis721 Blk BT, comic sans ms
+    halign: center
+    pos:
+    - 42.0
+    - 5.25
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: text
+    size: 5.0
+    stroke: none
+    stroke_width: 0
+    text: Ref 2
+    valign: center
+  - color: '#FFFFFF'
+    pos:
+    - 42.0
+    - -21.0
+    - 0
+    r_bl: 1.4700000000000002
+    r_br: 1.4700000000000002
+    r_tl: 1.4700000000000002
+    r_tr: 1.4700000000000002
+    shape: rrect_corners
+    size:
+    - 39.06
+    - 18.06
+    - 0
+    stroke: '#2E2E2E'
+    stroke_width: 0.5
+  - color: '#1A1A1A'
+    font: Swis721 Blk BT, comic sans ms
+    halign: center
+    pos:
+    - 42.0
+    - -21.0
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: text
+    size: 5.0
+    stroke: none
+    stroke_width: 0
+    text: Ref 3
+    valign: center
+  - color: '#FFFFFF'
+    pos:
+    - 0.0
+    - -52.5
+    - 0
+    r_bl: 6.0
+    r_br: 6.0
+    r_tl: 1.4700000000000002
+    r_tr: 1.4700000000000002
+    shape: rrect_corners
+    size:
+    - 123.06
+    - 39.06
+    - 0
+    stroke: '#2E2E2E'
+    stroke_width: 0.5
+  - color: '#BBBBBB'
+    pos:
+    - 0.0
+    - -40.785
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 114.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - 0.0
+    - -48.285
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 114.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - 0.0
+    - -55.785
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 114.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#BBBBBB'
+    pos:
+    - 0.0
+    - -63.285
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rect
+    size:
+    - 114.24000000000001
+    - 0.35
+    - 0
+    stroke: none
+    stroke_width: 0
+  - color: '#1A1A1A'
+    font: Swis721 Blk BT, comic sans ms
+    halign: left
+    pos:
+    - -58.59
+    - -35.91
+    - 0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: text
+    size: 4.5
+    stroke: none
+    stroke_width: 0
+    text: Tasks
+    valign: top
+  - color: none
+    pos:
+    - 0
+    - 0
+    - 0
+    r: 8.0
+    rot:
+    - 0
+    - 0
+    - 0
+    shape: rounded_rectangle
+    size:
+    - 130.0
+    - 151.0
+    - 0
+    stroke: '#1A1A1A'
+    stroke_width: 0.8
+  svg_details:
+    svg_name: internal_label_sheet
+  type: C:\gh\oomlout_svg_version_5_internal_label_sheet_workbench
+  width: 1
+  width_mm: 14.0

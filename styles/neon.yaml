@@ -1,0 +1,167 @@
+meta:
+  name: Neon
+  description: >-
+    Dark synthwave palette. Near-black background with vivid neon fills —
+    electric green, hot magenta, cyan. High energy and expressive — great for
+    demos, visualisations, and anything that needs to glow.
+
+# ── Plate / body geometry ────────────────────────────────────────────────────
+plate:
+  color: "#0D0D0D"
+  stroke: "#39FF14"
+  stroke_width: 0.3
+
+plate.accent:
+  color: "#39FF14"
+
+plate.pop:
+  color: "#FF00FF"
+
+plate.light:
+  color: "#1A1A2E"
+
+plate.outline:
+  color: "none"
+  stroke: "#39FF14"
+  stroke_width: 0.8
+
+# plate + stroke weight (merges with plate fill, adds a visible border)
+plate.hairline:
+  stroke: "#39FF14"
+  stroke_width: 0.1
+
+plate.thin:
+  stroke: "#39FF14"
+  stroke_width: 0.25
+
+plate.thick:
+  stroke: "#39FF14"
+  stroke_width: 1.0
+
+plate.heavy:
+  stroke: "#39FF14"
+  stroke_width: 2.0
+
+# ── Holes & slots ────────────────────────────────────────────────────────────
+hole:
+  color: "#FF00FF"
+  stroke: "none"
+  stroke_width: 0
+
+hole.cut:
+  color: "#000000"
+  stroke: "#FF00FF"
+  stroke_width: 0.5
+
+slot:
+  color: "#00FFFF"
+  stroke: "none"
+  stroke_width: 0
+
+# ── Outline-only shapes ───────────────────────────────────────────────────────
+outline:
+  color: "none"
+  stroke: "#39FF14"
+  stroke_width: 0.6
+
+outline.accent:
+  color: "none"
+  stroke: "#FF00FF"
+  stroke_width: 0.6
+
+outline.cool:
+  color: "none"
+  stroke: "#00FFFF"
+  stroke_width: 0.6
+
+# outline weight variants — inherit stroke color from base outline
+outline.hairline:
+  stroke_width: 0.1
+
+outline.thin:
+  stroke_width: 0.25
+
+outline.thick:
+  stroke_width: 1.0
+
+outline.heavy:
+  stroke_width: 2.0
+
+# ── Line drawing ─────────────────────────────────────────────────────────────
+line:
+  color: "none"
+  stroke: "#39FF14"
+  stroke_width: 0.6
+
+line.accent:
+  stroke: "#FF00FF"
+
+line.cool:
+  stroke: "#00FFFF"
+
+line.hairline:
+  stroke_width: 0.1
+
+line.thin:
+  stroke_width: 0.25
+
+line.thick:
+  stroke_width: 1.0
+
+line.heavy:
+  stroke_width: 2.0
+
+# ── Text / labels ─────────────────────────────────────────────────────────────
+label:
+  color: "#00FFFF"
+  stroke: "none"
+  stroke_width: 0
+  font: "JetBrains Mono, Fira Code, monospace"
+  size: 4.0
+  halign: center
+  valign: center
+
+label.small:
+  size: 2.5
+
+label.large:
+  size: 7.0
+
+label.mono:
+  font: "JetBrains Mono, Fira Code, monospace"
+
+label.dark:
+  color: "#0D0D0D"
+
+label.accent:
+  color: "#39FF14"
+
+label.pop:
+  color: "#FF00FF"
+
+# ── Header bar ────────────────────────────────────────────────────────────────
+header:
+  color: "#1A0533"
+  stroke: "#FF00FF"
+  stroke_width: 0.3
+
+header.label:
+  color: "#39FF14"
+  stroke: "none"
+  stroke_width: 0
+  font: "JetBrains Mono, Fira Code, monospace"
+  size: 5.0
+  halign: center
+  valign: center
+
+header.accent:
+  color: "#FF00FF"
+
+# ── Engraved / etched ─────────────────────────────────────────────────────────
+engraved:
+  color: "#FF6EC7"
+  stroke: "none"
+  stroke_width: 0
+
+engraved.light:
+  color: "#FF99E5"

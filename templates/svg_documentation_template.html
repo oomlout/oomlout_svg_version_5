@@ -452,6 +452,146 @@
       font-size: 12px;
       margin-top: 8px;
     }
+
+    /* ── Stylesheets section ─────────────────────────────────────────────── */
+    .stylesheets-section {
+      margin: 24px 0 0;
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      background: var(--surface);
+    }
+    .stylesheets-section summary {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--text);
+      list-style: none;
+    }
+    .stylesheets-section summary::-webkit-details-marker { display: none; }
+    .stylesheets-section details[open] .summary-arrow { transform: rotate(90deg); }
+    .stylesheets-body { padding: 0 20px 20px; }
+
+    /* Sheet tabs */
+    .sheet-tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0;
+    }
+    .sheet-tab {
+      padding: 8px 18px;
+      border: none;
+      background: none;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .sheet-tab:hover { color: var(--text); }
+    .sheet-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Sheet description */
+    .sheet-description {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      max-width: 640px;
+    }
+
+    /* Swatch grid */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .swatch-card {
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      font-size: 11px;
+    }
+    .swatch-preview {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      position: relative;
+    }
+    .swatch-preview.outline-only {
+      background: repeating-linear-gradient(
+        45deg,
+        #f0f0f0 0px, #f0f0f0 4px,
+        #ffffff 4px, #ffffff 8px
+      );
+    }
+    .swatch-name {
+      padding: 6px 8px 2px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .swatch-props {
+      padding: 2px 8px 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .swatch-prop {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .swatch-prop .prop-val { color: var(--accent); }
+
+    /* Usage code block */
+    .stylesheet-usage {
+      background: var(--surface-code);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 16px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .stylesheet-usage-heading {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .code-comment { color: #888888; }
+    .code-fn      { color: #E85D04; }
+    .code-str     { color: #0070cc; }
+    .code-kw      { color: #9B59B6; }
   </style>
 </head>
 <body>
@@ -495,6 +635,19 @@
           </thead>
           <tbody id="parts-tbody"></tbody>
         </table>
+      </details>
+    </div>
+
+    <!-- Stylesheets reference -->
+    <div class="stylesheets-section">
+      <details id="stylesheets-details">
+        <summary>
+          <span class="summary-arrow">&#9654;</span>
+          Stylesheets
+        </summary>
+        <div class="stylesheets-body" id="stylesheets-body">
+          <!-- populated by renderStylesheets() -->
+        </div>
       </details>
     </div>
 
@@ -677,6 +830,144 @@
     });
   }
 
+  // ── Stylesheets section ────────────────────────────────────────────────────
+  let activeSheetName = null;
+
+  function contrastText(hex) {
+    // Return '#111111' or '#FFFFFF' depending on perceived brightness of hex.
+    hex = (hex || '#888888').replace('#', '');
+    if (hex.length === 3) hex = hex.split('').map(c => c+c).join('');
+    const r = parseInt(hex.slice(0,2),16);
+    const g = parseInt(hex.slice(2,4),16);
+    const b = parseInt(hex.slice(4,6),16);
+    const lum = 0.299*r + 0.587*g + 0.114*b;
+    return lum > 140 ? '#111111' : '#FFFFFF';
+  }
+
+  function buildSwatchCard(style) {
+    const color  = style.color  || '#333333';
+    const stroke = style.stroke || 'none';
+    const sw     = style.stroke_width || 0;
+    const isOutlineOnly = color === 'none';
+    const isInvisible   = color === 'none' && stroke === 'none';
+
+    let previewStyle = '';
+    let previewClass = 'swatch-preview';
+    let previewLabel = '';
+
+    if (isInvisible) {
+      previewStyle = 'background:#f7f7f7;';
+      previewLabel = '<span style="color:#ccc;font-size:10px">empty</span>';
+    } else if (isOutlineOnly) {
+      previewClass += ' outline-only';
+      const sw2 = Math.max(sw * 3, 2);
+      previewStyle = `border: ${sw2}px solid ${stroke};`;
+      previewLabel = `<span style="color:${stroke};font-size:9px">${stroke}</span>`;
+    } else {
+      previewStyle = `background:${color};`;
+      if (stroke !== 'none') {
+        const sw2 = Math.max(sw * 3, 2);
+        previewStyle += `border: ${sw2}px solid ${stroke};`;
+      }
+      previewLabel = `<span style="color:${contrastText(color)};font-size:9px">${color}</span>`;
+    }
+
+    const extra = style.extra || {};
+    const extraProps = Object.entries(extra).slice(0, 3).map(([k, v]) =>
+      `<div class="swatch-prop">${esc(k)}: <span class="prop-val">${esc(String(v))}</span></div>`
+    ).join('');
+
+    const strokeProp = stroke !== 'none'
+      ? `<div class="swatch-prop">stroke: <span class="prop-val">${esc(stroke)}</span></div>`
+      : '';
+
+    return `
+      <div class="swatch-card">
+        <div class="${previewClass}" style="${previewStyle}">${previewLabel}</div>
+        <div class="swatch-name" title="${esc(style.name)}">${esc(style.name)}</div>
+        <div class="swatch-props">
+          ${isOutlineOnly ? '' : `<div class="swatch-prop">fill: <span class="prop-val">${esc(color)}</span></div>`}
+          ${strokeProp}
+          ${extraProps}
+        </div>
+      </div>`;
+  }
+
+  function buildUsageBlock(sheetName) {
+    const c  = s => `<span class="code-comment">${s}</span>`;
+    const f  = s => `<span class="code-fn">${s}</span>`;
+    const st = s => `<span class="code-str">${s}</span>`;
+    const kw = s => `<span class="code-kw">${s}</span>`;
+    const nl = '\n';
+
+    return [
+      c(`# Activate in a part builder:`),
+      `thing[${st('"styles"')}] = svg_styles.${f('get_stylesheet')}(${st('"' + sheetName + '"')})`,
+      '',
+      c(`# Or set per working.yaml (no Python needed):`),
+      c(`# svg_details:`),
+      c(`#   stylesheet: "${sheetName}"`),
+      '',
+      c(`# Use named styles — inline kwargs always override:`),
+      `opsvg.${f('se')}(thing, shape=${st('"oobb_plate"')}, ${kw('style')}=${st('"plate"')},        width=2, height=2, pos=pos)`,
+      `opsvg.${f('se')}(thing, shape=${st('"text"')},       ${kw('style')}=${st('"header.label"')}, text=${st('"Title"')},      pos=pos)`,
+      `opsvg.${f('se')}(thing, shape=${st('"text"')},       ${kw('style')}=${st('"label.small"')},  halign=${st('"left"')},     pos=pos)`,
+      '',
+      c(`# Override a single property on one style:`),
+      `svg_styles.${f('set_style')}(thing, ${st('"plate"')}, {${st('"color"')}: kwargs.get(${st('"color"')}, ${st('"#333333"')})})`,
+      '',
+      c(`# Per-part YAML style override:`),
+      c(`# svg_details:`),
+      c(`#   styles:`),
+      c(`#     plate:`),
+      c(`#       color: "#FF6600"`),
+    ].join(nl);
+  }
+
+  function renderStylesheets(stylesheets) {
+    const body = document.getElementById('stylesheets-body');
+    if (!stylesheets || stylesheets.length === 0) {
+      body.innerHTML = '<p style="color:var(--text-muted);padding:12px 0;">No stylesheet data found.</p>';
+      return;
+    }
+
+    // Default to first sheet
+    activeSheetName = stylesheets[0].name;
+
+    // Tabs
+    const tabs = stylesheets.map(s =>
+      `<button class="sheet-tab${s.name === activeSheetName ? ' active' : ''}"
+               data-sheet="${esc(s.name)}">${esc(s.label || s.name)}</button>`
+    ).join('');
+
+    body.innerHTML = `
+      <div class="sheet-tabs" id="sheet-tabs">${tabs}</div>
+      <div id="sheet-content"></div>`;
+
+    function showSheet(name) {
+      activeSheetName = name;
+      document.querySelectorAll('.sheet-tab').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.sheet === name);
+      });
+      const sheet = stylesheets.find(s => s.name === name);
+      if (!sheet) return;
+
+      const swatches = (sheet.styles || []).map(buildSwatchCard).join('');
+      document.getElementById('sheet-content').innerHTML = `
+        <div class="sheet-description">${esc(sheet.description || '')}</div>
+        <div class="swatch-grid">${swatches}</div>
+        <div class="stylesheet-usage-heading">Usage</div>
+        <div class="stylesheet-usage">${buildUsageBlock(sheet.name)}</div>`;
+    }
+
+    showSheet(activeSheetName);
+
+    document.getElementById('sheet-tabs').addEventListener('click', e => {
+      const btn = e.target.closest('.sheet-tab');
+      if (btn) showSheet(btn.dataset.sheet);
+    });
+  }
+
   // ── Parts table ────────────────────────────────────────────────────────────
   function renderParts(parts) {
     const tbody = document.getElementById('parts-tbody');
@@ -714,13 +1005,15 @@
       return;
     }
 
-    const data       = window.DOCUMENTATION_DATA;
-    const components = data.components || [];
-    const parts      = data.parts      || [];
+    const data        = window.DOCUMENTATION_DATA;
+    const components  = data.components  || [];
+    const parts       = data.parts       || [];
+    const stylesheets = data.stylesheets || [];
 
     populateCategories(components);
     renderCards(components);
     renderParts(parts);
+    renderStylesheets(stylesheets);
 
     document.getElementById('search-input').addEventListener('input',  () => renderCards(components));
     document.getElementById('category-select').addEventListener('change', () => renderCards(components));

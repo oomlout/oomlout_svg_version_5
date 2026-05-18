@@ -5,6 +5,7 @@ import yaml
 
 import opsvg
 import svg_variables as _sv
+import svg_styles as _ss
 
 
 ###### utilities
@@ -101,13 +102,12 @@ def make_svg_generic(part):
     thing = get_default_thing(**kwargs)
     thing.update(part)
 
-    #get the part from the function "get_{oobb_name}"
     import working_svg
+    svg_name = part.get("svg_details", {}).get("svg_name", oobb_name)
     try:
-        func = getattr(working_svg, f"get_{oobb_name}")
+        func = getattr(working_svg, f"get_{svg_name}")
     except AttributeError:
         func = None
-    # test if func exists
     if callable(func):
         func(thing, **kwargs)
     else:
@@ -170,9 +170,9 @@ def make_svg_generic(part):
         part_new["kwargs"] = kwargs_new
         part_new["project_name"] = os.getcwd()
         part_new["id_svg"] = thing.get("id", oomp_id)
-        # svg_details lets get_parts() reload this part from disk
+        # svg_details lets get_parts() reload this part from disk.
         svg_details = {}
-        svg_details["svg_name"] = oobb_name
+        svg_details["svg_name"] = part.get("svg_details", {}).get("svg_name", oobb_name)
         for k in ["width", "height", "depth", "extra", "radius_name"]:
             v = kwargs.get(k, "")
             if v != "" and v != 0:
@@ -247,6 +247,19 @@ def generate_navigation(folder="parts", sort=["oobb_name", "width", "height"]):
 
 
 def get_default_thing(**kwargs):
+    # Resolve stylesheet: kwargs may carry "stylesheet" name or a full "styles" dict
+    sheet_name = kwargs.get("stylesheet", "default")
+    styles     = kwargs.get("styles", None)
+    if styles is None:
+        styles = _ss.get_stylesheet(sheet_name)
+    else:
+        styles = copy.deepcopy(styles)
+
+    # Apply any per-part style overrides passed as part_styles
+    part_styles = kwargs.get("part_styles", {})
+    if part_styles:
+        styles = _ss.merge(styles, part_styles)
+
     thing = {
         "oobb_name":         kwargs.get("oobb_name",         ""),
         "type":              kwargs.get("type",              ""),
@@ -264,6 +277,7 @@ def get_default_thing(**kwargs):
         "height_mm":         (kwargs.get("height", 1) if isinstance(kwargs.get("height", 1), (int, float)) else 1) * _sv.OSP - _sv.OSP_MINUS,
         "depth_mm":          kwargs.get("depth",  3),
         "svg_components":    [],
+        "styles":            styles,
     }
     return thing
 

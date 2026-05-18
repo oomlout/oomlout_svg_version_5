@@ -69,6 +69,7 @@ import os
 import sys
 
 import svg_variables as _sv
+import svg_styles as _ss
 
 # ── constants pulled from svg_variables ───────────────────────────────────────
 _OSP           = _sv.OSP
@@ -215,17 +216,26 @@ def svg_easy(thing, **kwargs):
     Falls back to svg_append() directly for unknown shapes so se() and
     svg_append() can be freely mixed in the same builder.
 
-    Example
-    -------
-        p3 = copy.deepcopy(kwargs)
-        p3["type"]  = "positive"
-        p3["shape"] = "rounded_rectangle"
-        p3["size"]  = [label_width, label_height, depth]
-        p3["r"]     = corner_radius
-        p3["pos"]   = copy.deepcopy(pos)
-        opsvg.se(thing, **p3)
+    Style resolution
+    ----------------
+    Pass style="plate" (or any name from the active stylesheet) to apply
+    a set of pre-defined properties.  Inline kwargs always override the style.
+
+        opsvg.se(thing, shape="oobb_plate", style="plate",        width=2, height=2, pos=pos)
+        opsvg.se(thing, shape="text",       style="header.label", text="Title",      pos=pos)
+        opsvg.se(thing, shape="text",       style="label.small",  halign="left",     pos=pos)
     """
     svg_init(thing)
+
+    # ── Style resolution ──────────────────────────────────────────────────────
+    style_name = kwargs.pop("style", None)
+    if style_name:
+        stylesheet = thing.get("styles", _ss.default_styles())
+        resolved   = _ss.resolve(style_name, stylesheet)
+        # Style provides defaults; explicit inline kwargs always win
+        for k, v in resolved.items():
+            kwargs.setdefault(k, v)
+    # ─────────────────────────────────────────────────────────────────────────
 
     shape_arg = kwargs.get("shape", "")
     shapes    = shape_arg if isinstance(shape_arg, list) else [shape_arg]
@@ -402,6 +412,29 @@ def _render_shape(comp, ctx):
                 f'width="{w:.4f}" height="{h:.4f}" '
                 f'rx="{r:.4f}" ry="{r:.4f}"{_rot_attr()} />')
 
+    # ── rounded_rectangle_corners — per-corner radii ─────────────────────────
+    # r_tl, r_tr, r_br, r_bl  (top-left, top-right, bottom-right, bottom-left)
+    if shape in ("rrect_corners", "rounded_rectangle_corners"):
+        size  = comp.get("size", [10, 10, 3])
+        w, h  = size[0] * sc, size[1] * sc
+        r_tl  = comp.get("r_tl", 0) * sc
+        r_tr  = comp.get("r_tr", 0) * sc
+        r_br  = comp.get("r_br", 0) * sc
+        r_bl  = comp.get("r_bl", 0) * sc
+        x, y  = cx - w / 2, cy - h / 2
+        d = (
+            f"M {x + r_tl:.4f} {y:.4f} "
+            f"L {x + w - r_tr:.4f} {y:.4f} "
+            f"A {r_tr:.4f} {r_tr:.4f} 0 0 1 {x + w:.4f} {y + r_tr:.4f} "
+            f"L {x + w:.4f} {y + h - r_br:.4f} "
+            f"A {r_br:.4f} {r_br:.4f} 0 0 1 {x + w - r_br:.4f} {y + h:.4f} "
+            f"L {x + r_bl:.4f} {y + h:.4f} "
+            f"A {r_bl:.4f} {r_bl:.4f} 0 0 1 {x:.4f} {y + h - r_bl:.4f} "
+            f"L {x:.4f} {y + r_tl:.4f} "
+            f"A {r_tl:.4f} {r_tl:.4f} 0 0 1 {x + r_tl:.4f} {y:.4f} Z"
+        )
+        return f'<path d="{d}"{_rot_attr()} />'
+
     # ── polygon ───────────────────────────────────────────────────────────────
     if shape == "polygon":
         pts = comp.get("points", [])
@@ -422,8 +455,11 @@ def _render_shape(comp, ctx):
         anchor  = _halign.get(comp.get("halign", "center"), "middle")
         base    = _valign.get(comp.get("valign", "center"), "middle")
         colour  = comp.get("color", ctx["fill"])
+        weight  = comp.get("font_weight", "")
+        wattr   = f' font-weight="{weight}"' if weight else ""
         return (f'<text x="{cx:.4f}" y="{cy:.4f}" '
-                f'font-family="{font}" font-size="{fsz:.4f}" '
+                f'font-family="{font}" font-size="{fsz:.4f}"'
+                f'{wattr} '
                 f'text-anchor="{anchor}" dominant-baseline="{base}" '
                 f'fill="{colour}"{_rot_attr()}>{txt}</text>')
 

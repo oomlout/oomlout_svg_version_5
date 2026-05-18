@@ -452,6 +452,146 @@
       font-size: 12px;
       margin-top: 8px;
     }
+
+    /* ── Stylesheets section ─────────────────────────────────────────────── */
+    .stylesheets-section {
+      margin: 24px 0 0;
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      background: var(--surface);
+    }
+    .stylesheets-section summary {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--text);
+      list-style: none;
+    }
+    .stylesheets-section summary::-webkit-details-marker { display: none; }
+    .stylesheets-section details[open] .summary-arrow { transform: rotate(90deg); }
+    .stylesheets-body { padding: 0 20px 20px; }
+
+    /* Sheet tabs */
+    .sheet-tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0;
+    }
+    .sheet-tab {
+      padding: 8px 18px;
+      border: none;
+      background: none;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .sheet-tab:hover { color: var(--text); }
+    .sheet-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Sheet description */
+    .sheet-description {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      max-width: 640px;
+    }
+
+    /* Swatch grid */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .swatch-card {
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      font-size: 11px;
+    }
+    .swatch-preview {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      position: relative;
+    }
+    .swatch-preview.outline-only {
+      background: repeating-linear-gradient(
+        45deg,
+        #f0f0f0 0px, #f0f0f0 4px,
+        #ffffff 4px, #ffffff 8px
+      );
+    }
+    .swatch-name {
+      padding: 6px 8px 2px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .swatch-props {
+      padding: 2px 8px 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .swatch-prop {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .swatch-prop .prop-val { color: var(--accent); }
+
+    /* Usage code block */
+    .stylesheet-usage {
+      background: var(--surface-code);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 16px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .stylesheet-usage-heading {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .code-comment { color: #888888; }
+    .code-fn      { color: #E85D04; }
+    .code-str     { color: #0070cc; }
+    .code-kw      { color: #9B59B6; }
   </style>
 </head>
 <body>
@@ -498,6 +638,19 @@
       </details>
     </div>
 
+    <!-- Stylesheets reference -->
+    <div class="stylesheets-section">
+      <details id="stylesheets-details">
+        <summary>
+          <span class="summary-arrow">&#9654;</span>
+          Stylesheets
+        </summary>
+        <div class="stylesheets-body" id="stylesheets-body">
+          <!-- populated by renderStylesheets() -->
+        </div>
+      </details>
+    </div>
+
   </main>
 
   <!-- ── Detail drawer ──────────────────────────────────────────────────── -->
@@ -519,14 +672,14 @@
 
 <script>
 window.DOCUMENTATION_DATA = {
-  "generated_date": "2026-05-17",
+  "generated_date": "2026-05-18",
   "total_components": 9,
   "total_parts": 3,
   "components": [
     {
       "name": "circle",
       "name_long": "Circle / Hole",
-      "description": "Filled circle centred on pos. Use type='negative' to cut a hole; alias 'hole' is also accepted.",
+      "description": "Filled circle centred on pos. Alias 'hole' is also accepted.",
       "category": "SVG Primitives",
       "shape_aliases": [
         "hole"
@@ -548,6 +701,34 @@ window.DOCUMENTATION_DATA = {
             0,
             0
           ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. rz rotates any attached transform; the circle itself is symmetric.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "color",
+          "description": "Fill colour (CSS colour string, e.g. '#333333'). Set to 'none' for an outline-only shape.",
+          "type": "string",
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour (CSS colour string). Set to a colour to draw an outline; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"26.0000mm\" height=\"26.0000mm\"\n     viewBox=\"0 0 26.0000 26.0000\">\n  <circle cx=\"13.0000\" cy=\"13.0000\" r=\"8.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
@@ -575,6 +756,34 @@ window.DOCUMENTATION_DATA = {
             0,
             0
           ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. rz rotates any attached transform; the disc itself is symmetric.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "color",
+          "description": "Fill colour (CSS colour string, e.g. '#333333'). Set to 'none' for an outline-only shape.",
+          "type": "string",
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour (CSS colour string). Set to a colour to draw an outline; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"55.0000mm\" height=\"55.0000mm\"\n     viewBox=\"0 0 55.0000 55.0000\">\n  <circle cx=\"27.5000\" cy=\"27.5000\" r=\"22.5000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
@@ -582,7 +791,7 @@ window.DOCUMENTATION_DATA = {
     {
       "name": "oobb_holes",
       "name_long": "OOBB Hole Grid",
-      "description": "Grid of circles at every OOBB hole position for a width×height plate. radius_name selects the fastener size (e.g. 'm6', 'm3'). Typically used as type='negative' to cut holes through a plate.",
+      "description": "Grid of circles at every OOBB hole position for a width×height plate. radius_name selects the fastener size (e.g. 'm6', 'm3').",
       "category": "OOBB Shapes",
       "shape_aliases": [],
       "returns": "List containing one shape-descriptor dict.",
@@ -614,6 +823,34 @@ window.DOCUMENTATION_DATA = {
             0,
             0
           ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "color",
+          "description": "Fill colour for each hole circle (CSS colour string). Set to 'none' for outline-only holes.",
+          "type": "string",
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour (CSS colour string). Set to a colour to draw outlines; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"10.0000mm\" height=\"10.0000mm\"\n     viewBox=\"0 0 10.0000 10.0000\">\n  <g fill=\"#333333\" stroke=\"none\">\n    <circle cx=\"-2.5000\" cy=\"12.5000\" r=\"3.0000\" />\n    <circle cx=\"-2.5000\" cy=\"-2.5000\" r=\"3.0000\" />\n    <circle cx=\"12.5000\" cy=\"12.5000\" r=\"3.0000\" />\n    <circle cx=\"12.5000\" cy=\"-2.5000\" r=\"3.0000\" />\n  </g>\n</svg>"
@@ -653,6 +890,34 @@ window.DOCUMENTATION_DATA = {
             0,
             0
           ]
+        },
+        {
+          "name": "rot",
+          "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "color",
+          "description": "Fill colour (CSS colour string, e.g. '#333333'). Set to 'none' for an outline-only shape.",
+          "type": "string",
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour (CSS colour string). Set to a colour to draw an outline; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"39.0000mm\" height=\"39.0000mm\"\n     viewBox=\"0 0 39.0000 39.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"29.0000\" height=\"29.0000\" rx=\"2.0000\" ry=\"2.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
@@ -703,6 +968,24 @@ window.DOCUMENTATION_DATA = {
             0,
             0
           ]
+        },
+        {
+          "name": "color",
+          "description": "Fill colour (CSS colour string, e.g. '#333333'). Set to 'none' for an outline-only shape.",
+          "type": "string",
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour (CSS colour string). Set to a colour to draw an outline; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"30.0000mm\" height=\"28.0000mm\"\n     viewBox=\"0 0 30.0000 28.0000\">\n  <polygon points=\"15.0000,5.0000 5.0000,23.0000 25.0000,23.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
@@ -744,6 +1027,24 @@ window.DOCUMENTATION_DATA = {
             0,
             0
           ]
+        },
+        {
+          "name": "color",
+          "description": "Fill colour (CSS colour string, e.g. '#333333'). Set to 'none' for an outline-only shape.",
+          "type": "string",
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour (CSS colour string). Set to a colour to draw an outline; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"40.0000mm\" height=\"30.0000mm\"\n     viewBox=\"0 0 40.0000 30.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"30.0000\" height=\"20.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
@@ -794,6 +1095,24 @@ window.DOCUMENTATION_DATA = {
             0,
             0
           ]
+        },
+        {
+          "name": "color",
+          "description": "Fill colour (CSS colour string, e.g. '#333333'). Set to 'none' for an outline-only shape.",
+          "type": "string",
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour (CSS colour string). Set to a colour to draw an outline; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"40.0000mm\" height=\"30.0000mm\"\n     viewBox=\"0 0 40.0000 30.0000\">\n  <rect x=\"5.0000\" y=\"5.0000\" width=\"30.0000\" height=\"20.0000\" rx=\"4.0000\" ry=\"4.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
@@ -839,6 +1158,24 @@ window.DOCUMENTATION_DATA = {
             0,
             0
           ]
+        },
+        {
+          "name": "color",
+          "description": "Fill colour (CSS colour string, e.g. '#333333'). Set to 'none' for an outline-only shape.",
+          "type": "string",
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour (CSS colour string). Set to a colour to draw an outline; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"38.0000mm\" height=\"18.0000mm\"\n     viewBox=\"0 0 38.0000 18.0000\">\n  <path d=\"M 9.0000 5.0000 A 4.0000 4.0000 0 0 0 9.0000 13.0000 L 29.0000 13.0000 A 4.0000 4.0000 0 0 0 29.0000 5.0000 Z\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
@@ -885,9 +1222,21 @@ window.DOCUMENTATION_DATA = {
         },
         {
           "name": "color",
-          "description": "Optional explicit fill colour (CSS colour string). Overrides the type-based fill so white text can sit on a dark header bar.",
+          "description": "Fill colour (CSS colour string). Use 'none' for invisible fill (stroke-only text). Defaults to the global fill colour when empty.",
           "type": "string",
-          "default": ""
+          "default": "#333333"
+        },
+        {
+          "name": "stroke",
+          "description": "Outline colour for the text glyphs (CSS colour string). Set to a colour to draw outlined/hollow text; 'none' disables it.",
+          "type": "string",
+          "default": "none"
+        },
+        {
+          "name": "stroke_width",
+          "description": "Glyph outline width in mm. Only visible when stroke is set.",
+          "type": "float",
+          "default": 0
         },
         {
           "name": "pos",
@@ -940,6 +1289,1283 @@ window.DOCUMENTATION_DATA = {
       "description_main": "label_76x50",
       "size": "76x50",
       "folder": "parts\\svg_label_76x50_label_76x50"
+    }
+  ],
+  "stylesheets": [
+    {
+      "name": "default",
+      "label": "Default",
+      "description": "Technical monochrome palette. Dark charcoal fills, single burnt-orange (#E85D04) accent. Clean, precise — designed for laser-cut technical drawings and assembly labels.",
+      "source": "builtin",
+      "styles": [
+        {
+          "name": "plate",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.accent",
+          "color": "#E85D04",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.light",
+          "color": "#888888",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.outline",
+          "color": "none",
+          "stroke": "#333333",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "hole",
+          "color": "#666666",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "hole.cut",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "slot",
+          "color": "#666666",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "outline",
+          "color": "none",
+          "stroke": "#333333",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.accent",
+          "color": "none",
+          "stroke": "#E85D04",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.light",
+          "color": "none",
+          "stroke": "#888888",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "label",
+          "color": "#111111",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 4.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "label.small",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 2.5
+          }
+        },
+        {
+          "name": "label.large",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 7.0
+          }
+        },
+        {
+          "name": "label.mono",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace"
+          }
+        },
+        {
+          "name": "label.light",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.muted",
+          "color": "#666666",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.accent",
+          "color": "#E85D04",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header",
+          "color": "#111111",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header.label",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 5.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "header.accent",
+          "color": "#E85D04",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved",
+          "color": "#555555",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved.light",
+          "color": "#999999",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        }
+      ]
+    },
+    {
+      "name": "jazzy",
+      "label": "Jazzy",
+      "description": "Vivid purple-and-coral palette. Deep navy plates (#1B2869), fuchsia headers (#7B2FBE), coral accents (#FF6B6B), gold holes (#FFD60A) and sky-blue slots (#00B4D8). Bold and expressive — great for demos, art pieces, and anything that should pop.",
+      "source": "builtin",
+      "styles": [
+        {
+          "name": "plate",
+          "color": "#1B2869",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.accent",
+          "color": "#FF6B6B",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.pop",
+          "color": "#00B4D8",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.light",
+          "color": "#C8B6FF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.outline",
+          "color": "none",
+          "stroke": "#FF6B6B",
+          "stroke_width": 0.8,
+          "extra": {}
+        },
+        {
+          "name": "hole",
+          "color": "#FFD60A",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "hole.cut",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "slot",
+          "color": "#4ECDC4",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "outline",
+          "color": "none",
+          "stroke": "#FF6B6B",
+          "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "outline.accent",
+          "color": "none",
+          "stroke": "#FFD60A",
+          "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "outline.cool",
+          "color": "none",
+          "stroke": "#00B4D8",
+          "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "label",
+          "color": "#F0E6FF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 4.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "label.small",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 2.5
+          }
+        },
+        {
+          "name": "label.large",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 7.0
+          }
+        },
+        {
+          "name": "label.mono",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace"
+          }
+        },
+        {
+          "name": "label.dark",
+          "color": "#1B003E",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.accent",
+          "color": "#FFD60A",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.pop",
+          "color": "#FF6B6B",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header",
+          "color": "#7B2FBE",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header.label",
+          "color": "#F0E6FF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 5.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "header.accent",
+          "color": "#FFD60A",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved",
+          "color": "#9D4EDD",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved.light",
+          "color": "#C77DFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        }
+      ]
+    },
+    {
+      "name": "blueprint",
+      "label": "Blueprint",
+      "description": "Engineering blueprint aesthetic. Deep navy background with technical cyan detailing and gold dimension-line accents. Evokes CAD schematics and technical drawings — clear, precise, professional.",
+      "source": "file",
+      "styles": [
+        {
+          "name": "plate",
+          "color": "#0B3D91",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "plate.accent",
+          "color": "#1565C0",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "plate.pop",
+          "color": "#0277BD",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.light",
+          "color": "#1976D2",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.outline",
+          "color": "none",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "hole",
+          "color": "#0D2B6E",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "hole.cut",
+          "color": "#062050",
+          "stroke": "#7EC8E3",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "slot",
+          "color": "#0D2B6E",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "outline",
+          "color": "none",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.accent",
+          "color": "none",
+          "stroke": "#FFD700",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.cool",
+          "color": "none",
+          "stroke": "#B3E5FC",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "label",
+          "color": "#B3E5FC",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace",
+            "size": 4.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "label.small",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 2.5
+          }
+        },
+        {
+          "name": "label.large",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 7.0
+          }
+        },
+        {
+          "name": "label.mono",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace"
+          }
+        },
+        {
+          "name": "label.light",
+          "color": "#E3F2FD",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.muted",
+          "color": "#546E7A",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.accent",
+          "color": "#FFD700",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header",
+          "color": "#062550",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "header.label",
+          "color": "#4FC3F7",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace",
+            "size": 5.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "header.accent",
+          "color": "#FFD700",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved",
+          "color": "#1A6B9E",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved.light",
+          "color": "#4FC3F7",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        }
+      ]
+    },
+    {
+      "name": "high_contrast",
+      "label": "High Contrast",
+      "description": "Maximum contrast black and white palette. Bold fills, thick outlines, and white text on black. Ideal for accessibility requirements, photocopying, vinyl cutting, or single-colour laser engraving.",
+      "source": "file",
+      "styles": [
+        {
+          "name": "plate",
+          "color": "#000000",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.accent",
+          "color": "#222222",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.light",
+          "color": "#444444",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.outline",
+          "color": "none",
+          "stroke": "#000000",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "hole",
+          "color": "#FFFFFF",
+          "stroke": "#000000",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "hole.cut",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "slot",
+          "color": "#FFFFFF",
+          "stroke": "#000000",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline",
+          "color": "none",
+          "stroke": "#000000",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.accent",
+          "color": "none",
+          "stroke": "#000000",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.light",
+          "color": "none",
+          "stroke": "#555555",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "label",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 4.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "label.small",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 2.5
+          }
+        },
+        {
+          "name": "label.large",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 7.0
+          }
+        },
+        {
+          "name": "label.mono",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace"
+          }
+        },
+        {
+          "name": "label.light",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.muted",
+          "color": "#AAAAAA",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.accent",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header",
+          "color": "#000000",
+          "stroke": "#FFFFFF",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "header.label",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 5.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "header.accent",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved",
+          "color": "#666666",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved.light",
+          "color": "#999999",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        }
+      ]
+    },
+    {
+      "name": "minimal",
+      "label": "Minimal",
+      "description": "Ultra-clean outline style. Near-white fills, hairline borders, and small grey labels. Inspired by architectural drawings and wireframe mockups — invisible until you look closely, precise when you do.",
+      "source": "file",
+      "styles": [
+        {
+          "name": "plate",
+          "color": "#FAFAFA",
+          "stroke": "#CCCCCC",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "plate.accent",
+          "color": "#F5F5F5",
+          "stroke": "#999999",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "plate.light",
+          "color": "#FFFFFF",
+          "stroke": "#E0E0E0",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "plate.outline",
+          "color": "none",
+          "stroke": "#AAAAAA",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "hole",
+          "color": "#E8E8E8",
+          "stroke": "#AAAAAA",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "hole.cut",
+          "color": "#FFFFFF",
+          "stroke": "#CCCCCC",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "slot",
+          "color": "#F0F0F0",
+          "stroke": "#BBBBBB",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "outline",
+          "color": "none",
+          "stroke": "#999999",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "outline.accent",
+          "color": "none",
+          "stroke": "#555555",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "outline.light",
+          "color": "none",
+          "stroke": "#CCCCCC",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "label",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 3.5,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "label.small",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 2.0
+          }
+        },
+        {
+          "name": "label.large",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 6.0
+          }
+        },
+        {
+          "name": "label.mono",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace",
+            "size": 3.0
+          }
+        },
+        {
+          "name": "label.light",
+          "color": "#888888",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.muted",
+          "color": "#AAAAAA",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.accent",
+          "color": "#555555",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header",
+          "color": "#F0F0F0",
+          "stroke": "#CCCCCC",
+          "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "header.label",
+          "color": "#444444",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 4.5,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "header.accent",
+          "color": "#888888",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved",
+          "color": "#BBBBBB",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved.light",
+          "color": "#DDDDDD",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        }
+      ]
+    },
+    {
+      "name": "neon",
+      "label": "Neon",
+      "description": "Dark synthwave palette. Near-black background with vivid neon fills — electric green, hot magenta, cyan. High energy and expressive — great for demos, visualisations, and anything that needs to glow.",
+      "source": "file",
+      "styles": [
+        {
+          "name": "plate",
+          "color": "#0D0D0D",
+          "stroke": "#39FF14",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "plate.accent",
+          "color": "#39FF14",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.pop",
+          "color": "#FF00FF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.light",
+          "color": "#1A1A2E",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.outline",
+          "color": "none",
+          "stroke": "#39FF14",
+          "stroke_width": 0.8,
+          "extra": {}
+        },
+        {
+          "name": "hole",
+          "color": "#FF00FF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "hole.cut",
+          "color": "#000000",
+          "stroke": "#FF00FF",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "slot",
+          "color": "#00FFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "outline",
+          "color": "none",
+          "stroke": "#39FF14",
+          "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "outline.accent",
+          "color": "none",
+          "stroke": "#FF00FF",
+          "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "outline.cool",
+          "color": "none",
+          "stroke": "#00FFFF",
+          "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "label",
+          "color": "#00FFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace",
+            "size": 4.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "label.small",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 2.5
+          }
+        },
+        {
+          "name": "label.large",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 7.0
+          }
+        },
+        {
+          "name": "label.mono",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace"
+          }
+        },
+        {
+          "name": "label.dark",
+          "color": "#0D0D0D",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.accent",
+          "color": "#39FF14",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.pop",
+          "color": "#FF00FF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header",
+          "color": "#1A0533",
+          "stroke": "#FF00FF",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "header.label",
+          "color": "#39FF14",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace",
+            "size": 5.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "header.accent",
+          "color": "#FF00FF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved",
+          "color": "#FF6EC7",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved.light",
+          "color": "#FF99E5",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        }
+      ]
+    },
+    {
+      "name": "pastel",
+      "label": "Pastel",
+      "description": "Soft pastel palette. Blush pinks, mints, periwinkles, and creams with warm rose accents. Gentle and approachable — ideal for educational materials, decorative labels, or anywhere a friendly tone is needed.",
+      "source": "file",
+      "styles": [
+        {
+          "name": "plate",
+          "color": "#FFE5EC",
+          "stroke": "#D4A5A5",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "plate.accent",
+          "color": "#FFB3C1",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.pop",
+          "color": "#C7CEEA",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.light",
+          "color": "#E8F4F8",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "plate.outline",
+          "color": "none",
+          "stroke": "#D4A5A5",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "hole",
+          "color": "#B5EAD7",
+          "stroke": "#7DC9A8",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "hole.cut",
+          "color": "#FFFFFF",
+          "stroke": "#B5EAD7",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "slot",
+          "color": "#C7CEEA",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "outline",
+          "color": "none",
+          "stroke": "#D4A5A5",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.accent",
+          "color": "none",
+          "stroke": "#FFB347",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.light",
+          "color": "none",
+          "stroke": "#C7CEEA",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "label",
+          "color": "#5C5C5C",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 4.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "label.small",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 2.5
+          }
+        },
+        {
+          "name": "label.large",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 7.0
+          }
+        },
+        {
+          "name": "label.mono",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, monospace"
+          }
+        },
+        {
+          "name": "label.light",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.muted",
+          "color": "#9E9E9E",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.accent",
+          "color": "#E07B9A",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header",
+          "color": "#D4A5C9",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header.label",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Inter, sans-serif",
+            "size": 5.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "header.accent",
+          "color": "#FFB347",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved",
+          "color": "#AABFCC",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved.light",
+          "color": "#C8D8E4",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        }
+      ]
     }
   ]
 };
@@ -1103,6 +2729,144 @@ window.DOCUMENTATION_DATA = {
     });
   }
 
+  // ── Stylesheets section ────────────────────────────────────────────────────
+  let activeSheetName = null;
+
+  function contrastText(hex) {
+    // Return '#111111' or '#FFFFFF' depending on perceived brightness of hex.
+    hex = (hex || '#888888').replace('#', '');
+    if (hex.length === 3) hex = hex.split('').map(c => c+c).join('');
+    const r = parseInt(hex.slice(0,2),16);
+    const g = parseInt(hex.slice(2,4),16);
+    const b = parseInt(hex.slice(4,6),16);
+    const lum = 0.299*r + 0.587*g + 0.114*b;
+    return lum > 140 ? '#111111' : '#FFFFFF';
+  }
+
+  function buildSwatchCard(style) {
+    const color  = style.color  || '#333333';
+    const stroke = style.stroke || 'none';
+    const sw     = style.stroke_width || 0;
+    const isOutlineOnly = color === 'none';
+    const isInvisible   = color === 'none' && stroke === 'none';
+
+    let previewStyle = '';
+    let previewClass = 'swatch-preview';
+    let previewLabel = '';
+
+    if (isInvisible) {
+      previewStyle = 'background:#f7f7f7;';
+      previewLabel = '<span style="color:#ccc;font-size:10px">empty</span>';
+    } else if (isOutlineOnly) {
+      previewClass += ' outline-only';
+      const sw2 = Math.max(sw * 3, 2);
+      previewStyle = `border: ${sw2}px solid ${stroke};`;
+      previewLabel = `<span style="color:${stroke};font-size:9px">${stroke}</span>`;
+    } else {
+      previewStyle = `background:${color};`;
+      if (stroke !== 'none') {
+        const sw2 = Math.max(sw * 3, 2);
+        previewStyle += `border: ${sw2}px solid ${stroke};`;
+      }
+      previewLabel = `<span style="color:${contrastText(color)};font-size:9px">${color}</span>`;
+    }
+
+    const extra = style.extra || {};
+    const extraProps = Object.entries(extra).slice(0, 3).map(([k, v]) =>
+      `<div class="swatch-prop">${esc(k)}: <span class="prop-val">${esc(String(v))}</span></div>`
+    ).join('');
+
+    const strokeProp = stroke !== 'none'
+      ? `<div class="swatch-prop">stroke: <span class="prop-val">${esc(stroke)}</span></div>`
+      : '';
+
+    return `
+      <div class="swatch-card">
+        <div class="${previewClass}" style="${previewStyle}">${previewLabel}</div>
+        <div class="swatch-name" title="${esc(style.name)}">${esc(style.name)}</div>
+        <div class="swatch-props">
+          ${isOutlineOnly ? '' : `<div class="swatch-prop">fill: <span class="prop-val">${esc(color)}</span></div>`}
+          ${strokeProp}
+          ${extraProps}
+        </div>
+      </div>`;
+  }
+
+  function buildUsageBlock(sheetName) {
+    const c  = s => `<span class="code-comment">${s}</span>`;
+    const f  = s => `<span class="code-fn">${s}</span>`;
+    const st = s => `<span class="code-str">${s}</span>`;
+    const kw = s => `<span class="code-kw">${s}</span>`;
+    const nl = '\n';
+
+    return [
+      c(`# Activate in a part builder:`),
+      `thing[${st('"styles"')}] = svg_styles.${f('get_stylesheet')}(${st('"' + sheetName + '"')})`,
+      '',
+      c(`# Or set per working.yaml (no Python needed):`),
+      c(`# svg_details:`),
+      c(`#   stylesheet: "${sheetName}"`),
+      '',
+      c(`# Use named styles — inline kwargs always override:`),
+      `opsvg.${f('se')}(thing, shape=${st('"oobb_plate"')}, ${kw('style')}=${st('"plate"')},        width=2, height=2, pos=pos)`,
+      `opsvg.${f('se')}(thing, shape=${st('"text"')},       ${kw('style')}=${st('"header.label"')}, text=${st('"Title"')},      pos=pos)`,
+      `opsvg.${f('se')}(thing, shape=${st('"text"')},       ${kw('style')}=${st('"label.small"')},  halign=${st('"left"')},     pos=pos)`,
+      '',
+      c(`# Override a single property on one style:`),
+      `svg_styles.${f('set_style')}(thing, ${st('"plate"')}, {${st('"color"')}: kwargs.get(${st('"color"')}, ${st('"#333333"')})})`,
+      '',
+      c(`# Per-part YAML style override:`),
+      c(`# svg_details:`),
+      c(`#   styles:`),
+      c(`#     plate:`),
+      c(`#       color: "#FF6600"`),
+    ].join(nl);
+  }
+
+  function renderStylesheets(stylesheets) {
+    const body = document.getElementById('stylesheets-body');
+    if (!stylesheets || stylesheets.length === 0) {
+      body.innerHTML = '<p style="color:var(--text-muted);padding:12px 0;">No stylesheet data found.</p>';
+      return;
+    }
+
+    // Default to first sheet
+    activeSheetName = stylesheets[0].name;
+
+    // Tabs
+    const tabs = stylesheets.map(s =>
+      `<button class="sheet-tab${s.name === activeSheetName ? ' active' : ''}"
+               data-sheet="${esc(s.name)}">${esc(s.label || s.name)}</button>`
+    ).join('');
+
+    body.innerHTML = `
+      <div class="sheet-tabs" id="sheet-tabs">${tabs}</div>
+      <div id="sheet-content"></div>`;
+
+    function showSheet(name) {
+      activeSheetName = name;
+      document.querySelectorAll('.sheet-tab').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.sheet === name);
+      });
+      const sheet = stylesheets.find(s => s.name === name);
+      if (!sheet) return;
+
+      const swatches = (sheet.styles || []).map(buildSwatchCard).join('');
+      document.getElementById('sheet-content').innerHTML = `
+        <div class="sheet-description">${esc(sheet.description || '')}</div>
+        <div class="swatch-grid">${swatches}</div>
+        <div class="stylesheet-usage-heading">Usage</div>
+        <div class="stylesheet-usage">${buildUsageBlock(sheet.name)}</div>`;
+    }
+
+    showSheet(activeSheetName);
+
+    document.getElementById('sheet-tabs').addEventListener('click', e => {
+      const btn = e.target.closest('.sheet-tab');
+      if (btn) showSheet(btn.dataset.sheet);
+    });
+  }
+
   // ── Parts table ────────────────────────────────────────────────────────────
   function renderParts(parts) {
     const tbody = document.getElementById('parts-tbody');
@@ -1140,13 +2904,15 @@ window.DOCUMENTATION_DATA = {
       return;
     }
 
-    const data       = window.DOCUMENTATION_DATA;
-    const components = data.components || [];
-    const parts      = data.parts      || [];
+    const data        = window.DOCUMENTATION_DATA;
+    const components  = data.components  || [];
+    const parts       = data.parts       || [];
+    const stylesheets = data.stylesheets || [];
 
     populateCategories(components);
     renderCards(components);
     renderParts(parts);
+    renderStylesheets(stylesheets);
 
     document.getElementById('search-input').addEventListener('input',  () => renderCards(components));
     document.getElementById('category-select').addEventListener('change', () => renderCards(components));

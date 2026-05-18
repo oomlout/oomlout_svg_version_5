@@ -23,6 +23,7 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+import svg_styles as _ss
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -158,6 +159,39 @@ def get_all_parts_documentation(parts_root: str = "parts") -> list[dict]:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Stylesheet data extraction
+# ─────────────────────────────────────────────────────────────────────────────
+
+def get_all_stylesheets_documentation() -> list[dict]:
+    """
+    Return documentation data for every available stylesheet (built-in + file).
+
+    Uses svg_styles.list_available_stylesheets() so file-based sheets in the
+    styles/ directory are automatically included alongside the built-ins.
+    """
+    result = []
+    for sheet_info in _ss.list_available_stylesheets():
+        styles = []
+        for style_name, props in sheet_info["styles"].items():
+            styles.append({
+                "name":         style_name,
+                "color":        props.get("color",        "#333333"),
+                "stroke":       props.get("stroke",       "none"),
+                "stroke_width": props.get("stroke_width", 0),
+                "extra":        {k: v for k, v in props.items()
+                                 if k not in ("color", "stroke", "stroke_width")},
+            })
+        result.append({
+            "name":        sheet_info["name"],
+            "label":       sheet_info["label"],
+            "description": sheet_info["description"],
+            "source":      sheet_info.get("source", "builtin"),
+            "styles":      styles,
+        })
+    return result
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Export
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -167,8 +201,9 @@ def export_documentation_json(
     parts_root: str = "parts",
 ) -> dict:
     """Write documentation_data.json and return the payload dict."""
-    components = get_all_components_documentation(components_root)
-    parts      = get_all_parts_documentation(parts_root)
+    components  = get_all_components_documentation(components_root)
+    parts       = get_all_parts_documentation(parts_root)
+    stylesheets = get_all_stylesheets_documentation()
 
     payload = {
         "generated_date":    str(date.today()),
@@ -176,6 +211,7 @@ def export_documentation_json(
         "total_parts":       len(parts),
         "components":        components,
         "parts":             parts,
+        "stylesheets":       stylesheets,
     }
 
     output_path = Path(output_path)
@@ -202,8 +238,9 @@ def export_documentation_html(
         print(f"[svg_documentation] template not found: {template_path}")
         return
 
-    components = get_all_components_documentation(components_root)
-    parts      = get_all_parts_documentation(parts_root)
+    components  = get_all_components_documentation(components_root)
+    parts       = get_all_parts_documentation(parts_root)
+    stylesheets = get_all_stylesheets_documentation()
 
     payload = {
         "generated_date":   str(date.today()),
@@ -211,6 +248,7 @@ def export_documentation_html(
         "total_parts":      len(parts),
         "components":       components,
         "parts":            parts,
+        "stylesheets":      stylesheets,
     }
 
     script_tag = (

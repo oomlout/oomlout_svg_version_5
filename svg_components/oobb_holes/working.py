@@ -21,8 +21,7 @@ def describe():
     _d["name_long"] = "OOBB Hole Grid"
     _d["description"] = (
         "Grid of circles at every OOBB hole position for a width×height plate. "
-        "radius_name selects the fastener size (e.g. 'm6', 'm3'). "
-        "Typically used as type='negative' to cut holes through a plate."
+        "radius_name selects the fastener size (e.g. 'm6', 'm3')."
     )
     _d["category"] = "OOBB Shapes"
     _d["shape_aliases"] = []
@@ -54,6 +53,32 @@ def describe():
             "type": "list",
             "default": [0, 0, 0],
         },
+        {
+            "name": "rot",
+            "description": "Rotation [rx, ry, rz] degrees. Only rz affects the 2-D render.",
+            "type": "list",
+            "default": [0, 0, 0],
+        },
+        {
+            "name": "color",
+            "description": "Fill colour for each hole circle (CSS colour string). "
+                           "Set to 'none' for outline-only holes.",
+            "type": "string",
+            "default": "#333333",
+        },
+        {
+            "name": "stroke",
+            "description": "Outline colour (CSS colour string). "
+                           "Set to a colour to draw outlines; 'none' disables it.",
+            "type": "string",
+            "default": "none",
+        },
+        {
+            "name": "stroke_width",
+            "description": "Outline width in mm. Only visible when stroke is set.",
+            "type": "float",
+            "default": 0,
+        },
     ]
     return _d
 
@@ -73,16 +98,23 @@ def action(**kwargs):
 
     Parameters
     ----------
-    type        : str  "positive" or "negative"
-    width       : int  number of hole columns
-    height      : int  number of hole rows
-    radius_name : str  fastener key, e.g. "m6"
-    pos         : list [x, y, z] centre in OOBB mm
+    width        : int    number of hole columns
+    height       : int    number of hole rows
+    radius_name  : str    fastener key, e.g. 'm6'
+    pos          : list   [x, y, z] centre in OOBB mm
+    rot          : list   [rx, ry, rz] degrees
+    color        : str    fill colour for hole circles (CSS); 'none' = transparent
+    stroke       : str    outline colour (CSS); 'none' = no outline
+    stroke_width : float  outline width in mm
     """
     descriptor = copy.deepcopy(kwargs)
     descriptor["shape"] = "oobb_holes"
-    descriptor.setdefault("width",       1)
-    descriptor.setdefault("height",      1)
-    descriptor.setdefault("radius_name", "m6")
-    descriptor.setdefault("pos",         [0, 0, 0])
+    descriptor.setdefault("width",        1)
+    descriptor.setdefault("height",       1)
+    descriptor.setdefault("radius_name",  "m6")
+    descriptor.setdefault("pos",          [0, 0, 0])
+    descriptor.setdefault("rot",          [0, 0, 0])
+    descriptor.setdefault("color",        "#333333")
+    descriptor.setdefault("stroke",       "none")
+    descriptor.setdefault("stroke_width", 0)
     return [descriptor]
