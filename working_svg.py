@@ -56,16 +56,25 @@ def get_parts(kwargs, oomp_mode):
         if not isinstance(loaded_part, dict):
             continue
 
-        svg_details = loaded_part.get("svg_details")
-        if not isinstance(svg_details, dict):
-            continue
+        svg_details_raw = loaded_part.get("svg_details")
+        # Accept either a single dict or a list of dicts.
+        if isinstance(svg_details_raw, list):
+            # Use the first entry to derive kwargs / oobb_name; the full list
+            # is kept intact in part["svg_details"] for make_svg_generic.
+            svg_details = svg_details_raw[0] if svg_details_raw else {}
+        elif isinstance(svg_details_raw, dict):
+            svg_details = svg_details_raw
+        else:
+            continue  # no recognisable svg_details — skip
 
         part = loaded_part
 
         part_kwargs = copy.deepcopy(kwargs)
         part_kwargs.update(copy.deepcopy(loaded_part.get("kwargs", {})))
+        _SD_META = {"svg_name", "filename_extra", "width", "height", "depth", "styles",
+                    "extra", "radius_name"}
         svg_details_safe = {k: v for k, v in svg_details.items()
-                            if k not in ("width", "height", "depth", "styles") or isinstance(v, (int, float))}
+                            if k not in _SD_META or (k in ("width", "height", "depth") and isinstance(v, (int, float)))}
         part_kwargs.update(copy.deepcopy(svg_details_safe))
 
         # stylesheet name override from yaml: svg_details.stylesheet: "jazzy"

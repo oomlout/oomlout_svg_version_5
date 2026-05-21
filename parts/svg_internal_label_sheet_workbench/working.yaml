@@ -3,7 +3,18 @@ description_main: internal_label_sheet_workbench
 id: svg_internal_label_sheet_workbench
 id_svg: svg_internal_label_sheet_workbench
 kwargs:
-  boxes:
+  filter: ''
+  navigation: false
+  oomp_description_extra: ''
+  oomp_description_main: _internal_label_sheet_workbench
+  oomp_mode: project
+  overwrite: true
+  stylesheet: project_bolt
+  type: C:\gh\oomlout_svg_version_5_internal_label_sheet_workbench
+oobb_name: internal_label_sheet_workbench
+project_name: C:\gh\oomlout_svg_version_5
+svg_details:
+- boxes:
   - h: 0.5
     halign: center
     name: project
@@ -58,19 +69,32 @@ kwargs:
     y: 2.5
   card_margin_mm: 2.0
   card_r: 8.0
-  filter: ''
+  filename_extra: workbench
   grid_h: 3.5
   grid_w: 3.0
-  navigation: false
-  oomp_description_extra: ''
-  oomp_description_main: _internal_label_sheet_workbench
-  oomp_mode: project
-  overwrite: true
-  stylesheet: project_bolt
   svg_name: internal_label_sheet
-  type: C:\gh\oomlout_svg_version_5_internal_label_sheet_workbench
   unit_mm: 42.0
-oobb_name: internal_label_sheet_workbench
-project_name: C:\gh\oomlout_svg_version_5
-svg_details:
+- boxes:
+  - h: 0.5
+    halign: center
+    name: header
+    style: plate.light
+    text: Notes
+    w: 3.0
+    x: 0.0
+    y: 0.0
+  - h: 3.0
+    line_spacing_mm: 6.0
+    lined: true
+    name: notes
+    text: ''
+    w: 3.0
+    x: 0.0
+    y: 0.5
+  card_margin_mm: 2.0
+  card_r: 8.0
+  filename_extra: notes_only
+  grid_h: 3.5
+  grid_w: 3.0
   svg_name: internal_label_sheet
+  unit_mm: 42.0

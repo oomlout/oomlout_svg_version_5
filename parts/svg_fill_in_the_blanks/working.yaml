@@ -10,7 +10,6 @@ kwargs:
   oomp_mode: project
   overwrite: true
   stylesheet: project_bolt
-  svg_name: fill_in_the_blanks
   table_label: Contents
   title: Prototyping Tin
   type: C:\gh\oomlout_svg_version_5_fill_in_the_blanks

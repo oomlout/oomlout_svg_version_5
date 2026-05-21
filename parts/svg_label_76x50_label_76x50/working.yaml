@@ -5,7 +5,6 @@ description_main: label_76x50
 id: svg_label_76x50_label_76x50
 id_svg: svg_label_76x50_label_76x50
 kwargs:
-  depth: 3
   filter: ''
   navigation: true
   oobb_name: label_76x50
@@ -14,7 +13,6 @@ kwargs:
   oomp_mode: project
   output_formats: []
   overwrite: true
-  svg_name: label_76x50
   type: C:\gh\oomlout_svg_version_5_label_76x50
 oobb_name: label_76x50
 project_name: C:\gh\oomlout_svg_version_5

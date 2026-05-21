@@ -6,6 +6,7 @@ import yaml
 import opsvg
 import svg_variables as _sv
 import svg_styles as _ss
+import svg_a4
 
 
 ###### utilities
@@ -87,114 +88,133 @@ def make_parts(**kwargs):
 
 
 def make_svg_generic(part):
+    # Keys in an svg_details entry that control pipeline meta / routing,
+    # not layout data — they are NOT merged into kwargs for the builder.
+    _SVG_DETAILS_META = {
+        "svg_name", "filename_extra",
+        "width", "height", "depth", "extra", "radius_name",
+    }
 
-    # fetching variables
     oobb_name    = part.get("oobb_name", "default")
     project_name = part.get("project_name", "default")
 
-    kwargs = part.get("kwargs", {})
+    # kwargs_base is the live part["kwargs"] reference so that oomp_description_*
+    # written below survive into the working.yaml write-back.
+    kwargs_base              = part.get("kwargs", {})
+    save_type                = kwargs_base.get("save_type", "all")
+    overwrite                = kwargs_base.get("overwrite",  True)
+    kwargs_base["type"]      = f"{project_name}_{oobb_name}"
 
-    save_type      = kwargs.get("save_type",      "all")
-    overwrite      = kwargs.get("overwrite",       True)
+    # Build a scratch thing (no svg_details layout keys) to drive oomp_id.
+    thing_base = get_default_thing(**kwargs_base)
+    thing_base.update(part)
 
-    kwargs["type"] = f"{project_name}_{oobb_name}"
-
-    thing = get_default_thing(**kwargs)
-    thing.update(part)
-
-    import working_svg
-    svg_name = part.get("svg_details", {}).get("svg_name", oobb_name)
-    try:
-        func = getattr(working_svg, f"get_{svg_name}")
-    except AttributeError:
-        func = None
-    if callable(func):
-        func(thing, **kwargs)
-    else:
-        working_svg.get_base(thing, **kwargs)
-
-    oomp_mode = kwargs.get("oomp_mode", "project")
-
+    # oomp_mode — writes back to kwargs_base so values round-trip through YAML.
+    oomp_mode = kwargs_base.get("oomp_mode", "project")
     if oomp_mode == "project":
-        descmain = ""
-        current_description_main = thing.get("description_main", "default")
-        current_size = thing.get("size", "default")
-        new_size = current_size.replace(f"{project_name}_", "")
-        descmain = f"{new_size}_{current_description_main}"
-        kwargs["oomp_description_main"] = f"{descmain}"
-        descextra = ""
-        current_description_extra = thing.get("description_extra", "")
-        descextra = f"{current_description_extra}"
-        kwargs["oomp_description_extra"] = f"{descextra}"
+        current_size  = thing_base.get("size", "default")
+        new_size      = current_size.replace(f"{project_name}_", "")
+        kwargs_base["oomp_description_main"]  = f"{new_size}_{thing_base.get('description_main', 'default')}"
+        kwargs_base["oomp_description_extra"] = thing_base.get("description_extra", "")
     elif oomp_mode == "oobb":
-        current_description_main = thing.get("description_main", "default")
-        descmain = f"{current_description_main}"
-        descextra = thing.get("extra", "")
-        if descextra != "":
+        descextra = thing_base.get("extra", "")
+        if descextra:
             descextra = f"{descextra}_extra"
-        kwargs["oomp_description_main"] = f"{current_description_main}"
-        kwargs["oomp_description_extra"] = f"{descextra}"
-        kwargs["oomp_size"] = f"{part['oobb_name']}"
+        kwargs_base["oomp_description_main"]  = thing_base.get("description_main", "default")
+        kwargs_base["oomp_description_extra"] = descextra
+        kwargs_base["oomp_size"]              = part["oobb_name"]
 
-    oomp_keys = ["classification", "type", "size", "color", "description_main", "description_extra"]
+    # Build oomp_id / folder (once, independent of svg_details entries).
     oomp_id = part.get("id", "")
-    if oomp_id == "":
-        for key in oomp_keys:
-            deet = part.get(key, "")
-            deet = deet.replace(".", "_")
-            if deet != "":
+    if not oomp_id:
+        for key in ["classification", "type", "size", "color", "description_main", "description_extra"]:
+            deet = part.get(key, "").replace(".", "_")
+            if deet:
                 oomp_id += f"{deet}_"
-        oomp_id = oomp_id[:-1]
-    if oomp_id == "":
+        oomp_id = oomp_id.rstrip("_")
+    if not oomp_id:
         oomp_id = oobb_name
     part["id"] = oomp_id
     folder = f"parts/{oomp_id}"
 
     if save_type != "all":
         print(f"  dry-run — would write to {folder}/")
-        return thing
+        return thing_base
 
     if not os.path.isdir(folder):
         os.makedirs(folder)
 
-    # svg
-    svg_path = os.path.join(folder, "working.svg")
-    opsvg.opsvg_make_object(svg_path, thing["svg_components"], overwrite=overwrite)
+    # Normalise svg_details → list so we can loop over it uniformly.
+    # A single dict is treated as a one-element list.
+    raw_svg_details = part.get("svg_details", {})
+    svg_details_list = raw_svg_details if isinstance(raw_svg_details, list) else [raw_svg_details]
 
-    # working.yaml — partial dump (mirrors scad_help)
+    # Collect all layout keys used across every svg_details entry (for write-back cleanup).
+    all_svg_detail_layout_keys = set()
+    for sd in svg_details_list:
+        all_svg_detail_layout_keys.update(k for k in sd if k not in _SVG_DETAILS_META)
+
+    import working_svg
+    last_thing = thing_base
+
+    for svg_detail in svg_details_list:
+        # Per-entry kwargs: start from base, merge this entry's layout keys.
+        kwargs = copy.deepcopy(kwargs_base)
+        for k, v in svg_detail.items():
+            if k not in _SVG_DETAILS_META:
+                kwargs.setdefault(k, v)
+
+        thing = get_default_thing(**kwargs)
+        thing.update(part)
+
+        svg_name = svg_detail.get("svg_name", oobb_name)
+        func = getattr(working_svg, f"get_{svg_name}", None)
+        if callable(func):
+            func(thing, **kwargs)
+        else:
+            working_svg.get_base(thing, **kwargs)
+
+        filename_extra = svg_detail.get("filename_extra", "")
+        suffix         = f"_{filename_extra}" if filename_extra else ""
+
+        svg_path = os.path.join(folder, f"working_svg{suffix}.svg")
+        opsvg.opsvg_make_object(svg_path, thing["svg_components"], overwrite=overwrite)
+        svg_a4.make_a4_sheet(svg_path, folder, part, thing, filename_extra=filename_extra)
+
+        last_thing = thing
+
+    # working.yaml — partial dump
     yaml_file = f"{folder}/working.yaml"
     with open(yaml_file, "w", encoding="utf-8") as file:
-        part_new = copy.deepcopy(part)
-        kwargs_new = part_new.get("kwargs", {})
+        part_new    = copy.deepcopy(part)
+        kwargs_new  = part_new.get("kwargs", {})
         kwargs_new.pop("save_type", "")
-        part_new["kwargs"] = kwargs_new
+        # Strip all svg_details keys (both meta and layout) so they don't
+        # duplicate in kwargs — they live exclusively in svg_details.
+        for k in all_svg_detail_layout_keys | _SVG_DETAILS_META:
+            kwargs_new.pop(k, None)
+        part_new["kwargs"]      = kwargs_new
         part_new["project_name"] = os.getcwd()
-        part_new["id_svg"] = thing.get("id", oomp_id)
-        # svg_details lets get_parts() reload this part from disk.
-        svg_details = {}
-        svg_details["svg_name"] = part.get("svg_details", {}).get("svg_name", oobb_name)
-        for k in ["width", "height", "depth", "extra", "radius_name"]:
-            v = kwargs.get(k, "")
-            if v != "" and v != 0:
-                svg_details[k] = v
-        part_new["svg_details"] = svg_details
+        part_new["id_svg"]      = last_thing.get("id", oomp_id)
+        # Preserve svg_details exactly as loaded (list or dict).
+        part_new["svg_details"] = copy.deepcopy(part.get("svg_details", {}))
         part_new.pop("thing", "")
         yaml.dump(part_new, file, allow_unicode=True)
 
-    # thing.yaml — full dump (mirrors scad_help)
+    # thing.yaml — full dump
     yaml_file = f"{folder}/thing.yaml"
     with open(yaml_file, "w", encoding="utf-8") as file:
-        part_new = copy.deepcopy(part)
-        kwargs_new = part_new.get("kwargs", {})
+        part_new    = copy.deepcopy(part)
+        kwargs_new  = part_new.get("kwargs", {})
         kwargs_new.pop("save_type", "")
-        part_new["kwargs"] = kwargs_new
+        part_new["kwargs"]       = kwargs_new
         part_new["project_name"] = os.getcwd()
-        part_new["id_svg"] = thing.get("id", oomp_id)
-        part_new["thing"] = _serialisable(thing)
+        part_new["id_svg"]       = last_thing.get("id", oomp_id)
+        part_new["thing"]        = _serialisable(last_thing)
         yaml.dump(part_new, file, allow_unicode=True)
 
     print(f"done {oomp_id}")
-    return thing
+    return last_thing
 
 
 def generate_navigation(folder="parts", sort=["oobb_name", "width", "height"]):

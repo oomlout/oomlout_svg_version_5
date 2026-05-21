@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="210.0000mm" height="297.0000mm"
+     viewBox="0 0 210.0000 297.0000">
+
+  <rect x="0" y="0" width="210.0000" height="297.0000" fill="white" stroke="none" />
+  <rect x="8.0000" y="8.0000" width="194.0000" height="281.0000" fill="none" stroke="#1A1A1A" stroke-width="0.35" />
+  <rect x="10.5000" y="10.5000" width="189.0000" height="276.0000" fill="none" stroke="#1A1A1A" stroke-width="0.7" />
+  <line x1="8.0000" y1="261.0000" x2="202.0000" y2="261.0000" stroke="#1A1A1A" stroke-width="0.35" />
+  <line x1="10.5000" y1="263.5000" x2="199.5000" y2="263.5000" stroke="#1A1A1A" stroke-width="0.7" />
+  <line x1="101.5000" y1="261.0000" x2="101.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.35" />
+  <line x1="101.5000" y1="263.5000" x2="101.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.7" />
+  <line x1="139.5000" y1="261.0000" x2="139.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.35" />
+  <line x1="139.5000" y1="263.5000" x2="139.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.7" />
+  <line x1="169.5000" y1="261.0000" x2="169.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.35" />
+  <line x1="169.5000" y1="263.5000" x2="169.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.7" />
+  <text x="13.5000" y="270.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#555555" textLength="85.0000" lengthAdjust="spacingAndGlyphs">oomlout_svg_version_5</text>
+  <text x="13.5000" y="276.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="5.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A" textLength="85.0000" lengthAdjust="spacingAndGlyphs">internal_label_sheet_workbench</text>
+  <text x="104.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Dimensions</text>
+  <text x="104.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">140.0 × 161.0 mm</text>
+  <text x="142.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Scale</text>
+  <text x="142.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">1:1</text>
+  <text x="172.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Date</text>
+  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-05-18</text>
+  <g transform="translate(35.0000,54.0000) scale(1.000000)">
+    <rect x="5.0000" y="5.0000" width="130.0000" height="151.0000" rx="8.0000" ry="8.0000"  fill="#FAFAFA" stroke="none" />
+      <path d="M 14.4700 8.4700 L 88.0600 8.4700 A 1.4700 1.4700 0 0 1 89.5300 9.9400 L 89.5300 25.0600 A 1.4700 1.4700 0 0 1 88.0600 26.5300 L 9.9400 26.5300 A 1.4700 1.4700 0 0 1 8.4700 25.0600 L 8.4700 14.4700 A 6.0000 6.0000 0 0 1 14.4700 8.4700 Z"  fill="#F0F0F0" stroke="#333333" stroke-width="0.5" />
+      <text x="49.0000" y="17.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="5.0000" text-anchor="middle" dominant-baseline="middle" fill="#1A1A1A">Project</text>
+      <path d="M 93.9400 8.4700 L 125.5300 8.4700 A 6.0000 6.0000 0 0 1 131.5300 14.4700 L 131.5300 25.0600 A 1.4700 1.4700 0 0 1 130.0600 26.5300 L 93.9400 26.5300 A 1.4700 1.4700 0 0 1 92.4700 25.0600 L 92.4700 9.9400 A 1.4700 1.4700 0 0 1 93.9400 8.4700 Z"  fill="#F0F0F0" stroke="#333333" stroke-width="0.5" />
+      <text x="112.0000" y="17.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="5.0000" text-anchor="middle" dominant-baseline="middle" fill="#1A1A1A">Date</text>
+      <path d="M 9.9400 29.4700 L 88.0600 29.4700 A 1.4700 1.4700 0 0 1 89.5300 30.9400 L 89.5300 109.0600 A 1.4700 1.4700 0 0 1 88.0600 110.5300 L 9.9400 110.5300 A 1.4700 1.4700 0 0 1 8.4700 109.0600 L 8.4700 30.9400 A 1.4700 1.4700 0 0 1 9.9400 29.4700 Z"  fill="#FFFFFF" stroke="#2E2E2E" stroke-width="0.5" />
+      <rect x="12.8800" y="36.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="42.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="48.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="54.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="60.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="66.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="72.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="78.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="84.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="90.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="96.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="102.1350" width="72.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <text x="11.4100" y="32.4100" font-family="Swis721 Blk BT, comic sans ms" font-size="4.5000" text-anchor="start" dominant-baseline="hanging" fill="#1A1A1A">Notes</text>
+      <path d="M 93.9400 29.4700 L 130.0600 29.4700 A 1.4700 1.4700 0 0 1 131.5300 30.9400 L 131.5300 56.5600 A 1.4700 1.4700 0 0 1 130.0600 58.0300 L 93.9400 58.0300 A 1.4700 1.4700 0 0 1 92.4700 56.5600 L 92.4700 30.9400 A 1.4700 1.4700 0 0 1 93.9400 29.4700 Z"  fill="#FFFFFF" stroke="#2E2E2E" stroke-width="0.5" />
+      <text x="112.0000" y="43.7500" font-family="Swis721 Blk BT, comic sans ms" font-size="5.0000" text-anchor="middle" dominant-baseline="middle" fill="#1A1A1A">Ref 1</text>
+      <path d="M 93.9400 60.9700 L 130.0600 60.9700 A 1.4700 1.4700 0 0 1 131.5300 62.4400 L 131.5300 88.0600 A 1.4700 1.4700 0 0 1 130.0600 89.5300 L 93.9400 89.5300 A 1.4700 1.4700 0 0 1 92.4700 88.0600 L 92.4700 62.4400 A 1.4700 1.4700 0 0 1 93.9400 60.9700 Z"  fill="#FFFFFF" stroke="#2E2E2E" stroke-width="0.5" />
+      <text x="112.0000" y="75.2500" font-family="Swis721 Blk BT, comic sans ms" font-size="5.0000" text-anchor="middle" dominant-baseline="middle" fill="#1A1A1A">Ref 2</text>
+      <path d="M 93.9400 92.4700 L 130.0600 92.4700 A 1.4700 1.4700 0 0 1 131.5300 93.9400 L 131.5300 109.0600 A 1.4700 1.4700 0 0 1 130.0600 110.5300 L 93.9400 110.5300 A 1.4700 1.4700 0 0 1 92.4700 109.0600 L 92.4700 93.9400 A 1.4700 1.4700 0 0 1 93.9400 92.4700 Z"  fill="#FFFFFF" stroke="#2E2E2E" stroke-width="0.5" />
+      <text x="112.0000" y="101.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="5.0000" text-anchor="middle" dominant-baseline="middle" fill="#1A1A1A">Ref 3</text>
+      <path d="M 9.9400 113.4700 L 130.0600 113.4700 A 1.4700 1.4700 0 0 1 131.5300 114.9400 L 131.5300 146.5300 A 6.0000 6.0000 0 0 1 125.5300 152.5300 L 14.4700 152.5300 A 6.0000 6.0000 0 0 1 8.4700 146.5300 L 8.4700 114.9400 A 1.4700 1.4700 0 0 1 9.9400 113.4700 Z"  fill="#FFFFFF" stroke="#2E2E2E" stroke-width="0.5" />
+      <rect x="12.8800" y="121.1100" width="114.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="128.6100" width="114.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="136.1100" width="114.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.8800" y="143.6100" width="114.2400" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <text x="11.4100" y="116.4100" font-family="Swis721 Blk BT, comic sans ms" font-size="4.5000" text-anchor="start" dominant-baseline="hanging" fill="#1A1A1A">Tasks</text>
+      <rect x="5.0000" y="5.0000" width="130.0000" height="151.0000" rx="8.0000" ry="8.0000"  fill="none" stroke="#1A1A1A" stroke-width="0.8" />
+  </g>
+  <rect x="35.0000" y="54.0000" width="140.0000" height="161.0000" fill="none" stroke="#AAAAAA" stroke-width="0.3" />
+</svg>

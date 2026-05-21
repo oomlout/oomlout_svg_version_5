@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="210.0000mm" height="297.0000mm"
+     viewBox="0 0 210.0000 297.0000">
+
+  <rect x="0" y="0" width="210.0000" height="297.0000" fill="white" stroke="none" />
+  <rect x="8.0000" y="8.0000" width="194.0000" height="281.0000" fill="none" stroke="#1A1A1A" stroke-width="0.35" />
+  <rect x="10.5000" y="10.5000" width="189.0000" height="276.0000" fill="none" stroke="#1A1A1A" stroke-width="0.7" />
+  <line x1="8.0000" y1="261.0000" x2="202.0000" y2="261.0000" stroke="#1A1A1A" stroke-width="0.35" />
+  <line x1="10.5000" y1="263.5000" x2="199.5000" y2="263.5000" stroke="#1A1A1A" stroke-width="0.7" />
+  <line x1="101.5000" y1="261.0000" x2="101.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.35" />
+  <line x1="101.5000" y1="263.5000" x2="101.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.7" />
+  <line x1="139.5000" y1="261.0000" x2="139.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.35" />
+  <line x1="139.5000" y1="263.5000" x2="139.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.7" />
+  <line x1="169.5000" y1="261.0000" x2="169.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.35" />
+  <line x1="169.5000" y1="263.5000" x2="169.5000" y2="286.5000" stroke="#1A1A1A" stroke-width="0.7" />
+  <text x="13.5000" y="270.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#555555" textLength="85.0000" lengthAdjust="spacingAndGlyphs">oomlout_svg_version_5</text>
+  <text x="13.5000" y="276.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="5.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A" textLength="85.0000" lengthAdjust="spacingAndGlyphs">fill_in_the_blanks</text>
+  <text x="104.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Dimensions</text>
+  <text x="104.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">110.0 × 169.0 mm</text>
+  <text x="142.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Scale</text>
+  <text x="142.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">1:1</text>
+  <text x="172.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Date</text>
+  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-05-18</text>
+  <g transform="translate(50.0000,50.0000) scale(1.000000)">
+    <rect x="5.0000" y="5.0000" width="100.0000" height="159.0000" rx="8.0000" ry="8.0000"  fill="#FAFAFA" stroke="none" />
+      <text x="55.0000" y="23.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="14.0000" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="#111111">Prototyping</text>
+      <text x="55.0000" y="41.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="14.0000" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="#111111">Tin</text>
+      <rect x="12.0000" y="64.3250" width="86.0000" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.0000" y="75.3250" width="86.0000" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.0000" y="86.3250" width="86.0000" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="12.0000" y="97.3250" width="86.0000" height="0.3500"  fill="#BBBBBB" stroke="none" />
+      <rect x="5.0000" y="114.0000" width="60.0000" height="14.0000"  fill="#F0F0F0" stroke="none" />
+      <rect x="65.0000" y="114.0000" width="40.0000" height="14.0000"  fill="#1C1C1C" stroke="none" />
+      <text x="85.0000" y="121.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="7.0000" font-weight="bold" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF">Contents</text>
+      <rect x="5.0000" y="113.8000" width="100.0000" height="0.4000"  fill="#2E2E2E" stroke="none" />
+      <rect x="5.0000" y="127.8000" width="100.0000" height="0.4000"  fill="#2E2E2E" stroke="none" />
+      <rect x="5.0000" y="145.8000" width="100.0000" height="0.4000"  fill="#2E2E2E" stroke="none" />
+      <rect x="64.8000" y="114.0000" width="0.4000" height="14.0000"  fill="#2E2E2E" stroke="none" />
+      <rect x="38.1333" y="128.0000" width="0.4000" height="36.0000"  fill="#2E2E2E" stroke="none" />
+      <rect x="71.4667" y="128.0000" width="0.4000" height="36.0000"  fill="#2E2E2E" stroke="none" />
+      <rect x="5.0000" y="5.0000" width="100.0000" height="159.0000" rx="8.0000" ry="8.0000"  fill="none" stroke="#1A1A1A" stroke-width="0.8" />
+  </g>
+  <rect x="50.0000" y="50.0000" width="110.0000" height="169.0000" fill="none" stroke="#AAAAAA" stroke-width="0.3" />
+</svg>
