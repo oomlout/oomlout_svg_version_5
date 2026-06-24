@@ -21,7 +21,7 @@
   <text x="142.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Scale</text>
   <text x="142.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">1:1</text>
   <text x="172.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Date</text>
-  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-05-18</text>
+  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-06-04</text>
   <g transform="translate(61.9000,104.3000) scale(1.000000)">
     <rect x="5.0000" y="5.0000" width="76.2000" height="50.4000" rx="3.0000" ry="3.0000"  fill="#333333" stroke="none" />
       <rect x="5.0000" y="5.0000" width="76.2000" height="12.0000"  fill="#111111" stroke="none" />
@@ -31,5 +31,4 @@
       <text x="11.0000" y="34.0000" font-family="Inter, sans-serif" font-size="4.0000" text-anchor="start" dominant-baseline="middle" fill="#666666">L-shaped laser-cut plate</text>
       <text x="77.2000" y="50.4000" font-family="JetBrains Mono, Fira Code, monospace" font-size="3.0000" text-anchor="end" dominant-baseline="middle" fill="#111111">OOBB-BKT-4x2-001</text>
   </g>
-  <rect x="61.9000" y="104.3000" width="86.2000" height="60.4000" fill="none" stroke="#AAAAAA" stroke-width="0.3" />
 </svg>

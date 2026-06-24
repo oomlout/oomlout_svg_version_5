@@ -79,12 +79,20 @@ class TestGetAllPartsDocumentation(unittest.TestCase):
         self.assertTrue(all(isinstance(d, dict) for d in docs))
 
     def test_required_keys_present(self):
-        required = {"id", "oobb_name", "svg_name", "classification", "folder"}
+        required = {"id", "oobb_name", "svg_name", "classification", "folder", "style_options"}
         docs = get_all_parts_documentation(str(PARTS_ROOT))
         for entry in docs:
             with self.subTest(part=entry.get("id")):
                 missing = required - entry.keys()
                 self.assertFalse(missing, f"Missing keys: {missing}")
+
+    def test_style_options_include_stylesheet_and_styles(self):
+        docs = get_all_parts_documentation(str(PARTS_ROOT))
+        for entry in docs:
+            with self.subTest(part=entry.get("id")):
+                option_names = {option.get("name") for option in entry.get("style_options", [])}
+                self.assertIn("stylesheet", option_names)
+                self.assertIn("styles", option_names)
 
     def test_only_svg_details_parts_included(self):
         """Parts without svg_details must be excluded."""

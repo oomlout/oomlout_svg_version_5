@@ -75,7 +75,6 @@ kwargs:
   oomp_mode: project
   overwrite: true
   stylesheet: project_bolt
-  svg_name: internal_label_sheet
   type: C:\gh\oomlout_svg_version_5_internal_label_sheet
   unit_mm: 42.0
 oobb_name: internal_label_sheet
@@ -235,7 +234,6 @@ thing:
     overwrite: true
     save_type: all
     stylesheet: project_bolt
-    svg_name: internal_label_sheet
     type: C:\gh\oomlout_svg_version_5_internal_label_sheet
     unit_mm: 42.0
   oobb_name: internal_label_sheet

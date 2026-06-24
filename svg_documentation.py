@@ -60,6 +60,43 @@ def _normalise_variables(raw: Any) -> list[dict]:
     return result
 
 
+def _normalise_svg_details(raw: Any) -> list[dict]:
+    if isinstance(raw, dict):
+        return [raw]
+    if isinstance(raw, list):
+        return [item for item in raw if isinstance(item, dict)]
+    return []
+
+
+def _part_style_options(data: dict, svg_details_list: list[dict]) -> list[dict]:
+    kwargs = data.get("kwargs", {}) if isinstance(data.get("kwargs"), dict) else {}
+    first_svg_detail = svg_details_list[0] if svg_details_list else {}
+
+    stylesheet_value = first_svg_detail.get("stylesheet", kwargs.get("stylesheet", ""))
+    styles_value = first_svg_detail.get("styles", kwargs.get("styles", {}))
+
+    return [
+        {
+            "name": "stylesheet",
+            "type": "str | list[str]",
+            "description": (
+                "Selects a named stylesheet for the whole part. "
+                "A single name applies one sheet; a list merges multiple sheets left to right."
+            ),
+            "current": stylesheet_value,
+        },
+        {
+            "name": "styles",
+            "type": "dict",
+            "description": (
+                "Overrides named styles such as plate or header.label for this part only. "
+                "These overrides are merged on top of the resolved stylesheet."
+            ),
+            "current": styles_value,
+        },
+    ]
+
+
 def _load_component_module(working_py: Path):
     module_name = f"_svg_doc_component_{working_py.parent.name}"
     spec   = importlib.util.spec_from_file_location(module_name, working_py)
@@ -141,17 +178,20 @@ def get_all_parts_documentation(parts_root: str = "parts") -> list[dict]:
         if not isinstance(data, dict):
             continue
 
-        svg_details = data.get("svg_details")
-        if not isinstance(svg_details, dict):
+        svg_details_list = _normalise_svg_details(data.get("svg_details"))
+        if not svg_details_list:
             continue
+
+        primary_svg_detail = svg_details_list[0]
 
         docs.append({
             "id":               _coerce_text(data.get("id",               entry.name)),
             "oobb_name":        _coerce_text(data.get("oobb_name",        "")),
-            "svg_name":         _coerce_text(svg_details.get("svg_name",  "")),
+            "svg_name":         _coerce_text(primary_svg_detail.get("svg_name",  "")),
             "classification":   _coerce_text(data.get("classification",   "")),
             "description_main": _coerce_text(data.get("description_main", "")),
             "size":             _coerce_text(data.get("size",             "")),
+            "style_options":    _part_style_options(data, svg_details_list),
             "folder":           str(entry),
         })
 

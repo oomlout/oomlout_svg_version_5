@@ -44,7 +44,6 @@ kwargs:
   overwrite: true
   style_name: fill_in_the_blanks
   stylesheet: project_bolt
-  svg_name: fill_in_the_blanks
   table_label: Contents
   title: Prototyping Tin
   type: C:\gh\oomlout_svg_version_5_tin_insert
@@ -985,7 +984,6 @@ thing:
     save_type: all
     style_name: fill_in_the_blanks
     stylesheet: project_bolt
-    svg_name: fill_in_the_blanks
     table_label: Contents
     title: Prototyping Tin
     type: C:\gh\oomlout_svg_version_5_tin_insert

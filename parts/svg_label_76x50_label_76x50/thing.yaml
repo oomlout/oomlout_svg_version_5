@@ -14,7 +14,6 @@ kwargs:
   oomp_mode: project
   output_formats: []
   overwrite: true
-  svg_name: label_76x50
   type: C:\gh\oomlout_svg_version_5_label_76x50
 oobb_name: label_76x50
 project_name: C:\gh\oomlout_svg_version_5
@@ -46,7 +45,6 @@ thing:
     output_formats: []
     overwrite: true
     save_type: all
-    svg_name: label_76x50
     type: C:\gh\oomlout_svg_version_5_label_76x50
   oobb_name: label_76x50
   project_name: C:\gh\oomlout_svg_version_5

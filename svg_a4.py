@@ -235,10 +235,6 @@ def make_a4_sheet(svg_path, folder, part, thing, filename_extra=""):
         lines.append('    ' + src_line + '\n')
     lines.append('  </g>\n')
 
-    # --- page-size indicator (grey outline of the part's actual extents) ---
-    lines.append(_rect(ox, oy, scaled_w, scaled_h,
-                       stroke="#AAAAAA", stroke_width=0.3))
-
     lines.append('</svg>\n')
 
     suffix      = f"_{filename_extra}" if filename_extra else ""

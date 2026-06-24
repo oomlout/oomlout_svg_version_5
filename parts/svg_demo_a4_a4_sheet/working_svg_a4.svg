@@ -21,7 +21,7 @@
   <text x="142.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Scale</text>
   <text x="142.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">0.808× (80.8%)</text>
   <text x="172.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Date</text>
-  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-05-18</text>
+  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-06-04</text>
   <text x="105.0000" y="5.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#AA4400">SCALE 80.8%  (220.0×307.0 mm original)</text>
   <g transform="translate(16.1401,10.5000) scale(0.807818)">
     <rect x="5.0000" y="5.0000" width="210.0000" height="297.0000"  fill="#FAFAFA" stroke="#CCCCCC" stroke-width="0.2" />
@@ -33,5 +33,4 @@
       <circle cx="25.0000" cy="25.0000" r="4.0000"  fill="#E8E8E8" stroke="#AAAAAA" stroke-width="0.2" />
       <path d="M 90.0000 279.0000 A 3.0000 3.0000 0 0 0 90.0000 285.0000 L 130.0000 285.0000 A 3.0000 3.0000 0 0 0 130.0000 279.0000 Z"  fill="#F0F0F0" stroke="#BBBBBB" stroke-width="0.2" />
   </g>
-  <rect x="16.1401" y="10.5000" width="177.7199" height="248.0000" fill="none" stroke="#AAAAAA" stroke-width="0.3" />
 </svg>

@@ -477,6 +477,24 @@ def _render_shape(comp, ctx):
         r   = dia * _OSP / 2 * sc
         return f'<circle cx="{cx:.4f}" cy="{cy:.4f}" r="{r:.4f}" />'
 
+    # ── line ──────────────────────────────────────────────────────────────────
+    if shape == "line":
+        p1 = comp.get("p1", [0, 0])
+        p2 = comp.get("p2", [10, 10])
+        x1 = sx(pos[0] + p1[0])
+        y1 = sy(pos[1] + p1[1])
+        x2 = sx(pos[0] + p2[0])
+        y2 = sy(pos[1] + p2[1])
+        return f'<line x1="{x1:.4f}" y1="{y1:.4f}" x2="{x2:.4f}" y2="{y2:.4f}"{_rot_attr()} />'
+
+    # ── path ──────────────────────────────────────────────────────────────────
+    if shape == "path":
+        d = comp.get("d", "")
+        # Paths from components are relative to part origin, so they need to be translated.
+        # The `pos` is the center, so we translate to it.
+        transform = f'transform="translate({cx:.4f} {cy:.4f})"'
+        return f'<path d="{d}" {transform}{_rot_attr()} />'
+
     return None   # unknown / 3-D-only shape — silently skip
 
 

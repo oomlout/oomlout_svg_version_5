@@ -58,7 +58,6 @@ kwargs:
     y: 2.5
   card_margin_mm: 2.0
   card_r: 8.0
-  filename_extra: workbench
   filter: ''
   grid_h: 3.5
   grid_w: 3.0
@@ -68,7 +67,6 @@ kwargs:
   oomp_mode: project
   overwrite: true
   stylesheet: project_bolt
-  svg_name: internal_label_sheet
   type: C:\gh\oomlout_svg_version_5_internal_label_sheet_workbench
   unit_mm: 42.0
 oobb_name: internal_label_sheet_workbench
@@ -227,7 +225,6 @@ thing:
       y: 2.5
     card_margin_mm: 2.0
     card_r: 8.0
-    filename_extra: workbench
     filter: ''
     grid_h: 3.5
     grid_w: 3.0
@@ -238,7 +235,6 @@ thing:
     overwrite: true
     save_type: all
     stylesheet: project_bolt
-    svg_name: internal_label_sheet
     type: C:\gh\oomlout_svg_version_5_internal_label_sheet_workbench
     unit_mm: 42.0
   oobb_name: internal_label_sheet_workbench

@@ -1,7 +1,7 @@
 {
-  "generated_date": "2026-05-18",
-  "total_components": 9,
-  "total_parts": 3,
+  "generated_date": "2026-06-23",
+  "total_components": 11,
+  "total_parts": 7,
   "components": [
     {
       "name": "circle",
@@ -59,6 +59,29 @@
         }
       ],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"26.0000mm\" height=\"26.0000mm\"\n     viewBox=\"0 0 26.0000 26.0000\">\n  <circle cx=\"13.0000\" cy=\"13.0000\" r=\"8.0000\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "circle_slice",
+      "name_long": "circle_slice",
+      "description": "",
+      "category": "General",
+      "shape_aliases": [
+        "arc_slice",
+        "pie_slice"
+      ],
+      "returns": "",
+      "variables": [],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"10.0000mm\" height=\"10.0000mm\"\n     viewBox=\"0 0 10.0000 10.0000\">\n  <path d=\"M 10.0 0.0 A 10 10 0 0 1 6.123233995736766e-16 10.0 L 0 0 Z\" transform=\"translate(5.0000 5.0000)\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "line",
+      "name_long": "line",
+      "description": "",
+      "category": "General",
+      "shape_aliases": [],
+      "returns": "",
+      "variables": [],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"10.0000mm\" height=\"10.0000mm\"\n     viewBox=\"0 0 10.0000 10.0000\">\n  <line x1=\"5.0000\" y1=\"5.0000\" x2=\"15.0000\" y2=\"-5.0000\"  fill=\"#333333\" stroke=\"#333333\" stroke-width=\"1\" />\n</svg>"
     },
     {
       "name": "oobb_circle",
@@ -593,10 +616,24 @@
     {
       "id": "project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin",
       "oobb_name": "tin_insert",
-      "svg_name": "tin_insert",
+      "svg_name": "fill_in_the_blanks",
       "classification": "",
       "description_main": "",
       "size": "",
+      "style_options": [
+        {
+          "name": "stylesheet",
+          "type": "str | list[str]",
+          "description": "Selects a named stylesheet for the whole part. A single name applies one sheet; a list merges multiple sheets left to right.",
+          "current": "project_bolt"
+        },
+        {
+          "name": "styles",
+          "type": "dict",
+          "description": "Overrides named styles such as plate or header.label for this part only. These overrides are merged on top of the resolved stylesheet.",
+          "current": {}
+        }
+      ],
       "folder": "parts\\project_bolt_tin_insert_packaging_tin_hinged_lid_169_mm_width_130_mm_height_18_mm_depth_350_ml_capacity_tinware_direct_t4066_tin"
     },
     {
@@ -606,7 +643,113 @@
       "classification": "svg",
       "description_main": "a4_sheet",
       "size": "a4",
+      "style_options": [
+        {
+          "name": "stylesheet",
+          "type": "str | list[str]",
+          "description": "Selects a named stylesheet for the whole part. A single name applies one sheet; a list merges multiple sheets left to right.",
+          "current": ""
+        },
+        {
+          "name": "styles",
+          "type": "dict",
+          "description": "Overrides named styles such as plate or header.label for this part only. These overrides are merged on top of the resolved stylesheet.",
+          "current": {}
+        }
+      ],
       "folder": "parts\\svg_demo_a4_a4_sheet"
+    },
+    {
+      "id": "svg_fill_in_the_blanks",
+      "oobb_name": "fill_in_the_blanks",
+      "svg_name": "fill_in_the_blanks",
+      "classification": "svg",
+      "description_main": "fill_in_the_blanks",
+      "size": "",
+      "style_options": [
+        {
+          "name": "stylesheet",
+          "type": "str | list[str]",
+          "description": "Selects a named stylesheet for the whole part. A single name applies one sheet; a list merges multiple sheets left to right.",
+          "current": "project_bolt"
+        },
+        {
+          "name": "styles",
+          "type": "dict",
+          "description": "Overrides named styles such as plate or header.label for this part only. These overrides are merged on top of the resolved stylesheet.",
+          "current": {}
+        }
+      ],
+      "folder": "parts\\svg_fill_in_the_blanks"
+    },
+    {
+      "id": "svg_internal_label_sheet",
+      "oobb_name": "internal_label_sheet",
+      "svg_name": "internal_label_sheet",
+      "classification": "svg",
+      "description_main": "internal_label_sheet",
+      "size": "",
+      "style_options": [
+        {
+          "name": "stylesheet",
+          "type": "str | list[str]",
+          "description": "Selects a named stylesheet for the whole part. A single name applies one sheet; a list merges multiple sheets left to right.",
+          "current": "project_bolt"
+        },
+        {
+          "name": "styles",
+          "type": "dict",
+          "description": "Overrides named styles such as plate or header.label for this part only. These overrides are merged on top of the resolved stylesheet.",
+          "current": {}
+        }
+      ],
+      "folder": "parts\\svg_internal_label_sheet"
+    },
+    {
+      "id": "svg_internal_label_sheet_fasteners",
+      "oobb_name": "internal_label_sheet_fasteners",
+      "svg_name": "internal_label_sheet",
+      "classification": "svg",
+      "description_main": "internal_label_sheet_fasteners",
+      "size": "",
+      "style_options": [
+        {
+          "name": "stylesheet",
+          "type": "str | list[str]",
+          "description": "Selects a named stylesheet for the whole part. A single name applies one sheet; a list merges multiple sheets left to right.",
+          "current": "project_bolt"
+        },
+        {
+          "name": "styles",
+          "type": "dict",
+          "description": "Overrides named styles such as plate or header.label for this part only. These overrides are merged on top of the resolved stylesheet.",
+          "current": {}
+        }
+      ],
+      "folder": "parts\\svg_internal_label_sheet_fasteners"
+    },
+    {
+      "id": "svg_internal_label_sheet_workbench",
+      "oobb_name": "internal_label_sheet_workbench",
+      "svg_name": "internal_label_sheet",
+      "classification": "svg",
+      "description_main": "internal_label_sheet_workbench",
+      "size": "",
+      "style_options": [
+        {
+          "name": "stylesheet",
+          "type": "str | list[str]",
+          "description": "Selects a named stylesheet for the whole part. A single name applies one sheet; a list merges multiple sheets left to right.",
+          "current": "project_bolt"
+        },
+        {
+          "name": "styles",
+          "type": "dict",
+          "description": "Overrides named styles such as plate or header.label for this part only. These overrides are merged on top of the resolved stylesheet.",
+          "current": {}
+        }
+      ],
+      "folder": "parts\\svg_internal_label_sheet_workbench"
     },
     {
       "id": "svg_label_76x50_label_76x50",
@@ -615,6 +758,20 @@
       "classification": "svg",
       "description_main": "label_76x50",
       "size": "76x50",
+      "style_options": [
+        {
+          "name": "stylesheet",
+          "type": "str | list[str]",
+          "description": "Selects a named stylesheet for the whole part. A single name applies one sheet; a list merges multiple sheets left to right.",
+          "current": ""
+        },
+        {
+          "name": "styles",
+          "type": "dict",
+          "description": "Overrides named styles such as plate or header.label for this part only. These overrides are merged on top of the resolved stylesheet.",
+          "current": {}
+        }
+      ],
       "folder": "parts\\svg_label_76x50_label_76x50"
     }
   ],
@@ -651,6 +808,34 @@
           "color": "none",
           "stroke": "#333333",
           "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "plate.hairline",
+          "color": "#333333",
+          "stroke": "#333333",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "plate.thin",
+          "color": "#333333",
+          "stroke": "#333333",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "plate.thick",
+          "color": "#333333",
+          "stroke": "#333333",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.heavy",
+          "color": "#333333",
+          "stroke": "#333333",
+          "stroke_width": 2.0,
           "extra": {}
         },
         {
@@ -693,6 +878,83 @@
           "color": "none",
           "stroke": "#888888",
           "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "outline.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "outline.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "outline.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "line",
+          "color": "none",
+          "stroke": "#333333",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "line.accent",
+          "color": "#333333",
+          "stroke": "#E85D04",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.muted",
+          "color": "#333333",
+          "stroke": "#888888",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "line.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "line.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "line.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
           "extra": {}
         },
         {
@@ -839,6 +1101,34 @@
           "extra": {}
         },
         {
+          "name": "plate.hairline",
+          "color": "#333333",
+          "stroke": "#FF6B6B",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "plate.thin",
+          "color": "#333333",
+          "stroke": "#FF6B6B",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "plate.thick",
+          "color": "#333333",
+          "stroke": "#FF6B6B",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.heavy",
+          "color": "#333333",
+          "stroke": "#FF6B6B",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
           "name": "hole",
           "color": "#FFD60A",
           "stroke": "none",
@@ -878,6 +1168,83 @@
           "color": "none",
           "stroke": "#00B4D8",
           "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "outline.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "outline.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "outline.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "line",
+          "color": "none",
+          "stroke": "#FF6B6B",
+          "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "line.accent",
+          "color": "#333333",
+          "stroke": "#FFD60A",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.cool",
+          "color": "#333333",
+          "stroke": "#00B4D8",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "line.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "line.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "line.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
           "extra": {}
         },
         {
@@ -1024,6 +1391,34 @@
           "extra": {}
         },
         {
+          "name": "plate.hairline",
+          "color": "#333333",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "plate.thin",
+          "color": "#333333",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "plate.thick",
+          "color": "#333333",
+          "stroke": "#4FC3F7",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.heavy",
+          "color": "#333333",
+          "stroke": "#4FC3F7",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
           "name": "hole",
           "color": "#0D2B6E",
           "stroke": "#4FC3F7",
@@ -1063,6 +1458,83 @@
           "color": "none",
           "stroke": "#B3E5FC",
           "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "outline.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "outline.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "outline.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "line",
+          "color": "none",
+          "stroke": "#4FC3F7",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "line.accent",
+          "color": "#333333",
+          "stroke": "#FFD700",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.muted",
+          "color": "#333333",
+          "stroke": "#546E7A",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "line.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "line.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "line.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
           "extra": {}
         },
         {
@@ -1202,6 +1674,34 @@
           "extra": {}
         },
         {
+          "name": "plate.hairline",
+          "color": "#333333",
+          "stroke": "#000000",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "plate.thin",
+          "color": "#333333",
+          "stroke": "#000000",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "plate.thick",
+          "color": "#333333",
+          "stroke": "#000000",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.heavy",
+          "color": "#333333",
+          "stroke": "#000000",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
           "name": "hole",
           "color": "#FFFFFF",
           "stroke": "#000000",
@@ -1241,6 +1741,76 @@
           "color": "none",
           "stroke": "#555555",
           "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "outline.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "outline.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "line",
+          "color": "none",
+          "stroke": "#000000",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "line.muted",
+          "color": "#333333",
+          "stroke": "#555555",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "line.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "line.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "line.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
           "extra": {}
         },
         {
@@ -1380,6 +1950,34 @@
           "extra": {}
         },
         {
+          "name": "plate.hairline",
+          "color": "#333333",
+          "stroke": "#CCCCCC",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "plate.thin",
+          "color": "#333333",
+          "stroke": "#CCCCCC",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "plate.thick",
+          "color": "#333333",
+          "stroke": "#999999",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.heavy",
+          "color": "#333333",
+          "stroke": "#999999",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
           "name": "hole",
           "color": "#E8E8E8",
           "stroke": "#AAAAAA",
@@ -1419,6 +2017,83 @@
           "color": "none",
           "stroke": "#CCCCCC",
           "stroke_width": 0.2,
+          "extra": {}
+        },
+        {
+          "name": "outline.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "outline.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "outline.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "line",
+          "color": "none",
+          "stroke": "#999999",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "line.accent",
+          "color": "#333333",
+          "stroke": "#555555",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.muted",
+          "color": "#333333",
+          "stroke": "#CCCCCC",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "line.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "line.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "line.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
           "extra": {}
         },
         {
@@ -1566,6 +2241,34 @@
           "extra": {}
         },
         {
+          "name": "plate.hairline",
+          "color": "#333333",
+          "stroke": "#39FF14",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "plate.thin",
+          "color": "#333333",
+          "stroke": "#39FF14",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "plate.thick",
+          "color": "#333333",
+          "stroke": "#39FF14",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.heavy",
+          "color": "#333333",
+          "stroke": "#39FF14",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
           "name": "hole",
           "color": "#FF00FF",
           "stroke": "none",
@@ -1605,6 +2308,83 @@
           "color": "none",
           "stroke": "#00FFFF",
           "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "outline.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "outline.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "outline.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "line",
+          "color": "none",
+          "stroke": "#39FF14",
+          "stroke_width": 0.6,
+          "extra": {}
+        },
+        {
+          "name": "line.accent",
+          "color": "#333333",
+          "stroke": "#FF00FF",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.cool",
+          "color": "#333333",
+          "stroke": "#00FFFF",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "line.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "line.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "line.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
           "extra": {}
         },
         {
@@ -1751,6 +2531,34 @@
           "extra": {}
         },
         {
+          "name": "plate.hairline",
+          "color": "#333333",
+          "stroke": "#D4A5A5",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "plate.thin",
+          "color": "#333333",
+          "stroke": "#D4A5A5",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "plate.thick",
+          "color": "#333333",
+          "stroke": "#D4A5A5",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.heavy",
+          "color": "#333333",
+          "stroke": "#D4A5A5",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
           "name": "hole",
           "color": "#B5EAD7",
           "stroke": "#7DC9A8",
@@ -1790,6 +2598,83 @@
           "color": "none",
           "stroke": "#C7CEEA",
           "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "outline.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "outline.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "outline.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "line",
+          "color": "none",
+          "stroke": "#D4A5A5",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "line.accent",
+          "color": "#333333",
+          "stroke": "#FFB347",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.muted",
+          "color": "#333333",
+          "stroke": "#C7CEEA",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "line.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "line.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "line.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
           "extra": {}
         },
         {
@@ -1888,6 +2773,322 @@
         {
           "name": "engraved.light",
           "color": "#C8D8E4",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        }
+      ]
+    },
+    {
+      "name": "project_bolt",
+      "label": "Project Bolt",
+      "description": "Clean utilitarian hardware-bin card style. Crisp white body, near-black double border, bold sans-serif title, light-grey ruled lines, and a strong dark \"Contents\" header cell in the bottom table. Inspired by the physical Project Bolt tin label cards.",
+      "source": "file",
+      "styles": [
+        {
+          "name": "plate",
+          "color": "#FAFAFA",
+          "stroke": "#1A1A1A",
+          "stroke_width": 1.2,
+          "extra": {}
+        },
+        {
+          "name": "plate.inner",
+          "color": "none",
+          "stroke": "#2E2E2E",
+          "stroke_width": 0.35,
+          "extra": {}
+        },
+        {
+          "name": "plate.accent",
+          "color": "#E8E8E8",
+          "stroke": "#1A1A1A",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "plate.light",
+          "color": "#F0F0F0",
+          "stroke": "#333333",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "plate.outline",
+          "color": "none",
+          "stroke": "#1A1A1A",
+          "stroke_width": 0.8,
+          "extra": {}
+        },
+        {
+          "name": "plate.hairline",
+          "color": "#333333",
+          "stroke": "#333333",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "plate.thin",
+          "color": "#333333",
+          "stroke": "#333333",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "plate.thick",
+          "color": "#333333",
+          "stroke": "#333333",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.heavy",
+          "color": "#333333",
+          "stroke": "#333333",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "plate.cell",
+          "color": "#FFFFFF",
+          "stroke": "#2E2E2E",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "rule",
+          "color": "#BBBBBB",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "hole",
+          "color": "#DDDDDD",
+          "stroke": "#1A1A1A",
+          "stroke_width": 0.4,
+          "extra": {}
+        },
+        {
+          "name": "hole.cut",
+          "color": "#FFFFFF",
+          "stroke": "#444444",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "slot",
+          "color": "#DDDDDD",
+          "stroke": "#1A1A1A",
+          "stroke_width": 0.4,
+          "extra": {}
+        },
+        {
+          "name": "outline",
+          "color": "none",
+          "stroke": "#1A1A1A",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.accent",
+          "color": "none",
+          "stroke": "#555555",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "outline.light",
+          "color": "none",
+          "stroke": "#AAAAAA",
+          "stroke_width": 0.3,
+          "extra": {}
+        },
+        {
+          "name": "outline.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "outline.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "outline.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "outline.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "line",
+          "color": "none",
+          "stroke": "#333333",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "line.accent",
+          "color": "#333333",
+          "stroke": "#111111",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.muted",
+          "color": "#333333",
+          "stroke": "#AAAAAA",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "line.hairline",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.1,
+          "extra": {}
+        },
+        {
+          "name": "line.thin",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0.25,
+          "extra": {}
+        },
+        {
+          "name": "line.thick",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 1.0,
+          "extra": {}
+        },
+        {
+          "name": "line.heavy",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 2.0,
+          "extra": {}
+        },
+        {
+          "name": "label",
+          "color": "#1A1A1A",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Swis721 Blk BT, comic sans ms",
+            "size": 5.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "label.title",
+          "color": "#111111",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 14.0,
+            "font": "Swis721 Blk BT, comic sans ms",
+            "font_weight": "bold"
+          }
+        },
+        {
+          "name": "label.small",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 2.5
+          }
+        },
+        {
+          "name": "label.large",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "size": 8.0
+          }
+        },
+        {
+          "name": "label.mono",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "JetBrains Mono, Fira Code, Consolas, monospace"
+          }
+        },
+        {
+          "name": "label.light",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.muted",
+          "color": "#888888",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "label.accent",
+          "color": "#333333",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "header",
+          "color": "#1C1C1C",
+          "stroke": "#1C1C1C",
+          "stroke_width": 0.5,
+          "extra": {}
+        },
+        {
+          "name": "header.label",
+          "color": "#FFFFFF",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {
+            "font": "Swis721 Blk BT, comic sans ms",
+            "font_weight": "bold",
+            "size": 7.0,
+            "halign": "center",
+            "valign": "center"
+          }
+        },
+        {
+          "name": "header.accent",
+          "color": "#444444",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved",
+          "color": "#CCCCCC",
+          "stroke": "none",
+          "stroke_width": 0,
+          "extra": {}
+        },
+        {
+          "name": "engraved.light",
+          "color": "#E0E0E0",
           "stroke": "none",
           "stroke_width": 0,
           "extra": {}
