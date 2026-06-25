@@ -21,7 +21,7 @@
   <text x="142.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Scale</text>
   <text x="142.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">1:1</text>
   <text x="172.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Date</text>
-  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-06-04</text>
+  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-06-25</text>
   <g transform="translate(35.0000,54.0000) scale(1.000000)">
     <rect x="5.0000" y="5.0000" width="130.0000" height="151.0000" rx="8.0000" ry="8.0000"  fill="#FAFAFA" stroke="none" />
       <path d="M 14.4700 8.4700 L 46.0600 8.4700 A 1.4700 1.4700 0 0 1 47.5300 9.9400 L 47.5300 35.5600 A 1.4700 1.4700 0 0 1 46.0600 37.0300 L 9.9400 37.0300 A 1.4700 1.4700 0 0 1 8.4700 35.5600 L 8.4700 14.4700 A 6.0000 6.0000 0 0 1 14.4700 8.4700 Z"  fill="#FFFFFF" stroke="#2E2E2E" stroke-width="0.5" />

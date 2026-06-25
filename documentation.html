@@ -890,8 +890,8 @@
 
   <script>
 window.DOCUMENTATION_DATA = {
-  "generated_date": "2026-06-23",
-  "total_components": 11,
+  "generated_date": "2026-06-25",
+  "total_components": 12,
   "total_parts": 7,
   "components": [
     {
@@ -963,6 +963,114 @@ window.DOCUMENTATION_DATA = {
       "returns": "",
       "variables": [],
       "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"10.0000mm\" height=\"10.0000mm\"\n     viewBox=\"0 0 10.0000 10.0000\">\n  <path d=\"M 10.0 0.0 A 10 10 0 0 1 6.123233995736766e-16 10.0 L 0 0 Z\" transform=\"translate(5.0000 5.0000)\"  fill=\"#333333\" stroke=\"none\" />\n</svg>"
+    },
+    {
+      "name": "dimension_line",
+      "name_long": "Dimension Line",
+      "description": "Engineering dimension annotation: extension lines, a dimension bar with end ticks, and a centred label.  Supports horizontal and vertical orientations with configurable offset and tick style.",
+      "category": "SVG Annotations",
+      "shape_aliases": [
+        "dim_line",
+        "dimension"
+      ],
+      "returns": "",
+      "variables": [
+        {
+          "name": "p1",
+          "description": "First measurement point [x, y] relative to pos.",
+          "type": "list",
+          "default": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "p2",
+          "description": "Second measurement point [x, y] relative to pos.",
+          "type": "list",
+          "default": [
+            10,
+            0
+          ]
+        },
+        {
+          "name": "direction",
+          "description": "'horizontal' — dim line runs horizontally, extension lines are vertical.  'vertical' — dim line runs vertically, extension lines are horizontal.  'auto' (default) — inferred from the larger axis span of p1→p2.",
+          "type": "string",
+          "default": "auto"
+        },
+        {
+          "name": "offset",
+          "description": "Signed perpendicular distance from the measured edge to the dimension bar (mm).  Positive = above for horizontal, right for vertical.",
+          "type": "float",
+          "default": 10.0
+        },
+        {
+          "name": "text",
+          "description": "Label string.  Omit (or pass '') to auto-compute the distance.",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "text_size",
+          "description": "Label font size in mm.",
+          "type": "float",
+          "default": 4.0
+        },
+        {
+          "name": "font",
+          "description": "Label font family.",
+          "type": "string",
+          "default": "Arial, Helvetica, sans-serif"
+        },
+        {
+          "name": "gap",
+          "description": "Gap between the measured object edge and the start of each extension line (mm).",
+          "type": "float",
+          "default": 1.5
+        },
+        {
+          "name": "overshoot",
+          "description": "How far the extension line continues past the dimension bar (mm).",
+          "type": "float",
+          "default": 1.5
+        },
+        {
+          "name": "tick_size",
+          "description": "Half-length of the tick marks at each end of the dimension bar (mm).",
+          "type": "float",
+          "default": 1.5
+        },
+        {
+          "name": "text_offset",
+          "description": "Additional gap between the dimension bar and the text label (mm).  Positive places text on the far side of the bar from the object.",
+          "type": "float",
+          "default": 1.0
+        },
+        {
+          "name": "stroke_width",
+          "description": "Stroke width for all lines (mm).",
+          "type": "float",
+          "default": 0.3
+        },
+        {
+          "name": "color",
+          "description": "Color applied to lines and text.",
+          "type": "string",
+          "default": "#000000"
+        },
+        {
+          "name": "pos",
+          "description": "Component anchor [x, y, z] in mm (Y-up).",
+          "type": "list",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sample_svg": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"15.0000mm\" height=\"23.4000mm\"\n     viewBox=\"0 0 15.0000 23.4000\">\n  <line x1=\"5.0000\" y1=\"16.9000\" x2=\"5.0000\" y2=\"6.9000\"  fill=\"#000000\" stroke=\"#000000\" stroke-width=\"0.3\" />\n  <line x1=\"15.0000\" y1=\"16.9000\" x2=\"15.0000\" y2=\"6.9000\"  fill=\"#000000\" stroke=\"#000000\" stroke-width=\"0.3\" />\n  <line x1=\"5.0000\" y1=\"8.4000\" x2=\"15.0000\" y2=\"8.4000\"  fill=\"#000000\" stroke=\"#000000\" stroke-width=\"0.3\" />\n  <line x1=\"5.0000\" y1=\"9.9000\" x2=\"5.0000\" y2=\"6.9000\"  fill=\"#000000\" stroke=\"#000000\" stroke-width=\"0.3\" />\n  <line x1=\"15.0000\" y1=\"9.9000\" x2=\"15.0000\" y2=\"6.9000\"  fill=\"#000000\" stroke=\"#000000\" stroke-width=\"0.3\" />\n  <text x=\"10.0000\" y=\"5.0000\" font-family=\"Arial, Helvetica, sans-serif\" font-size=\"4.0000\" text-anchor=\"middle\" dominant-baseline=\"middle\" fill=\"#000000\">10.0 mm</text>\n</svg>"
     },
     {
       "name": "line",

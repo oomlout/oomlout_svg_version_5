@@ -51,124 +51,119 @@ thing:
   size: a4
   styles:
     engraved:
-      color: '#BBBBBB'
+      color: '#555555'
       stroke: none
       stroke_width: 0
     engraved.light:
-      color: '#DDDDDD'
+      color: '#999999'
     header:
-      color: '#F0F0F0'
-      stroke: '#CCCCCC'
-      stroke_width: 0.2
+      color: '#111111'
+      stroke: none
+      stroke_width: 0
     header.accent:
-      color: '#888888'
+      color: '#E85D04'
     header.label:
-      color: '#444444'
+      color: '#FFFFFF'
       font: Inter, sans-serif
       halign: center
-      size: 4.5
+      size: 5.0
       stroke: none
       stroke_width: 0
       valign: center
     hole:
-      color: '#E8E8E8'
-      stroke: '#AAAAAA'
-      stroke_width: 0.2
+      color: '#666666'
+      stroke: none
+      stroke_width: 0
     hole.cut:
       color: '#FFFFFF'
-      stroke: '#CCCCCC'
-      stroke_width: 0.2
+      stroke: none
+      stroke_width: 0
     label:
-      color: '#333333'
+      color: '#111111'
       font: Inter, sans-serif
       halign: center
-      size: 3.5
+      size: 4.0
       stroke: none
       stroke_width: 0
       valign: center
     label.accent:
-      color: '#555555'
+      color: '#E85D04'
     label.large:
-      size: 6.0
+      size: 7.0
     label.light:
-      color: '#888888'
+      color: '#FFFFFF'
     label.mono:
       font: JetBrains Mono, Fira Code, monospace
-      size: 3.0
     label.muted:
-      color: '#AAAAAA'
+      color: '#666666'
     label.small:
-      size: 2.0
+      size: 2.5
     line:
       color: none
-      stroke: '#999999'
-      stroke_width: 0.3
+      stroke: '#333333'
+      stroke_width: 0.5
     line.accent:
-      stroke: '#555555'
+      stroke: '#E85D04'
     line.hairline:
       stroke_width: 0.1
     line.heavy:
       stroke_width: 2.0
     line.muted:
-      stroke: '#CCCCCC'
+      stroke: '#888888'
     line.thick:
       stroke_width: 1.0
     line.thin:
       stroke_width: 0.25
     outline:
       color: none
-      stroke: '#999999'
-      stroke_width: 0.3
+      stroke: '#333333'
+      stroke_width: 0.5
     outline.accent:
       color: none
-      stroke: '#555555'
-      stroke_width: 0.3
+      stroke: '#E85D04'
+      stroke_width: 0.5
     outline.hairline:
       stroke_width: 0.1
     outline.heavy:
       stroke_width: 2.0
     outline.light:
       color: none
-      stroke: '#CCCCCC'
-      stroke_width: 0.2
+      stroke: '#888888'
+      stroke_width: 0.3
     outline.thick:
       stroke_width: 1.0
     outline.thin:
       stroke_width: 0.25
     plate:
-      color: '#FAFAFA'
-      stroke: '#CCCCCC'
-      stroke_width: 0.2
+      color: '#333333'
+      stroke: none
+      stroke_width: 0
     plate.accent:
-      color: '#F5F5F5'
-      stroke: '#999999'
-      stroke_width: 0.2
+      color: '#E85D04'
     plate.hairline:
-      stroke: '#CCCCCC'
+      stroke: '#333333'
       stroke_width: 0.1
     plate.heavy:
-      stroke: '#999999'
+      stroke: '#333333'
       stroke_width: 2.0
     plate.light:
-      color: '#FFFFFF'
-      stroke: '#E0E0E0'
-      stroke_width: 0.2
+      color: '#888888'
     plate.outline:
       color: none
-      stroke: '#AAAAAA'
-      stroke_width: 0.3
+      stroke: '#333333'
+      stroke_width: 0.5
     plate.thick:
-      stroke: '#999999'
+      stroke: '#333333'
       stroke_width: 1.0
     plate.thin:
-      stroke: '#CCCCCC'
+      stroke: '#333333'
       stroke_width: 0.25
     slot:
-      color: '#F0F0F0'
-      stroke: '#BBBBBB'
-      stroke_width: 0.2
+      color: '#666666'
+      stroke: none
+      stroke_width: 0
   svg_components:
-  - color: '#FAFAFA'
+  - color: '#333333'
     pos:
     - 0
     - 0
@@ -182,9 +177,9 @@ thing:
     - 210.0
     - 297.0
     - 3
-    stroke: '#CCCCCC'
-    stroke_width: 0.2
-  - color: '#FFFFFF'
+    stroke: none
+    stroke_width: 0
+  - color: '#888888'
     pos:
     - 0
     - 0
@@ -199,9 +194,9 @@ thing:
     - 190.0
     - 277.0
     - 3
-    stroke: '#E0E0E0'
-    stroke_width: 0.2
-  - color: '#444444'
+    stroke: none
+    stroke_width: 0
+  - color: '#FFFFFF'
     font: Inter, sans-serif
     halign: center
     pos:
@@ -218,7 +213,7 @@ thing:
     stroke_width: 0
     text: A4 Demo Sheet
     valign: center
-  - color: '#444444'
+  - color: '#FFFFFF'
     font: Inter, sans-serif
     halign: center
     pos:
@@ -235,7 +230,7 @@ thing:
     stroke_width: 0
     text: oomlout SVG pipeline
     valign: center
-  - color: '#333333'
+  - color: '#111111'
     font: JetBrains Mono, Fira Code, monospace
     halign: right
     pos:
@@ -252,7 +247,7 @@ thing:
     stroke_width: 0
     text: v1.0
     valign: center
-  - color: '#F5F5F5'
+  - color: '#E85D04'
     points:
     - - 0
       - 4
@@ -269,9 +264,9 @@ thing:
     - 0
     - 0
     shape: polygon
-    stroke: '#999999'
-    stroke_width: 0.2
-  - color: '#E8E8E8'
+    stroke: none
+    stroke_width: 0
+  - color: '#666666'
     pos:
     - -85.0
     - 128.5
@@ -282,9 +277,9 @@ thing:
     - 0
     - 0
     shape: circle
-    stroke: '#AAAAAA'
-    stroke_width: 0.2
-  - color: '#F0F0F0'
+    stroke: none
+    stroke_width: 0
+  - color: '#666666'
     pos:
     - 0
     - -128.5
@@ -295,8 +290,8 @@ thing:
     - 0
     - 0
     shape: slot
-    stroke: '#BBBBBB'
-    stroke_width: 0.2
+    stroke: none
+    stroke_width: 0
     w: 40.0
   svg_details:
     depth: 3

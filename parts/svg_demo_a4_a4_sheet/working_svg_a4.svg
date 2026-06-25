@@ -21,16 +21,16 @@
   <text x="142.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Scale</text>
   <text x="142.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">0.808× (80.8%)</text>
   <text x="172.5000" y="271.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">Date</text>
-  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-06-04</text>
+  <text x="172.5000" y="276.0000" font-family="Swis721 Blk BT, comic sans ms" font-size="3.5000" font-weight="bold" text-anchor="start" dominant-baseline="middle" fill="#1A1A1A">2026-06-25</text>
   <text x="105.0000" y="5.5000" font-family="Swis721 Blk BT, comic sans ms" font-size="2.8000" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#AA4400">SCALE 80.8%  (220.0×307.0 mm original)</text>
   <g transform="translate(16.1401,10.5000) scale(0.807818)">
-    <rect x="5.0000" y="5.0000" width="210.0000" height="297.0000"  fill="#FAFAFA" stroke="#CCCCCC" stroke-width="0.2" />
-      <rect x="15.0000" y="15.0000" width="190.0000" height="277.0000" rx="5.0000" ry="5.0000"  fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.2" />
-      <text x="110.0000" y="35.0000" font-family="Inter, sans-serif" font-size="14.0000" text-anchor="middle" dominant-baseline="middle" fill="#444444">A4 Demo Sheet</text>
-      <text x="110.0000" y="53.0000" font-family="Inter, sans-serif" font-size="7.0000" text-anchor="middle" dominant-baseline="middle" fill="#444444">oomlout SVG pipeline</text>
-      <text x="207.0000" y="294.0000" font-family="JetBrains Mono, Fira Code, monospace" font-size="4.0000" text-anchor="end" dominant-baseline="middle" fill="#333333">v1.0</text>
-      <polygon points="195.0000,21.0000 189.0000,29.0000 201.0000,29.0000"  fill="#F5F5F5" stroke="#999999" stroke-width="0.2" />
-      <circle cx="25.0000" cy="25.0000" r="4.0000"  fill="#E8E8E8" stroke="#AAAAAA" stroke-width="0.2" />
-      <path d="M 90.0000 279.0000 A 3.0000 3.0000 0 0 0 90.0000 285.0000 L 130.0000 285.0000 A 3.0000 3.0000 0 0 0 130.0000 279.0000 Z"  fill="#F0F0F0" stroke="#BBBBBB" stroke-width="0.2" />
+    <rect x="5.0000" y="5.0000" width="210.0000" height="297.0000"  fill="#333333" stroke="none" />
+      <rect x="15.0000" y="15.0000" width="190.0000" height="277.0000" rx="5.0000" ry="5.0000"  fill="#888888" stroke="none" />
+      <text x="110.0000" y="35.0000" font-family="Inter, sans-serif" font-size="14.0000" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF">A4 Demo Sheet</text>
+      <text x="110.0000" y="53.0000" font-family="Inter, sans-serif" font-size="7.0000" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF">oomlout SVG pipeline</text>
+      <text x="207.0000" y="294.0000" font-family="JetBrains Mono, Fira Code, monospace" font-size="4.0000" text-anchor="end" dominant-baseline="middle" fill="#111111">v1.0</text>
+      <polygon points="195.0000,21.0000 189.0000,29.0000 201.0000,29.0000"  fill="#E85D04" stroke="none" />
+      <circle cx="25.0000" cy="25.0000" r="4.0000"  fill="#666666" stroke="none" />
+      <path d="M 90.0000 279.0000 A 3.0000 3.0000 0 0 0 90.0000 285.0000 L 130.0000 285.0000 A 3.0000 3.0000 0 0 0 130.0000 279.0000 Z"  fill="#666666" stroke="none" />
   </g>
 </svg>

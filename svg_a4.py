@@ -237,8 +237,10 @@ def make_a4_sheet(svg_path, folder, part, thing, filename_extra=""):
 
     lines.append('</svg>\n')
 
+    import os as _os
+    stem        = _os.path.splitext(_os.path.basename(svg_path))[0]
     suffix      = f"_{filename_extra}" if filename_extra else ""
-    a4_svg_path = os.path.join(folder, f"working_svg_a4{suffix}.svg")
+    a4_svg_path = os.path.join(folder, f"{stem}_a4{suffix}.svg")
     with open(a4_svg_path, "w", encoding="utf-8") as fh:
         fh.writelines(lines)
     print(f"  svg_a4: wrote {a4_svg_path}")
@@ -247,10 +249,16 @@ def make_a4_sheet(svg_path, folder, part, thing, filename_extra=""):
     _try_write_pdf(a4_svg_path, folder, filename_extra=filename_extra)
 
 
+def make_pdf(svg_path, folder):
+    """Convert any SVG file directly to PDF without the A4 wrapper."""
+    _try_write_pdf(svg_path, folder)
+
+
 def _try_write_pdf(a4_svg_path, folder, filename_extra=""):
     """Try cairosvg then weasyprint to emit a PDF."""
-    suffix   = f"_{filename_extra}" if filename_extra else ""
-    pdf_path = os.path.join(folder, f"working_svg_a4{suffix}.pdf")
+    import os as _os
+    stem     = _os.path.splitext(_os.path.basename(a4_svg_path))[0]
+    pdf_path = os.path.join(folder, f"{stem}.pdf")
 
     # cairosvg
     try:

@@ -71,8 +71,8 @@ def get_parts(kwargs, oomp_mode):
 
         part_kwargs = copy.deepcopy(kwargs)
         part_kwargs.update(copy.deepcopy(loaded_part.get("kwargs", {})))
-        _SD_META = {"svg_name", "filename_extra", "width", "height", "depth", "styles",
-                    "extra", "radius_name"}
+        _SD_META = {"svg_name", "filename_extra", "width", "height", "depth",
+                    "styles", "extra", "radius_name"}
         svg_details_safe = {k: v for k, v in svg_details.items()
                             if k not in _SD_META or (k in ("width", "height", "depth") and isinstance(v, (int, float)))}
         part_kwargs.update(copy.deepcopy(svg_details_safe))
