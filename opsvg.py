@@ -488,6 +488,18 @@ def _render_shape(comp, ctx):
         return f'<line x1="{x1:.4f}" y1="{y1:.4f}" x2="{x2:.4f}" y2="{y2:.4f}"{_rot_attr()} />'
 
     # ── path ──────────────────────────────────────────────────────────────────
+    if shape == "image":
+        size = comp.get("size", [10, 10, 0])
+        w, h = size[0] * sc, size[1] * sc
+        x, y = cx - w / 2, cy - h / 2
+        href = comp.get("href", "")
+        preserve = comp.get("preserveAspectRatio", "xMidYMid meet")
+        return (
+            f'<image href="{href}" x="{x:.4f}" y="{y:.4f}" '
+            f'width="{w:.4f}" height="{h:.4f}" '
+            f'preserveAspectRatio="{preserve}"{_rot_attr()} />'
+        )
+
     if shape == "path":
         d = comp.get("d", "")
         # Paths from components are relative to part origin, so they need to be translated.
@@ -590,6 +602,11 @@ def _bounding_box(components):
         elif shape == "polygon":
             for pt in c.get("points", []):
                 xs.append(px + pt[0]);  ys.append(py + pt[1])
+
+        elif shape == "image":
+            size = c.get("size", [10, 10, 0])
+            hw, hh = size[0] / 2, size[1] / 2
+            xs += [px - hw, px + hw];  ys += [py - hh, py + hh]
 
         else:
             xs.append(px);  ys.append(py)

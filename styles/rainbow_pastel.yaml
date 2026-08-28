@@ -1,0 +1,49 @@
+meta:
+  name: Rainbow Pastel
+  description: Calendar-compatible soft rainbow palette.
+
+plate:
+  color: "#FDEDEC"
+  stroke: "#D6D6E5"
+  stroke_width: 0.4
+
+plate.light:
+  color: "#EBF5FB"
+  stroke: "#D6D6E5"
+  stroke_width: 0.2
+
+plate.outline:
+  color: "none"
+  stroke: "#4A4A6A"
+  stroke_width: 0.6
+
+line:
+  color: "none"
+  stroke: "#D6D6E5"
+  stroke_width: 0.4
+
+label:
+  color: "#3A3A5A"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 4.0
+  halign: center
+  valign: center
+
+label.accent:
+  color: "#9B2335"
+
+header:
+  color: "#F0F0F8"
+  stroke: "#4A4A6A"
+  stroke_width: 0.6
+
+header.label:
+  color: "#3A3A5A"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 5.0
+  halign: center
+  valign: center

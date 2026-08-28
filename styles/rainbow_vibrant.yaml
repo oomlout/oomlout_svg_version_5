@@ -1,0 +1,49 @@
+meta:
+  name: Rainbow Vibrant
+  description: Calendar-compatible bold saturated rainbow palette.
+
+plate:
+  color: "#FFE5E5"
+  stroke: "#CCCCCC"
+  stroke_width: 0.5
+
+plate.light:
+  color: "#E0ECFF"
+  stroke: "#CCCCCC"
+  stroke_width: 0.25
+
+plate.outline:
+  color: "none"
+  stroke: "#2C2C2C"
+  stroke_width: 0.8
+
+line:
+  color: "none"
+  stroke: "#CCCCCC"
+  stroke_width: 0.5
+
+label:
+  color: "#1A1A1A"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 4.0
+  halign: center
+  valign: center
+
+label.accent:
+  color: "#CC0000"
+
+header:
+  color: "#F5F5F5"
+  stroke: "#2C2C2C"
+  stroke_width: 0.8
+
+header.label:
+  color: "#1A1A1A"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 5.0
+  halign: center
+  valign: center

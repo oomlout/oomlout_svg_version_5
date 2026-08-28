@@ -1,0 +1,49 @@
+meta:
+  name: Rainbow
+  description: Calendar-compatible vivid rainbow palette.
+
+plate:
+  color: "#FFE0E0"
+  stroke: "#90EE90"
+  stroke_width: 0.5
+
+plate.light:
+  color: "#E0E0FF"
+  stroke: "#90EE90"
+  stroke_width: 0.25
+
+plate.outline:
+  color: "none"
+  stroke: "#FF4444"
+  stroke_width: 0.8
+
+line:
+  color: "none"
+  stroke: "#90EE90"
+  stroke_width: 0.5
+
+label:
+  color: "#0000CC"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 4.0
+  halign: center
+  valign: center
+
+label.accent:
+  color: "#8B00FF"
+
+header:
+  color: "#FFE0E0"
+  stroke: "#FF4444"
+  stroke_width: 0.8
+
+header.label:
+  color: "#0000CC"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 5.0
+  halign: center
+  valign: center

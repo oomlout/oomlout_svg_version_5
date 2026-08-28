@@ -1,0 +1,46 @@
+meta:
+  name: Basic
+  description: Calendar-compatible monochrome baseline palette.
+
+plate:
+  color: "#FFFFFF"
+  stroke: "#CCCCCC"
+  stroke_width: 0.3
+
+plate.light:
+  color: "#F0F0F0"
+  stroke: "#CCCCCC"
+  stroke_width: 0.15
+
+plate.outline:
+  color: "none"
+  stroke: "#000000"
+  stroke_width: 0.5
+
+line:
+  color: "none"
+  stroke: "#CCCCCC"
+  stroke_width: 0.3
+
+label:
+  color: "#000000"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 4.0
+  halign: center
+  valign: center
+
+header:
+  color: "#F0F0F0"
+  stroke: "#000000"
+  stroke_width: 0.5
+
+header.label:
+  color: "#000000"
+  stroke: "none"
+  stroke_width: 0
+  font: "Inter, sans-serif"
+  size: 5.0
+  halign: center
+  valign: center
