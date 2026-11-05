@@ -235,6 +235,9 @@ def svg_easy(thing, **kwargs):
         # Style provides defaults; explicit inline kwargs always win
         for k, v in resolved.items():
             kwargs.setdefault(k, v)
+        # Retain the style name so descriptors can be classified downstream
+        # (e.g. lifting pads above body artwork in assembly drawings).
+        kwargs.setdefault("style_name", style_name)
     # ─────────────────────────────────────────────────────────────────────────
 
     shape_arg = kwargs.get("shape", "")
@@ -256,7 +259,12 @@ def svg_easy(thing, **kwargs):
                 except Exception as exc:
                     print(f"[opsvg] warning: {shape}.action() failed: {exc}")
                     descriptors = []
+                # Composite components build fresh descriptors, so carry the
+                # classification kwargs (style name, css class) onto them.
+                carry = {key: call_kwargs[key] for key in ("style_name", "css_class") if key in call_kwargs}
                 for descriptor in (descriptors or []):
+                    for key, value in carry.items():
+                        descriptor.setdefault(key, value)
                     svg_append(thing, **descriptor)
         else:
             for pos in poss:
@@ -352,7 +360,7 @@ def opsvg_get_svg(components,
             comp_fill         = comp.get("color",        fill)
             comp_stroke       = comp.get("stroke",       stroke)
             comp_stroke_width = comp.get("stroke_width", stroke_width)
-            lines.append(_styled(elem, comp_fill, comp_stroke, comp_stroke_width))
+            lines.append(_styled(elem, comp_fill, comp_stroke, comp_stroke_width, comp.get("css_class", "")))
 
     lines.append("</svg>")
     return "\n".join(lines) + "\n"
@@ -634,13 +642,14 @@ def _flatten(items, depth=8):
     return items
 
 
-def _styled(elem, fill, stroke, stroke_width):
+def _styled(elem, fill, stroke, stroke_width, css_class=""):
     """
     Inject fill/stroke attributes into a raw SVG element string.
 
     fill         : CSS colour for the shape interior ('none' = transparent)
     stroke       : CSS colour for the outline ('none' = no outline)
     stroke_width : outline width in mm (ignored when stroke is 'none')
+    css_class    : optional class="" for downstream styling (e.g. pads)
 
     Three common modes
     ------------------
@@ -651,6 +660,9 @@ def _styled(elem, fill, stroke, stroke_width):
     stroke_val = stroke if stroke else "none"
     sw_attr    = f' stroke-width="{stroke_width}"' if stroke_width else ""
     attrs      = f'fill="{fill}" stroke="{stroke_val}"{sw_attr}'
+    if css_class:
+        attrs += f' class="{css_class}"'
+
 
     elem = elem.rstrip()
 

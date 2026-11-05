@@ -109,6 +109,12 @@ outline.thick:
 outline.heavy:
   stroke_width: 2.0
 
+# Filled hardware silhouettes and drive geometry.
+diagram.solid:
+  color: "#1A1A1A"
+  stroke: "none"
+  stroke_width: 0
+
 # ── Line drawing ─────────────────────────────────────────────────────────────
 line:
   color: "none"

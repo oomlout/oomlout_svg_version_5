@@ -1,0 +1,38 @@
+meta:
+  name: Hardware labels
+  description: Quiet technical typography and fine rules, layered over Project Bolt.
+
+plate:
+  color: "#FFFFFF"
+  stroke_width: 0.6
+plate.cell:
+  stroke: "#747A80"
+  stroke_width: 0.22
+plate.outline:
+  stroke: "#383E44"
+  stroke_width: 0.35
+outline:
+  stroke_width: 0.32
+label:
+  font: "Segoe UI, Arial, sans-serif"
+  font_weight: 400
+  color: "#20262C"
+  size: 4.5
+label.title:
+  font: "Segoe UI, Arial, sans-serif"
+  font_weight: 400
+  size: 7.0
+label.large:
+  font_weight: 600
+  size: 6.2
+label.category:
+  font_weight: 400
+  size: 3.6
+label.small:
+  font_weight: 400
+  size: 2.7
+  color: "#434A51"
+label.mono:
+  font: "Consolas, monospace"
+  font_weight: 400
+  size: 4.0
